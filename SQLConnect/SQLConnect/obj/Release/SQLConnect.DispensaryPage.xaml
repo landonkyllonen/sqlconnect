@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SQLConnect.DispensaryPage"
+		Title = "Choose Your Dispensary">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Teal">
+			<StackLayout x:Name="firstTimeLbls" Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Start" Padding="7" Spacing = "10">
+				<Label TextColor="White" Text="First, select your dispensary."
+					HorizontalOptions="Center" FontSize="25"/>
+				<Label TextColor="White" Text="Don't worry, you can change your dispensary at any time."
+					HorizontalOptions="Center" FontSize="15"/>
+			</StackLayout>
+			<SearchBar Placeholder="Enter City Name" TextChanged = "Handle_TextChanged" PlaceholderColor = "#E5E2DD" TextColor="White" 
+				CancelButtonColor = "White" />
+			<ListView  x:Name="dispList" RowHeight="230" SeparatorVisibility="Default" SeparatorColor="Silver">
+            	<ListView.ItemTemplate>
+	                <DataTemplate>
+	                    <ViewCell>
+	                        <RelativeLayout>
+	                        	<Image Source="{Binding dispImgPath}" Aspect="AspectFill"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+								/>
+								<BoxView Color="Teal" Opacity="0.2"
+										RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+										RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+								/>
+								<StackLayout Orientation="Vertical" Spacing = "15"
+										RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-100}"
+										RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+										RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+										>
+										<Label Text = "{Binding dispName}" TextColor = "White" FontSize="30" HorizontalOptions = "Center" VerticalOptions="Center"/>
+										<Label Text = "{Binding dispAddress}" TextColor = "White" FontSize="20" HorizontalOptions = "Center" VerticalOptions="Center"/>
+										<Label Text = "{Binding dispCity}" TextColor = "White" FontSize="20" HorizontalOptions = "Center" VerticalOptions="Center"/>
+								</StackLayout>
+							</RelativeLayout>
+	                    </ViewCell>
+	                </DataTemplate>
+            	</ListView.ItemTemplate>
+        	</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

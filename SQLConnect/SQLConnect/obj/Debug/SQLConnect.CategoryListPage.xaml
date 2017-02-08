@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SQLConnect.CategoryListPage"
+		x:Name="titleholder">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Teal">
+			<SearchBar Placeholder="Search by name" TextChanged = "filterItems" PlaceholderColor = "White" TextColor="White"
+				CancelButtonColor = "White" />
+			<ListView  x:Name="prodList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver">
+            	<ListView.ItemTemplate>
+	                <DataTemplate>
+	                    <ViewCell>
+	                        <RelativeLayout>
+	                        	<Image Source="{Binding prodImgUrl}" Aspect="AspectFill"
+									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=5}"
+									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=5}"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=-10}"
+									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=-10}"
+								/>
+								<Label Text = "{Binding prodName}" TextColor = "White" FontSize="25" HorizontalOptions = "Center" VerticalOptions = "Center"
+										RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+										RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+										RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+										/>
+							</RelativeLayout>
+	                    </ViewCell>
+	                </DataTemplate>
+            	</ListView.ItemTemplate>
+        	</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

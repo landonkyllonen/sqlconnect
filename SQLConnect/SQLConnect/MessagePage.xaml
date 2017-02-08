@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SQLConnect.MessagePage">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" BackgroundColor="Teal" Opacity=".15" Padding="15">
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Padding = "5">
+				<Label x:Name="from" HorizontalTextAlignment="Start" FontSize="25" TextColor="White" HorizontalOptions="Start"/>
+				<Label x:Name="date" HorizontalTextAlignment="End" FontSize="25" TextColor="White" HorizontalOptions="End"/>
+			</StackLayout>
+			<Label x:Name="content" HorizontalTextAlignment="Start" VerticalOptions="Start" HeightRequest="250" TextColor="White"/>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+				<Button Text="Reply" TextColor="White" BackgroundColor="Teal" VerticalOptions="Center" HorizontalOptions="Center" Clicked="reply"/>
+				<Button Text="Delete" TextColor="White" BackgroundColor="Teal" VerticalOptions="Center" HorizontalOptions="Center" Clicked="delete"/>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

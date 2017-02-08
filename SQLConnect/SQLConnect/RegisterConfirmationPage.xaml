@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SQLConnect.RegisterConfirmationPage">
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="Center" Padding="20">
+			<Label Text="Registration Successful!" TextColor="Teal" FontSize="25" HorizontalOptions="Center" VerticalOptions="End"/>
+			<Label Text="Please check your email in order to confirm your account." TextColor = "Teal" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<Button Text="Back to Login" BackgroundColor="Teal" TextColor="White" HorizontalOptions="Center" Clicked="toLogIn" VerticalOptions="Start"/>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

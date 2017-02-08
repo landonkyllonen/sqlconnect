@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SQLConnect.RegisterPage">
+	<ContentPage.Content>
+		<ScrollView Orientation = "Vertical" HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand" Padding="10">
+			<StackLayout HorizontalOptions = "Fill" VerticalOptions = "Fill" Orientation="Vertical">
+				
+				<Label Text="First, we need some personal info." TextColor = "Teal" FontSize = "22"
+					HorizontalTextAlignment="Center" 
+				/>
+				
+				<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" HeightRequest="60" Orientation="Horizontal">
+					<Label Text = "First name:" TextColor = "Teal"
+						HorizontalOptions="Start"
+						WidthRequest="60"
+						HorizontalTextAlignment="Start"
+						VerticalOptions="Center"
+						/>
+					<Entry x:Name="first" TextColor = "Teal"
+						VerticalOptions="Center"
+						HorizontalOptions="StartAndExpand"
+						WidthRequest="230"
+						/>
+				</StackLayout>
+				
+				<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" HeightRequest="60" Orientation="Horizontal">
+					<Label Text = "Last name:" TextColor = "Teal"
+						WidthRequest="60"
+						HorizontalTextAlignment="Start"
+						VerticalOptions="Center"
+						/>
+					<Entry x:Name="last" TextColor = "Teal"
+						VerticalOptions="Center"
+						HorizontalOptions="StartAndExpand"
+						WidthRequest="230"
+						/>
+				</StackLayout>
+				
+				<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" HeightRequest="60" Orientation="Horizontal">
+					<Label Text = "Email:" TextColor = "Teal"
+						WidthRequest="60"
+						HorizontalTextAlignment="Start"
+						VerticalOptions="Center"
+						/>
+					<Entry x:Name="email" TextColor = "Teal"
+						VerticalOptions="Center"
+						HorizontalOptions="StartAndExpand"
+						WidthRequest="230"
+						/>
+				</StackLayout>
+				
+				<Label Text = "Your email must be valid to confirm your account!"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+					/>
+				
+				<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" HeightRequest="60" Orientation="Horizontal">
+					<Label TextColor = "Teal" Text = "Phone #:"
+							VerticalOptions="Center"
+							WidthRequest="60"
+							HorizontalTextAlignment="Start"
+						/>
+					<Entry x:Name="phone" TextColor = "Teal"
+							VerticalOptions="Center"
+							HorizontalOptions="StartAndExpand"
+							WidthRequest="230"
+						/>
+				</StackLayout>
+				
+				<Label TextColor = "Teal" Text = "Now choose your username and password" FontSize="18"
+						HorizontalOptions="Center"
+					/>
+				<Entry x:Name="user" Placeholder="Username" TextColor = "Teal"
+						HorizontalOptions="Center"
+						WidthRequest="200"
+					/>
+				<Entry x:Name="pass" Placeholder="Password" TextColor = "Teal"
+						HorizontalOptions="Center"
+						WidthRequest="200"
+					/>
+				<Label Text="Your username and password must be at least 4 characters long, and your password must contain letters and numbers."
+						HorizontalOptions="Center" HorizontalTextAlignment="Center"
+						VerticalOptions="Start" VerticalTextAlignment="Center" HeightRequest="65"
+					/>
+				<Label x:Name="console" TextColor="Red" IsVisible="false"
+						HorizontalOptions="Center"
+						HorizontalTextAlignment="Center"
+					/>
+				<Button Text= "Confirm Registration" BackgroundColor = "Teal" TextColor="White" Clicked="register"
+						HorizontalOptions="Center"
+					/>
+				
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>
