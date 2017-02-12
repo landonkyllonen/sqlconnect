@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
@@ -29,7 +28,7 @@ namespace SQLConnect
 			prodList.ItemTapped += onItemSelect;
 		}
 
-		void filterItems(object sender, Xamarin.Forms.TextChangedEventArgs e)
+		void filterItems(object sender, TextChangedEventArgs e)
 		{
 			prodList.BeginRefresh();
 

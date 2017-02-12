@@ -1,6 +1,4 @@
-﻿using Xamarin.Forms;
-
-namespace SQLConnect
+﻿namespace SQLConnect
 {
 	public class Product
 	{

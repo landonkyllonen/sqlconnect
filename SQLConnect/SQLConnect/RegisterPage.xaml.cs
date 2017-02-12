@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -14,6 +13,8 @@ namespace SQLConnect
 
 		public async void register(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			//Reset console
 			console.IsVisible = false;
 

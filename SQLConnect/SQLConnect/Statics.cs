@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace SQLConnect
@@ -35,7 +34,7 @@ namespace SQLConnect
 		}
 		public string[] getCreds()
 		{
-			return this.credentials;
+			return credentials;
 		}
 
 		public void setUser(string user)
@@ -44,7 +43,7 @@ namespace SQLConnect
 		}
 		public string getUser()
 		{
-			return this.user;
+			return user;
 		}
 
 		public void setMessages(ObservableCollection<MessageListItem> messages)
@@ -53,7 +52,7 @@ namespace SQLConnect
 		}
 		public ObservableCollection<MessageListItem> getMessages()
 		{
-			return this.messages;
+			return messages;
 		}
 
 		public void setProducts(Product[] products)
@@ -62,7 +61,7 @@ namespace SQLConnect
 		}
 		public Product[] getProducts()
 		{
-			return this.products;
+			return products;
 		}
 
 		public void setMaster(MasterPage master)
@@ -71,7 +70,7 @@ namespace SQLConnect
 		}
 		public MasterPage getMaster()
 		{
-			return this.master;
+			return master;
 		}
 
 		public void setMsgClicked(MessageListItem msgClicked)
@@ -80,7 +79,7 @@ namespace SQLConnect
 		}
 		public MessageListItem getMsgClicked()
 		{
-			return this.msgClicked;
+			return msgClicked;
 		}
 
 		public void setProdClicked(ProductListItem prodClicked)
@@ -89,7 +88,7 @@ namespace SQLConnect
 		}
 		public ProductListItem getProdClicked()
 		{
-			return this.prodClicked;
+			return prodClicked;
 		}
 
 		public void setCatClicked(string catClicked)
@@ -98,7 +97,7 @@ namespace SQLConnect
 		}
 		public string getCatClicked()
 		{
-			return this.catClicked;
+			return catClicked;
 		}
 
 		public void setCatClickedContents(List<ProductListItem> catClickedContents)
@@ -107,7 +106,7 @@ namespace SQLConnect
 		}
 		public List<ProductListItem> getCatClickedContents()
 		{
-			return this.catClickedContents;
+			return catClickedContents;
 		}
 
 		public string UrlEncodeParameter(string paramToEncode)

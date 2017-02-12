@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using Xamarin.Forms;
 using System.Net;
 
@@ -12,8 +11,11 @@ namespace SQLConnect
 			InitializeComponent();
 		}
 
-		public async void sendMessage(object s, EventArgs e)
+		public void sendMessage(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
+
 			string auth = Statics.Default.getCreds()[11];
 
 			DateTime date = DateTime.Today;
@@ -33,17 +35,17 @@ namespace SQLConnect
 
 			//Show that we are waiting for a response and wait for it.
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/messageTemplate.php?" +
+			client.GetAsync("http://cbd-online.net/landon/messageTemplate.php?" +
 			                                     "user=" + WebUtility.UrlEncode(to.Text) +
 			                                     "&sender=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
 			                                     "&msg=" + WebUtility.UrlEncode(Convert.ToBase64String(messageCrypt)) +
-			                                     "&date=" + WebUtility.UrlEncode(date.ToString()) +
+			                                     "&date=" + WebUtility.UrlEncode(date.ToString("d")) +
 			                                     "&title=" + WebUtility.UrlEncode(Convert.ToBase64String(titleCrypt)));
 
 
 			//INSERT FEEDBACK TOAST HERE
 
-			await Navigation.PopModalAsync();
+			Navigation.PopModalAsync();
 		}
 	}
 }

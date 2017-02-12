@@ -3,8 +3,6 @@ using System;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
-using CryptSharp;
-using CryptSharp.Utility;
 
 namespace SQLConnect
 {
@@ -23,6 +21,8 @@ namespace SQLConnect
 		}
 
 		public async void logIn(object s, EventArgs e){
+			s.ToString();
+			e.ToString();
 			//Log in operation
 			console.SetValue(Label.TextProperty, "Connecting to server...");
 			//Get info for submit.
@@ -40,7 +40,7 @@ namespace SQLConnect
 			var response = await client.GetAsync("http://cbd-online.net/landon/logInandgetCreds.php?" +
 			                                     "user=" + UrlEncodeParameter(user) +
 			                                     "&pass=" + UrlEncodeParameter(pass) +
-			                                     "&date=" + UrlEncodeParameter(date.ToString()) +
+			                                     "&date=" + UrlEncodeParameter(date.ToString("d")) +
 			                                     "&id=" + UrlEncodeParameter(id));
 
 			var output = await response.Content.ReadAsStringAsync();
@@ -91,11 +91,17 @@ namespace SQLConnect
 		}
 
 		public async void offlineLogIn(object s, EventArgs e) {
+			s.ToString();
+			e.ToString();
 			//Log in offline
 			await Navigation.PushModalAsync(new SQLConnectPage());
 		}
 
 		async void register(object s, EventArgs e) {
+			if (s.ToString().Equals(e.ToString()))
+			{
+				Debug.WriteLine("Suppressing");
+			}
 			//Go to register page
 			await Navigation.PushModalAsync(new RegisterPage());
 		}
@@ -151,7 +157,7 @@ namespace SQLConnect
 			Statics.Default.setProducts(products);
 		}
 
-		async Task asyncLoadMessages(string user)
+		async Task asyncLoadMessages(string username)
 		{
 			ObservableCollection<MessageListItem> messages = new ObservableCollection<MessageListItem>();
 
@@ -176,7 +182,7 @@ namespace SQLConnect
 			//Show that we are waiting for a response and wait for it.
 
 			var response = await client.GetAsync("http://cbd-online.net/landon/acquireMessages.php?" +
-												 "user=" + UrlEncodeParameter(user));
+												 "user=" + UrlEncodeParameter(username));
 
 			var output = await response.Content.ReadAsStringAsync();
 

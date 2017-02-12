@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -41,7 +40,7 @@ namespace SQLConnect
 			await Navigation.PushModalAsync(new MasterPage());
 		}
 
-		void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+		void Handle_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			dispList.BeginRefresh();
 

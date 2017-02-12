@@ -1,19 +1,15 @@
-﻿using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace SQLConnect
 {
 	public class ProfileTab : ContentPage
 	{
 		string[] credentials;
-		string user;
 
 		public ProfileTab()
 		{
 			//Get statics
 			credentials = Statics.Default.getCreds();
-			user = Statics.Default.getUser();
 			/*$firstname; ;$lastname; ;$email; ;$phone; ;$body; ;$blood; ;$energy; ;$ctype; ;$ancestry; ;$condInfo; 
 				 ;$medInfo; ;$auth; ;$authorized; ;$admin; ;$reviewed; ;$userID; ;$dispensary"*/
 
@@ -70,6 +66,7 @@ namespace SQLConnect
 			{
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
+				WidthRequest = 125,
 				Text = credentials[3],
 				TextColor = Color.White
 			};
@@ -154,7 +151,7 @@ namespace SQLConnect
 				TextColor=Color.Black
 			};
 			//Configure types
-			string[] bodytypes = new string[4] {"N/A", "Under-average", "Average", "Over-average"};
+			string[] bodytypes = {"N/A", "Under-average", "Average", "Over-average"};
 			int savedBMIIndex = 0;
 			for (int i = 0; i < bodytypes.Length; i++) {
 				bmi.Items.Add(bodytypes[i]);
@@ -193,7 +190,7 @@ namespace SQLConnect
 				TextColor = Color.Black
 			};
 			//Configure
-			string[] bloodtypes = new string[9] { "N/A", "O+","O-","A+","A-","B+","B-","AB+","AB-"};
+			string[] bloodtypes = { "N/A", "O+","O-","A+","A-","B+","B-","AB+","AB-"};
 			int savedBloodIndex = 0;
 			for (int i = 0; i < bloodtypes.Length; i++)
 			{
@@ -225,7 +222,7 @@ namespace SQLConnect
 				TextColor = Color.Black
 			};
 			//Configure
-			string[] energytypes = new string[4] {"N/A", "Low", "Medium", "High"};
+			string[] energytypes = {"N/A", "Low", "Medium", "High"};
 			int savedEnergyIndex = 0;
 			for (int i = 0; i < energytypes.Length; i++)
 			{
@@ -265,7 +262,7 @@ namespace SQLConnect
 				TextColor = Color.Black
 			};
 			//Configure
-			string[] cancertypes = new string[13] {"N/A", "None", "Skin Cancer", "Lung Cancer", "Breast Cancer", "Prostate Cancer", "Colorectal Cancer", "Bladder Cancer", "Melanoma", "Lymphoma", "Kidney Cancer","Leukemia", "Other"};
+			string[] cancertypes = {"N/A", "None", "Skin Cancer", "Lung Cancer", "Breast Cancer", "Prostate Cancer", "Colorectal Cancer", "Bladder Cancer", "Melanoma", "Lymphoma", "Kidney Cancer","Leukemia", "Other"};
 			int savedCancerIndex = 0;
 			for (int i = 0; i < cancertypes.Length; i++)
 			{

@@ -42,11 +42,11 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Xamarin.Forms.Platform.Android.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Xamarin.Forms.Platform.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Xamarin.Forms.Xaml.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/CryptSharp.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/PInvoke.Windows.Core.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/PInvoke.Kernel32.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/PInvoke.BCrypt.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/PInvoke.NCrypt.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Validation.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/PCLCrypto.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/CryptSharp.dll

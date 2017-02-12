@@ -13,6 +13,8 @@ namespace SQLConnect
 
 		public async void toLogIn(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			await Navigation.PushModalAsync(new SQLConnectPage());
 		}
 	}

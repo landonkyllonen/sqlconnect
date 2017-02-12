@@ -7,7 +7,6 @@ namespace SQLConnect
 	public class HomeTab : ContentPage
 	{
 		string[] credentials;
-		string user;
 
 		public HomeTab()
 		{
@@ -282,7 +281,6 @@ namespace SQLConnect
 
 			//Initializations
 			credentials = Statics.Default.getCreds();
-			user = Statics.Default.getUser();
 
 			welcome.SetValue(Label.TextProperty, "Hello, " + credentials[0] + "!");
 		}

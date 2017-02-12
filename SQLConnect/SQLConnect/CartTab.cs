@@ -110,7 +110,7 @@ namespace SQLConnect
 
 			relativeLayout.Children.Add(checkoutButton, Constraint.RelativeToParent((parent) =>
 										{
-											return parent.Width / 2 - parent.Width * .4 / 2;
+											return parent.Width / 2 - parent.Width * .3;
 										}), Constraint.RelativeToParent((parent) =>
 										{
 											return parent.Height * .85;
@@ -119,7 +119,7 @@ namespace SQLConnect
 											return parent.Width * .6;
 										}), Constraint.RelativeToParent((parent) =>
 										{
-											return parent.Height * .2;
+											return parent.Height * .1;
 										}));
 
 			Content = relativeLayout;

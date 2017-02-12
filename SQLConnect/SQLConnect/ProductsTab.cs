@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -9,7 +7,6 @@ namespace SQLConnect
 	public class ProductsTab : ContentPage
 	{
 		ObservableCollection<CategoryListItem> categories;
-		ProductListItem[] catClickedContents;
 		Product[] loadedProducts;
 
 		public ProductsTab()

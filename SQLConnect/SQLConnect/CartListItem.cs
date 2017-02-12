@@ -1,5 +1,4 @@
-﻿using System;
-namespace SQLConnect
+﻿namespace SQLConnect
 {
 	public class CartListItem
 	{
