@@ -1,16 +1,34 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SQLConnect.MessagePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SQLConnect.MessagePage">
 	<ContentPage.Content>
-		<StackLayout Orientation="Vertical" BackgroundColor="Teal" Opacity=".05" Padding="15">
-			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Padding = "5">
-				<Label x:Name="from" HorizontalTextAlignment="Start" FontSize="25" TextColor="White" HorizontalOptions="Start"/>
-				<Label x:Name="date" HorizontalTextAlignment="End" FontSize="25" TextColor="White" HorizontalOptions="End"/>
-			</StackLayout>
-			<Label x:Name="content" HorizontalTextAlignment="Start" VerticalOptions="Start" HeightRequest="250" TextColor="White"/>
-			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="End">
-				<Button Text="Reply" TextColor="White" BackgroundColor="Teal" VerticalOptions="Center" HorizontalOptions="Center" Clicked="reply"/>
-				<Button Text="Delete" TextColor="White" BackgroundColor="Teal" VerticalOptions="Center" HorizontalOptions="Center" Clicked="delete"/>
-			</StackLayout>
-		</StackLayout>
+		<RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+			<Label x:Name="from" TextColor="Teal" FontSize="23" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=15}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-15}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=0}"/>
+			<Label x:Name="date" TextColor="Teal" FontSize="23" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-15}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=0}"/>
+			<Label x:Name="content" HorizontalTextAlignment="Start" TextColor="Teal" FontSize="18"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=15}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=-15}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.7,Constant=0}"/>
+			<Button Text="Reply" TextColor="White" BackgroundColor="Teal" Clicked="reply"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=-60}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.9,Constant=-25}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=120}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=50}"/>
+			<Button Text="Delete" TextColor="White" BackgroundColor="Teal" Clicked="delete"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=-60}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.9,Constant=-25}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=120}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=50}"/>
+		</RelativeLayout>
 	</ContentPage.Content>
 </ContentPage>

@@ -63,6 +63,9 @@
     <EmbeddedResource Include="MessagePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ComposeMessagePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -120,6 +123,10 @@
     <Compile Include="MessagePage.xaml.cs">
       <DependentUpon>MessagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ComposeMessagePage.xaml.cs">
+      <DependentUpon>ComposeMessagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Crypto.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -142,6 +149,13 @@
     </Reference>
     <Reference Include="CryptSharp">
       <HintPath>..\packages\CryptSharpOfficial.2.1.0.0\lib\CryptSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Validation">
+      <HintPath>..\packages\Validation.2.2.8\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

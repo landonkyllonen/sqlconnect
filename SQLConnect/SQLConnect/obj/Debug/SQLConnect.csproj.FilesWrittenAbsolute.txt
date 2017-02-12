@@ -11,6 +11,8 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.SettingsPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.RegisterConfirmationPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.CategoryListPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.MessagePage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ComposeMessagePage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.App.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.SQLConnectPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.SocialPage.xaml.g.cs
@@ -23,6 +25,8 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.SettingsPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.RegisterConfirmationPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.CategoryListPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.MessagePage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ComposeMessagePage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/SQLConnect.dll.mdb
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.dll
@@ -33,5 +37,6 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/System.Net.Http.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/System.Net.Http.Extensions.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/System.Net.Http.Primitives.dll
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.MessagePage.xaml
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.MessagePage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/CryptSharp.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/Validation.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/PCLCrypto.dll

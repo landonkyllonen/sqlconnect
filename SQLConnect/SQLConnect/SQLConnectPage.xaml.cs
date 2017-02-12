@@ -155,6 +155,21 @@ namespace SQLConnect
 		{
 			ObservableCollection<MessageListItem> messages = new ObservableCollection<MessageListItem>();
 
+			string auth = credentials[11];
+
+			/*string tobecrypted = "l";
+			Debug.WriteLine("About to test out some cryptology. " + tobecrypted);
+			string salt = Crypter.Blowfish.GenerateSalt();
+			Debug.WriteLine(salt);
+			string whatisit = Crypter.Blowfish.Crypt(tobecrypted, salt);
+			Debug.WriteLine(whatisit);
+			if (Crypter.CheckPassword("l", whatisit))
+			{
+				Debug.WriteLine("salted crypted text is same as input text");
+			}*/
+
+			byte[] saltDefault = { 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20 };
+
 			//Connect to url.
 			var client = new System.Net.Http.HttpClient();
 
@@ -167,6 +182,13 @@ namespace SQLConnect
 
 			//Process the output.
 			string[] messageObjects = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+
+			//If the split yields only 1 object with value "", return no messages.
+			//Not sure why this value is retrieved in the first place.
+			if (messageObjects[0].Equals(""))
+			{
+				return;
+			}
 
 			//Separate into components and turn into objects.
 			//bound as $title--$msg--$date--$viewed--$from--$id;;
@@ -184,24 +206,20 @@ namespace SQLConnect
 
 				bool viewed = false;
 				if (messageComponents[3].Equals("1")) { viewed = true; }
-				messages.Add(new MessageListItem{msgId = int.Parse(messageComponents[5]), msgContent = messageComponents[1],
-					msgDate = messageComponents[2], msgFrom = messageComponents[4], msgTitle = messageComponents[0], msgViewed = viewed});
+				messages.Add(new MessageListItem{msgId = int.Parse(messageComponents[5]), msgContent = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[1]), auth, saltDefault),
+					msgDate = messageComponents[2], msgFrom = messageComponents[4], msgTitle = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[0]), auth, saltDefault), msgViewed = viewed});
 			}
 
 			//messages now contains all the messages for this user that are not deleted, 
 
 			Statics.Default.setMessages(messages);
+
+
 		}
 
 		public static string UrlEncodeParameter(string paramToEncode)
 		{
-			/*string urlEncodedParam = string.Empty;
-
-			// remove whitespace from search parameter and URL encode it
-			urlEncodedParam = paramToEncode.Trim();
-			urlEncodedParam = Uri.EscapeDataString(urlEncodedParam);*/
-
-			return paramToEncode;
+			return System.Net.WebUtility.UrlEncode(paramToEncode);
 		}
 	}
 }

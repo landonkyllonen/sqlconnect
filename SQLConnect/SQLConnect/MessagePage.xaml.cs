@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -22,7 +20,9 @@ namespace SQLConnect
 
 		async void reply(object sender, System.EventArgs e)
 		{
-			await Navigation.PushModalAsync(new Page());
+			NavigationPage nav = new NavigationPage(new ComposeMessagePage());
+			NavigationPage.SetHasBackButton(nav, true);
+			await Navigation.PushModalAsync(nav);
 		}
 
 		async void delete(object sender, System.EventArgs e)
@@ -35,7 +35,9 @@ namespace SQLConnect
 			var response = await client.GetAsync("http://cbd-online.net/landon/deleteMessage.php?" +
 			                                     "id=" + Statics.Default.UrlEncodeParameter(msgClicked.msgId.ToString()));
 
-			var output = await response.Content.ReadAsStringAsync();		
+			var output = await response.Content.ReadAsStringAsync();
+
+			await Navigation.PopModalAsync();
 		}
 	}
 }

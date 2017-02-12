@@ -18,8 +18,15 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Xamarin.Forms.Platform.Android.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Xamarin.Forms.Platform.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Xamarin.Forms.Xaml.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/PInvoke.Windows.Core.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/PInvoke.Kernel32.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/PInvoke.BCrypt.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/PInvoke.NCrypt.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Validation.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/PCLCrypto.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/mscorlib.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/System.Net.Http.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/System.Runtime.Serialization.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/System.ServiceModel.Internals.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/System.Numerics.dll

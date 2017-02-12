@@ -19,6 +19,12 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/Xamarin.Forms.Platform.Android.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/Xamarin.Forms.Platform.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/Xamarin.Forms.Xaml.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/PInvoke.Windows.Core.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/PInvoke.Kernel32.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/PInvoke.BCrypt.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/PInvoke.NCrypt.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/Validation.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/PCLCrypto.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/mscorlib.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/System.Net.Http.dll
@@ -45,3 +51,5 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/System.Dynamic.Runtime.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/System.Text.RegularExpressions.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/System.Diagnostics.Tools.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/System.Numerics.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/android/assets/System.Text.Encoding.dll

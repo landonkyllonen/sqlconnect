@@ -114,6 +114,12 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"PInvoke.Windows.Core.dll",
+		"PInvoke.Kernel32.dll",
+		"PInvoke.BCrypt.dll",
+		"PInvoke.NCrypt.dll",
+		"Validation.dll",
+		"PCLCrypto.dll",
 		"SQLConnect.dll",
 		"System.Threading.dll",
 		"System.Collections.dll",
@@ -135,6 +141,7 @@ class MonoPackageManager_Resources {
 		"System.Dynamic.Runtime.dll",
 		"System.Text.RegularExpressions.dll",
 		"System.Diagnostics.Tools.dll",
+		"System.Text.Encoding.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

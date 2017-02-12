@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using Xamarin.Forms;
+using System;
 
 namespace SQLConnect
 {
@@ -8,10 +8,26 @@ namespace SQLConnect
 	{
 		ObservableCollection<MessageListItem> messages;
 
+		ListView messageList;
+
+		public Command LoadMessagesCommand
+		{
+			get
+			{
+				return new Command(ExecuteLoadMessagesCommand, () =>
+			   {
+				   return !IsBusy;
+			   });
+			}
+		}
+
 		public MessagingTab()
 		{
 			//Initialize list
-			ListView messageList = new ListView();
+			messageList = new ListView();
+			messageList.IsPullToRefreshEnabled = true;
+			messageList.RefreshCommand = LoadMessagesCommand;
+
 			messageList.RowHeight = 60;
 
 			//Create row layouts
@@ -85,6 +101,7 @@ namespace SQLConnect
 				HorizontalOptions=LayoutOptions.Center,
 				VerticalOptions=LayoutOptions.Center
 			};
+			functionToggle.Clicked += toCompose;
 
 			//Define container
 			RelativeLayout relativeLayout = new RelativeLayout();
@@ -124,6 +141,76 @@ namespace SQLConnect
 			NavigationPage.SetHasBackButton(nav, true);
 
 			await Navigation.PushModalAsync(nav);
+		}
+
+		public async void toCompose(object s, EventArgs e)
+		{
+			NavigationPage nav = new NavigationPage(new ComposeMessagePage());
+			NavigationPage.SetHasBackButton(nav, true);
+			await Navigation.PushModalAsync(nav);
+		}
+
+		private async void ExecuteLoadMessagesCommand()
+		{
+			if (IsBusy)
+				return;
+
+			IsBusy = true;
+			LoadMessagesCommand.ChangeCanExecute();
+
+			ObservableCollection<MessageListItem> messagesRefreshed = new ObservableCollection<MessageListItem>();
+
+			string auth = Statics.Default.getCreds()[11];
+
+			byte[] saltDefault = { 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20 };
+
+			//Connect to url.
+			var client = new System.Net.Http.HttpClient();
+
+			//Show that we are waiting for a response and wait for it.
+
+			var response = await client.GetAsync("http://cbd-online.net/landon/acquireMessages.php?" +
+												 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()));
+
+			var output = await response.Content.ReadAsStringAsync();
+
+			//Process the output.
+			string[] messageObjects = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+
+			//If the split yields only 1 object with value "", return no messages.
+			//Not sure why this value is retrieved in the first place.
+			if (messageObjects[0].Equals(""))
+			{
+				messageObjects = new string[0];
+			}
+
+			//Separate into components and turn into objects.
+			//bound as $title--$msg--$date--$viewed--$from--$id;;
+			foreach (string obj in messageObjects)
+			{
+				string[] messageComponents = obj.Split(new string[] { "--" }, StringSplitOptions.None);
+
+				bool viewed = false;
+				if (messageComponents[3].Equals("1")) { viewed = true; }
+				messagesRefreshed.Add(new MessageListItem
+				{
+					msgId = int.Parse(messageComponents[5]),
+					msgContent = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[1]), auth, saltDefault),
+					msgDate = messageComponents[2],
+					msgFrom = messageComponents[4],
+					msgTitle = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[0]), auth, saltDefault),
+					msgViewed = viewed
+				});
+			}
+
+			//messages now contains all the messages for this user that are not deleted, 
+			Statics.Default.setMessages(messagesRefreshed);
+			messages = messagesRefreshed;
+			messageList.ItemsSource = messages;
+
+			IsBusy = false;
+			LoadMessagesCommand.ChangeCanExecute();
+			messageList.EndRefresh();
 		}
 	}
 }

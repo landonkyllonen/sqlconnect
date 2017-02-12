@@ -5,7 +5,7 @@
 		x:Name="titleholder">
 	<ContentPage.Content>
 		<StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Teal">
-			<SearchBar Placeholder="Search by name" TextChanged = "filterItems" PlaceholderColor = "White" TextColor="White"
+			<SearchBar Placeholder="Search by name" TextChanged = "filterItems" PlaceholderColor = "#E5E2DD" TextColor="White"
 				CancelButtonColor = "White" />
 			<ListView  x:Name="prodList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver">
             	<ListView.ItemTemplate>
