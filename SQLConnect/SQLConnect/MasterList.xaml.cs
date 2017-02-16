@@ -43,6 +43,12 @@ namespace SQLConnect
 				IconSource = "settings.png",
 				TargetType = typeof(SettingsPage)
 			});
+			masterPageItems.Add(new MasterPageItem
+			{
+				Title = "Log Out",
+				IconSource = "logout.png",
+				TargetType = typeof(SQLConnectPage)
+			});
 
 			listView.ItemsSource = masterPageItems;
 		}

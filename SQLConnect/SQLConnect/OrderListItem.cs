@@ -1,4 +1,6 @@
-﻿namespace SQLConnect
+﻿using System.Collections.ObjectModel;
+
+namespace SQLConnect
 {
 	public class OrderListItem
 	{
@@ -7,5 +9,6 @@
 		public string orderTotal { get; set; }
 		public string orderPaymentStatus { get; set; }
 		public string orderCompletionStatus { get; set; }
+		public ObservableCollection<ProductListItem> orderItems { get; set;}
 	}
 }

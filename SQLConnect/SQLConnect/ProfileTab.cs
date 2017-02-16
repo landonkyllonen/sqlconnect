@@ -1,10 +1,17 @@
 ﻿using Xamarin.Forms;
+using System;
+using System.Threading.Tasks;
 
 namespace SQLConnect
 {
 	public class ProfileTab : ContentPage
 	{
 		string[] credentials;
+		Label email;
+		Entry phone, ancestry;
+		Picker bmi, blood, energy, cancer;
+		int savedCancerIndex, savedBmiIndex, savedEnergyIndex, savedBloodIndex;
+		string[] bodytypes, cancertypes, bloodtypes, energytypes;
 
 		public ProfileTab()
 		{
@@ -43,7 +50,7 @@ namespace SQLConnect
 			upperOne.Children.Add(name);
 
 			//Email portion
-			Label email = new Label
+			email = new Label
 			{
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
@@ -62,7 +69,7 @@ namespace SQLConnect
 			upperTwo.Children.Add(email);
 
 			//Phone portion
-			Entry phone = new Entry
+			phone = new Entry
 			{
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
@@ -143,7 +150,7 @@ namespace SQLConnect
 			};
 
 			//First
-			Picker bmi = new Picker
+			bmi = new Picker
 			{
 				HorizontalOptions = LayoutOptions.EndAndExpand,
 				WidthRequest = 140,
@@ -151,16 +158,16 @@ namespace SQLConnect
 				TextColor=Color.Black
 			};
 			//Configure types
-			string[] bodytypes = {"N/A", "Under-average", "Average", "Over-average"};
-			int savedBMIIndex = 0;
+			bodytypes = new string[]{"N/A", "Under-average", "Average", "Over-average"};
+			savedBmiIndex = 0;
 			for (int i = 0; i < bodytypes.Length; i++) {
 				bmi.Items.Add(bodytypes[i]);
 				if (credentials[4].Equals(bodytypes[i]))
 				{
-					savedBMIIndex = i;
+					savedBmiIndex = i;
 				}
 			}
-			bmi.SetValue(Picker.SelectedIndexProperty, savedBMIIndex);
+			bmi.SetValue(Picker.SelectedIndexProperty, savedBmiIndex);
 
 			Button helpBmi = new Button
 			{
@@ -182,7 +189,7 @@ namespace SQLConnect
 			midOne.Children.Add(helpBmi);
 
 			//Second
-			Picker blood = new Picker
+			blood = new Picker
 			{
 				HorizontalOptions = LayoutOptions.EndAndExpand,
 				WidthRequest=140,
@@ -190,8 +197,8 @@ namespace SQLConnect
 				TextColor = Color.Black
 			};
 			//Configure
-			string[] bloodtypes = { "N/A", "O+","O-","A+","A-","B+","B-","AB+","AB-"};
-			int savedBloodIndex = 0;
+			bloodtypes = new string[]{ "N/A", "O+","O-","A+","A-","B+","B-","AB+","AB-"};
+			savedBloodIndex = 0;
 			for (int i = 0; i < bloodtypes.Length; i++)
 			{
 				blood.Items.Add(bloodtypes[i]);
@@ -214,7 +221,7 @@ namespace SQLConnect
 			midTwo.Children.Add(new Button { Text = "", TextColor = Color.White, BackgroundColor=Color.White, IsEnabled=false});
 
 			//Third
-			Picker energy = new Picker
+			energy = new Picker
 			{
 				HorizontalOptions = LayoutOptions.EndAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
@@ -222,8 +229,8 @@ namespace SQLConnect
 				TextColor = Color.Black
 			};
 			//Configure
-			string[] energytypes = {"N/A", "Low", "Medium", "High"};
-			int savedEnergyIndex = 0;
+			energytypes = new string[]{"N/A", "Low", "Medium", "High"};
+			savedEnergyIndex = 0;
 			for (int i = 0; i < energytypes.Length; i++)
 			{
 				energy.Items.Add(energytypes[i]);
@@ -254,7 +261,7 @@ namespace SQLConnect
 			midThree.Children.Add(helpEnergy);
 
 			//Fourth
-			Picker cancer = new Picker
+			cancer = new Picker
 			{
 				HorizontalOptions = LayoutOptions.EndAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
@@ -262,8 +269,8 @@ namespace SQLConnect
 				TextColor = Color.Black
 			};
 			//Configure
-			string[] cancertypes = {"N/A", "None", "Skin Cancer", "Lung Cancer", "Breast Cancer", "Prostate Cancer", "Colorectal Cancer", "Bladder Cancer", "Melanoma", "Lymphoma", "Kidney Cancer","Leukemia", "Other"};
-			int savedCancerIndex = 0;
+			cancertypes = new string[]{"N/A", "None", "Skin Cancer", "Lung Cancer", "Breast Cancer", "Prostate Cancer", "Colorectal Cancer", "Bladder Cancer", "Melanoma", "Lymphoma", "Kidney Cancer","Leukemia", "Other"};
+			savedCancerIndex = 0;
 			for (int i = 0; i < cancertypes.Length; i++)
 			{
 				cancer.Items.Add(cancertypes[i]);
@@ -294,7 +301,7 @@ namespace SQLConnect
 			midFour.Children.Add(helpCancer);
 
 			//Fifth
-			Entry ancestry = new Entry
+			ancestry = new Entry
 			{
 				HorizontalOptions = LayoutOptions.EndAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
@@ -418,6 +425,7 @@ namespace SQLConnect
 				BackgroundColor = Color.Teal,
 				TextColor = Color.White
 			};
+			save.Clicked += saveProfile;
 
 			Button manageApprovals = new Button
 			{
@@ -483,6 +491,33 @@ namespace SQLConnect
 			};
 
 			Content = new ScrollView{Content = outer};
+		}
+
+		public async void saveProfile(object s, EventArgs e)
+		{
+			s.ToString();
+			e.ToString();
+
+			//Connect to url.
+			var client = new System.Net.Http.HttpClient();
+
+			//Show that we are waiting for a response and wait for it.
+
+			var response = await client.GetAsync("http://cbd-online.net/landon/updateDetails.php?" +
+			                                     "email="+ email.Text +
+			                                     "&phone=" + phone.Text +
+			                                     "&body=" + bodytypes[savedBmiIndex] +
+			                                     "&blood=" + bloodtypes[savedBloodIndex] +
+			                                     "&ctype=" + cancertypes[savedCancerIndex] +
+			                                     "&energy=" + energytypes[savedEnergyIndex] +
+			                                     "&ancestry=" + ancestry.Text +
+			                                     "&conds=" + credentials[9] + 
+			                                     "&meds=" + credentials[10]);
+
+			//var output = await response.Content.ReadAsStringAsync();
+
+			//If output says it was successful, then also change locally.
+
 		}
 	}
 }

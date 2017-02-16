@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/CartTab.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/OrdersTab.cs">
     <Files>
-      <File FileName="SQLConnect/ProfileTab.cs" Line="69" Column="24" />
-      <File FileName="SQLConnect/CartTab.cs" Line="1" Column="1" />
+      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="28" Column="4" />
+      <File FileName="SQLConnect/DispensaryPage.xaml.cs" Line="41" Column="40" />
+      <File FileName="SQLConnect/Statics.cs" Line="42" Column="19" />
+      <File FileName="SQLConnect/OrdersTab.cs" Line="139" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

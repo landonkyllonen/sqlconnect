@@ -141,6 +141,7 @@
     <AndroidResource Include="Resources\drawable-nodpi\glass.jpg" />
     <AndroidResource Include="Resources\drawable-nodpi\edibles.jpg" />
     <AndroidResource Include="Resources\drawable-nodpi\blueberryyumyumi.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

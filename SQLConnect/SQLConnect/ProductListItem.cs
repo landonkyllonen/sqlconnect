@@ -12,5 +12,7 @@
 		public double prodDiscount { get; set; }
 		public bool prodDealFlag { get; set; }
 		public bool prodIncentiveFlag { get; set; }
+		public string prodOrderPrice { get; set; }
+		public string prodOrderAmount { get; set; }
 	}
 }

@@ -66,6 +66,12 @@
     <EmbeddedResource Include="ComposeMessagePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewOrderPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicationsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -128,6 +134,13 @@
     </Compile>
     <Compile Include="Crypto.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ViewOrderPage.xaml.cs">
+      <DependentUpon>ViewOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicationsPage.xaml.cs">
+      <DependentUpon>MedicationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

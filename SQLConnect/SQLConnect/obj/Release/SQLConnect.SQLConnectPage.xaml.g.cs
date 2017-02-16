@@ -17,9 +17,6 @@ namespace SQLConnect {
     public partial class SQLConnectPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Image logo;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry userentry;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -34,7 +31,6 @@ namespace SQLConnect {
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(SQLConnectPage));
-            logo = this.FindByName <global::Xamarin.Forms.Image>("logo");
             userentry = this.FindByName <global::Xamarin.Forms.Entry>("userentry");
             passentry = this.FindByName <global::Xamarin.Forms.Entry>("passentry");
             rememberSwitch = this.FindByName <global::Xamarin.Forms.Switch>("rememberSwitch");

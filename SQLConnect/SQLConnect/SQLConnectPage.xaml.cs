@@ -25,68 +25,87 @@ namespace SQLConnect
 			e.ToString();
 			//Log in operation
 			console.SetValue(Label.TextProperty, "Connecting to server...");
-			//Get info for submit.
-			user = userentry.Text;
-			string pass = passentry.Text;
-			DateTime date = DateTime.Today;
-			//Replace this with a functional cross-platform device id.
-			string id = "placeholder";
 
-			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
-
-			//Show that we are waiting for a response and wait for it.
-
-			var response = await client.GetAsync("http://cbd-online.net/landon/logInandgetCreds.php?" +
-			                                     "user=" + UrlEncodeParameter(user) +
-			                                     "&pass=" + UrlEncodeParameter(pass) +
-			                                     "&date=" + UrlEncodeParameter(date.ToString("d")) +
-			                                     "&id=" + UrlEncodeParameter(id));
-
-			var output = await response.Content.ReadAsStringAsync();
-
-			//Process the output.
-			string[] words = output.Split(new string[]{";;"}, StringSplitOptions.None);
-
-			client.Dispose();
-
-			string determinant = words[0];
-
-			//If login success, parse credentials
-			if (determinant.Equals("True"))
+			if (Statics.Default.isOffline())
 			{
-				/*$firstname; ;$lastname; ;$email; ;$phone; ;$body; ;$blood; ;$energy; ;$ctype; ;$ancestry; ;$condInfo; 
-				 ;$medInfo; ;$auth; ;$authorized; ;$admin; ;$reviewed; ;$userID; ;$dispensary"*/
-				credentials = new string[17];
-
-				for (int i = 1; i < words.Length; i++)
-				{
-					credentials[i-1] = words[i];
-				}
-
-				console.SetValue(Label.TextProperty, "Success!");
-
-				//Update static vars
-				Statics.Default.setCreds(credentials);
-				Statics.Default.setUser(user);
-
-				/*if (credentials[16].Equals(""))
-				{
-					await Navigation.PushModalAsync(new DispensaryPage());
-				}
-				else {
-					await Navigation.PushModalAsync(new MasterPage());
-				}*/
-
-				await asyncLoadProducts(credentials[16]);
-
-				await asyncLoadMessages(user);
-
 				await Navigation.PushModalAsync(new DispensaryPage());
-
+				Statics.Default.setMessages(new ObservableCollection<MessageListItem>());
+				Statics.Default.setProducts(new Product[0]);
+				Statics.Default.setUser("");
+				Statics.Default.setMeds(new ObservableCollection<MedListItem>());
+				Statics.Default.setOrders(new ObservableCollection<OrderListItem>());
 			}
-			else {//Show error
-				console.SetValue(Label.TextProperty, determinant);
+			else {
+
+				//Get info for submit.
+				user = userentry.Text;
+				string pass = passentry.Text;
+				DateTime date = DateTime.Today;
+				//Replace this with a functional cross-platform device id.
+				string id = "placeholder";
+
+				//Connect to url.
+				var client = new System.Net.Http.HttpClient();
+
+				//Show that we are waiting for a response and wait for it.
+
+				var response = await client.GetAsync("http://cbd-online.net/landon/logInandgetCreds.php?" +
+													 "user=" + UrlEncodeParameter(user) +
+													 "&pass=" + UrlEncodeParameter(pass) +
+													 "&date=" + UrlEncodeParameter(date.ToString("d")) +
+													 "&id=" + UrlEncodeParameter(id));
+
+				var output = await response.Content.ReadAsStringAsync();
+
+				//Process the output.
+				string[] words = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+
+				client.Dispose();
+
+				string determinant = words[0];
+
+				//If login success, parse credentials
+				if (determinant.Equals("True"))
+				{
+					/*$firstname; ;$lastname; ;$email; ;$phone; ;$body; ;$blood; ;$energy; ;$ctype; ;$ancestry; ;$condInfo; 
+					 ;$medInfo; ;$auth; ;$authorized; ;$admin; ;$reviewed; ;$userID; ;$dispensary"*/
+					credentials = new string[17];
+
+					for (int i = 1; i < words.Length; i++)
+					{
+						credentials[i - 1] = words[i];
+					}
+
+					console.SetValue(Label.TextProperty, "Success!");
+
+					//Update static vars
+					Statics.Default.setCreds(credentials);
+					Statics.Default.setUser(user);
+
+					//await asyncLoadDispensaries();
+
+					await asyncLoadMessages(user);
+
+					await asyncLoadProducts(credentials[16]);
+
+					await asyncLoadOrders(user);
+
+					//If user has no dispensary, display possible choices. Otherwise, go to home page.
+					/*if (credentials[16].Equals(""))
+					{
+						await Navigation.PushModalAsync(new DispensaryPage());
+					}
+					else {
+						await Navigation.PushModalAsync(new MasterPage());
+					}*/
+
+					await Navigation.PushModalAsync(new DispensaryPage());
+
+				}
+				else {//Show error
+					console.SetValue(Label.TextProperty, determinant);
+				}
+
 			}
 		}
 
@@ -105,6 +124,46 @@ namespace SQLConnect
 			//Go to register page
 			await Navigation.PushModalAsync(new RegisterPage());
 		}
+
+		async Task asyncLoadDispensaries()
+		{
+			ObservableCollection<DispListItem> dispensaries = new ObservableCollection<DispListItem>();
+
+			//Connect to url.
+			var client = new System.Net.Http.HttpClient();
+
+			//Show that we are waiting for a response and wait for it.
+
+			var response = await client.GetAsync("http://cbd-online.net/landon/getDispensaryList.php");
+
+			var output = await response.Content.ReadAsStringAsync();
+
+			//Process the output.
+			string[] dispensaryObjects = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+
+			//Separate into product components and turn into product objects.
+			//bound as name--category--description--imageurl--incrementtype--baseprice--incbaseprice--dealdiscount--dealflag-incflag;;
+			foreach (string obj in dispensaryObjects)
+			{
+				string[] dispensaryComponents = obj.Split(new string[] { "--" }, StringSplitOptions.None);
+				Debug.WriteLine(obj);
+
+				string comps = "";
+				foreach (string s in dispensaryComponents)
+				{
+					comps = comps + " " + s;
+				}
+				Debug.WriteLine(comps);
+
+				dispensaries.Add(new DispListItem { });
+			}
+
+			//products now contains all the products loaded from a certain dispensary, save to static for use in deal on front page,
+			//as well as for lists.
+
+			Statics.Default.setDispensaries(dispensaries);
+		}
+
 
 		async Task asyncLoadProducts(string dispId)
 		{
@@ -219,8 +278,64 @@ namespace SQLConnect
 			//messages now contains all the messages for this user that are not deleted, 
 
 			Statics.Default.setMessages(messages);
+		}
 
+		async Task asyncLoadOrders(string username)
+		{
+			ObservableCollection<OrderListItem> orders = new ObservableCollection<OrderListItem>();
 
+			//Connect to url.
+			var client = new System.Net.Http.HttpClient();
+
+			//Show that we are waiting for a response and wait for it.
+
+			var response = await client.GetAsync("http://cbd-online.net/landon/importOrders.php?" +
+												 "user=" + UrlEncodeParameter(username));
+
+			var output = await response.Content.ReadAsStringAsync();
+
+			//Process the output.
+			string[] orderObjects = output.Split(new string[] { "##" }, StringSplitOptions.None);
+
+			//If the split yields only 1 object with value "", return no orders.
+			//Not sure why this value is retrieved in the first place.
+			if (orderObjects[0].Equals(""))
+			{
+				return;
+			}
+
+			//Separate into components and turn into objects.
+			//bound as $item--$item--$item...;;$date;;$id;;$price;;$paid;;$received##
+			foreach (string obj in orderObjects)
+			{
+				string[] orderComponents = obj.Split(new string[] { ";;" }, StringSplitOptions.None);
+				Debug.WriteLine(obj);
+
+				string comps = "";
+				foreach (string s in orderComponents)
+				{
+					comps = comps + " " + s;
+				}
+				Debug.WriteLine(comps);
+
+				//All items will appear in the first component (before first ";;").
+				string[] orderItems = orderComponents[0].Split(new string[] { "--" }, StringSplitOptions.None);
+
+				ObservableCollection<ProductListItem> thisOrderItems = new ObservableCollection<ProductListItem>();
+
+				//Check that format is correct, should be multiple of 3
+				//item bound as: name--amount--price
+				for (int i = 0; i+3 < orderItems.Length&&(orderItems.Length%3<1); i+=3){
+					double price = double.Parse(orderItems[i + 2]);
+					thisOrderItems.Add(new ProductListItem {prodName = orderItems[i], prodOrderAmount = orderItems[i+1], prodOrderPrice = price.ToString("C")});
+				}
+
+				//thisOrderitems is now populated, create the orderItem object
+				orders.Add(new OrderListItem {orderDate = orderComponents[1], orderID = int.Parse(orderComponents[2]), orderTotal = orderComponents[3],
+					orderPaymentStatus=orderComponents[4], orderCompletionStatus=orderComponents[5], orderItems = thisOrderItems});
+			}
+
+			Statics.Default.setOrders(orders);
 		}
 
 		public static string UrlEncodeParameter(string paramToEncode)

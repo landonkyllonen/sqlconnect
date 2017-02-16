@@ -38,3 +38,7 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/CryptSharp.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/Validation.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/PCLCrypto.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ViewOrderPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.MedicationsPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ViewOrderPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.MedicationsPage.xaml.g.cs

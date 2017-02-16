@@ -12,7 +12,24 @@ namespace SQLConnect
 		{
 			InitializeComponent();
 
-			credentials = Statics.Default.getCreds();
+			dispItems = new ObservableCollection<DispListItem>();
+			dispItemsFiltered = new ObservableCollection<DispListItem>();
+
+			if (Statics.Default.isOffline())
+			{
+				credentials = new string[] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
+				Statics.Default.setCreds(credentials);
+
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary", dispAddress = "6436 Boulder Drive", dispCity = "Kelowna, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 2", dispAddress = "5326 Rock Drive", dispCity = "Vancouver, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 3", dispAddress = "5431 Stone Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 4", dispAddress = "6868 Pebble Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 5", dispAddress = "5336 Flint Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
+			}
+			else {
+				//Import dispensaries
+				credentials = Statics.Default.getCreds();
+			}
 
 			//if not first time login, make top message invisible and label as choose your dispensary
 			if (!credentials[16].Equals(""))
@@ -20,23 +37,25 @@ namespace SQLConnect
 				firstTimeLbls.SetValue(IsVisibleProperty, false);
 			}
 
-			dispItems = new ObservableCollection<DispListItem>();
-			dispItems.Add(new DispListItem {dispName="Example Dispensary", dispAddress="6436 Boulder Drive", dispCity="Kelowna, BC", dispImgPath="jarspic.jpg"});
-			dispItems.Add(new DispListItem {dispName= "Example Dispensary 2", dispAddress = "5326 Rock Drive", dispCity = "Vancouver, BC", dispImgPath = "jarspic.jpg"});
-			dispItems.Add(new DispListItem {dispName = "Example Dispensary 3", dispAddress = "5431 Stone Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
-			dispItems.Add(new DispListItem {dispName = "Example Dispensary 4", dispAddress = "6868 Pebble Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
-			dispItems.Add(new DispListItem {dispName = "Example Dispensary 5", dispAddress = "5336 Flint Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
-			dispItemsFiltered = new ObservableCollection<DispListItem>();
-
 			dispList.ItemsSource = dispItems;
 			dispList.ItemTapped += onDispSelect;
 		}
 
-		public async void onDispSelect(object s, ItemTappedEventArgs args)
+		public async void onDispSelect(object s, ItemTappedEventArgs e)
 		{
-			//Do something.
-			credentials[16] = "ExampleDisp";
+			string newDispensary = ((DispListItem)e.Item).dispName;
+			credentials[16] = newDispensary;
 			Statics.Default.setCreds(credentials);
+
+			//Connect to url.
+			/*var client = new System.Net.Http.HttpClient();
+
+			//Show that we are waiting for a response and wait for it.
+
+			var response = await client.GetAsync("http://cbd-online.net/landon/changeDispensary.php?" +
+			                                     "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
+			                                     "&disp=" + System.Net.WebUtility.UrlEncode(newDispensary));*/
+
 			await Navigation.PushModalAsync(new MasterPage());
 		}
 

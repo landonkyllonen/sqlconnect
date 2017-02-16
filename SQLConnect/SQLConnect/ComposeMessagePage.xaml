@@ -5,7 +5,7 @@
 		Title="Compose Message">
 	<ContentPage.Content>
 		<RelativeLayout>
-			<Label x:Name="titleLbl" Text="Title:" TextColor="Teal" FontSize="17" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+			<Label Text="Title:" TextColor="Teal" FontSize="17" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=10}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.15,Constant=-10}"
@@ -16,7 +16,7 @@
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.85,Constant=-20}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=-10}"/>
 
-			<Label x:Name="toLbl" TextColor="Teal" Text = "To:" FontSize="17" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+			<Label TextColor="Teal" Text = "To:" FontSize="17" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=10}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.15,Constant=-10}"
@@ -27,7 +27,7 @@
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.85,Constant=-20}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=-10}"/>
 
-			<Label x:Name="contentLbl" TextColor="Teal" Text = "Message:" FontSize="17" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+			<Label TextColor="Teal" Text = "Message:" FontSize="17" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=10}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.2,Constant=-10}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=-10}"

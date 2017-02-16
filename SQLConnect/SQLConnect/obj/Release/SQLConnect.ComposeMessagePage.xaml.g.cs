@@ -17,19 +17,10 @@ namespace SQLConnect {
     public partial class ComposeMessagePage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label titleLbl;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry title;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label toLbl;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry to;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label contentLbl;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Editor content;
@@ -37,11 +28,8 @@ namespace SQLConnect {
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(ComposeMessagePage));
-            titleLbl = this.FindByName <global::Xamarin.Forms.Label>("titleLbl");
             title = this.FindByName <global::Xamarin.Forms.Entry>("title");
-            toLbl = this.FindByName <global::Xamarin.Forms.Label>("toLbl");
             to = this.FindByName <global::Xamarin.Forms.Entry>("to");
-            contentLbl = this.FindByName <global::Xamarin.Forms.Label>("contentLbl");
             content = this.FindByName <global::Xamarin.Forms.Editor>("content");
         }
     }

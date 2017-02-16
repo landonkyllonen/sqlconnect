@@ -50,3 +50,4 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/PCLCrypto.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/CryptSharp.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/logout.png
