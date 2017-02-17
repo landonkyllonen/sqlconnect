@@ -42,3 +42,5 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.MedicationsPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ViewOrderPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.MedicationsPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ConditionsPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ConditionsPage.xaml.g.cs

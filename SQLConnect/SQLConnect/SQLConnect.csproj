@@ -72,6 +72,9 @@
     <EmbeddedResource Include="MedicationsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConditionsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -141,6 +144,10 @@
       <DependentUpon>MedicationsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MedListItem.cs" />
+    <Compile Include="ConditionsPage.xaml.cs">
+      <DependentUpon>ConditionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CondListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

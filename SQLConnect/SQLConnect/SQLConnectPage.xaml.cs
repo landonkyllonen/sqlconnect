@@ -23,97 +23,94 @@ namespace SQLConnect
 		public async void logIn(object s, EventArgs e){
 			s.ToString();
 			e.ToString();
+
+			//Set to online
+			Statics.Default.setOffline(false);
 			//Log in operation
 			console.SetValue(Label.TextProperty, "Connecting to server...");
 
-			if (Statics.Default.isOffline())
-			{
-				await Navigation.PushModalAsync(new DispensaryPage());
-				Statics.Default.setMessages(new ObservableCollection<MessageListItem>());
-				Statics.Default.setProducts(new Product[0]);
-				Statics.Default.setUser("");
-				Statics.Default.setMeds(new ObservableCollection<MedListItem>());
-				Statics.Default.setOrders(new ObservableCollection<OrderListItem>());
-			}
-			else {
 
-				//Get info for submit.
-				user = userentry.Text;
-				string pass = passentry.Text;
-				DateTime date = DateTime.Today;
-				//Replace this with a functional cross-platform device id.
-				string id = "placeholder";
+			//Get info for submit.
+			user = userentry.Text;
+			string pass = passentry.Text;
+			DateTime date = DateTime.Today;
+			//Replace this with a functional cross-platform device id.
+			string id = "placeholder";
 
-				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+			//Connect to url.
+			var client = new System.Net.Http.HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+			//Show that we are waiting for a response and wait for it.
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/logInandgetCreds.php?" +
+			var response = await client.GetAsync("http://cbd-online.net/landon/logInandgetCreds.php?" +
 													 "user=" + UrlEncodeParameter(user) +
 													 "&pass=" + UrlEncodeParameter(pass) +
 													 "&date=" + UrlEncodeParameter(date.ToString("d")) +
 													 "&id=" + UrlEncodeParameter(id));
 
-				var output = await response.Content.ReadAsStringAsync();
+			var output = await response.Content.ReadAsStringAsync();
 
-				//Process the output.
-				string[] words = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+			//Process the output.
+			string[] words = output.Split(new string[] { ";;" }, StringSplitOptions.None);
 
-				client.Dispose();
+			client.Dispose();
 
-				string determinant = words[0];
+			string determinant = words[0];
 
-				//If login success, parse credentials
-				if (determinant.Equals("True"))
+			//If login success, parse credentials
+			if (determinant.Equals("True")){
+				/*$firstname; ;$lastname; ;$email; ;$phone; ;$body; ;$blood; ;$energy; ;$ctype; ;$ancestry; ;$condInfo; 
+				 ;$medInfo; ;$auth; ;$authorized; ;$admin; ;$reviewed; ;$userID; ;$dispensary"*/
+				credentials = new string[17];
+
+				for (int i = 1; i < words.Length; i++)
 				{
-					/*$firstname; ;$lastname; ;$email; ;$phone; ;$body; ;$blood; ;$energy; ;$ctype; ;$ancestry; ;$condInfo; 
-					 ;$medInfo; ;$auth; ;$authorized; ;$admin; ;$reviewed; ;$userID; ;$dispensary"*/
-					credentials = new string[17];
+					credentials[i - 1] = words[i];
+				}
 
-					for (int i = 1; i < words.Length; i++)
-					{
-						credentials[i - 1] = words[i];
-					}
+				console.SetValue(Label.TextProperty, "Success!");
 
-					console.SetValue(Label.TextProperty, "Success!");
+				//Update static vars
+				Statics.Default.setCreds(credentials);
+				Statics.Default.setUser(user);
 
-					//Update static vars
-					Statics.Default.setCreds(credentials);
-					Statics.Default.setUser(user);
+				//await asyncLoadDispensaries();
 
-					//await asyncLoadDispensaries();
+				await asyncLoadMessages(user);
 
-					await asyncLoadMessages(user);
+				await asyncLoadProducts(credentials[16]);
 
-					await asyncLoadProducts(credentials[16]);
+				await asyncLoadOrders(user);
 
-					await asyncLoadOrders(user);
-
-					//If user has no dispensary, display possible choices. Otherwise, go to home page.
-					/*if (credentials[16].Equals(""))
-					{
-						await Navigation.PushModalAsync(new DispensaryPage());
-					}
-					else {
-						await Navigation.PushModalAsync(new MasterPage());
-					}*/
-
+				//If user has no dispensary, display possible choices. Otherwise, go to home page.
+				/*if (credentials[16].Equals(""))
+				{
 					await Navigation.PushModalAsync(new DispensaryPage());
-
 				}
-				else {//Show error
-					console.SetValue(Label.TextProperty, determinant);
-				}
+				else {
+					await Navigation.PushModalAsync(new MasterPage());
+				}*/
 
+				await Navigation.PushModalAsync(new DispensaryPage());
+			}
+			else {//Show error
+				console.SetValue(Label.TextProperty, determinant);
 			}
 		}
 
 		public async void offlineLogIn(object s, EventArgs e) {
 			s.ToString();
 			e.ToString();
-			//Log in offline
-			await Navigation.PushModalAsync(new SQLConnectPage());
+
+			//Set to offline
+			Statics.Default.setOffline(true);
+			//Log in operation
+			Statics.Default.setMessages(new ObservableCollection<MessageListItem>());
+			Statics.Default.setProducts(new Product[0]);
+			Statics.Default.setUser("");
+			Statics.Default.setMeds(new ObservableCollection<MedListItem>());
+			Statics.Default.setOrders(new ObservableCollection<OrderListItem>());
+			await Navigation.PushModalAsync(new DispensaryPage());
 		}
 
 		async void register(object s, EventArgs e) {

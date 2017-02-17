@@ -1,6 +1,5 @@
 ﻿using Xamarin.Forms;
 using System;
-using System.Threading.Tasks;
 
 namespace SQLConnect
 {
@@ -336,6 +335,7 @@ namespace SQLConnect
 				BackgroundColor = Color.Teal,
 				HorizontalOptions = LayoutOptions.EndAndExpand
 			};
+			editConds.Clicked += changeConds;
 
 			StackLayout midSix = new StackLayout
 			{
@@ -355,6 +355,7 @@ namespace SQLConnect
 				BackgroundColor = Color.Teal,
 				HorizontalOptions = LayoutOptions.EndAndExpand
 			};
+			editMeds.Clicked += changeMeds;
 
 			StackLayout midSeven = new StackLayout
 			{
@@ -514,10 +515,25 @@ namespace SQLConnect
 			                                     "&conds=" + credentials[9] + 
 			                                     "&meds=" + credentials[10]);
 
-			//var output = await response.Content.ReadAsStringAsync();
+			await response.Content.ReadAsStringAsync();
 
 			//If output says it was successful, then also change locally.
+		}
 
+		public void changeMeds(object s, EventArgs e)
+		{
+			s.ToString();
+			e.ToString();
+
+			Navigation.PushModalAsync(new MedicationsPage());
+		}
+
+		public void changeConds(object s, EventArgs e)
+		{
+			s.ToString();
+			e.ToString();
+
+			Navigation.PushModalAsync(new ConditionsPage());
 		}
 	}
 }

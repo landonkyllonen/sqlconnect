@@ -11,6 +11,7 @@ namespace SQLConnect
 		string[] credentials;
 		string user;
 		ObservableCollection<MessageListItem> messages;
+		ObservableCollection<CondListItem> conds;
 		ObservableCollection<MedListItem> meds;
 
 
@@ -37,6 +38,10 @@ namespace SQLConnect
 		// this is the default static instance you'd use like string text = Settings.Default.SomeSetting;
 		public readonly static Statics Default = new Statics();
 
+		public void setOffline(bool state)
+		{
+			offline = state;
+		}
 		public bool isOffline()
 		{
 			return offline;
@@ -67,6 +72,15 @@ namespace SQLConnect
 		public ObservableCollection<MessageListItem> getMessages()
 		{
 			return messages;
+		}
+
+		public void setConds(ObservableCollection<CondListItem> conds)
+		{
+			this.conds = conds;
+		}
+		public ObservableCollection<CondListItem> getConds()
+		{
+			return conds;
 		}
 
 		public void setMeds(ObservableCollection<MedListItem> meds)
@@ -175,6 +189,7 @@ namespace SQLConnect
 			credentials = null;
 			user = null;
 			messages = null;
+			conds = null;
 			meds = null;
 
 			//Products Tab
