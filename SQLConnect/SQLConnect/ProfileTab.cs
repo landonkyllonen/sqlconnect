@@ -82,6 +82,7 @@ namespace SQLConnect
 				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
+				WidthRequest=80,
 				HeightRequest = 50
 			};
 			upperThree.Children.Add(new Label { Text = "Phone", TextColor = Color.White, HorizontalOptions = LayoutOptions.Start, VerticalOptions = LayoutOptions.CenterAndExpand });

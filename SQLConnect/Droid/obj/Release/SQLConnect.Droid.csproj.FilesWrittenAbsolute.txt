@@ -51,3 +51,5 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/CryptSharp.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/logout.png
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/medkit.png
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/pill.png

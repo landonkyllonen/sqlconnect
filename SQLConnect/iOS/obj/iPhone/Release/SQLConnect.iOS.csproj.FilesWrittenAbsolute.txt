@@ -26,3 +26,4 @@
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/PCLCrypto.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/CryptSharp.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/logout.png

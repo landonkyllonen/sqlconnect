@@ -4,9 +4,19 @@
 		x:Class="SQLConnect.ConditionsPage"
 		Title="Current Conditions">
 	<ContentPage.Content>
-		<StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#009a9a">
-			<Label Text="You can press a condition to edit it or remove it." TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Fill" VerticalOptions="Start" HeightRequest="70" FontSize="18"/>
-			<ListView  x:Name="condList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver" BackgroundColor="White">
+		<RelativeLayout BackgroundColor="#009a9a">
+			<Label Text="You can press a condition to edit it or remove it." TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=60}"
+			/>
+			<ListView  x:Name="condList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver" BackgroundColor="White"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=60}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=-60}"
+				>
             	<ListView.ItemTemplate>
 	                <DataTemplate>
 	                    <ViewCell>
@@ -22,6 +32,10 @@
 	                </DataTemplate>
             	</ListView.ItemTemplate>
         	</ListView>
-		</StackLayout>
+			<Button Text="+Add" TextColor="White" BackgroundColor="Teal" Clicked="goToAddCondition"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.9,Constant=0}"
+			/>
+		</RelativeLayout>
 	</ContentPage.Content>
 </ContentPage>

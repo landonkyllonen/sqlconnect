@@ -24,5 +24,10 @@ namespace SQLConnect
 			//Display Edit/Delete options.
 			return;
 		}
+
+		void goToAddCondition(object sender, System.EventArgs e)
+		{
+			Navigation.PushModalAsync(new AddConditionPage());
+		}
 	}
 }
