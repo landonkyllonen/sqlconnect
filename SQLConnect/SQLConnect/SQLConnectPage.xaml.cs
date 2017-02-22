@@ -74,6 +74,8 @@ namespace SQLConnect
 				Statics.Default.setCreds(credentials);
 				Statics.Default.setUser(user);
 
+				populateCondsMeds(credentials[9], credentials[10]);
+
 				//await asyncLoadDispensaries();
 
 				await asyncLoadMessages(user);
@@ -102,14 +104,39 @@ namespace SQLConnect
 			s.ToString();
 			e.ToString();
 
+			/*$firstname; ;$lastname; ;$email; ;$phone; ;$body; ;$blood; ;$energy; ;$ctype; ;$ancestry; ;$condInfo; 
+				 ;$medInfo; ;$auth; ;$authorized; ;$admin; ;$reviewed; ;$userID; ;$dispensary"*/
+			credentials = new string[17];
+			credentials[0] = "Bob";
+			credentials[1] = "Ross";
+			credentials[2] = "BobRoss@trees.com";
+			credentials[3] = "2505555555";
+			credentials[4] = "Average";
+			credentials[5] = "O+";
+			credentials[6] = "Medium";
+			credentials[7] = "N/A";
+			credentials[8] = "Unknown";
+			credentials[9] = "Chronic Tranquility--Painter's Wrist";
+			credentials[10] = "Nature--9001mg--EveryGotDamn Day--Visual;;Anti-Drowsy--80mg--Biweekly--Oral";
+			credentials[11] = "ABCDEFGHIJKLMNOP";
+			credentials[12] = "1";
+			credentials[13] = "1";
+			credentials[14] = "";
+			credentials[15] = "1";
+			credentials[16] = "1";
+			credentials[17] = "1";
+			Statics.Default.setCreds(credentials);
+
 			//Set to offline
 			Statics.Default.setOffline(true);
 			//Log in operation
 			Statics.Default.setMessages(new ObservableCollection<MessageListItem>());
 			Statics.Default.setProducts(new Product[0]);
 			Statics.Default.setUser("");
-			Statics.Default.setMeds(new ObservableCollection<MedListItem>());
 			Statics.Default.setOrders(new ObservableCollection<OrderListItem>());
+
+			populateCondsMeds(credentials[9], credentials[10]);
+
 			await Navigation.PushModalAsync(new DispensaryPage());
 		}
 
@@ -333,6 +360,31 @@ namespace SQLConnect
 			}
 
 			Statics.Default.setOrders(orders);
+		}
+
+		private void populateCondsMeds(string conds, string meds)
+		{
+			//First conditions, split into undelimited condition names, then set the global variable for future use.
+			string[] condsSeparated = conds.Split(new string[] { "--" }, StringSplitOptions.None);
+			ObservableCollection<CondListItem> conditions = new ObservableCollection<CondListItem>();
+
+			foreach (string name in condsSeparated)
+			{
+				conditions.Add(new CondListItem { condName=name });
+			}
+			Statics.Default.setConds(conditions);
+
+			//Repeat for medications, must split twice.
+			string[] medObjects = meds.Split(new string[] { ";;" }, StringSplitOptions.None);
+			ObservableCollection<MedListItem> medications = new ObservableCollection<MedListItem>();
+
+			foreach (string med in medObjects)
+			{
+				string[] medComponents = med.Split(new string[] { "--" }, StringSplitOptions.None);
+				medications.Add(new MedListItem { medName=medComponents[0], medDose=medComponents[1], medFrequency=medComponents[2], medMethod=medComponents[3]});
+			}
+			Statics.Default.setMeds(medications);
+
 		}
 
 		public static string UrlEncodeParameter(string paramToEncode)
