@@ -13,6 +13,13 @@ namespace SQLConnect
 
 		public void addCondition(object s, EventArgs e)
 		{
+			//Check if condition is empty or already existing.
+			if (String.IsNullOrEmpty(condNameEntry.Text) || Statics.Default.getCreds()[9].Contains(condNameEntry.Text))
+			{
+				console.Text = "Condition cannot be blank or already added.";
+				return;
+			}
+
 			//Add the condition to current conditions and upload to db.
 			ObservableCollection<CondListItem> condsListPulled = Statics.Default.getConds();
 			string[] creds = Statics.Default.getCreds();

@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/MedicationsPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/AddMedicationPage.xaml">
     <Files>
-      <File FileName="SQLConnect/Statics.cs" Line="192" Column="17" />
       <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="110" Column="8" />
-      <File FileName="SQLConnect/ProfileTab.cs" Line="276" Column="5" />
-      <File FileName="SQLConnect/ConditionsPage.xaml.cs" Line="14" Column="6" />
-      <File FileName="SQLConnect/MedicationsPage.xaml.cs" Line="14" Column="6" />
+      <File FileName="SQLConnect/AddConditionPage.xaml" Line="25" Column="11" />
+      <File FileName="SQLConnect/AddMedicationPage.xaml" Line="20" Column="80" />
+      <File FileName="SQLConnect/AddConditionPage.xaml.cs" Line="33" Column="4" />
+      <File FileName="SQLConnect/AddMedicationPage.xaml.cs" Line="30" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

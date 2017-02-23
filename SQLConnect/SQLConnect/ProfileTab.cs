@@ -305,7 +305,6 @@ namespace SQLConnect
 			ancestry = new Entry
 			{
 				Text=credentials[8],
-				HorizontalTextAlignment= TextAlignment.Center,
 				HorizontalOptions = LayoutOptions.EndAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				WidthRequest=140,

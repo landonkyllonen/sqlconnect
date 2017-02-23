@@ -13,6 +13,13 @@ namespace SQLConnect
 
 		public void addMedication(object s, EventArgs e)
 		{
+			//Check that fields are not empty and that medication does not already exist.
+			if (String.IsNullOrEmpty(medNameEntry.Text)|| String.IsNullOrEmpty(medDoseEntry.Text)|| String.IsNullOrEmpty(medFreqEntry.Text)|| String.IsNullOrEmpty(medMethodEntry.Text) || Statics.Default.getCreds()[10].Contains(medNameEntry.Text))
+			{
+				console.Text = "Fields cannot be blank or you are already taking this medication.";
+				return;
+			}
+
 			//Add the medication to current medications and upload to db.
 			ObservableCollection<MedListItem> medsPulled = Statics.Default.getMeds();
 			string[] creds = Statics.Default.getCreds();
@@ -27,6 +34,21 @@ namespace SQLConnect
 			Statics.Default.setCreds(creds);
 
 			Navigation.PopModalAsync();
+		}
+
+		public void toDose(object s, EventArgs e)
+		{
+			medDoseEntry.Focus();
+		}
+
+		public void toFreq(object s, EventArgs e)
+		{
+			medFreqEntry.Focus();
+		}
+
+		public void toMethod(object s, EventArgs e)
+		{
+			medMethodEntry.Focus();
 		}
 	}
 }

@@ -17,25 +17,30 @@
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=70}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=70}"
 			/>
-			<Entry x:Name="medNameEntry" Placeholder="Name of medication..."
+			<Entry x:Name="medNameEntry" Placeholder="Name of medication..." Completed="toDose"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.2,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
 			/>
-			<Entry x:Name="medDoseEntry" Placeholder="Dosage..."
+			<Entry x:Name="medDoseEntry" Placeholder="Dosage..." Completed="toFreq"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.3,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
 			/>
-			<Entry x:Name="medFreqEntry" Placeholder="Frequency..."
+			<Entry x:Name="medFreqEntry" Placeholder="Frequency..." Completed="toMethod"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.4,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
 			/>
-			<Entry x:Name="medMethodEntry" Placeholder="Method of Administration..."
+			<Entry x:Name="medMethodEntry" Placeholder="Method of Administration..." Completed="addMedication"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.5,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
+			/>
+			<Label x:Name="console" TextColor="Red" HorizontalTextAlignment="Center"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.6,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
 			/>
 			<Button Text="Add Medication" BackgroundColor="Teal" Clicked="addMedication" TextColor="White"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-50}"

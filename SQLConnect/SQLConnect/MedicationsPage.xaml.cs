@@ -12,9 +12,6 @@ namespace SQLConnect
 			ObservableCollection<MedListItem> meds = Statics.Default.getMeds();
 
 			//meds = new ObservableCollection<MedListItem>();
-
-			meds.Add(new MedListItem {medName="Test Med", medDose="88mg", medFrequency="Daily", medMethod="Oral" });
-
 			medList.ItemsSource = meds;
 			medList.ItemTapped += onItemSelect;
 		}
