@@ -15,11 +15,10 @@ namespace SQLConnect
 			dispItems = new ObservableCollection<DispListItem>();
 			dispItemsFiltered = new ObservableCollection<DispListItem>();
 
+			credentials = Statics.Default.getCreds();
+
 			if (Statics.Default.isOffline())
 			{
-				credentials = new string[] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
-				Statics.Default.setCreds(credentials);
-
 				dispItems.Add(new DispListItem { dispName = "Example Dispensary", dispAddress = "6436 Boulder Drive", dispCity = "Kelowna, BC", dispImgPath = "jarspic.jpg" });
 				dispItems.Add(new DispListItem { dispName = "Example Dispensary 2", dispAddress = "5326 Rock Drive", dispCity = "Vancouver, BC", dispImgPath = "jarspic.jpg" });
 				dispItems.Add(new DispListItem { dispName = "Example Dispensary 3", dispAddress = "5431 Stone Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });

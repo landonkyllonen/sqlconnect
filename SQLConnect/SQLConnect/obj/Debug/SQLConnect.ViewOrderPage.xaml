@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SQLConnect.ViewOrderPage"
+		Title="Your Order Details">
+	<ContentPage.Content>
+		<RelativeLayout BackgroundColor="#009a9a">
+			<Label TextColor="White" x:Name="idLabel" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=0}"/>
+				
+			<ListView x:Name="orderItemList" BackgroundColor="White"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.05,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.9,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.7,Constant=0}">
+				<ListView.ItemTemplate>
+	                <DataTemplate>
+	                    <ViewCell>
+	                        <RelativeLayout>
+	                        	<Label Text="{Binding prodName}" TextColor="Teal" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+								/>
+								<Label Text = "{Binding prodOrderAmount}" TextColor = "Teal" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=0}"
+									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+								/>
+								<Label Text="{Binding prodOrderPrice}" TextColor="Teal" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+								/>
+							</RelativeLayout>
+	                    </ViewCell>
+	                </DataTemplate>
+            	</ListView.ItemTemplate>
+			</ListView>
+
+			<StackLayout Orientation="Horizontal"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.8,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.2,Constant=0}">
+
+				<Label TextColor="White" Text="Total: " FontSize="25" HorizontalOptions="EndAndExpand" VerticalOptions="Center" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+				<Label x:Name = "totalLbl" TextColor="White" FontSize="25" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+			</StackLayout>
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>

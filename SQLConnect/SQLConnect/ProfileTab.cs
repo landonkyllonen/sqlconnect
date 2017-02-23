@@ -72,6 +72,7 @@ namespace SQLConnect
 			{
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HorizontalTextAlignment = TextAlignment.Center,
 				WidthRequest = 125,
 				Text = credentials[3],
 				TextColor = Color.White
@@ -202,7 +203,7 @@ namespace SQLConnect
 			for (int i = 0; i < bloodtypes.Length; i++)
 			{
 				blood.Items.Add(bloodtypes[i]);
-				if (credentials[4].Equals(bloodtypes[i]))
+				if (credentials[5].Equals(bloodtypes[i]))
 				{
 					savedBloodIndex = i;
 				}
@@ -234,9 +235,9 @@ namespace SQLConnect
 			for (int i = 0; i < energytypes.Length; i++)
 			{
 				energy.Items.Add(energytypes[i]);
-				if (credentials[4].Equals(energytypes[i]))
+				if (credentials[6].Equals(energytypes[i]))
 				{
-					savedBloodIndex = i;
+					savedEnergyIndex = i;
 				}
 			}
 			energy.SetValue(Picker.SelectedIndexProperty, savedEnergyIndex);
@@ -274,7 +275,7 @@ namespace SQLConnect
 			for (int i = 0; i < cancertypes.Length; i++)
 			{
 				cancer.Items.Add(cancertypes[i]);
-				if (credentials[4].Equals(cancertypes[i]))
+				if (credentials[7].Equals(cancertypes[i]))
 				{
 					savedCancerIndex = i;
 				}
@@ -303,11 +304,14 @@ namespace SQLConnect
 			//Fifth
 			ancestry = new Entry
 			{
+				Text=credentials[8],
+				HorizontalTextAlignment= TextAlignment.Center,
 				HorizontalOptions = LayoutOptions.EndAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				WidthRequest=140,
 				TextColor = Color.Black
 			};
+
 
 			Button helpAncestry = new Button
 			{

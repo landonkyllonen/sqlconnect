@@ -11,7 +11,7 @@ namespace SQLConnect
 
 			ObservableCollection<CondListItem> conds = Statics.Default.getConds();
 
-			conds = new ObservableCollection<CondListItem>();
+			//conds = new ObservableCollection<CondListItem>();
 
 			conds.Add(new CondListItem {condName="Condition Example"});
 

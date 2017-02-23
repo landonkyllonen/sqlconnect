@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SQLConnect.MedicationsPage"
+		Title="Current Medications">
+	<ContentPage.Content>
+		<RelativeLayout BackgroundColor="#009a9a">
+			<Label Text="You can press a medication to edit it or remove it." TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=60}"/>
+			<ListView  x:Name="medList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver" BackgroundColor="White"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=60}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=-60}"
+				>
+            	<ListView.ItemTemplate>
+	                <DataTemplate>
+	                    <ViewCell>
+	                        <RelativeLayout>
+	                        	<Label Text="{Binding medName}" TextColor="Teal" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="15"
+									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+								/>
+								<Label Text="{Binding medDose}" TextColor="Teal" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="15"
+									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.2,Constant=0}"
+									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+								/>
+								<Label Text="{Binding medFrequency}" TextColor="Teal" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="15"
+									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=0}"
+									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.2,Constant=0}"
+									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+								/>
+								<Label Text="{Binding medMethod}" TextColor="Teal" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="15"
+									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
+								/>
+							</RelativeLayout>
+	                    </ViewCell>
+	                </DataTemplate>
+            	</ListView.ItemTemplate>
+        	</ListView>
+			<Button Text="+Add" TextColor="White" BackgroundColor="Teal" Clicked="goToAddMedication"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.9,Constant=0}"
+			/>
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>

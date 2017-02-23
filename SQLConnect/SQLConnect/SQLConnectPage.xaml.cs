@@ -124,7 +124,6 @@ namespace SQLConnect
 			credentials[14] = "";
 			credentials[15] = "1";
 			credentials[16] = "1";
-			credentials[17] = "1";
 			Statics.Default.setCreds(credentials);
 
 			//Set to offline

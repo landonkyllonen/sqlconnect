@@ -40,3 +40,13 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/CryptSharp.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/Validation.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/PCLCrypto.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ViewOrderPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.MedicationsPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ConditionsPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.AddMedicationPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.AddConditionPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ViewOrderPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.MedicationsPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ConditionsPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.AddMedicationPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.AddConditionPage.xaml.g.cs
