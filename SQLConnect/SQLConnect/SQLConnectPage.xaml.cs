@@ -84,6 +84,8 @@ namespace SQLConnect
 
 				await asyncLoadOrders(user);
 
+				await asyncLoadLogs(user);
+
 				//If user has no dispensary, display possible choices. Otherwise, go to home page.
 				/*if (credentials[16].Equals(""))
 				{
@@ -133,6 +135,7 @@ namespace SQLConnect
 			Statics.Default.setProducts(new Product[0]);
 			Statics.Default.setUser("");
 			Statics.Default.setOrders(new ObservableCollection<OrderListItem>());
+			Statics.Default.setLogs(new ObservableCollection<LogListItem>());
 
 			populateCondsMeds(credentials[9], credentials[10]);
 
@@ -359,6 +362,73 @@ namespace SQLConnect
 			}
 
 			Statics.Default.setOrders(orders);
+		}
+
+		async Task asyncLoadLogs(string username)
+		{
+			ObservableCollection<LogListItem> logs = new ObservableCollection<LogListItem>();
+
+			//Connect to url.
+			var client = new System.Net.Http.HttpClient();
+
+			//Show that we are waiting for a response and wait for it.
+
+			var response = await client.GetAsync("http://cbd-online.net/landon/importLogs.php?" +
+												 "user=" + UrlEncodeParameter(username));
+
+			var output = await response.Content.ReadAsStringAsync();
+
+			//Process the output.
+			string[] logObjects = output.Split(new string[] { "##" }, StringSplitOptions.None);
+
+			//If the split yields only 1 object with value "", return no orders.
+			//Not sure why this value is retrieved in the first place.
+			if (logObjects[0].Equals(""))
+			{
+				return;
+			}
+
+			//Separate into components and turn into objects.
+			//bound as $ttl;;$date;;$txt;;$public;;$important;;$meds##
+			//meds as med--med--med?
+			foreach (string obj in logObjects)
+			{
+				string[] logComponents = obj.Split(new string[] { ";;" }, StringSplitOptions.None);
+				Debug.WriteLine(obj);
+
+				string comps = "";
+				foreach (string s in logComponents)
+				{
+					comps = comps + " " + s;
+				}
+				Debug.WriteLine(comps);
+
+				//Get boolean values from strings
+				bool pub = false;
+				bool imp = false;
+				if (logComponents[3].Equals("1")){
+					pub = true;
+				}
+				if (logComponents[4].Equals("1"))
+				{
+					imp = true;
+				}
+				//extract med items for this log
+				string[] logMedItems = logComponents[5].Split(new string[] { "--" }, StringSplitOptions.None);
+
+				//thisOrderitems is now populated, create the orderItem object
+				logs.Add(new LogListItem
+				{
+					logTitle = logComponents[0],
+					logDate = logComponents[1],
+					logText = logComponents[2],
+					logPublic = pub,
+					logImportant = imp,
+					logMeds = logMedItems
+				});
+			}
+
+			Statics.Default.setLogs(logs);
 		}
 
 		private void populateCondsMeds(string conds, string meds)

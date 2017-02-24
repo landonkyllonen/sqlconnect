@@ -19,6 +19,9 @@ namespace SQLConnect
 		Product[] products; //Dispensary specific item info, only has url for pic to be downloaded.
 		ObservableCollection<OrderListItem> orders;
 
+		//Analytics Tab
+		ObservableCollection<LogListItem> logs;
+
 		//Dispensary List
 		ObservableCollection<DispListItem> dispensaries;
 
@@ -110,6 +113,15 @@ namespace SQLConnect
 			return orders;
 		}
 
+		public void setLogs(ObservableCollection<LogListItem> logs)
+		{
+			this.logs = logs;
+		}
+		public ObservableCollection<LogListItem> getLogs()
+		{
+			return logs;
+		}
+
 		public void setDispensaries(ObservableCollection<DispListItem> dispensaries)
 		{
 			this.dispensaries = dispensaries;
@@ -198,6 +210,9 @@ namespace SQLConnect
 
 			//Dispensary List
 			dispensaries = null;
+
+			//Analytics Tab
+			logs = null;
 
 			//To manipulate navigation
 			master = null;

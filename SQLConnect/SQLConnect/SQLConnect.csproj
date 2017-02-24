@@ -161,6 +161,7 @@
     <Compile Include="AddConditionPage.xaml.cs">
       <DependentUpon>AddConditionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LogListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

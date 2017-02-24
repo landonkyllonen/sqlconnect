@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/AddMedicationPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/SQLConnectPage.xaml.cs">
     <Files>
-      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="110" Column="8" />
-      <File FileName="SQLConnect/AddConditionPage.xaml" Line="25" Column="11" />
-      <File FileName="SQLConnect/AddMedicationPage.xaml" Line="20" Column="80" />
-      <File FileName="SQLConnect/AddConditionPage.xaml.cs" Line="33" Column="4" />
-      <File FileName="SQLConnect/AddMedicationPage.xaml.cs" Line="30" Column="4" />
+      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="416" Column="10" />
+      <File FileName="SQLConnect/Statics.cs" Line="215" Column="16" />
+      <File FileName="SQLConnect/AnalyticsPage.xaml" Line="9" Column="23" />
+      <File FileName="SQLConnect/LogListItem.cs" Line="11" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
@@ -16,6 +15,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.LGH8126e5714a3" />
+  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.ItemProperties.SQLConnect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.EB7C7C09-6F4E-4F40-A091-15EF2C2DEC4A" />
 </Properties>
