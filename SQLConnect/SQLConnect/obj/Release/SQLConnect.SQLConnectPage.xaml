@@ -2,31 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		xmlns:local="clr-namespace:SQLConnect"
-		x:Class="SQLConnect.SQLConnectPage">
+		x:Class="SQLConnect.SQLConnectPage"
+		Title="Not Centered On Android">
 	<ContentPage.Content>
-		<RelativeLayout BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill">
-			<StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Center" Padding="15,30,15,15" Spacing="10"
-			     RelativeLayout.WidthConstraint=
-			         "{ConstraintExpression Type=RelativeToParent,
-			                                Property=Width,
-			                                Factor=1}"
-			     RelativeLayout.HeightConstraint=
-			         "{ConstraintExpression Type=RelativeToParent,
-			                                Property=Height,
-			                                Factor=1}">
-				<Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="125" WidthRequest="200" Aspect="AspectFit"/>
-				<Entry x:Name="userentry" Placeholder="Username" WidthRequest="250" HorizontalOptions="Center"/>
-				<Entry x:Name="passentry" Placeholder="Password" IsPassword="true" WidthRequest="250" HorizontalOptions="Center"/>
-				<StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-					<Switch x:Name="rememberSwitch"/> 
-					<Label Text="Remember Me" VerticalOptions="Center" TextColor="Teal"/>
+		<ScrollView Orientation="Vertical">
+			<RelativeLayout BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill">
+				<StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Center" Padding="15,30,15,15" Spacing="10"
+				     RelativeLayout.WidthConstraint=
+				         "{ConstraintExpression Type=RelativeToParent,
+				                                Property=Width,
+				                                Factor=1}"
+				     RelativeLayout.HeightConstraint=
+				         "{ConstraintExpression Type=RelativeToParent,
+				                                Property=Height,
+				                                Factor=1}">
+					<Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="125" WidthRequest="200" Aspect="AspectFit"/>
+					<Entry x:Name="userentry" Placeholder="Username" WidthRequest="250" HorizontalOptions="Center"/>
+					<Entry x:Name="passentry" Placeholder="Password" IsPassword="true" WidthRequest="250" HorizontalOptions="Center"/>
+					<StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+						<Switch x:Name="rememberSwitch"/> 
+						<Label Text="Remember Me" VerticalOptions="Center" TextColor="Teal"/>
+					</StackLayout>
+					<Label Text="" TextColor="Red" HorizontalOptions="Center" x:Name="console"/>
+					<Button Text="Log In" Clicked="logIn" WidthRequest="175" HorizontalOptions="Center" TextColor="White" BackgroundColor="Teal"/>
+					<Button Text="Log In Offline" Clicked="offlineLogIn" WidthRequest="175" HorizontalOptions="Center" TextColor="White" BackgroundColor="Teal"/>
+					<Button Text="Register" Clicked="register" WidthRequest="175" HorizontalOptions="Center" TextColor="White" BackgroundColor="Teal"/>
 				</StackLayout>
-				<Label Text="" TextColor="Red" HorizontalOptions="Center" x:Name="console"/>
-				<Button Text="Log In" Clicked="logIn" WidthRequest="175" HorizontalOptions="Center" TextColor="White" BackgroundColor="Teal"/>
-				<Button Text="Log In Offline" Clicked="offlineLogIn" WidthRequest="175" HorizontalOptions="Center" TextColor="White" BackgroundColor="Teal"/>
-				<Button Text="Register" Clicked="register" WidthRequest="175" HorizontalOptions="Center" TextColor="White" BackgroundColor="Teal"/>
-			</StackLayout>
-		</RelativeLayout>
+			</RelativeLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
 

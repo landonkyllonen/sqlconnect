@@ -13,6 +13,8 @@ namespace SQLConnect
 			
 		public SQLConnectPage()
 		{
+			Application.Current.MainPage = this;
+
 			InitializeComponent();
 
 			userentry.SetValue(Entry.TextProperty, "l");
