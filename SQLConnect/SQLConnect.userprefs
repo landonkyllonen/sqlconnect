@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/SQLConnectPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/LogListItem.cs">
     <Files>
-      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="18" Column="26" />
       <File FileName="SQLConnect/Statics.cs" Line="215" Column="16" />
-      <File FileName="SQLConnect/DispensaryPage.xaml.cs" Line="48" Column="4" />
-      <File FileName="SQLConnect/SQLConnectPage.xaml" Line="19" Column="101" />
-      <File FileName="SQLConnect/App.xaml.cs" Line="8" Column="4" />
+      <File FileName="SQLConnect/LogsTab.cs" Line="19" Column="4" />
+      <File FileName="SQLConnect/MessagingTab.cs" Line="88" Column="51" />
+      <File FileName="SQLConnect/LogListItem.cs" Line="14" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
