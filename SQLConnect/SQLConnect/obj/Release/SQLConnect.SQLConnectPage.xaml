@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		xmlns:local="clr-namespace:SQLConnect"
-		x:Class="SQLConnect.SQLConnectPage"
-		Title="Not Centered On Android">
+		x:Class="SQLConnect.SQLConnectPage">
 	<ContentPage.Content>
 		<ScrollView Orientation="Vertical">
 			<RelativeLayout BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill">
