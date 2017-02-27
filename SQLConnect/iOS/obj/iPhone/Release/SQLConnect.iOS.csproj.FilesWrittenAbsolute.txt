@@ -27,3 +27,7 @@
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/CryptSharp.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/logout.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/medkit.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/pill.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/important.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/group.png

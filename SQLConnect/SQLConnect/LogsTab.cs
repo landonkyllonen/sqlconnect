@@ -74,6 +74,7 @@ namespace SQLConnect
 			});
 
 			logList.ItemTemplate = logDataTemplate;
+			logList.ItemTapped+= logSelected;
 
 			holder.Children.Add(logList, Constraint.Constant(0), Constraint.Constant(0),
 								Constraint.RelativeToParent((parent) =>
@@ -82,7 +83,7 @@ namespace SQLConnect
 								}),
 								Constraint.RelativeToParent((parent) =>
 								{
-									return parent.Height * .8;
+									return parent.Height * .85;
 								}));
 
 			//Now create bottom bar
@@ -137,19 +138,24 @@ namespace SQLConnect
 									}),
 									Constraint.RelativeToParent((parent) =>
 									{
-										return parent.Height*2/3-16;
+										return parent.Height*2/3;
 									}));
 
-			holder.Children.Add(bottom, Constraint.Constant(0), Constraint.RelativeToParent((parent) => { return parent.Height * 0.8; }),
+			holder.Children.Add(bottom, Constraint.Constant(0), Constraint.RelativeToParent((parent) => { return parent.Height * 0.85; }),
 								Constraint.RelativeToParent((parent) => { return parent.Width; }),
-			                    Constraint.RelativeToParent((parent) => { return parent.Height * 0.2; }));
+			                    Constraint.RelativeToParent((parent) => { return parent.Height * 0.15; }));
 
 			Content = holder;
 		}
 
 		public void toCreateLog(object s, EventArgs e)
 		{
-			//Navigation.PushModalAsync(new CreateLogPage());
+			Navigation.PushModalAsync(new CreateLogPage());
+		}
+
+		public void logSelected(object sender, ItemTappedEventArgs e)
+		{
+
 		}
 	}
 }

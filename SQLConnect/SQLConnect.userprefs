@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/MessagingTab.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/CreateLogPage.xaml">
     <Files>
       <File FileName="SQLConnect/Statics.cs" Line="215" Column="16" />
-      <File FileName="SQLConnect/LogsTab.cs" Line="103" Column="7" />
-      <File FileName="SQLConnect/MessagingTab.cs" Line="73" Column="11" />
-      <File FileName="SQLConnect/LogListItem.cs" Line="10" Column="41" />
+      <File FileName="SQLConnect/LogsTab.cs" Line="86" Column="36" />
+      <File FileName="SQLConnect/CreateLogPage.xaml" Line="94" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

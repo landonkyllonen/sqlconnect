@@ -81,6 +81,9 @@
     <EmbeddedResource Include="AddConditionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateLogPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -162,6 +165,9 @@
       <DependentUpon>AddConditionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="LogListItem.cs" />
+    <Compile Include="CreateLogPage.xaml.cs">
+      <DependentUpon>CreateLogPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
