@@ -4,90 +4,120 @@
 		x:Class="SQLConnect.CreateLogPage"
 		Title="Create a Log">
 	<ContentPage.Content>
-		<RelativeLayout>
-			<BoxView BackgroundColor="#009a9a" Opacity="0.3"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.6,Constant=-10}"
-			/>
-			<Entry x:Name="title" Placeholder="Entry Title..." FontSize="20" TextColor="Teal"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-100}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=200}"
-				/>
-			<Label x:Name="logDate" TextColor="Teal" Text="2017-01-01" HorizontalTextAlignment="Center" FontSize="18"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-75}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=title, Property=Height,Factor=1,Constant=30}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=150}"/>
-			<Label x:Name="pubLbl" TextColor="Teal" FontSize="18" Text="Public"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=logDate, Property=Y,Factor=1,Constant=30}"
-				/>
-			<Label x:Name="impLbl" TextColor="Teal" FontSize="18" Text="Important"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Width,Factor=1,Constant=30}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=0}"
-				/>
-			<Label x:Name="medLbl" TextColor="Teal" FontSize="18" Text="Medication:" HorizontalTextAlignment="End"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=0}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
-			<Label x:Name="med1Lbl" TextColor="Teal" FontSize="18" Text="1" HorizontalTextAlignment="End"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=medLbl, Property=Y,Factor=1,Constant=30}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
-			<Label x:Name="med2Lbl" TextColor="Teal" FontSize="18" Text="2" HorizontalTextAlignment="End"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med1Lbl, Property=Y,Factor=1,Constant=30}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
-			<Label x:Name="med3Lbl" TextColor="Teal" FontSize="18" Text="3" HorizontalTextAlignment="End"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med2Lbl, Property=Y,Factor=1,Constant=30}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
-			<Switch x:Name="pubSwitch"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=X, Factor=1,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=30}"
-				/>
-			<Switch x:Name="impSwitch"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=impLbl, Property=X, Factor=1,Constant=15}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=impLbl, Property=Y,Factor=1,Constant=30}"
-				/>
-			<Button x:Name="writeChoice" Text ="Write Your Entry" BackgroundColor="Teal" TextColor="White"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0,Constant=15}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med3Lbl, Property=Y,Factor=1,Constant=30}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.45,Constant=-15}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=100}"
-				/>
-			<Label x:Name="orLbl" Text="or" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="21" TextColor="Teal"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med3Lbl, Property=Y,Factor=1,Constant=30}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.2,Constant=0}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=100}"
-				/>
-			<Button x:Name="quickChoice" Text ="Select a Quick Entry" BackgroundColor="Teal" TextColor="White"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.55,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med3Lbl, Property=Y,Factor=1,Constant=30}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.45,Constant=-15}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=100}"
-				/>
-			<Label x:Name="extraInfoLbl" BackgroundColor="#009a9a" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="If you feel that a medication is helping/having no effect on a condition of yours, please indicate below."
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.6,Constant=-10}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=50}"
-				/>
-			<Button x:Name="startExtraBtn" BackgroundColor="Teal" Text="Start Feedback" TextColor="White"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-65}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=extraInfoLbl, Property=Y,Factor=1,Constant=65}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=130}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=50}"
-				/>
-			<Button x:Name="finishBtn" BackgroundColor="Teal" Text="Finish" TextColor="White"
-				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7,Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9,Constant=0}"
-				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.1,Constant=0}"
-				/>
-		</RelativeLayout>
+			<ScrollView Orientation="Vertical">
+				<RelativeLayout>
+					<BoxView BackgroundColor="#009a9a" Opacity="0.3"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=360}"
+					/>
+					<Entry x:Name="title" Placeholder="Entry Title..." FontSize="20" TextColor="Teal"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-100}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=200}"
+						/>
+					<Label x:Name="logDate" TextColor="Teal" Text="2017-01-01" HorizontalTextAlignment="Center" FontSize="18"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-75}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=title, Property=Height,Factor=1,Constant=30}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=150}"/>
+					<Label x:Name="pubLbl" TextColor="Teal" FontSize="18" Text="Public"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=logDate, Property=Y,Factor=1,Constant=30}"
+						/>
+					<Label x:Name="impLbl" TextColor="Teal" FontSize="18" Text="Important"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Width,Factor=1,Constant=30}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=0}"
+						/>
+					<Label x:Name="medLbl" TextColor="Teal" FontSize="18" Text="Medication:" HorizontalTextAlignment="End"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=0}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
+					<Label x:Name="med1Lbl" TextColor="Teal" FontSize="18" Text="Test 1" HorizontalTextAlignment="End"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=medLbl, Property=Y,Factor=1,Constant=30}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
+					<Label x:Name="med2Lbl" TextColor="Teal" FontSize="18" Text="Test 2" HorizontalTextAlignment="End"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med1Lbl, Property=Y,Factor=1,Constant=30}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
+					<Label x:Name="med3Lbl" TextColor="Teal" FontSize="18" Text="Test 3" HorizontalTextAlignment="End"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med2Lbl, Property=Y,Factor=1,Constant=30}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
+					<Switch x:Name="pubSwitch"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=X, Factor=1,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=30}"
+						/>
+					<Switch x:Name="impSwitch"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=impLbl, Property=X, Factor=1,Constant=15}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=impLbl, Property=Y,Factor=1,Constant=30}"
+						/>
+					<Editor x:Name="logTextBox" TextColor="Teal" BackgroundColor="#fcfcfc"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0,Constant=15}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med3Lbl, Property=Y,Factor=1,Constant=35}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=100}"
+						/>
+					<Button TextColor="White" Text="Presets" BackgroundColor="Teal" Clicked="activatePicker"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75,Constant=15}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med3Lbl, Property=Y,Factor=1,Constant=35}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=-15}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=100}"
+						/>
+					<Picker x:Name="quickPick" SelectedIndexChanged="setQuickEntry" IsVisible="false"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.85,Constant=15}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med3Lbl, Property=Y,Factor=1,Constant=60}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"
+						/>
+					<Label x:Name="extraInfoLbl" BackgroundColor="#009a9a" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="If you feel that a medication is helping/having no effect on a condition of yours, please indicate below."
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=logTextBox, Property=Y,Factor=1,Constant=110}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=50}"
+						/>
+					<Button x:Name="startExtraBtn" BackgroundColor="Teal" Text="Start Feedback" TextColor="White" Clicked="toggleFeedback"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-65}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=extraInfoLbl, Property=Y,Factor=1,Constant=65}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=130}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=50}"
+						/>
+					<StackLayout x:Name="extraComponent" IsVisible="false" Spacing="15" Orientation="Vertical" HorizontalOptions="Fill"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=startExtraBtn, Property=Y,Factor=1,Constant=65}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}">
+						<Label Text="What medication would you like to comment on?" FontSize="18" TextColor="Teal" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+						<Picker x:Name="extraMed" HorizontalOptions="Center" WidthRequest="220"/>
+						
+						<Label Text="What condition are you taking it for?" FontSize="18" TextColor="Teal" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+						<Picker x:Name="extraCond" HorizontalOptions="Center" WidthRequest="220"/>
+						
+						<Label Text="Have you seen any improvement?" FontSize="18" TextColor="Teal" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+							<Label Text="No" FontSize="18" TextColor="Teal"/>
+							<Switch x:Name="posSwitch"/>
+							<Label Text="Yes" FontSize="18" TextColor="Teal"/>
+						</StackLayout>
+						
+						<Label Text="Have you experienced any negative effects?" FontSize="18" TextColor="Teal" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+							<Label Text="No" FontSize="18" TextColor="Teal"/>
+							<Switch x:Name="negSwitch" Toggled="toggleUserClarification"/>
+							<Label Text="Yes" FontSize="18" TextColor="Teal"/>
+						</StackLayout>
+						<Entry x:Name="negText" IsVisible="false" FontSize="18" Placeholder="What kinds of effects?" PlaceholderColor="Silver" TextColor="Teal" HorizontalOptions="Center" WidthRequest="220"/>
+
+						<Button Text="Finish" BackgroundColor="Teal" TextColor="White" Clicked="submitLogFeedback" HorizontalOptions="Center" WidthRequest="130"/>
+					</StackLayout>
+
+					<Button x:Name="finishBtn" BackgroundColor="Teal" Text="Finish" TextColor="White" Clicked="submitLog"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-100}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=startExtraBtn, Property=Y, Factor=1,Constant=60}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=200}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=100}"
+					/>
+				</RelativeLayout>
+			</ScrollView>
 	</ContentPage.Content>
 </ContentPage>

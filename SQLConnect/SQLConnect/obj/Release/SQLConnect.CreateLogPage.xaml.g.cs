@@ -47,19 +47,34 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Switch impSwitch;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button writeChoice;
+        private global::Xamarin.Forms.Editor logTextBox;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label orLbl;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button quickChoice;
+        private global::Xamarin.Forms.Picker quickPick;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label extraInfoLbl;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Button startExtraBtn;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout extraComponent;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker extraMed;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker extraCond;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Switch posSwitch;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Switch negSwitch;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry negText;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Button finishBtn;
@@ -77,11 +92,16 @@ namespace SQLConnect {
             med3Lbl = this.FindByName <global::Xamarin.Forms.Label>("med3Lbl");
             pubSwitch = this.FindByName <global::Xamarin.Forms.Switch>("pubSwitch");
             impSwitch = this.FindByName <global::Xamarin.Forms.Switch>("impSwitch");
-            writeChoice = this.FindByName <global::Xamarin.Forms.Button>("writeChoice");
-            orLbl = this.FindByName <global::Xamarin.Forms.Label>("orLbl");
-            quickChoice = this.FindByName <global::Xamarin.Forms.Button>("quickChoice");
+            logTextBox = this.FindByName <global::Xamarin.Forms.Editor>("logTextBox");
+            quickPick = this.FindByName <global::Xamarin.Forms.Picker>("quickPick");
             extraInfoLbl = this.FindByName <global::Xamarin.Forms.Label>("extraInfoLbl");
             startExtraBtn = this.FindByName <global::Xamarin.Forms.Button>("startExtraBtn");
+            extraComponent = this.FindByName <global::Xamarin.Forms.StackLayout>("extraComponent");
+            extraMed = this.FindByName <global::Xamarin.Forms.Picker>("extraMed");
+            extraCond = this.FindByName <global::Xamarin.Forms.Picker>("extraCond");
+            posSwitch = this.FindByName <global::Xamarin.Forms.Switch>("posSwitch");
+            negSwitch = this.FindByName <global::Xamarin.Forms.Switch>("negSwitch");
+            negText = this.FindByName <global::Xamarin.Forms.Entry>("negText");
             finishBtn = this.FindByName <global::Xamarin.Forms.Button>("finishBtn");
         }
     }
