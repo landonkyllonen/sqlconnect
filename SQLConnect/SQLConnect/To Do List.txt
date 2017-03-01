@@ -14,3 +14,4 @@ Implement log uploads (input validation) and imports properly. (CreateLogPage.cs
 Implement 2 more analytics tabs.
 
 Implement feedback, will either have to do this with toasts in android and something else in ios, or find a cross-platform method.
+

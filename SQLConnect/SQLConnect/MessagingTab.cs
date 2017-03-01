@@ -185,6 +185,10 @@ namespace SQLConnect
 			}
 
 			//Separate into components and turn into objects.
+			string authHalf = Statics.Default.getAuthHalf();
+
+			string complete = authHalf + auth;
+
 			//bound as $title--$msg--$date--$viewed--$from--$id;;
 			foreach (string obj in messageObjects)
 			{
@@ -195,10 +199,10 @@ namespace SQLConnect
 				messagesRefreshed.Add(new MessageListItem
 				{
 					msgId = int.Parse(messageComponents[5]),
-					msgContent = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[1]), auth, saltDefault),
+					msgContent = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[1]), complete, saltDefault),
 					msgDate = messageComponents[2],
 					msgFrom = messageComponents[4],
-					msgTitle = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[0]), auth, saltDefault),
+					msgTitle = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[0]), complete, saltDefault),
 					msgViewed = viewed
 				});
 			}

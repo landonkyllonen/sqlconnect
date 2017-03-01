@@ -13,10 +13,11 @@ namespace SQLConnect
 			//Load logs and initialize list.
 			ObservableCollection<LogListItem> logs = Statics.Default.getLogs();
 
+			//logs = new ObservableCollection<LogListItem>();
+
 			logs.Add(new LogListItem { logTitle = "TestLog", logDate = "2017-01-01", logMeds = new string[] { "med1", "med2", "med3" }, logText = "sample text", logPublic = false, logImportant = true });
 			logs.Add(new LogListItem { logTitle = "TestLog", logDate = "2017-01-01", logMeds = new string[] { "med1", "med2", "med3" }, logText = "sample text", logPublic = true, logImportant = false });
 			logs.Add(new LogListItem { logTitle = "TestLog", logDate = "2017-01-01", logMeds = new string[] { "med1", "med2", "med3" }, logText = "sample text", logPublic = true, logImportant = true });
-
 
 			ListView logList = new ListView
 			{
@@ -89,14 +90,33 @@ namespace SQLConnect
 			//Now create bottom bar
 			RelativeLayout bottom = new RelativeLayout { BackgroundColor = Color.FromHex("#009a9a") };
 
+			//Determine if a log has already been created today.
+			bool avail = true;
+			string datestring = DateTime.Today.ToString("d");
+			foreach (LogListItem log in logs)
+			{
+				if (log.logDate.Equals(datestring))
+				{
+					avail = false;
+				}
+			}
+
 			Button createLog = new Button
 			{
 				Text = "+ Create Log",
 				TextColor = Color.White,
 				BackgroundColor = Color.FromHex("#009a9a")
 			};
-			createLog.Clicked += toCreateLog;
 
+			if (avail)
+			{
+				createLog.Clicked += toCreateLog;
+			}
+			else {
+				createLog.BackgroundColor = Color.Gray;
+			}
+
+			//Initialize sortPicker.
 			string[] sortTypes = new string[] { "Date", "Public", "Importance" };
 			Picker sorting = new Picker
 			{
@@ -155,7 +175,12 @@ namespace SQLConnect
 
 		public void logSelected(object sender, ItemTappedEventArgs e)
 		{
+			Statics.Default.setLogClicked((LogListItem)e.Item);
 
+			NavigationPage nav = new NavigationPage(new ViewLogPage());
+			NavigationPage.SetHasBackButton(nav, true);
+
+			Navigation.PushModalAsync(nav);
 		}
 	}
 }

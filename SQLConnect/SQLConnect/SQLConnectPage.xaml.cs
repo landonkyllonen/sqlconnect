@@ -79,13 +79,13 @@ namespace SQLConnect
 				populateCondsMeds(credentials[9], credentials[10]);
 
 				//await asyncLoadDispensaries();
-
+				console.Text = "Loading messages...";
 				await asyncLoadMessages(user);
-
+				console.Text = "Loading products...";
 				await asyncLoadProducts(credentials[16]);
-
+				console.Text = "Loading orders...";
 				await asyncLoadOrders(user);
-
+				console.Text = "Loading logs...";
 				await asyncLoadLogs(user);
 
 				//If user has no dispensary, display possible choices. Otherwise, go to home page.
@@ -169,8 +169,7 @@ namespace SQLConnect
 			//Process the output.
 			string[] dispensaryObjects = output.Split(new string[] { ";;" }, StringSplitOptions.None);
 
-			//Separate into product components and turn into product objects.
-			//bound as name--category--description--imageurl--incrementtype--baseprice--incbaseprice--dealdiscount--dealflag-incflag;;
+			//bound as 
 			foreach (string obj in dispensaryObjects)
 			{
 				string[] dispensaryComponents = obj.Split(new string[] { "--" }, StringSplitOptions.None);
@@ -263,7 +262,7 @@ namespace SQLConnect
 
 			byte[] saltDefault = { 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20 };
 
-			string authHalf = "GFEDCBA";
+			string authHalf = Statics.Default.getAuthHalf();
 
 			string complete = authHalf + auth;
 
@@ -284,9 +283,9 @@ namespace SQLConnect
 			//Not sure why this value is retrieved in the first place.
 			if (messageObjects[0].Equals(""))
 			{
+				Statics.Default.setMessages(messages);
 				return;
 			}
-
 			//Separate into components and turn into objects.
 			//bound as $title--$msg--$date--$viewed--$from--$id;;
 			foreach (string obj in messageObjects)
@@ -333,6 +332,7 @@ namespace SQLConnect
 			//Not sure why this value is retrieved in the first place.
 			if (orderObjects[0].Equals(""))
 			{
+				Statics.Default.setOrders(orders);
 				return;
 			}
 
@@ -391,6 +391,7 @@ namespace SQLConnect
 			//Not sure why this value is retrieved in the first place.
 			if (logObjects[0].Equals(""))
 			{
+				Statics.Default.setLogs(logs);
 				return;
 			}
 
@@ -450,7 +451,7 @@ namespace SQLConnect
 			Statics.Default.setConds(conditions);
 
 			//Repeat for medications, must split twice.
-			string[] medObjects = meds.Split(new string[] { ";;" }, StringSplitOptions.None);
+			string[] medObjects = meds.Split(new string[] { "##" }, StringSplitOptions.None);
 			ObservableCollection<MedListItem> medications = new ObservableCollection<MedListItem>();
 
 			foreach (string med in medObjects)
@@ -462,7 +463,7 @@ namespace SQLConnect
 				}
 				catch (IndexOutOfRangeException e)
 				{
-					System.Diagnostics.Debug.WriteLine("Medications received from server were not in proper format. w--x--y--z;;");
+					System.Diagnostics.Debug.WriteLine("Medications received from server were not in proper format. w--x--y--z##");
 					System.Diagnostics.Debug.WriteLine(e.StackTrace);
 				}
 			}

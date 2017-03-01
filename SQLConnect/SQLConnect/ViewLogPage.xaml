@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SQLConnect.ViewLogPage"
+		Title="Log Title">
+	<ContentPage.Content>
+			<ScrollView Orientation="Vertical">
+				<RelativeLayout>
+					<BoxView BackgroundColor="#009a9a" Opacity="0.3"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"
+					/>
+					<Label x:Name="logDate" TextColor="Teal" Text="2017-01-01" HorizontalTextAlignment="Center" FontSize="18"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-75}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=150}"/>
+					<Label x:Name="pubLbl" TextColor="Teal" FontSize="18" Text="Public"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=logDate, Property=Y,Factor=1,Constant=30}"
+						/>
+					<Label x:Name="impLbl" TextColor="Teal" FontSize="18" Text="Important"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Width,Factor=1,Constant=30}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=0}"
+						/>
+					<Label x:Name="medLbl" TextColor="Teal" FontSize="18" Text="Medication:" HorizontalTextAlignment="End"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=0}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
+					<Label x:Name="med1Lbl" TextColor="Teal" FontSize="18" Text="" HorizontalTextAlignment="End"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=medLbl, Property=Y,Factor=1,Constant=30}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
+					<Label x:Name="med2Lbl" TextColor="Teal" FontSize="18" Text="" HorizontalTextAlignment="End"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med1Lbl, Property=Y,Factor=1,Constant=30}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
+					<Label x:Name="med3Lbl" TextColor="Teal" FontSize="18" Text="" HorizontalTextAlignment="End"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med2Lbl, Property=Y,Factor=1,Constant=30}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
+					<Switch x:Name="pubSwitch" IsEnabled="false"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=X, Factor=1,Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=30}"
+						/>
+					<Switch x:Name="impSwitch" IsEnabled="false"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=impLbl, Property=X, Factor=1,Constant=15}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=impLbl, Property=Y,Factor=1,Constant=30}"
+						/>
+					<Editor x:Name="logTextBox" TextColor="Teal" BackgroundColor="#fcfcfc" IsEnabled="false"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0,Constant=15}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med3Lbl, Property=Y,Factor=1,Constant=35}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=-30}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=100}"
+						/>
+				</RelativeLayout>
+			</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

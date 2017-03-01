@@ -33,15 +33,15 @@
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=0}"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
-					<Label x:Name="med1Lbl" TextColor="Teal" FontSize="18" Text="Test 1" HorizontalTextAlignment="End"
+					<Label x:Name="med1Lbl" TextColor="Teal" FontSize="18" Text="" HorizontalTextAlignment="End"
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=medLbl, Property=Y,Factor=1,Constant=30}"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
-					<Label x:Name="med2Lbl" TextColor="Teal" FontSize="18" Text="Test 2" HorizontalTextAlignment="End"
+					<Label x:Name="med2Lbl" TextColor="Teal" FontSize="18" Text="" HorizontalTextAlignment="End"
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med1Lbl, Property=Y,Factor=1,Constant=30}"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
-					<Label x:Name="med3Lbl" TextColor="Teal" FontSize="18" Text="Test 3" HorizontalTextAlignment="End"
+					<Label x:Name="med3Lbl" TextColor="Teal" FontSize="18" Text="" HorizontalTextAlignment="End"
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=med2Lbl, Property=Y,Factor=1,Constant=30}"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>

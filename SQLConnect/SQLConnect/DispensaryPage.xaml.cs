@@ -19,15 +19,20 @@ namespace SQLConnect
 
 			if (Statics.Default.isOffline())
 			{
-				dispItems.Add(new DispListItem { dispName = "Example Dispensary", dispAddress = "6436 Boulder Drive", dispCity = "Kelowna, BC", dispImgPath = "jarspic.jpg" });
-				dispItems.Add(new DispListItem { dispName = "Example Dispensary 2", dispAddress = "5326 Rock Drive", dispCity = "Vancouver, BC", dispImgPath = "jarspic.jpg" });
-				dispItems.Add(new DispListItem { dispName = "Example Dispensary 3", dispAddress = "5431 Stone Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
-				dispItems.Add(new DispListItem { dispName = "Example Dispensary 4", dispAddress = "6868 Pebble Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
-				dispItems.Add(new DispListItem { dispName = "Example Dispensary 5", dispAddress = "5336 Flint Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary", dispId="1", dispAddress = "6436 Boulder Drive", dispCity = "Kelowna, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 2", dispId = "1", dispAddress = "5326 Rock Drive", dispCity = "Vancouver, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 3", dispId = "1", dispAddress = "5431 Stone Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 4", dispId = "1", dispAddress = "6868 Pebble Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 5", dispId = "1", dispAddress = "5336 Flint Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
 			}
 			else {
 				//Import dispensaries
 				credentials = Statics.Default.getCreds();
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary", dispId = "1", dispAddress = "6436 Boulder Drive", dispCity = "Kelowna, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 2", dispId = "1", dispAddress = "5326 Rock Drive", dispCity = "Vancouver, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 3", dispId = "1", dispAddress = "5431 Stone Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 4", dispId = "1", dispAddress = "6868 Pebble Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
+				dispItems.Add(new DispListItem { dispName = "Example Dispensary 5", dispId = "1", dispAddress = "5336 Flint Drive", dispCity = "Vernon, BC", dispImgPath = "jarspic.jpg" });
 			}
 
 			//if not first time login, make top message invisible and label as choose your dispensary
@@ -42,7 +47,7 @@ namespace SQLConnect
 
 		public async void onDispSelect(object s, ItemTappedEventArgs e)
 		{
-			string newDispensary = ((DispListItem)e.Item).dispName;
+			string newDispensary = ((DispListItem)e.Item).dispId;
 			credentials[16] = newDispensary;
 			Statics.Default.setCreds(credentials);
 

@@ -35,22 +35,22 @@ namespace SQLConnect
 			//Encrypt
 			byte[] saltDefault = {0x20,0x20,0x20,0x20,0x20, 0x20, 0x20, 0x20};
 
-			string authHalf = "GFEDCBA";
+			string authHalf = Statics.Default.getAuthHalf();
 
 			string complete = authHalf + authRetrieved;
 
-			byte[] messageCrypt = Crypto.EncryptAes(message, complete, saltDefault);
+			string messageCrypt = Convert.ToBase64String(Crypto.EncryptAes(message, complete, saltDefault));
 
-			byte[] titleCrypt = Crypto.EncryptAes(titletext, complete, saltDefault);
+			string titleCrypt = Convert.ToBase64String(Crypto.EncryptAes(titletext, complete, saltDefault));
 
 			//Show that we are waiting for a response and wait for it.
 
 			await client.GetAsync("http://cbd-online.net/landon/messageTemplate.php?" +
 			                                     "user=" + WebUtility.UrlEncode(to.Text) +
 			                                     "&sender=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
-			                                     "&msg=" + WebUtility.UrlEncode(Convert.ToBase64String(messageCrypt)) +
+			                                     "&msg=" + WebUtility.UrlEncode(messageCrypt) +
 			                                     "&date=" + WebUtility.UrlEncode(date.ToString("d")) +
-			                                     "&title=" + WebUtility.UrlEncode(Convert.ToBase64String(titleCrypt)));
+			                                     "&title=" + WebUtility.UrlEncode(titleCrypt));
 
 
 			//INSERT FEEDBACK TOAST HERE

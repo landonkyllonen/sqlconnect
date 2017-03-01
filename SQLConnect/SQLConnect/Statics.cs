@@ -10,6 +10,7 @@ namespace SQLConnect
 		//Profile page, etc
 		string[] credentials;
 		string user;
+		string authHalf = "GFEDCBA";
 		ObservableCollection<MessageListItem> messages;
 		ObservableCollection<CondListItem> conds;
 		ObservableCollection<MedListItem> meds;
@@ -32,11 +33,9 @@ namespace SQLConnect
 		MessageListItem msgClicked;
 		ProductListItem prodClicked;
 		OrderListItem orderClicked;
+		LogListItem logClicked;
 		string catClicked;
 		List<ProductListItem> catClickedContents;
-
-
-
 
 		// this is the default static instance you'd use like string text = Settings.Default.SomeSetting;
 		public readonly static Statics Default = new Statics();
@@ -66,6 +65,11 @@ namespace SQLConnect
 		public string getUser()
 		{
 			return user;
+		}
+
+		public string getAuthHalf()
+		{
+			return authHalf;
 		}
 
 		public void setMessages(ObservableCollection<MessageListItem> messages)
@@ -165,6 +169,15 @@ namespace SQLConnect
 		public OrderListItem getOrderClicked()
 		{
 			return orderClicked;
+		}
+
+		public void setLogClicked(LogListItem logClicked)
+		{
+			this.logClicked = logClicked;
+		}
+		public LogListItem getLogClicked()
+		{
+			return logClicked;
 		}
 
 		public void setCatClicked(string catClicked)

@@ -1,14 +1,23 @@
 ﻿using System;
-
+using System.Linq;
 using Xamarin.Forms;
 
 namespace SQLConnect
 {
 	public partial class RegisterPage : ContentPage
 	{
+		private static Random random = new Random();
+
 		public RegisterPage()
 		{
 			InitializeComponent();
+		}
+
+		public static string RandomString(int length)
+		{
+			const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			return new string(Enumerable.Repeat(chars, length)
+			  .Select(s => s[random.Next(s.Length)]).ToArray());
 		}
 
 		public async void register(object s, EventArgs e)
@@ -26,7 +35,7 @@ namespace SQLConnect
 			entries[3] = last.Text;
 			entries[4] = email.Text;
 			entries[5] = phone.Text;
-			entries[6] = "ABCDEFG";//Auth
+			entries[6] = RandomString(9);//Auth
 
 			//Check nulls
 			for (int i = 0; i < entries.Length; i++)
