@@ -263,6 +263,10 @@ namespace SQLConnect
 
 			byte[] saltDefault = { 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20 };
 
+			string authHalf = "GFEDCBA";
+
+			string complete = authHalf + auth;
+
 			//Connect to url.
 			var client = new System.Net.Http.HttpClient();
 
@@ -299,8 +303,8 @@ namespace SQLConnect
 
 				bool viewed = false;
 				if (messageComponents[3].Equals("1")) { viewed = true; }
-				messages.Add(new MessageListItem{msgId = int.Parse(messageComponents[5]), msgContent = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[1]), auth, saltDefault),
-					msgDate = messageComponents[2], msgFrom = messageComponents[4], msgTitle = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[0]), auth, saltDefault), msgViewed = viewed});
+				messages.Add(new MessageListItem{msgId = int.Parse(messageComponents[5]), msgContent = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[1]), complete, saltDefault),
+					msgDate = messageComponents[2], msgFrom = messageComponents[4], msgTitle = Crypto.DecryptAes(Convert.FromBase64String(messageComponents[0]), complete, saltDefault), msgViewed = viewed});
 			}
 
 			//messages now contains all the messages for this user that are not deleted, 
@@ -452,10 +456,17 @@ namespace SQLConnect
 			foreach (string med in medObjects)
 			{
 				string[] medComponents = med.Split(new string[] { "--" }, StringSplitOptions.None);
-				medications.Add(new MedListItem { medName=medComponents[0], medDose=medComponents[1], medFrequency=medComponents[2], medMethod=medComponents[3]});
+				try
+				{
+					medications.Add(new MedListItem { medName = medComponents[0], medDose = medComponents[1], medFrequency = medComponents[2], medMethod = medComponents[3] });
+				}
+				catch (IndexOutOfRangeException e)
+				{
+					System.Diagnostics.Debug.WriteLine("Medications received from server were not in proper format. w--x--y--z;;");
+					System.Diagnostics.Debug.WriteLine(e.StackTrace);
+				}
 			}
 			Statics.Default.setMeds(medications);
-
 		}
 
 		public static string UrlEncodeParameter(string paramToEncode)

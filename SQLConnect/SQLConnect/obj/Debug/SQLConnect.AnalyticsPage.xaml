@@ -6,7 +6,7 @@
 			Title = "Analytics"
 			Icon="icon.png"
 			>
-        <local:HomeTab Title="Home"/>
-		<local:MessagingTab Title="Messaging"/>
-		<local:ProfileTab Title="Profile"/>
+        <local:LogsTab Title="Logs"/>
+		<local:MessagingTab Title="Medical Search"/>
+		<local:ProfileTab Title="Graphs"/>
 </TabbedPage>

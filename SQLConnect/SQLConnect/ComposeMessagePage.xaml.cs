@@ -11,31 +11,41 @@ namespace SQLConnect
 			InitializeComponent();
 		}
 
-		public void sendMessage(object s, EventArgs e)
+		public async void sendMessage(object s, EventArgs e)
 		{
 			s.ToString();
 			e.ToString();
-
-			string auth = Statics.Default.getCreds()[11];
 
 			DateTime date = DateTime.Today;
 
 			string message = content.Text;
 
 			string titletext = title.Text;
-			//Encrypt
-			byte[] saltDefault = {0x20,0x20,0x20,0x20,0x20, 0x20, 0x20, 0x20};
-
-			byte[] messageCrypt = Crypto.EncryptAes(message, auth, saltDefault);
-
-			byte[] titleCrypt = Crypto.EncryptAes(titletext, auth, saltDefault);
 
 			//Connect to url.
 			var client = new System.Net.Http.HttpClient();
 
 			//Show that we are waiting for a response and wait for it.
 
-			client.GetAsync("http://cbd-online.net/landon/messageTemplate.php?" +
+			var response = await client.GetAsync("http://cbd-online.net/landon/getAuth.php?" +
+			                                     "user=" + WebUtility.UrlEncode(to.Text));
+
+			var authRetrieved = await response.Content.ReadAsStringAsync();
+
+			//Encrypt
+			byte[] saltDefault = {0x20,0x20,0x20,0x20,0x20, 0x20, 0x20, 0x20};
+
+			string authHalf = "GFEDCBA";
+
+			string complete = authHalf + authRetrieved;
+
+			byte[] messageCrypt = Crypto.EncryptAes(message, complete, saltDefault);
+
+			byte[] titleCrypt = Crypto.EncryptAes(titletext, complete, saltDefault);
+
+			//Show that we are waiting for a response and wait for it.
+
+			await client.GetAsync("http://cbd-online.net/landon/messageTemplate.php?" +
 			                                     "user=" + WebUtility.UrlEncode(to.Text) +
 			                                     "&sender=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
 			                                     "&msg=" + WebUtility.UrlEncode(Convert.ToBase64String(messageCrypt)) +
@@ -45,7 +55,7 @@ namespace SQLConnect
 
 			//INSERT FEEDBACK TOAST HERE
 
-			Navigation.PopModalAsync();
+			await Navigation.PopModalAsync();
 		}
 	}
 }

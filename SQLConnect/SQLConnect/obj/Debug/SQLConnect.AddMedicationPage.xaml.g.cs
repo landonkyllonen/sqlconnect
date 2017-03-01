@@ -29,12 +29,16 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Entry medMethodEntry;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label console;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(AddMedicationPage));
             medNameEntry = this.FindByName <global::Xamarin.Forms.Entry>("medNameEntry");
             medDoseEntry = this.FindByName <global::Xamarin.Forms.Entry>("medDoseEntry");
             medFreqEntry = this.FindByName <global::Xamarin.Forms.Entry>("medFreqEntry");
             medMethodEntry = this.FindByName <global::Xamarin.Forms.Entry>("medMethodEntry");
+            console = this.FindByName <global::Xamarin.Forms.Label>("console");
         }
     }
 }

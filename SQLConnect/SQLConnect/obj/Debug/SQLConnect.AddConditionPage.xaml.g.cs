@@ -20,9 +20,13 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Entry condNameEntry;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label console;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(AddConditionPage));
             condNameEntry = this.FindByName <global::Xamarin.Forms.Entry>("condNameEntry");
+            console = this.FindByName <global::Xamarin.Forms.Label>("console");
         }
     }
 }

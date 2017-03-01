@@ -1,0 +1,16 @@
+﻿Implement proper message encryption: (SQLConnectPage.cs & ComposeMessagePage.cs & MessagesTab.cs)
+	Right now everyone has same auth, secure over connection, but not with unwanted db access.
+	Solution: Retrieve recipient's auth when sending, needs to be done in c#, can't send unencrypted details to php.
+				As a bonus, keep auth for decryption in two parts, one part static in c#, other part unique to every user on db.
+				This way, access to db cannot give whole key to decryption.
+
+/-----------Complete ^
+Change auths in db. Change meds in db.
+
+Implement phps and format default values once able to access ftp and SQL. Get products working again.
+
+Implement log uploads (input validation) and imports properly. (CreateLogPage.cs)
+
+Implement 2 more analytics tabs.
+
+Implement feedback, will either have to do this with toasts in android and something else in ios, or find a cross-platform method.

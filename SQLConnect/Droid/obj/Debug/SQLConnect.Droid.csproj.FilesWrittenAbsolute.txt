@@ -54,3 +54,5 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/logout.png
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/medkit.png
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/pill.png
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/group.png
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/important.png
