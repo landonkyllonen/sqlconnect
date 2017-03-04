@@ -2,10 +2,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/CreateLogPage.xaml.cs">
     <Files>
       <File FileName="SQLConnect/Statics.cs" Line="178" Column="37" />
-      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="86" Column="40" />
-      <File FileName="SQLConnect/LogsTab.cs" Line="173" Column="51" />
+      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="438" Column="1" />
       <File FileName="SQLConnect/CreateLogPage.xaml.cs" Line="166" Column="61" />
-      <File FileName="SQLConnect/CreateLogPage.xaml" Line="2" Column="60" />
+      <File FileName="SQLConnect/To Do List.txt" Line="13" Column="85" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
@@ -18,7 +17,6 @@
       <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="52" column="1" />
       <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="53" column="1" />
       <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="58" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/SQLConnectPage.xaml.cs" line="438" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

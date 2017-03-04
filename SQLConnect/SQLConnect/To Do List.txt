@@ -4,14 +4,22 @@
 				As a bonus, keep auth for decryption in two parts, one part static in c#, other part unique to every user on db.
 				This way, access to db cannot give whole key to decryption.
 
-/-----------Complete ^
 Change auths in db. Change meds in db.
 
 Implement phps and format default values once able to access ftp and SQL. Get products working again.
+
+Add labels to medication list.
+
+Setup log creation scheme on db and change phps to support this.
+
+Get profile saving working properly. (Update phps and save med/conds upon addition.)
+/-----------Complete ^
+Implement med/cond deletion.
 
 Implement log uploads (input validation) and imports properly. (CreateLogPage.cs)
 
 Implement 2 more analytics tabs.
 
-Implement feedback, will either have to do this with toasts in android and something else in ios, or find a cross-platform method.
+Implement feedback all-around, will either have to do this with toasts in android and something else in ios, or find a cross-platform method.
 
+Setup tables to track which users have which medications and conditions to facilitate search, need to edit phps to utilize these.

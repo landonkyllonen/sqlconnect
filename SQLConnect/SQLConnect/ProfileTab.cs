@@ -519,9 +519,24 @@ namespace SQLConnect
 			                                     "&conds=" + credentials[9] + 
 			                                     "&meds=" + credentials[10]);
 
-			await response.Content.ReadAsStringAsync();
+			var output = await response.Content.ReadAsStringAsync();
 
 			//If output says it was successful, then also change locally.
+			/*$firstname; ;$lastname; ;$email; ;$phone; ;$body; ;$blood; ;$energy; ;$ctype; ;$ancestry; ;$condInfo; 
+				 ;$medInfo; ;$auth; ;$authorized; ;$admin; ;$reviewed; ;$userID; ;$dispensary"*/
+			if (output.Equals("True")){
+				//Success
+				credentials[2] = email.Text;
+				credentials[3] = phone.Text;
+				credentials[4] = bodytypes[savedBmiIndex];
+				credentials[5] = bloodtypes[savedBloodIndex];
+				credentials[6] = energytypes[savedEnergyIndex];
+				credentials[7] = cancertypes[savedCancerIndex];
+				credentials[8] = ancestry.Text;
+				Statics.Default.setCreds(credentials);
+
+				//Provide feedback.
+			}
 		}
 
 		public void changeMeds(object s, EventArgs e)

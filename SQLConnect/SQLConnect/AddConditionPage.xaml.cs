@@ -11,7 +11,7 @@ namespace SQLConnect
 			InitializeComponent();
 		}
 
-		public void addCondition(object s, EventArgs e)
+		public async void addCondition(object s, EventArgs e)
 		{
 			//Check if condition is empty or already existing.
 			if (String.IsNullOrEmpty(condNameEntry.Text) || Statics.Default.getCreds()[9].Contains(condNameEntry.Text))
@@ -19,21 +19,39 @@ namespace SQLConnect
 				console.Text = "Condition cannot be blank or already added.";
 				return;
 			}
+			else {
+				//Upload to db.
+				//Connect to url.
+				var client = new System.Net.Http.HttpClient();
 
-			//Add the condition to current conditions and upload to db.
-			ObservableCollection<CondListItem> condsListPulled = Statics.Default.getConds();
-			string[] creds = Statics.Default.getCreds();
+				//Show that we are waiting for a response and wait for it.
 
-			CondListItem newCond = new CondListItem { condName=condNameEntry.Text };
-			string appendCond = "--" + newCond;
+				var response = await client.GetAsync("http://cbd-online.net/landon/addCondition.php?" +
+													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
+													 "&name=" + System.Net.WebUtility.UrlEncode(condNameEntry.Text));
 
-			condsListPulled.Add(newCond);
-			creds[9] = creds[9] + appendCond;
+				var output = await response.Content.ReadAsStringAsync();
+				//If successful, add the condition to current conditions.
 
-			Statics.Default.setConds(condsListPulled);
-			Statics.Default.setCreds(creds);
+				if (output.Equals("true"))
+				{
+					//Feedback.
+				}
 
-			Navigation.PopModalAsync();
+				ObservableCollection<CondListItem> condsListPulled = Statics.Default.getConds();
+				string[] creds = Statics.Default.getCreds();
+
+				CondListItem newCond = new CondListItem { condName = condNameEntry.Text };
+				string appendCond = "--" + newCond;
+
+				condsListPulled.Add(newCond);
+				creds[9] = creds[9] + appendCond;
+
+				Statics.Default.setConds(condsListPulled);
+				Statics.Default.setCreds(creds);
+
+				await Navigation.PopModalAsync();
+			}
 		}
 	}
 }

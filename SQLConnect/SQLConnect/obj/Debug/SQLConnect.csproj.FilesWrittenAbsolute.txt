@@ -52,3 +52,5 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.AddConditionPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.CreateLogPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.CreateLogPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ViewLogPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ViewLogPage.xaml.g.cs
