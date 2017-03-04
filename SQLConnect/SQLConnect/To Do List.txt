@@ -14,6 +14,8 @@ Setup log creation scheme on db and change phps to support this.
 
 Get profile saving working properly. (Update phps and save med/conds upon addition.)
 /-----------Complete ^
+Limit feedback to med/cond combinations that havent been done already.
+
 Implement med/cond deletion.
 
 Implement log uploads (input validation) and imports properly. (CreateLogPage.cs)

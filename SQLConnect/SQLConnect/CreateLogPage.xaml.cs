@@ -143,6 +143,11 @@ namespace SQLConnect
 				if (pubSwitch.IsToggled){pub = "1";}
 				if (impSwitch.IsToggled){imp = "1";}
 
+				string pos = "0";
+				string neg = "0";
+				if (posSwitch.IsToggled) { pos = "1"; }
+				if (negSwitch.IsToggled) { neg = "1"; }
+
 				string medstring = "";
 
 				foreach (string medname in medNames)
@@ -161,7 +166,13 @@ namespace SQLConnect
 
 				var response = await client.GetAsync("http://cbd-online.net/landon/uploadLogWithReview.php?" +
 				                                     "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-				                                     "&log=" + System.Net.WebUtility.UrlEncode(logstring));
+				                                     "&log=" + System.Net.WebUtility.UrlEncode(logstring) +
+				                                     "&oldFeedback=" + System.Net.WebUtility.UrlEncode(Statics.Default.getCreds()[14]) +
+				                                     "&med=" + System.Net.WebUtility.UrlEncode(extraMed.Items[extraMed.SelectedIndex]) +
+				                                     "&cond=" + System.Net.WebUtility.UrlEncode(extraCond.Items[extraCond.SelectedIndex]) +
+				                                     "&pos=" + System.Net.WebUtility.UrlEncode(pos) +
+				                                     "&neg=" + System.Net.WebUtility.UrlEncode(neg) +
+				                                     "&note=" + System.Net.WebUtility.UrlEncode(negText.Text));
 
 				var output = await response.Content.ReadAsStringAsync();
 
