@@ -18,13 +18,17 @@ namespace SQLConnect
 			InitializeComponent();
 
 			userentry.SetValue(Entry.TextProperty, "l");
+			userentry.Completed += (sender, e) => passentry.Focus();
 			passentry.SetValue(Entry.TextProperty, "l");
+			passentry.Completed += (sender, e) => logIn(sender,e);
 			rememberSwitch.SetValue(Switch.IsToggledProperty, true);
 		}
 
 		public async void logIn(object s, EventArgs e){
 			s.ToString();
 			e.ToString();
+
+			console.TextColor = Color.Red;
 
 			//Set to online
 			Statics.Default.setOffline(false);
@@ -70,8 +74,6 @@ namespace SQLConnect
 					credentials[i - 1] = words[i];
 				}
 
-				console.SetValue(Label.TextProperty, "Success!");
-
 				//Update static vars
 				Statics.Default.setCreds(credentials);
 				Statics.Default.setUser(user);
@@ -87,6 +89,8 @@ namespace SQLConnect
 				await asyncLoadOrders(user);
 				console.Text = "Loading logs...";
 				await asyncLoadLogs(user);
+				console.TextColor = Color.Teal;
+				console.Text = "Success!";
 
 				//If user has no dispensary, display possible choices. Otherwise, go to home page.
 				/*if (credentials[16].Equals(""))

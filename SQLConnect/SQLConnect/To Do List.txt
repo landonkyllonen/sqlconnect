@@ -13,11 +13,13 @@ Add labels to medication list.
 Setup log creation scheme on db and change phps to support this.
 
 Get profile saving working properly. (Update phps and save med/conds upon addition.)
-/-----------Complete ^
+/
 Limit feedback to med/cond combinations that havent been done already.
 
 Implement med/cond deletion.
 
+Make all current entries progress to the next entry when done is pressed on the keyboard.
+/-----------Complete ^
 Implement log uploads (input validation) and imports properly. (CreateLogPage.cs)
 
 Implement 2 more analytics tabs.

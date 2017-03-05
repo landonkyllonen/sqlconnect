@@ -9,14 +9,20 @@ namespace SQLConnect
 		public AddConditionPage()
 		{
 			InitializeComponent();
+			condNameEntry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
 		}
 
 		public async void addCondition(object s, EventArgs e)
 		{
 			//Check if condition is empty or already existing.
-			if (String.IsNullOrEmpty(condNameEntry.Text) || Statics.Default.getCreds()[9].Contains(condNameEntry.Text))
+			if (String.IsNullOrEmpty(condNameEntry.Text))
 			{
-				console.Text = "Condition cannot be blank or already added.";
+				console.Text = "Condition cannot be blank.";
+				return;
+			}
+			else if (Statics.Default.getConds().Contains(new CondListItem { condName=condNameEntry.Text}))
+			{
+				console.Text = "Condition has already been added.";
 				return;
 			}
 			else {

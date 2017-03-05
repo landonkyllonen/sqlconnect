@@ -75,7 +75,8 @@ namespace SQLConnect
 				HorizontalTextAlignment = TextAlignment.Center,
 				WidthRequest = 125,
 				Text = credentials[3],
-				TextColor = Color.White
+				TextColor = Color.White,
+				Keyboard = Keyboard.Telephone
 			};
 
 			StackLayout upperThree = new StackLayout

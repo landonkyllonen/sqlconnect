@@ -11,6 +11,14 @@ namespace SQLConnect
 		public RegisterPage()
 		{
 			InitializeComponent();
+
+			first.Completed+= (sender, e) => last.Focus();
+			first.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
+			last.Completed += (sender, e) => email.Focus();
+			last.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
+			email.Completed += (sender, e) => phone.Focus();
+			phone.Completed += (sender, e) => user.Focus();
+			user.Completed += (sender, e) => pass.Focus();
 		}
 
 		public static string RandomString(int length)

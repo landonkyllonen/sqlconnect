@@ -55,3 +55,6 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/pill.png
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/group.png
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/important.png
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Toasts.Forms.Plugin.Abstractions.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Toasts.Forms.Plugin.Droid.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/pillblank.png

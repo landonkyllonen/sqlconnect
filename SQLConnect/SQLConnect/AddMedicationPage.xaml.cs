@@ -9,17 +9,21 @@ namespace SQLConnect
 		public AddMedicationPage()
 		{
 			InitializeComponent();
+			medNameEntry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
+			medFreqEntry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
+			medMethodEntry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
 		}
 
 		public async void addMedication(object s, EventArgs e)
 		{
+			MedListItem newMed = new MedListItem { medName = medNameEntry.Text, medDose = medDoseEntry.Text, medFrequency = medFreqEntry.Text, medMethod = medMethodEntry.Text };
 			//Check that fields are not empty and that medication does not already exist.
 			if (String.IsNullOrEmpty(medNameEntry.Text) || String.IsNullOrEmpty(medDoseEntry.Text) || String.IsNullOrEmpty(medFreqEntry.Text) || String.IsNullOrEmpty(medMethodEntry.Text))
 			{
 				console.Text = "Fields cannot be blank.";
 				return;
 			}
-			else if (Statics.Default.getCreds()[10].Contains(medNameEntry.Text))
+			else if (Statics.Default.getMeds().Contains(newMed))
 			{
 				console.Text = "You are already taking this medication.";
 				return;
@@ -48,7 +52,6 @@ namespace SQLConnect
 				ObservableCollection<MedListItem> medsPulled = Statics.Default.getMeds();
 				string[] creds = Statics.Default.getCreds();
 
-				MedListItem newMed = new MedListItem { medName = medNameEntry.Text, medDose = medDoseEntry.Text, medFrequency = medFreqEntry.Text, medMethod = medMethodEntry.Text };
 				string medsAppend = ";;" + newMed.medName + "--" + newMed.medDose + "--" + newMed.medFrequency + "--" + newMed.medMethod;
 
 				medsPulled.Add(newMed);

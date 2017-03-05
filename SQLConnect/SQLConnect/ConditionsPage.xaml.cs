@@ -16,9 +16,41 @@ namespace SQLConnect
 			condList.ItemTapped += onItemSelect;
 		}
 
-		void onItemSelect(object sender, ItemTappedEventArgs e)
+		async void onItemSelect(object sender, ItemTappedEventArgs e)
 		{
-			//Display Edit/Delete options.
+			//Display confirmation dialog.
+			var answer = await DisplayAlert("Delete?", "Do you really want to delete this item?", "Yes", "No");
+
+			if (answer)
+			{
+				//Delete cond from db.
+				//Connect to url.
+				var client = new System.Net.Http.HttpClient();
+
+				//Show that we are waiting for a response and wait for it.
+
+				var response = await client.GetAsync("http://cbd-online.net/landon/removeDetail.php?" +
+													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
+														 "&type=" + System.Net.WebUtility.UrlEncode("Conditions") +
+				                                     "&itemname=" + System.Net.WebUtility.UrlEncode(((CondListItem)e.Item).condName));
+
+				var output = await response.Content.ReadAsStringAsync();
+
+				//and locally.
+				ObservableCollection<CondListItem> pulled = Statics.Default.getConds();
+				foreach (CondListItem cond in pulled)
+				{
+					if (cond.condName.Equals(((CondListItem)e.Item).condName))
+					{
+						pulled.Remove(cond);
+						break;
+					}
+				}
+
+				//Reflect changes to static variable.
+				Statics.Default.setConds(pulled);
+
+			}
 			return;
 		}
 

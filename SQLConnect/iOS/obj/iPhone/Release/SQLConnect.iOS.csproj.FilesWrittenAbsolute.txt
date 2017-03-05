@@ -31,3 +31,4 @@
 /Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/pill.png
 /Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/important.png
 /Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/group.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/pillblank.png

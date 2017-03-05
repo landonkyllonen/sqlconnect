@@ -9,6 +9,10 @@ namespace SQLConnect
 		public ComposeMessagePage()
 		{
 			InitializeComponent();
+			title.Completed += (sender, e) => to.Focus();
+			to.Completed += (sender, e) => content.Focus();
+			title.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
+			content.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
 		}
 
 		public async void sendMessage(object s, EventArgs e)

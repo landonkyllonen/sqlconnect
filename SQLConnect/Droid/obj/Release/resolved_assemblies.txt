@@ -24,6 +24,8 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/PInvoke.NCrypt.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Validation.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/PCLCrypto.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Toasts.Forms.Plugin.Abstractions.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Toasts.Forms.Plugin.Droid.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/mscorlib.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/System.Net.Http.dll

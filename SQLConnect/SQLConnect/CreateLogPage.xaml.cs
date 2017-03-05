@@ -9,18 +9,26 @@ namespace SQLConnect
 	{
 		ObservableCollection<MedListItem> meds;
 		ObservableCollection<CondListItem> conds;
+		List<string> condsOriginal;
 
 		string[] medNames;
+
+		string[] feedbackPairs;
 
 		public CreateLogPage()
 		{
 			InitializeComponent();
+
+			logTextBox.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
+
+			feedbackPairs = Statics.Default.getCreds()[14].Split(new string[] { "##" }, StringSplitOptions.None);
 
 			DateTime date = DateTime.Today;
 			logDate.Text = date.ToString("d");
 
 			meds = Statics.Default.getMeds();
 			conds = Statics.Default.getConds();
+			condsOriginal = new List<string>();
 
 			medNames = new string[meds.Count];
 
@@ -32,14 +40,20 @@ namespace SQLConnect
 			}
 
 			//Populate extra pickers.
+			extraCond.Items.Add("None");
+			condsOriginal.Add("None");
 			foreach (CondListItem cond in conds)
 			{
 				extraCond.Items.Add(cond.condName);
+				condsOriginal.Add(cond.condName);
 			}
+
+			extraMed.Items.Add("None");
 			foreach (string med in medNames)
 			{
 				extraMed.Items.Add(med);
 			}
+			extraMed.SelectedIndexChanged += filterCondChoices;
 
 			//Set meds if available.
 			if (meds.Count > 0){med1Lbl.Text = medNames[0];}
@@ -69,6 +83,38 @@ namespace SQLConnect
 		{
 			string selection = quickPick.Items[quickPick.SelectedIndex];
 			logTextBox.Text = selection;
+		}
+
+		void filterCondChoices(object sender, EventArgs e)
+		{
+			//Add removed choices back.
+			extraCond.Items.Clear();
+			foreach (string c in condsOriginal)
+			{
+				extraCond.Items.Add(c);
+			}
+			//Set cond choice back to nothing.
+			extraCond.SelectedIndex = 0;
+
+			string medname = extraMed.Items[extraMed.SelectedIndex];
+
+			List<string> associated = new List<string>();
+			//Loop through the previous feedback pairs, find conds associated with this medname and remove from choices.
+			foreach (string pair in feedbackPairs)
+			{
+				string[] medcondpair = pair.Split(new string[] { "--" }, StringSplitOptions.None);
+				//will be of length 2, med--cond.
+				if (medname.Equals(medcondpair[0]))
+				{
+					associated.Add(medcondpair[1]);
+				}
+			}
+
+			//Now loop through cond picker and remove associated cond choices.
+			foreach (string s in extraCond.Items)
+			{
+				if (associated.Contains(s)){extraCond.Items.Remove(s);}
+			}
 		}
 
 		public void toggleFeedback(object s, EventArgs e)
