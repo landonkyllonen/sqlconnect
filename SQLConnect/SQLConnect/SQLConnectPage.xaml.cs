@@ -35,6 +35,8 @@ namespace SQLConnect
 			//Log in operation
 			console.SetValue(Label.TextProperty, "Connecting to server...");
 
+			//Set defaults.
+			Statics.Default.setCartItems(new ObservableCollection<CartListItem>());
 
 			//Get info for submit.
 			user = userentry.Text;
@@ -140,6 +142,7 @@ namespace SQLConnect
 			Statics.Default.setMessages(new ObservableCollection<MessageListItem>());
 			Statics.Default.setProducts(new Product[0]);
 			Statics.Default.setUser("");
+			Statics.Default.setCartItems(new ObservableCollection<CartListItem>());
 			Statics.Default.setOrders(new ObservableCollection<OrderListItem>());
 			Statics.Default.setLogs(new ObservableCollection<LogListItem>());
 

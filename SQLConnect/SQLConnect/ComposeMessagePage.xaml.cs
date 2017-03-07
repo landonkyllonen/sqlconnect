@@ -6,9 +6,17 @@ namespace SQLConnect
 {
 	public partial class ComposeMessagePage : ContentPage
 	{
-		public ComposeMessagePage()
+		public ComposeMessagePage(string replytitle, string replyto)
 		{
 			InitializeComponent();
+
+			if (!String.IsNullOrEmpty(replytitle) && !String.IsNullOrEmpty(replyto))
+			{
+				title.Text = replytitle;
+				to.Text = replyto;
+				to.IsEnabled = false;
+			}
+
 			title.Completed += (sender, e) => to.Focus();
 			to.Completed += (sender, e) => content.Focus();
 			title.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
@@ -49,17 +57,29 @@ namespace SQLConnect
 
 			//Show that we are waiting for a response and wait for it.
 
-			await client.GetAsync("http://cbd-online.net/landon/messageTemplate.php?" +
+			var response2 = await client.GetAsync("http://cbd-online.net/landon/messageTemplate.php?" +
 			                                     "user=" + WebUtility.UrlEncode(to.Text) +
 			                                     "&sender=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
 			                                     "&msg=" + WebUtility.UrlEncode(messageCrypt) +
 			                                     "&date=" + WebUtility.UrlEncode(date.ToString("d")) +
 			                                     "&title=" + WebUtility.UrlEncode(titleCrypt));
 
+			var output = await response2.Content.ReadAsStringAsync();
 
-			//INSERT FEEDBACK TOAST HERE
+			switch (output)
+			{
+				case "True":
+					await DisplayAlert("Success", "Message Sent!", "OK");
+					await Navigation.PopModalAsync();
+					break;
+				case "False":
+					await DisplayAlert("Error", "User not found.", "OK");
+					break;
+				default:
+					await DisplayAlert("Error", "Sorry, for some reason the message was not sent.", "OK");
+					break;
+			}
 
-			await Navigation.PopModalAsync();
 		}
 	}
 }

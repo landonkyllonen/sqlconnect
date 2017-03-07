@@ -145,7 +145,7 @@ namespace SQLConnect
 
 		public async void toCompose(object s, EventArgs e)
 		{
-			NavigationPage nav = new NavigationPage(new ComposeMessagePage());
+			NavigationPage nav = new NavigationPage(new ComposeMessagePage(null, null));
 			NavigationPage.SetHasBackButton(nav, true);
 			await Navigation.PushModalAsync(nav);
 		}

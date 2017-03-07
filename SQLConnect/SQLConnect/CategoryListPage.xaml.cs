@@ -52,7 +52,10 @@ namespace SQLConnect
 
 		void onItemSelect(object sender, ItemTappedEventArgs e)
 		{
-			return;
+			Statics.Default.setProdClicked((ProductListItem)e.Item);
+			NavigationPage nav = new NavigationPage(new ProductPage());
+			NavigationPage.SetHasBackButton(nav, true);
+			Navigation.PushModalAsync(nav);
 		}
 	}
 

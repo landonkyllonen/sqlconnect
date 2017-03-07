@@ -132,6 +132,7 @@ namespace SQLConnect
 			if (String.IsNullOrEmpty(title.Text) || String.IsNullOrEmpty(logTextBox.Text))
 			{
 				//Give error.
+				await DisplayAlert("Error", "No fields can be left blank. (Title and log entry)", "OK");
 			}
 			else {
 				//Submit log to db.
@@ -179,6 +180,7 @@ namespace SQLConnect
 			if (String.IsNullOrEmpty(title.Text) || String.IsNullOrEmpty(logTextBox.Text)||extraMed.SelectedIndex==0||extraCond.SelectedIndex==0)
 			{
 				//Give error.
+				await DisplayAlert("Error", "No fields can be left blank. Press cancel if you do no not want to provide feedback.", "OK");
 			}
 			else {
 				//Submit log to db.

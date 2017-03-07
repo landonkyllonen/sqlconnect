@@ -23,6 +23,12 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/glass.jpg
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/edibles.jpg
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/blueberryyumyumi.jpg
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/logout.png
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/medkit.png
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/pill.png
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/group.png
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/important.png
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/pillblank.png
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/R.cs.flag
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/com.landonkyllonen.sqlconnect-Signed.apk
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/uploadflags.txt
@@ -48,13 +54,6 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/PInvoke.NCrypt.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Validation.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/PCLCrypto.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/CryptSharp.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/logout.png
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/medkit.png
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/pill.png
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/group.png
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/important.png
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Toasts.Forms.Plugin.Abstractions.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Toasts.Forms.Plugin.Droid.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/pillblank.png
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.dll

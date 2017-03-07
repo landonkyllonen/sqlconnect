@@ -18,6 +18,7 @@ namespace SQLConnect
 
 		//Products Tab
 		Product[] products; //Dispensary specific item info, only has url for pic to be downloaded.
+		ObservableCollection<CartListItem> cartItems;
 		ObservableCollection<OrderListItem> orders;
 
 		//Analytics Tab
@@ -106,6 +107,15 @@ namespace SQLConnect
 		public Product[] getProducts()
 		{
 			return products;
+		}
+
+		public void setCartItems(ObservableCollection<CartListItem> cartItems)
+		{
+			this.cartItems = cartItems;
+		}
+		public ObservableCollection<CartListItem> getCartItems()
+		{
+			return cartItems;
 		}
 
 		public void setOrders(ObservableCollection<OrderListItem> orders)

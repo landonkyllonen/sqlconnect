@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -20,24 +21,34 @@ namespace SQLConnect
 
 		async void reply(object sender, EventArgs e)
 		{
-			NavigationPage nav = new NavigationPage(new ComposeMessagePage());
+			NavigationPage nav = new NavigationPage(new ComposeMessagePage("Re:"+msgClicked.msgTitle, msgClicked.msgFrom));
 			NavigationPage.SetHasBackButton(nav, true);
 			await Navigation.PushModalAsync(nav);
 		}
 
 		async void delete(object sender, EventArgs e)
 		{
-			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var answer = await DisplayAlert("Delete?", "Do you really want to delete this message?", "Yes", "No");
 
-			//Show that we are waiting for a response and wait for it.
+			if (answer)
+			{
+				//Connect to url.
+				var client = new System.Net.Http.HttpClient();
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/deleteMessage.php?" +
-			                                     "id=" + Statics.Default.UrlEncodeParameter(msgClicked.msgId.ToString()));
+				//Show that we are waiting for a response and wait for it.
 
-			await response.Content.ReadAsStringAsync();
+				var response = await client.GetAsync("http://cbd-online.net/landon/deleteMessage.php?" +
+													 "id=" + Statics.Default.UrlEncodeParameter(msgClicked.msgId.ToString()));
 
-			await Navigation.PopModalAsync();
+				await response.Content.ReadAsStringAsync();
+
+				//Remove locally
+				ObservableCollection<MessageListItem> pulled = Statics.Default.getMessages();
+				pulled.Remove(msgClicked);
+				Statics.Default.setMessages(pulled);
+
+				await Navigation.PopModalAsync();
+			}
 		}
 	}
 }

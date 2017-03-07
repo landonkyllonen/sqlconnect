@@ -504,6 +504,8 @@ namespace SQLConnect
 			s.ToString();
 			e.ToString();
 
+			credentials = Statics.Default.getCreds();
+
 			//Connect to url.
 			var client = new System.Net.Http.HttpClient();
 
@@ -525,7 +527,8 @@ namespace SQLConnect
 			//If output says it was successful, then also change locally.
 			/*$firstname; ;$lastname; ;$email; ;$phone; ;$body; ;$blood; ;$energy; ;$ctype; ;$ancestry; ;$condInfo; 
 				 ;$medInfo; ;$auth; ;$authorized; ;$admin; ;$reviewed; ;$userID; ;$dispensary"*/
-			if (output.Equals("True")){
+			if (output.Equals("True"))
+			{
 				//Success
 				credentials[2] = email.Text;
 				credentials[3] = phone.Text;
@@ -537,6 +540,10 @@ namespace SQLConnect
 				Statics.Default.setCreds(credentials);
 
 				//Provide feedback.
+				await DisplayAlert("Success", "Profile saved successfully!", "OK");
+			}
+			else {
+				await DisplayAlert("Error", "Sorry, we were unable to save your profile.", "OK");
 			}
 		}
 

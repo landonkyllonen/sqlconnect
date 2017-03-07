@@ -19,11 +19,19 @@ Limit feedback to med/cond combinations that havent been done already.
 Implement med/cond deletion.
 
 Make all current entries progress to the next entry when done is pressed on the keyboard.
-/-----------Complete ^
+/
+On reply, fill title with a default and lock 'to' field to the sender's name.
+
 Implement log uploads (input validation) and imports properly. (CreateLogPage.cs)
+/
+Started layout for a product's page when tapped. currently available for regular increment types only.
+
+Introduced feedback from db operations through the use of DisplayAlert, which is not as good as toast, but works.
+/-----------Complete ^
+Create layout for a medical increment (flowers) product page.
 
 Implement 2 more analytics tabs.
 
-Implement feedback all-around, will either have to do this with toasts in android and something else in ios, or find a cross-platform method.
+Find a better method of feedback than displayalert?
 
-Setup tables to track which users have which medications and conditions to facilitate search, need to edit phps to utilize these.
+Setup tables to track which users have which medications and conditions to facilitate search, need to create phps to utilize these.

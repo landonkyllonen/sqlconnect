@@ -1,26 +1,18 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/SQLConnectPage.xaml.cs">
     <Files>
+      <File FileName="SQLConnect/To Do List.txt" Line="37" Column="132" />
+      <File FileName="SQLConnect/ProductPage.xaml" Line="35" Column="105" />
+      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="38" Column="79" />
+      <File FileName="SQLConnect/CartTab.cs" Line="89" Column="4" />
+      <File FileName="SQLConnect/ProfileTab.cs" Line="28" Column="38" />
+      <File FileName="SQLConnect/Statics.cs" Line="116" Column="43" />
       <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="23" Column="58" />
-      <File FileName="SQLConnect/To Do List.txt" Line="27" Column="81" />
-      <File FileName="SQLConnect/ProfileTab.cs" Line="80" Column="6" />
-      <File FileName="SQLConnect/CreateLogPage.xaml" Line="56" Column="76" />
-      <File FileName="SQLConnect/CreateLogPage.xaml.cs" Line="22" Column="76" />
-      <File FileName="SQLConnect/RegisterPage.xaml.cs" Line="21" Column="50" />
-      <File FileName="Droid/MainActivity.cs" Line="15" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="42" column="52" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="44" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="40" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="55" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="56" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="57" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ComposeMessagePage.xaml.cs" line="62" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.LGH8126e5714a3" />
