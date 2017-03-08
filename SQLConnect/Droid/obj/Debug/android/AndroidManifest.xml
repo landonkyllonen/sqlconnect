@@ -4,8 +4,8 @@
   <uses-sdk android:minSdkVersion="15" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <application android:label="SQLConnect" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="SQLConnect.Droid" android:theme="@style/MyTheme" android:name="md52df16859396b1908c2fb5e9e7ba38765.MainActivity">
+  <application android:label="SQLConnect" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/pillblank" android:debuggable="true">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/pillblank" android:label="Stay Medicated!" android:theme="@style/MyTheme" android:name="md52df16859396b1908c2fb5e9e7ba38765.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

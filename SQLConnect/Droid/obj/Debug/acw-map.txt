@@ -566,3 +566,15 @@ Xamarin.Forms.Platform.Android.AppCompat.FormsFragmentPagerAdapter`1, Xamarin.Fo
 Xamarin.Forms.Platform.Android.AppCompat.FormsFragmentPagerAdapter`1, Xamarin.Forms.Platform.Android, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null;md5270abb39e60627f0f200893b490a1ade.FormsFragmentPagerAdapter_1
 Xamarin.Forms.Platform.Android.AppCompat.FormsFragmentPagerAdapter`1;md5270abb39e60627f0f200893b490a1ade.FormsFragmentPagerAdapter_1
 xamarin.forms.platform.android.appcompat.FormsFragmentPagerAdapter_1;md5270abb39e60627f0f200893b490a1ade.FormsFragmentPagerAdapter_1
+Plugin.Toasts.NotificationReceiver, Toasts.Forms.Plugin.Droid;md52d189d64b7b0ac40b59b56928c06114b.NotificationReceiver
+Plugin.Toasts.NotificationReceiver, Toasts.Forms.Plugin.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52d189d64b7b0ac40b59b56928c06114b.NotificationReceiver
+Plugin.Toasts.NotificationReceiver;md52d189d64b7b0ac40b59b56928c06114b.NotificationReceiver
+plugin.toasts.NotificationReceiver;md52d189d64b7b0ac40b59b56928c06114b.NotificationReceiver
+Plugin.Toasts.ToastCallback, Toasts.Forms.Plugin.Droid;md52d189d64b7b0ac40b59b56928c06114b.ToastCallback
+Plugin.Toasts.ToastCallback, Toasts.Forms.Plugin.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52d189d64b7b0ac40b59b56928c06114b.ToastCallback
+Plugin.Toasts.ToastCallback;md52d189d64b7b0ac40b59b56928c06114b.ToastCallback
+plugin.toasts.ToastCallback;md52d189d64b7b0ac40b59b56928c06114b.ToastCallback
+Plugin.Toasts.EmptyOnClickListener, Toasts.Forms.Plugin.Droid;md52d189d64b7b0ac40b59b56928c06114b.EmptyOnClickListener
+Plugin.Toasts.EmptyOnClickListener, Toasts.Forms.Plugin.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52d189d64b7b0ac40b59b56928c06114b.EmptyOnClickListener
+Plugin.Toasts.EmptyOnClickListener;md52d189d64b7b0ac40b59b56928c06114b.EmptyOnClickListener
+plugin.toasts.EmptyOnClickListener;md52d189d64b7b0ac40b59b56928c06114b.EmptyOnClickListener

@@ -120,6 +120,8 @@ class MonoPackageManager_Resources {
 		"PInvoke.NCrypt.dll",
 		"Validation.dll",
 		"PCLCrypto.dll",
+		"Toasts.Forms.Plugin.Abstractions.dll",
+		"Toasts.Forms.Plugin.Droid.dll",
 		"SQLConnect.dll",
 		"System.Threading.dll",
 		"System.Collections.dll",

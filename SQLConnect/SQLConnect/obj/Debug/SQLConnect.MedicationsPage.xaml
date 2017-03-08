@@ -5,14 +5,34 @@
 		Title="Current Medications">
 	<ContentPage.Content>
 		<RelativeLayout BackgroundColor="#009a9a">
-			<Label Text="You can press a medication to edit it or remove it." TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18"
+			<Label Text="You can press a medication if you are no longer taking it." TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=60}"/>
-			<ListView  x:Name="medList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver" BackgroundColor="White"
+			<Label Text="Name" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="16" BackgroundColor="#008686"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=60}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=40}"/>
+			<Label Text="Dosage" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="16" BackgroundColor="#008686"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=60}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.2,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=40}"/>
+			<Label Text="Frequency" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="16" BackgroundColor="#008686"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=60}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.2,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=40}"/>
+			<Label Text="Method" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="16" BackgroundColor="#008686"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=60}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=40}"/>
+			<ListView  x:Name="medList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver" BackgroundColor="White"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=100}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=-60}"
 				>

@@ -79,11 +79,13 @@ namespace SQLConnect
 
 			cartList.ItemTemplate = productDataTemplate;
 
-			cartItems = new ObservableCollection<CartListItem>();
+			cartItems = Statics.Default.getCartItems();
+
+			/*cartItems = new ObservableCollection<CartListItem>();
 			cartItems.Add(new CartListItem { prodName = "Pineapple Express", prodAmount = 3, prodUnitType = "oz.", prodTotal = "$60.85" });
 			cartItems.Add(new CartListItem { prodName = "Peanut Butter Cup", prodAmount = 2, prodUnitType = "", prodTotal = "$3.50" });
 			cartItems.Add(new CartListItem { prodName = "Leaf T-Shirt", prodAmount = 1, prodUnitType = "", prodTotal = "$14.50" });
-			cartItems.Add(new CartListItem { prodName = "Glass Pipe", prodAmount = 1, prodUnitType = "", prodTotal = "$10.75" });
+			cartItems.Add(new CartListItem { prodName = "Glass Pipe", prodAmount = 1, prodUnitType = "", prodTotal = "$10.75" });*/
 
 			cartList.ItemsSource = cartItems;
 

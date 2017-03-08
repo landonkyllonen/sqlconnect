@@ -35,7 +35,7 @@ namespace SQLConnect
 			//Log in operation
 			console.SetValue(Label.TextProperty, "Connecting to server...");
 
-			//Set defaults.
+			//Set defaults
 			Statics.Default.setCartItems(new ObservableCollection<CartListItem>());
 
 			//Get info for submit.

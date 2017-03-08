@@ -45,6 +45,7 @@
 						VerticalOptions="Center"
 						HorizontalOptions="StartAndExpand"
 						WidthRequest="230"
+						Keyboard = "Email"
 						/>
 				</StackLayout>
 				
@@ -63,6 +64,7 @@
 							VerticalOptions="Center"
 							HorizontalOptions="StartAndExpand"
 							WidthRequest="230"
+							Keyboard = "Telephone"
 						/>
 				</StackLayout>
 				

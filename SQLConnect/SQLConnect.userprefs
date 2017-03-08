@@ -1,13 +1,12 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/SQLConnectPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/Statics.cs">
     <Files>
       <File FileName="SQLConnect/To Do List.txt" Line="37" Column="132" />
       <File FileName="SQLConnect/ProductPage.xaml" Line="35" Column="105" />
-      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="38" Column="79" />
-      <File FileName="SQLConnect/CartTab.cs" Line="89" Column="4" />
-      <File FileName="SQLConnect/ProfileTab.cs" Line="28" Column="38" />
+      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="42" Column="41" />
+      <File FileName="SQLConnect/CartTab.cs" Line="83" Column="4" />
       <File FileName="SQLConnect/Statics.cs" Line="116" Column="43" />
-      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="23" Column="58" />
+      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="37" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

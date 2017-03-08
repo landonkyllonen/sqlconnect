@@ -5,7 +5,7 @@
 		Title="Current Conditions">
 	<ContentPage.Content>
 		<RelativeLayout BackgroundColor="#009a9a">
-			<Label Text="You can press a condition to edit it or remove it." TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18"
+			<Label Text="You can press a condition to remove it." TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="18"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
