@@ -27,8 +27,14 @@ Implement log uploads (input validation) and imports properly. (CreateLogPage.cs
 Started layout for a product's page when tapped. currently available for regular increment types only.
 
 Introduced feedback from db operations through the use of DisplayAlert, which is not as good as toast, but works.
+/
+Prototype for layout supporting adding to cart from enumerated and incremental types completed, room for improvement?
+/
+Introduced code to handle different discount types.
 /-----------Complete ^
-Create layout for a medical increment (flowers) product page.
+Properly implement item dependant discounts set by dispensaries.
+
+Properly implement enumerated products on db and locally now that layout is there.
 
 Implement 2 more analytics tabs.
 

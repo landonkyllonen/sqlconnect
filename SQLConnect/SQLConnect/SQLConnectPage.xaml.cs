@@ -204,6 +204,7 @@ namespace SQLConnect
 			Debug.WriteLine(dispId);
 
 			Product[] products;
+			ObservableCollection<ProductListItem> prods;
 
 			//Connect to url.
 			var client = new System.Net.Http.HttpClient();
@@ -221,6 +222,7 @@ namespace SQLConnect
 			//Separate into product components and turn into product objects.
 			//bound as name--category--description--imageurl--incrementtype--baseprice--incbaseprice--dealdiscount--dealflag-incflag;;
 			products = new Product[productObjects.Length];
+			prods = new ObservableCollection<ProductListItem>();
 			int index = 0;
 			foreach (string obj in productObjects)
 			{
@@ -241,13 +243,16 @@ namespace SQLConnect
 				products[index] = new Product(productComponents[0], productComponents[1], productComponents[2], productComponents[4],
 				                          double.Parse(productComponents[5]), productComponents[3], double.Parse(productComponents[7]), 
 				                          double.Parse(productComponents[6]), deal, incentive);
+				prods.Add(new ProductListItem { prodName=products[index].name, prodCategory=products[index].category, prodImgUrl=products[index].imgURL,
+					prodDealFlag=products[index].deal, prodDiscount=products[index].discount, prodUnitPrice=products[index].price, prodUnitPriceIncentive=products[index].priceInPoints,
+					prodDescription=products[index].description, prodIncentiveFlag= products[index].incentive, prodIncrementType=products[index].incrementType});
 				index++;
 			}
 
 			//products now contains all the products loaded from a certain dispensary, save to static for use in deal on front page,
 			//as well as for lists.
 
-			Statics.Default.setProducts(products);
+			Statics.Default.setProducts(prods);
 		}
 
 		async Task asyncLoadMessages(string username)

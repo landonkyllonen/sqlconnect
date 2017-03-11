@@ -11,6 +11,8 @@ namespace SQLConnect
 
 		string[] medicalAmounts;
 		double[] medicalPrices;
+		string discountType;
+		double discountRate;
 		int index;
 
 		public ProductPage()
@@ -23,8 +25,42 @@ namespace SQLConnect
 			image.Source = product.prodImgUrl;
 
 			medicalAmounts = new string[] { "Gram", "Eighth", "Quarter", "Half Oz" };
-			//Test
-			medicalPrices = new double[] { 10.75, 20.00, 38.55, 72.30 };
+			//Discount?
+			discountType = "Linear";
+			discountRate = 0.95;
+			//Populate price list for flowers.
+			//If discount available, it is applied iteratively to amounts greater than a gram. This value could be set by the dispensary, maybe for each item?
+			//1 gram is base price
+			switch (discountType)
+			{
+				case "Linear":
+					//eighth is 3.54688 grams with a 5% discount
+					//quarter is 2 eighths price with another 5% discount
+					//half oz is 2 quarters price with another 5% discount
+					medicalPrices = new double[4];
+					medicalPrices[0] = product.prodUnitPrice;
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * discountRate;
+					medicalPrices[2] = 3.54688*2 * product.prodUnitPrice * (discountRate-.05);
+					medicalPrices[3] = 3.54688 * 2*2 * product.prodUnitPrice * (discountRate-.1);
+					break;
+				case "Diminishing":
+					//each step up gives half the discount of the previous step.
+					medicalPrices = new double[4];
+					medicalPrices[0] = product.prodUnitPrice;
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * discountRate;
+					medicalPrices[2] = 3.54688 *2* product.prodUnitPrice * (discountRate - .025);
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (discountRate - .0375);
+					break;
+				default:
+					//No discount.
+					medicalPrices = new double[4];
+					medicalPrices[0] = product.prodUnitPrice;
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice;
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice;
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice;
+					break;
+			}
+
 			index = 0;
 			priceExact.Text = medicalPrices[0].ToString("C");
 
@@ -44,14 +80,20 @@ namespace SQLConnect
 
 		void increment(object s, EventArgs e)
 		{
-			value.Text = (int.Parse(value.Text) + 1).ToString();
-			price.Text = (int.Parse(value.Text) * product.prodUnitPrice).ToString("C");
+			if (int.Parse(value.Text) > 9) { return; }
+			else {
+				value.Text = (int.Parse(value.Text) + 1).ToString();
+				price.Text = (int.Parse(value.Text) * product.prodUnitPrice).ToString("C");
+			}
 		}
 
 		void decrement(object s, EventArgs e)
 		{
-			value.Text = (int.Parse(value.Text) - 1).ToString();
-			price.Text = (int.Parse(value.Text) * product.prodUnitPrice).ToString("C");
+			if (int.Parse(value.Text) < 2) { return; }
+			else {
+				value.Text = (int.Parse(value.Text) - 1).ToString();
+				price.Text = (int.Parse(value.Text) * product.prodUnitPrice).ToString("C");
+			}
 		}
 
 		void previous(object s, EventArgs e)
