@@ -140,7 +140,7 @@ namespace SQLConnect
 			Statics.Default.setOffline(true);
 			//Log in operation
 			Statics.Default.setMessages(new ObservableCollection<MessageListItem>());
-			Statics.Default.setProducts(new Product[0]);
+			Statics.Default.setProducts(new ObservableCollection<ProductListItem>());
 			Statics.Default.setUser("");
 			Statics.Default.setCartItems(new ObservableCollection<CartListItem>());
 			Statics.Default.setOrders(new ObservableCollection<OrderListItem>());

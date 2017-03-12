@@ -1,12 +1,10 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/Statics.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/SearchTab.cs">
     <Files>
       <File FileName="SQLConnect/To Do List.txt" Line="35" Column="65" />
-      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="16" Column="13" />
-      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="255" Column="39" />
-      <File FileName="SQLConnect/ProductPage.xaml" Line="71" Column="140" />
-      <File FileName="SQLConnect/SearchTab.cs" Line="146" Column="6" />
-      <File FileName="SQLConnect/Statics.cs" Line="103" Column="52" />
+      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="143" Column="75" />
+      <File FileName="SQLConnect/SearchTab.cs" Line="237" Column="25" />
+      <File FileName="SQLConnect/Statics.cs" Line="96" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
@@ -14,6 +12,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.LGH8126e5714a3" />
   <MonoDevelop.Ide.ItemProperties.SQLConnect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.EB7C7C09-6F4E-4F40-A091-15EF2C2DEC4A" />
 </Properties>

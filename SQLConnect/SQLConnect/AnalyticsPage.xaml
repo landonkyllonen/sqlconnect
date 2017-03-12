@@ -7,6 +7,6 @@
 			Icon="icon.png"
 			>
         <local:LogsTab Title="Logs"/>
-		<local:MessagingTab Title="Medical Search"/>
+		<local:SearchTab Title="Medical Search"/>
 		<local:ProfileTab Title="Graphs"/>
 </TabbedPage>

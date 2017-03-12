@@ -7,7 +7,7 @@ namespace SQLConnect
 	public class ProductsTab : ContentPage
 	{
 		ObservableCollection<CategoryListItem> categories;
-		Product[] loadedProducts;
+		ObservableCollection<ProductListItem> loadedProducts;
 
 		public ProductsTab()
 		{
@@ -89,16 +89,12 @@ namespace SQLConnect
 			List<ProductListItem> catProducts = new List<ProductListItem>();
 
 			//Linear search all products
-			for (int i = 0; i < loadedProducts.Length; i++)
+			foreach (ProductListItem p in loadedProducts)
 			{
-				Product p = loadedProducts[i];
-
 				//If in the category clicked, add to the list to be passed.
-				if (p.category.Equals(category))
+				if (p.prodCategory.Equals(category))
 				{
-					catProducts.Add(new ProductListItem { prodName = p.name, prodCategory = p.category, prodDescription = p.description,
-						prodImgUrl = p.imgURL, prodUnitPrice = p.price, prodIncrementType = p.incrementType, prodUnitPriceIncentive = p.priceInPoints,
-						prodDiscount = p.discount, prodDealFlag = p.deal, prodIncentiveFlag = p.incentive});
+					catProducts.Add(p);
 				}
 			}
 
