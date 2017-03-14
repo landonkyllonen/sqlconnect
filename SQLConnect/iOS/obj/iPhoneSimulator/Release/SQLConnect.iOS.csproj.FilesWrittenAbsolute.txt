@@ -19,3 +19,15 @@
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Release/Xamarin.Forms.Platform.iOS.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Release/Xamarin.Forms.Xaml.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Release/SQLConnect.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Release/optimized/logout.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Release/optimized/medkit.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Release/optimized/pill.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Release/optimized/important.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Release/optimized/group.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Release/optimized/pillblank.png
+/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Release/PInvoke.Windows.Core.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Release/PInvoke.Kernel32.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Release/PInvoke.BCrypt.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Release/PInvoke.NCrypt.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Release/Validation.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Release/PCLCrypto.dll

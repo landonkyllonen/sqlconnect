@@ -1,5 +1,7 @@
 ﻿using Xamarin.Forms;
 using System;
+using System.Net;
+using System.Diagnostics;
 
 namespace SQLConnect
 {
@@ -511,16 +513,18 @@ namespace SQLConnect
 
 			//Show that we are waiting for a response and wait for it.
 
+			Debug.WriteLine(WebUtility.UrlEncode(Statics.Default.getUser()) + " " + WebUtility.UrlEncode(email.Text) + " " +WebUtility.UrlEncode(phone.Text)+" "+WebUtility.UrlEncode(bodytypes[bmi.SelectedIndex])+" "+WebUtility.UrlEncode(bloodtypes[blood.SelectedIndex])+" "+
+			                WebUtility.UrlEncode(energytypes[energy.SelectedIndex]) + " " + WebUtility.UrlEncode(cancertypes[cancer.SelectedIndex]) +" "+WebUtility.UrlEncode(ancestry.Text));
+
 			var response = await client.GetAsync("http://cbd-online.net/landon/updateDetails.php?" +
-			                                     "email="+ email.Text +
-			                                     "&phone=" + phone.Text +
-			                                     "&body=" + bodytypes[savedBmiIndex] +
-			                                     "&blood=" + bloodtypes[savedBloodIndex] +
-			                                     "&ctype=" + cancertypes[savedCancerIndex] +
-			                                     "&energy=" + energytypes[savedEnergyIndex] +
-			                                     "&ancestry=" + ancestry.Text +
-			                                     "&conds=" + credentials[9] + 
-			                                     "&meds=" + credentials[10]);
+			                                     "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
+			                                     "&email="+ WebUtility.UrlEncode(email.Text) +
+			                                     "&phone=" + WebUtility.UrlEncode(phone.Text) +
+			                                     "&body=" + WebUtility.UrlEncode(bodytypes[bmi.SelectedIndex]) +
+			                                     "&blood=" + WebUtility.UrlEncode(bloodtypes[blood.SelectedIndex]) +
+			                                     "&energy=" + WebUtility.UrlEncode(energytypes[energy.SelectedIndex]) +
+			                                     "&ctype=" + WebUtility.UrlEncode(cancertypes[cancer.SelectedIndex]) +
+			                                     "&ancestry=" + WebUtility.UrlEncode(ancestry.Text));
 
 			var output = await response.Content.ReadAsStringAsync();
 
@@ -532,10 +536,10 @@ namespace SQLConnect
 				//Success
 				credentials[2] = email.Text;
 				credentials[3] = phone.Text;
-				credentials[4] = bodytypes[savedBmiIndex];
-				credentials[5] = bloodtypes[savedBloodIndex];
-				credentials[6] = energytypes[savedEnergyIndex];
-				credentials[7] = cancertypes[savedCancerIndex];
+				credentials[4] = bodytypes[bmi.SelectedIndex];
+				credentials[5] = bloodtypes[blood.SelectedIndex];
+				credentials[6] = energytypes[energy.SelectedIndex];
+				credentials[7] = cancertypes[cancer.SelectedIndex];
 				credentials[8] = ancestry.Text;
 				Statics.Default.setCreds(credentials);
 

@@ -83,13 +83,13 @@ namespace SQLConnect
 				populateCondsMeds(credentials[9], credentials[10]);
 
 				//await asyncLoadDispensaries();
-				console.Text = "Loading messages...";
+				console.Text = "Loading Messages...";
 				await asyncLoadMessages(user);
-				console.Text = "Loading products...";
+				console.Text = "Loading Products...";
 				await asyncLoadProducts(credentials[16]);
-				console.Text = "Loading orders...";
+				console.Text = "Loading Orders...";
 				await asyncLoadOrders(user);
-				console.Text = "Loading logs...";
+				console.Text = "Loading Logs...";
 				await asyncLoadLogs(user);
 				console.TextColor = Color.Teal;
 				console.Text = "Success!";

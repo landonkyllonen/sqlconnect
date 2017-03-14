@@ -2,9 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/SearchTab.cs">
     <Files>
       <File FileName="SQLConnect/To Do List.txt" Line="35" Column="65" />
-      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="143" Column="75" />
-      <File FileName="SQLConnect/SearchTab.cs" Line="237" Column="25" />
-      <File FileName="SQLConnect/Statics.cs" Line="96" Column="21" />
+      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="81" Column="35" />
+      <File FileName="SQLConnect/SearchTab.cs" Line="103" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

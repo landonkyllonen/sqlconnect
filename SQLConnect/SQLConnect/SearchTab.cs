@@ -10,7 +10,7 @@ namespace SQLConnect
 		int queryId;
 		Entry three;
 		Button back, search;
-		Label console, lbl1, lbl2;
+		Label console, lbl1, lbl2, result;
 		string[] choices, piChoices, userChoices;
 
 		ListView resultList;
@@ -98,11 +98,46 @@ namespace SQLConnect
 			holder.Children.Add(back, Constraint.RelativeToParent((parent) => { return parent.Width / 2 - 75;}), Constraint.Constant(10),
 								Constraint.Constant(150), Constraint.Constant(45));
 
+			//Create template for result list.
+			var simpleDataTemplate = new DataTemplate(() =>
+			{
+				RelativeLayout templateHolder = new RelativeLayout { HorizontalOptions = LayoutOptions.Fill, VerticalOptions = LayoutOptions.Fill };
+
+				var title = new Label { FontSize = 26, TextColor = Color.Teal, VerticalTextAlignment = TextAlignment.Center, HorizontalTextAlignment = TextAlignment.Start };
+
+				title.SetBinding(Label.TextProperty, "condName");
+				//Reusing condlistitem template.
+
+				templateHolder.Children.Add(title, Constraint.Constant(40), Constraint.Constant(0),
+									Constraint.RelativeToParent((parent) =>
+									{
+										return parent.Width - 80;
+									}),
+									Constraint.RelativeToParent((parent) =>
+									{
+										return parent.Height;
+									}));
+
+				return new ViewCell { View = templateHolder };
+			});
+
 			resultList = new ListView { 
-				IsVisible=false
+				IsVisible=false,
+				RowHeight=60
 			};
-			holder.Children.Add(resultList, Constraint.Constant(0), Constraint.Constant(160),
+			resultList.ItemTemplate = simpleDataTemplate;
+			holder.Children.Add(resultList, Constraint.Constant(0), Constraint.Constant(65),
 			                    Constraint.RelativeToParent((parent) => { return parent.Width;}), Constraint.RelativeToParent((parent) => { return parent.Height - 160; }));
+
+			result = new Label
+			{
+				IsVisible = false,
+				TextColor= Color.Teal,
+				HorizontalTextAlignment=TextAlignment.Center,
+				FontSize=22
+			};
+			holder.Children.Add(result, Constraint.Constant(40), Constraint.Constant(65),
+			                    Constraint.RelativeToParent((parent) => { return parent.Width-80; }), Constraint.RelativeToParent((parent) => { return parent.Height - 65; }));
 
 			Content = holder;
 		}
@@ -205,10 +240,67 @@ namespace SQLConnect
 
 				var response = await client.GetAsync("http://cbd-online.net/landon/medicalSearch.php?" +
 				                                     "queryId=" + System.Net.WebUtility.UrlEncode(queryId.ToString()) +
+				                                     "&dispId=" + System.Net.WebUtility.UrlEncode(Statics.Default.getCreds()[16]) +
 				                                     "&extraInfo=" + System.Net.WebUtility.UrlEncode(extraInfo));
 
 				var output = await response.Content.ReadAsStringAsync();
 
+				output.ToString();
+
+				//Do something different with output depending on query.
+				lbl2.IsVisible = false;
+				string[] names;
+				int count;
+				//Reusing code from condlistitem, as it is a single string being bound.
+				ObservableCollection<CondListItem> ranks = new ObservableCollection<CondListItem>();
+
+				switch (queryId)
+				{
+					case 11://Most Popular
+						//"--" delimited list of most popular products in user's current dispensary.
+						count = 1;
+						names = output.Split(new string[] { "--" }, StringSplitOptions.None);
+						foreach (string name in names)
+						{
+							ranks.Add(new CondListItem { condName="#" + count + " " + name});//Produce something like #1 Taho, #2 Rocky Mtn...
+							count++;
+						}
+						resultList.ItemsSource = ranks;
+						resultList.IsVisible = true;
+						break;
+					case 21://Most popular with condition...
+						//"--" delimited list of most popular products in user's current dispensary.
+						count = 1;
+						names = output.Split(new string[] { "--" }, StringSplitOptions.None);
+						foreach (string name in names)
+						{
+							ranks.Add(new CondListItem { condName = "#" + count + " " + name });//Produce something like #1 Taho, #2 Rocky Mtn...
+							count++;
+						}
+						resultList.ItemsSource = ranks;
+						resultList.IsVisible = true;
+						break;
+					case 31://Specific Product...
+						//Output is a string that should be displayed.
+						result.IsVisible = true;
+						result.Text = output;
+						break;
+					case 12://Users that have used med...
+						//Output is a string that should be displayed... for now.
+						result.IsVisible = true;
+						result.Text = output;
+						break;
+					case 22://Users with the condition...
+						//Output is a string that should be displayed... for now.
+						result.IsVisible = true;
+						result.Text = output;
+						break;
+					default:
+						//selected nothing, do nothing.
+						lbl2.IsVisible = true;
+						lbl2.Text = "Bad queryId/connection.";
+						break;
+				}
 			}
 		}
 
@@ -231,6 +323,7 @@ namespace SQLConnect
 			//hide searching & results
 			back.IsVisible = false;
 			lbl2.IsVisible = false;
+			result.IsVisible = false;
 			resultList.IsVisible = false;
 		}
 	}

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
@@ -24,7 +23,7 @@ namespace SQLConnect
 			Title = product.prodName;
 			image.Source = product.prodImgUrl;
 
-			medicalAmounts = new string[] { "Gram", "Eighth", "Quarter", "Half Oz" };
+			medicalAmounts = new string[] { "Gram", "Eighth\n(~3.5g)", "Quarter\n(~7g)", "Half Oz\n(~14g)", "Ounce\n(~28g)" };
 			//Discount?
 			discountType = "Linear";
 			discountRate = 0.95;
@@ -37,19 +36,21 @@ namespace SQLConnect
 					//eighth is 3.54688 grams with a 5% discount
 					//quarter is 2 eighths price with another 5% discount
 					//half oz is 2 quarters price with another 5% discount
-					medicalPrices = new double[4];
+					medicalPrices = new double[5];
 					medicalPrices[0] = product.prodUnitPrice;
 					medicalPrices[1] = 3.54688 * product.prodUnitPrice * discountRate;
-					medicalPrices[2] = 3.54688*2 * product.prodUnitPrice * (discountRate-.05);
-					medicalPrices[3] = 3.54688 * 2*2 * product.prodUnitPrice * (discountRate-.1);
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (discountRate-.05);
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (discountRate-.1);
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (discountRate-.15);
 					break;
 				case "Diminishing":
 					//each step up gives half the discount of the previous step.
 					medicalPrices = new double[4];
 					medicalPrices[0] = product.prodUnitPrice;
 					medicalPrices[1] = 3.54688 * product.prodUnitPrice * discountRate;
-					medicalPrices[2] = 3.54688 *2* product.prodUnitPrice * (discountRate - .025);
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (discountRate - .025);
 					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (discountRate - .0375);
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (discountRate - .04375);
 					break;
 				default:
 					//No discount.
@@ -58,6 +59,7 @@ namespace SQLConnect
 					medicalPrices[1] = 3.54688 * product.prodUnitPrice;
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice;
 					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice;
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice;
 					break;
 			}
 
@@ -114,13 +116,13 @@ namespace SQLConnect
 
 		void next(object s, EventArgs e)
 		{
-			if (index == 3)
+			if (index == 4)
 			{
 				return;
 			}
 			else {
 				index++;
-				if (index == 3) { valueRight.Text = ""; }
+				if (index == 4) { valueRight.Text = ""; }
 				else {valueRight.Text = medicalAmounts[index + 1];}
 				valueMid.Text = medicalAmounts[index];
 				valueLeft.Text = medicalAmounts[index - 1];

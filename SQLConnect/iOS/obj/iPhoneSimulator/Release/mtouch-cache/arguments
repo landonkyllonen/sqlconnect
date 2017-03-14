@@ -37,6 +37,18 @@
 	-r \
 	/Users/kellypowers/Projects/SQLConnect/packages/Xamarin.Forms.2.3.3.180/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
 	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PInvoke.Windows.Core.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PInvoke.Kernel32.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PInvoke.BCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PInvoke.NCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.NCrypt.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/Validation.2.2.8/lib/dotnet/Validation.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PCLCrypto.2.0.147/lib/xamarinios10/PCLCrypto.dll \
+	-r \
 	/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/SQLConnect.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
@@ -304,6 +316,18 @@
 	/Users/kellypowers/Projects/SQLConnect/packages/Xamarin.Forms.2.3.3.180/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll \
 	-r \
 	/Users/kellypowers/Projects/SQLConnect/packages/Xamarin.Forms.2.3.3.180/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PInvoke.Windows.Core.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PInvoke.Kernel32.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PInvoke.BCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PInvoke.NCrypt.0.3.2/lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.NCrypt.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/Validation.2.2.8/lib/dotnet/Validation.dll \
+	-r \
+	/Users/kellypowers/Projects/SQLConnect/packages/PCLCrypto.2.0.147/lib/xamarinios10/PCLCrypto.dll \
 	-r \
 	/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/SQLConnect.dll \
 	--target-framework \
