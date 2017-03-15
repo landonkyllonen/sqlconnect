@@ -31,13 +31,23 @@ Introduced feedback from db operations through the use of DisplayAlert, which is
 Prototype for layout supporting adding to cart from enumerated and incremental types completed, room for improvement?
 /
 Introduced code to handle different discount types.
-/-----------Complete ^
+/
+Medical search implemented
+/
 Properly implement item dependant discounts set by dispensaries.
-
 Properly implement enumerated products on db and locally now that layout is there.
+Setup tables to track which users have which medications and conditions to facilitate search, need to create phps to utilize these.
+/-----------Complete ^
+Implement a contacts list on the messaging tab.
 
-Implement 2 more analytics tabs.
+Implement settings to:  Toggle users visibility in searches
+						Toggle allowing messages from non-contacts
+						Allow message filtering.
+
+Implement search of dispensary names carrying certain product?
+
+Implement sharing log viewing between contacts?
+
+Implement 1 more analytics tab.
 
 Find a better method of feedback than displayalert?
-
-Setup tables to track which users have which medications and conditions to facilitate search, need to create phps to utilize these.

@@ -3,7 +3,8 @@
 	public class Product
 	{
 		public string name, category, description, incrementType, imgURL;
-		public double price, priceInPoints, discount;
+		public int bulkDiscountType;
+		public double price, priceInPoints, bulkDiscount, discount;
 		public bool deal, incentive;
 
 		//Reg

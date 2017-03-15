@@ -10,8 +10,8 @@ namespace SQLConnect
 
 		string[] medicalAmounts;
 		double[] medicalPrices;
-		string discountType;
-		double discountRate;
+		int discountType;
+		double bulkDiscountRate;
 		int index;
 
 		public ProductPage()
@@ -25,32 +25,41 @@ namespace SQLConnect
 
 			medicalAmounts = new string[] { "Gram", "Eighth\n(~3.5g)", "Quarter\n(~7g)", "Half Oz\n(~14g)", "Ounce\n(~28g)" };
 			//Discount?
-			discountType = "Linear";
-			discountRate = 0.95;
+			discountType = product.prodBulkType;
+			bulkDiscountRate = product.prodBulkDiscount;
 			//Populate price list for flowers.
 			//If discount available, it is applied iteratively to amounts greater than a gram. This value could be set by the dispensary, maybe for each item?
 			//1 gram is base price
 			switch (discountType)
 			{
-				case "Linear":
+				case 0:
+					//No discount.
+					medicalPrices = new double[4];
+					medicalPrices[0] = product.prodUnitPrice;
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice;
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice;
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice;
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice;
+					break;
+				case 1:
 					//eighth is 3.54688 grams with a 5% discount
 					//quarter is 2 eighths price with another 5% discount
 					//half oz is 2 quarters price with another 5% discount
 					medicalPrices = new double[5];
 					medicalPrices[0] = product.prodUnitPrice;
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice * discountRate;
-					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (discountRate-.05);
-					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (discountRate-.1);
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (discountRate-.15);
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * bulkDiscountRate;
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (bulkDiscountRate-.05);
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (bulkDiscountRate-.1);
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (bulkDiscountRate-.15);
 					break;
-				case "Diminishing":
+				case 2:
 					//each step up gives half the discount of the previous step.
 					medicalPrices = new double[4];
 					medicalPrices[0] = product.prodUnitPrice;
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice * discountRate;
-					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (discountRate - .025);
-					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (discountRate - .0375);
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (discountRate - .04375);
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * bulkDiscountRate;
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (bulkDiscountRate - .025);
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (bulkDiscountRate - .0375);
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (bulkDiscountRate - .04375);
 					break;
 				default:
 					//No discount.
@@ -69,7 +78,7 @@ namespace SQLConnect
 			//Get information on what type of choices to display.
 			//For now, display simple.
 
-			if (product.prodCategory.Equals("Flowers"))
+			if (product.prodIncrementType.Equals("Flower"))
 			{
 				componentExact.IsVisible = true;
 			}

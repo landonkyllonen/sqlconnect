@@ -220,33 +220,31 @@ namespace SQLConnect
 			string[] productObjects = output.Split(new string[] { ";;" }, StringSplitOptions.None);
 
 			//Separate into product components and turn into product objects.
-			//bound as name--category--description--imageurl--incrementtype--baseprice--incbaseprice--dealdiscount--dealflag-incflag;;
-			products = new Product[productObjects.Length];
 			prods = new ObservableCollection<ProductListItem>();
-			int index = 0;
 			foreach (string obj in productObjects)
 			{
 				string[] productComponents = obj.Split(new string[] { "--" }, StringSplitOptions.None);
-				Debug.WriteLine(obj);
 
+				Debug.WriteLine(obj);
+				//FOR DEBUGGING--
 				string comps = "";
 				foreach (string s in productComponents)
 				{
 					comps = comps + " " + s;
 				}
 				Debug.WriteLine(comps);
+				//FOR DEBUGGING--
  
 				bool deal = false;
 				bool incentive = false;
 				if (productComponents[8].Equals("1")) { deal = true; }
 				if (productComponents[9].Equals("1")) { incentive = true; }
-				products[index] = new Product(productComponents[0], productComponents[1], productComponents[2], productComponents[4],
-				                          double.Parse(productComponents[5]), productComponents[3], double.Parse(productComponents[7]), 
-				                          double.Parse(productComponents[6]), deal, incentive);
-				prods.Add(new ProductListItem { prodName=products[index].name, prodCategory=products[index].category, prodImgUrl=products[index].imgURL,
-					prodDealFlag=products[index].deal, prodDiscount=products[index].discount, prodUnitPrice=products[index].price, prodUnitPriceIncentive=products[index].priceInPoints,
-					prodDescription=products[index].description, prodIncentiveFlag= products[index].incentive, prodIncrementType=products[index].incrementType});
-				index++;
+
+				//bound as name--category--description--imageurl--incrementtype--baseprice--incbaseprice--dealdiscount--dealflag-incflag--bulkdis--bulkdistype;;
+				prods.Add(new ProductListItem { prodName=productComponents[0], prodCategory=productComponents[1], prodDescription=productComponents[2],
+					prodImgUrl=productComponents[3], prodIncrementType=productComponents[4], prodUnitPrice=double.Parse(productComponents[5]), prodUnitPriceIncentive=double.Parse(productComponents[6]),
+					prodDiscount=double.Parse(productComponents[7]), prodDealFlag=deal, prodIncentiveFlag=incentive, prodBulkDiscount=double.Parse(productComponents[10]),
+					prodBulkType=int.Parse(productComponents[11])});
 			}
 
 			//products now contains all the products loaded from a certain dispensary, save to static for use in deal on front page,
