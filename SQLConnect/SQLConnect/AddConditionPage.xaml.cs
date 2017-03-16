@@ -20,7 +20,7 @@ namespace SQLConnect
 				console.Text = "Condition cannot be blank.";
 				return;
 			}
-			else if (Statics.Default.getConds().Contains(new CondListItem { condName=condNameEntry.Text}))
+			else if (Statics.Default.getConds().Contains(new SimpleListItem { labelName=condNameEntry.Text}))
 			{
 				console.Text = "Condition has already been added.";
 				return;
@@ -44,10 +44,10 @@ namespace SQLConnect
 					//Feedback.
 				}
 
-				ObservableCollection<CondListItem> condsListPulled = Statics.Default.getConds();
+				ObservableCollection<SimpleListItem> condsListPulled = Statics.Default.getConds();
 				string[] creds = Statics.Default.getCreds();
 
-				CondListItem newCond = new CondListItem { condName = condNameEntry.Text };
+				SimpleListItem newCond = new SimpleListItem { labelName = condNameEntry.Text };
 				string appendCond = "--" + newCond;
 
 				condsListPulled.Add(newCond);

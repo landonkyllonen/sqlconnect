@@ -8,7 +8,7 @@ namespace SQLConnect
 	public partial class CreateLogPage : ContentPage
 	{
 		ObservableCollection<MedListItem> meds;
-		ObservableCollection<CondListItem> conds;
+		ObservableCollection<SimpleListItem> conds;
 		List<string> condsOriginal;
 
 		string[] medNames;
@@ -42,10 +42,10 @@ namespace SQLConnect
 			//Populate extra pickers.
 			extraCond.Items.Add("None");
 			condsOriginal.Add("None");
-			foreach (CondListItem cond in conds)
+			foreach (SimpleListItem cond in conds)
 			{
-				extraCond.Items.Add(cond.condName);
-				condsOriginal.Add(cond.condName);
+				extraCond.Items.Add(cond.labelName);
+				condsOriginal.Add(cond.labelName);
 			}
 
 			extraMed.Items.Add("None");

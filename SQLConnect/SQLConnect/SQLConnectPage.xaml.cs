@@ -91,6 +91,8 @@ namespace SQLConnect
 				await asyncLoadOrders(user);
 				console.Text = "Loading Logs...";
 				await asyncLoadLogs(user);
+				console.Text = "Loading Preferences...";
+				await asyncLoadPrefs(user);
 				console.TextColor = Color.Teal;
 				console.Text = "Success!";
 
@@ -448,15 +450,48 @@ namespace SQLConnect
 			Statics.Default.setLogs(logs);
 		}
 
+		async Task asyncLoadPrefs(string username) {
+			//Connect to url.
+			var client = new System.Net.Http.HttpClient();
+
+			//Show that we are waiting for a response and wait for it.
+
+			var response = await client.GetAsync("http://cbd-online.net/landon/getPrefs.php?" +
+			                                     "user=" + WebUtility.UrlEncode(username));
+
+			var output = await response.Content.ReadAsStringAsync();
+			//Response as Appear;;Block;;Blacklist1--blacklist2--...
+
+			string[] components = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+
+			if (components.Length > 1)
+			{
+				Statics.Default.setAppearInSearch(int.Parse(components[0]));
+				Statics.Default.setBlockNonContacts(int.Parse(components[1]));
+
+				string[] blComps = components[2].Split(new string[] { "--" }, StringSplitOptions.None);
+				ObservableCollection<SimpleListItem> blacklist = new ObservableCollection<SimpleListItem>();
+				foreach (string blocked in blComps)
+				{
+					blacklist.Add(new SimpleListItem { labelName = blocked });
+				}
+				//Set static
+				Statics.Default.setBlacklist(blacklist);
+			}
+			else {
+				Debug.WriteLine("Problem importing user preferences.");
+			}
+		}
+
 		private void populateCondsMeds(string conds, string meds)
 		{
 			//First conditions, split into undelimited condition names, then set the global variable for future use.
 			string[] condsSeparated = conds.Split(new string[] { "--" }, StringSplitOptions.None);
-			ObservableCollection<CondListItem> conditions = new ObservableCollection<CondListItem>();
+			ObservableCollection<SimpleListItem> conditions = new ObservableCollection<SimpleListItem>();
 
 			foreach (string name in condsSeparated)
 			{
-				conditions.Add(new CondListItem { condName=name });
+				conditions.Add(new SimpleListItem { labelName=name });
 			}
 			Statics.Default.setConds(conditions);
 

@@ -12,7 +12,7 @@ namespace SQLConnect
 		string user;
 		string authHalf = "GFEDCBA";
 		ObservableCollection<MessageListItem> messages;
-		ObservableCollection<CondListItem> conds;
+		ObservableCollection<SimpleListItem> conds;
 		ObservableCollection<MedListItem> meds;
 
 
@@ -26,6 +26,10 @@ namespace SQLConnect
 
 		//Dispensary List
 		ObservableCollection<DispListItem> dispensaries;
+
+		//Settings
+		int appearInSearch, blockNonContacts;
+		ObservableCollection<SimpleListItem> blacklist;
 
 		//To manipulate navigation
 		MasterPage master;
@@ -82,11 +86,11 @@ namespace SQLConnect
 			return messages;
 		}
 
-		public void setConds(ObservableCollection<CondListItem> conds)
+		public void setConds(ObservableCollection<SimpleListItem> conds)
 		{
 			this.conds = conds;
 		}
-		public ObservableCollection<CondListItem> getConds()
+		public ObservableCollection<SimpleListItem> getConds()
 		{
 			return conds;
 		}
@@ -143,6 +147,33 @@ namespace SQLConnect
 		public ObservableCollection<DispListItem> setDispensaries()
 		{
 			return dispensaries;
+		}
+
+		public void setAppearInSearch(int appearInSearch)
+		{
+			this.appearInSearch = appearInSearch;
+		}
+		public int getAppearInSearch()
+		{
+			return appearInSearch;
+		}
+
+		public void setBlockNonContacts(int blockNonContacts)
+		{
+			this.blockNonContacts = blockNonContacts;
+		}
+		public int getBlockNonContacts()
+		{
+			return blockNonContacts;
+		}
+
+		public void setBlacklist(ObservableCollection<SimpleListItem> blacklist)
+		{
+			this.blacklist = blacklist;
+		}
+		public ObservableCollection<SimpleListItem> getBlacklist()
+		{
+			return blacklist;
 		}
 
 		public void setMaster(MasterPage master)

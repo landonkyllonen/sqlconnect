@@ -252,7 +252,7 @@ namespace SQLConnect
 				string[] names;
 				int count;
 				//Reusing code from condlistitem, as it is a single string being bound.
-				ObservableCollection<CondListItem> ranks = new ObservableCollection<CondListItem>();
+				ObservableCollection<SimpleListItem> ranks = new ObservableCollection<SimpleListItem>();
 
 				switch (queryId)
 				{
@@ -262,7 +262,7 @@ namespace SQLConnect
 						names = output.Split(new string[] { "--" }, StringSplitOptions.None);
 						foreach (string name in names)
 						{
-							ranks.Add(new CondListItem { condName="#" + count + " " + name});//Produce something like #1 Taho, #2 Rocky Mtn...
+							ranks.Add(new SimpleListItem { labelName="#" + count + " " + name});//Produce something like #1 Taho, #2 Rocky Mtn...
 							count++;
 						}
 						resultList.ItemsSource = ranks;
@@ -274,7 +274,7 @@ namespace SQLConnect
 						names = output.Split(new string[] { "--" }, StringSplitOptions.None);
 						foreach (string name in names)
 						{
-							ranks.Add(new CondListItem { condName = "#" + count + " " + name });//Produce something like #1 Taho, #2 Rocky Mtn...
+							ranks.Add(new SimpleListItem { labelName = "#" + count + " " + name });//Produce something like #1 Taho, #2 Rocky Mtn...
 							count++;
 						}
 						resultList.ItemsSource = ranks;

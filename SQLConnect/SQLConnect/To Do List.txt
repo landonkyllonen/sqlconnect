@@ -37,12 +37,18 @@ Medical search implemented
 Properly implement item dependant discounts set by dispensaries.
 Properly implement enumerated products on db and locally now that layout is there.
 Setup tables to track which users have which medications and conditions to facilitate search, need to create phps to utilize these.
+/
+Toggle users visibility in searches
+Toggle allowing messages from non-contacts
+Setup settings tab.
+Refactored condlistitem to simplelistitem for use as a general string object model.
+Create phps for getting and setting prefs, code pref imports.
 /-----------Complete ^
+Add blacklist page, edit/create phps to support removing/adding users to/from contacts and blacklist.
+
 Implement a contacts list on the messaging tab.
 
-Implement settings to:  Toggle users visibility in searches
-						Toggle allowing messages from non-contacts
-						Allow message filtering.
+Implement settings to:  Allow message filtering.
 
 Implement search of dispensary names carrying certain product?
 

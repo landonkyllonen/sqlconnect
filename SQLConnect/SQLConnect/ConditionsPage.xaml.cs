@@ -9,7 +9,7 @@ namespace SQLConnect
 		{
 			InitializeComponent();
 
-			ObservableCollection<CondListItem> conds = Statics.Default.getConds();
+			ObservableCollection<SimpleListItem> conds = Statics.Default.getConds();
 
 			//conds = new ObservableCollection<CondListItem>();
 			condList.ItemsSource = conds;
@@ -32,15 +32,15 @@ namespace SQLConnect
 				var response = await client.GetAsync("http://cbd-online.net/landon/removeDetail.php?" +
 													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
 														 "&type=" + System.Net.WebUtility.UrlEncode("Conditions") +
-				                                     "&itemname=" + System.Net.WebUtility.UrlEncode(((CondListItem)e.Item).condName));
+				                                     "&itemname=" + System.Net.WebUtility.UrlEncode(((SimpleListItem)e.Item).labelName));
 
 				var output = await response.Content.ReadAsStringAsync();
 
 				//and locally.
-				ObservableCollection<CondListItem> pulled = Statics.Default.getConds();
-				foreach (CondListItem cond in pulled)
+				ObservableCollection<SimpleListItem> pulled = Statics.Default.getConds();
+				foreach (SimpleListItem cond in pulled)
 				{
-					if (cond.condName.Equals(((CondListItem)e.Item).condName))
+					if (cond.labelName.Equals(((SimpleListItem)e.Item).labelName))
 					{
 						pulled.Remove(cond);
 						break;

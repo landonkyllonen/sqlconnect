@@ -4,5 +4,23 @@
 		x:Class="SQLConnect.SettingsPage"
 		Title = "Settings">
 	<ContentPage.Content>
+		<RelativeLayout>
+			<Label x:Name="lbl1" Text="Appear in search results" TextColor="Teal"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
+			/>
+			<Label x:Name="lbl2" Text="Block messages from non-contacts" TextColor="Teal"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl1, Property=Height, Factor=1, Constant=30}"
+			/>
+			<Switch x:Name="hideSwitch"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8, Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
+			/>
+			<Switch x:Name="blockSwitch"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8, Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl2, Property=Y, Factor=1, Constant=0}"
+			/>
+		</RelativeLayout>
 	</ContentPage.Content>
 </ContentPage>

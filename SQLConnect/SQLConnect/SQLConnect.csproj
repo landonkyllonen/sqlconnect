@@ -162,7 +162,7 @@
     <Compile Include="ConditionsPage.xaml.cs">
       <DependentUpon>ConditionsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CondListItem.cs" />
+    <Compile Include="SimpleListItem.cs" />
     <Compile Include="LogsTab.cs" />
     <Compile Include="AddMedicationPage.xaml.cs">
       <DependentUpon>AddMedicationPage.xaml</DependentUpon>
