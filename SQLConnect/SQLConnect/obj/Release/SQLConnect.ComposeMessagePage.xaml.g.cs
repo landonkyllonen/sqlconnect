@@ -23,6 +23,12 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Entry to;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button quickContact;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker contactPick;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Editor content;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -30,6 +36,8 @@ namespace SQLConnect {
             this.LoadFromXaml(typeof(ComposeMessagePage));
             title = this.FindByName <global::Xamarin.Forms.Entry>("title");
             to = this.FindByName <global::Xamarin.Forms.Entry>("to");
+            quickContact = this.FindByName <global::Xamarin.Forms.Button>("quickContact");
+            contactPick = this.FindByName <global::Xamarin.Forms.Picker>("contactPick");
             content = this.FindByName <global::Xamarin.Forms.Editor>("content");
         }
     }

@@ -43,10 +43,14 @@ Toggle allowing messages from non-contacts
 Setup settings tab.
 Refactored condlistitem to simplelistitem for use as a general string object model.
 Create phps for getting and setting prefs, code pref imports.
-/-----------Complete ^
-Add blacklist page, edit/create phps to support removing/adding users to/from contacts and blacklist.
-
+/
+edit/create phps to support removing/adding users to/from contacts and blacklist.
+Allow quick select of contact on composemessage page.
+Add blacklist page.
 Implement a contacts list on the messaging tab.
+/-----------Complete ^
+Finish blacklist and contactspage addition methods, make new features look nice.
+Add code to change blacklist/contacts on db when adding/removing.
 
 Implement settings to:  Allow message filtering.
 

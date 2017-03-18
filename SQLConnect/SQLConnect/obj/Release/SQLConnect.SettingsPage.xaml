@@ -13,11 +13,11 @@
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl1, Property=Height, Factor=1, Constant=30}"
 			/>
-			<Switch x:Name="hideSwitch"
+			<Switch x:Name="hideSwitch" Toggled="hideWarning"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8, Constant=0}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
 			/>
-			<Switch x:Name="blockSwitch"
+			<Switch x:Name="blockSwitch" Toggled="blockWarning"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8, Constant=0}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl2, Property=Y, Factor=1, Constant=0}"
 			/>

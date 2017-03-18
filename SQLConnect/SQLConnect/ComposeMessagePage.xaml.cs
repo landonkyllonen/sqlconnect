@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Net;
+using System.Collections.ObjectModel;
 
 namespace SQLConnect
 {
@@ -15,10 +16,21 @@ namespace SQLConnect
 				title.Text = replytitle;
 				to.Text = replyto;
 				to.IsEnabled = false;
+				quickContact.IsVisible = false;
 			}
 
 			title.Completed += (sender, e) => to.Focus();
 			to.Completed += (sender, e) => content.Focus();
+
+			ObservableCollection<SimpleListItem> obsContacts = Statics.Default.getContacts();
+
+			//Initialize contacts list for quick contact select.
+			foreach (SimpleListItem item in Statics.Default.getContacts())
+			{
+				contactPick.Items.Add(item.labelName);
+			}
+			contactPick.SelectedIndexChanged += (sender, e) => to.Text = contactPick.Items[contactPick.SelectedIndex];
+
 			title.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
 			content.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
 		}
@@ -79,7 +91,12 @@ namespace SQLConnect
 					await DisplayAlert("Error", "Sorry, for some reason the message was not sent.", "OK");
 					break;
 			}
+		}
 
+		public void pickContact(object s, EventArgs e)
+		{
+			contactPick.Focus();
+			return;
 		}
 	}
 }

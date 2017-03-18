@@ -93,15 +93,35 @@ namespace SQLConnect
 			messageList.ItemsSource = messages;
 			messageList.ItemTapped += onMessageSelect;
 
-			Button functionToggle = new Button
+			Button contacts = new Button
 			{
-				Text = "Compose Message",
+				Text = "Contacts",
 				BackgroundColor=Color.Teal,
 				TextColor=Color.White,
 				HorizontalOptions=LayoutOptions.Center,
 				VerticalOptions=LayoutOptions.Center
 			};
+			contacts.Clicked += toContacts;
+
+			Button functionToggle = new Button
+			{
+				Text = "Compose Message",
+				BackgroundColor = Color.Teal,
+				TextColor = Color.White,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center
+			};
 			functionToggle.Clicked += toCompose;
+
+			Button blacklist = new Button
+			{
+				Text = "Blacklist",
+				BackgroundColor = Color.Black,
+				TextColor = Color.White,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.Center
+			};
+			blacklist.Clicked += toBlacklist;
 
 			//Define container
 			RelativeLayout relativeLayout = new RelativeLayout();
@@ -114,15 +134,43 @@ namespace SQLConnect
 			                            Constraint.RelativeToParent((parent) => { return parent.Width; }),
 			                            Constraint.RelativeToParent((parent) => { return parent.Height*.85; }));
 
-			relativeLayout.Children.Add(functionToggle, Constraint.RelativeToParent((parent) =>
+			relativeLayout.Children.Add(contacts, Constraint.RelativeToParent((parent) =>
 										{
-											return parent.Width/2-parent.Width*.4/2;
+											return parent.Width*0+10;
 										}), Constraint.RelativeToParent((parent) =>
 										{
 											return parent.Height * .85;
 										}), Constraint.RelativeToParent((parent) =>
 										{
-											return parent.Width*.4;
+											return parent.Width * .3;
+										}), Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Height * .15;
+										}));
+
+			relativeLayout.Children.Add(functionToggle, Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Width/3+10;
+										}), Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Height * .80;
+										}), Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Width*.3;
+										}), Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Height * .20;
+										}));
+
+			relativeLayout.Children.Add(blacklist, Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Width*2/3+10;
+										}), Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Height * .85;
+										}), Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Width * .3;
 										}), Constraint.RelativeToParent((parent) =>
 										{
 											return parent.Height * .15;
@@ -143,9 +191,23 @@ namespace SQLConnect
 			await Navigation.PushModalAsync(nav);
 		}
 
+		public async void toContacts(object s, EventArgs e)
+		{
+			NavigationPage nav = new NavigationPage(new ContactsPage());
+			NavigationPage.SetHasBackButton(nav, true);
+			await Navigation.PushModalAsync(nav);
+		}
+
 		public async void toCompose(object s, EventArgs e)
 		{
 			NavigationPage nav = new NavigationPage(new ComposeMessagePage(null, null));
+			NavigationPage.SetHasBackButton(nav, true);
+			await Navigation.PushModalAsync(nav);
+		}
+
+		public async void toBlacklist(object s, EventArgs e)
+		{
+			NavigationPage nav = new NavigationPage(new BlacklistPage());
 			NavigationPage.SetHasBackButton(nav, true);
 			await Navigation.PushModalAsync(nav);
 		}

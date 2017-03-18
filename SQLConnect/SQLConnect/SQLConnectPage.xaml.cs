@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using System;
+using System.Net;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
@@ -460,7 +461,7 @@ namespace SQLConnect
 			                                     "user=" + WebUtility.UrlEncode(username));
 
 			var output = await response.Content.ReadAsStringAsync();
-			//Response as Appear;;Block;;Blacklist1--blacklist2--...
+			//Response as Appear;;Block;;Contacts1--contacts2...;;Blacklist1--blacklist2
 
 			string[] components = output.Split(new string[] { ";;" }, StringSplitOptions.None);
 
@@ -469,7 +470,16 @@ namespace SQLConnect
 				Statics.Default.setAppearInSearch(int.Parse(components[0]));
 				Statics.Default.setBlockNonContacts(int.Parse(components[1]));
 
-				string[] blComps = components[2].Split(new string[] { "--" }, StringSplitOptions.None);
+				string[] cComps = components[3].Split(new string[] { "--" }, StringSplitOptions.None);
+				ObservableCollection<SimpleListItem> contacts = new ObservableCollection<SimpleListItem>();
+				foreach (string contact in cComps)
+				{
+					contacts.Add(new SimpleListItem { labelName = contact });
+				}
+				//Set static
+				Statics.Default.setContacts(contacts);
+
+				string[] blComps = components[3].Split(new string[] { "--" }, StringSplitOptions.None);
 				ObservableCollection<SimpleListItem> blacklist = new ObservableCollection<SimpleListItem>();
 				foreach (string blocked in blComps)
 				{

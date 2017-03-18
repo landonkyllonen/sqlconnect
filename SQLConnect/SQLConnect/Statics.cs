@@ -30,6 +30,7 @@ namespace SQLConnect
 		//Settings
 		int appearInSearch, blockNonContacts;
 		ObservableCollection<SimpleListItem> blacklist;
+		ObservableCollection<SimpleListItem> contacts;
 
 		//To manipulate navigation
 		MasterPage master;
@@ -165,6 +166,15 @@ namespace SQLConnect
 		public int getBlockNonContacts()
 		{
 			return blockNonContacts;
+		}
+
+		public void setContacts(ObservableCollection<SimpleListItem> contacts)
+		{
+			this.contacts = contacts;
+		}
+		public ObservableCollection<SimpleListItem> getContacts()
+		{
+			return contacts;
 		}
 
 		public void setBlacklist(ObservableCollection<SimpleListItem> blacklist)

@@ -54,3 +54,7 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/PCLCrypto.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ProductPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ProductPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BlacklistPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ContactsPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BlacklistPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ContactsPage.xaml.g.cs
