@@ -7,11 +7,12 @@ namespace SQLConnect
 {
 	public partial class BlacklistPage : ContentPage
 	{
+		ObservableCollection<SimpleListItem> blacklist;
 		public BlacklistPage()
 		{
 			InitializeComponent();
 
-			ObservableCollection<SimpleListItem> blacklist = Statics.Default.getBlacklist();
+			blacklist = Statics.Default.getBlacklist();
 
 			blackList.ItemsSource = blacklist;
 			blackList.ItemTapped += onItemSelect;
@@ -56,10 +57,43 @@ namespace SQLConnect
 			return;
 		}
 
-		void addToBlacklist(object sender, System.EventArgs e)
+		async void addToBlacklist(object sender, System.EventArgs e)
 		{
-			//add user listed in entry.
-			return;
+			//Display confirmation dialog.
+			var answer = await DisplayAlert("Blacklist?", "Do you want to reject future messages from this user?", "Yes", "No");
+
+			if (answer)
+			{
+
+				console.Text = "";
+				//add contact listed in entry.
+				string name = nameEntry.Text;
+				if (String.IsNullOrEmpty(name))
+				{
+					console.Text = "You must enter a name.";
+					return;
+				}
+
+				//db
+				//Connect to url.
+				var client = new System.Net.Http.HttpClient();
+
+				//Show that we are waiting for a response and wait for it.
+
+				var response = await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
+													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
+													 "&type=" + System.Net.WebUtility.UrlEncode("Blacklist") +
+													 "&itemname=" + System.Net.WebUtility.UrlEncode(name) +
+														"&action=" + System.Net.WebUtility.UrlEncode("Add"));
+
+				//var output = response.Content.ReadAsStringAsync();
+
+				//locally
+				blacklist.Add(new SimpleListItem { labelName = name });
+				Statics.Default.setBlacklist(blacklist);
+
+				nameEntry.Text = "";
+			}
 		}
 	}
 }

@@ -48,10 +48,10 @@ edit/create phps to support removing/adding users to/from contacts and blacklist
 Allow quick select of contact on composemessage page.
 Add blacklist page.
 Implement a contacts list on the messaging tab.
-/-----------Complete ^
-Finish blacklist and contactspage addition methods, make new features look nice.
+/
+Finish blacklist and contactspage addition methods, make new features look better.
 Add code to change blacklist/contacts on db when adding/removing.
-
+/-----------Complete ^
 Implement settings to:  Allow message filtering.
 
 Implement search of dispensary names carrying certain product?

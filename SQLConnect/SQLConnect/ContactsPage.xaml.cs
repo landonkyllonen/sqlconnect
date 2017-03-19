@@ -7,11 +7,12 @@ namespace SQLConnect
 {
 	public partial class ContactsPage : ContentPage
 	{
+		ObservableCollection<SimpleListItem> contacts;
 		public ContactsPage()
 		{
 			InitializeComponent();
 
-			ObservableCollection<SimpleListItem> contacts = Statics.Default.getContacts();
+			contacts = Statics.Default.getContacts();
 
 			contactList.ItemsSource = contacts;
 			contactList.ItemTapped += onItemSelect;
@@ -56,10 +57,36 @@ namespace SQLConnect
 			return;
 		}
 
-		void addContact(object sender, System.EventArgs e)
+		async void addContact(object sender, System.EventArgs e)
 		{
+			console.Text = "";
 			//add contact listed in entry.
-			return;
+			string name = nameEntry.Text;
+			if (String.IsNullOrEmpty(name))
+			{
+				console.Text = "You must enter a name.";
+				return;
+			}
+
+			//db
+			//Connect to url.
+			var client = new System.Net.Http.HttpClient();
+
+			//Show that we are waiting for a response and wait for it.
+
+			var response = await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
+												 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
+												 "&type=" + System.Net.WebUtility.UrlEncode("Contacts") +
+			                                     "&itemname=" + System.Net.WebUtility.UrlEncode(name) +
+													"&action=" + System.Net.WebUtility.UrlEncode("Add"));
+
+			//var output = response.Content.ReadAsStringAsync();
+
+			//locally
+			contacts.Add(new SimpleListItem { labelName = name });
+			Statics.Default.setContacts(contacts);
+
+			nameEntry.Text = "";
 		}
 	}
 }

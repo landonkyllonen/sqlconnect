@@ -20,9 +20,17 @@ namespace SQLConnect {
         private global::Xamarin.Forms.ListView blackList;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label console;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry nameEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(BlacklistPage));
             blackList = this.FindByName <global::Xamarin.Forms.ListView>("blackList");
+            console = this.FindByName <global::Xamarin.Forms.Label>("console");
+            nameEntry = this.FindByName <global::Xamarin.Forms.Entry>("nameEntry");
         }
     }
 }

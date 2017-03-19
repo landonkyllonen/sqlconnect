@@ -472,21 +472,33 @@ namespace SQLConnect
 
 				string[] cComps = components[3].Split(new string[] { "--" }, StringSplitOptions.None);
 				ObservableCollection<SimpleListItem> contacts = new ObservableCollection<SimpleListItem>();
-				foreach (string contact in cComps)
+				if (cComps[0].Equals(""))
 				{
-					contacts.Add(new SimpleListItem { labelName = contact });
+					Statics.Default.setContacts(contacts);
 				}
-				//Set static
-				Statics.Default.setContacts(contacts);
+				else {
+					foreach (string contact in cComps)
+					{
+						contacts.Add(new SimpleListItem { labelName = contact });
+					}
+					//Set static
+					Statics.Default.setContacts(contacts);
+				}
 
 				string[] blComps = components[3].Split(new string[] { "--" }, StringSplitOptions.None);
 				ObservableCollection<SimpleListItem> blacklist = new ObservableCollection<SimpleListItem>();
-				foreach (string blocked in blComps)
+				if (blComps[0].Equals(""))//If none found, set static to empty list.
 				{
-					blacklist.Add(new SimpleListItem { labelName = blocked });
+					Statics.Default.setBlacklist(blacklist);
 				}
-				//Set static
-				Statics.Default.setBlacklist(blacklist);
+				else {
+					foreach (string blocked in blComps)
+					{
+						blacklist.Add(new SimpleListItem { labelName = blocked });
+					}
+					//Set static
+					Statics.Default.setBlacklist(blacklist);
+				}
 			}
 			else {
 				Debug.WriteLine("Problem importing user preferences.");

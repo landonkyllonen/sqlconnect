@@ -4,29 +4,47 @@
 		x:Class="SQLConnect.MessagePage">
 	<ContentPage.Content>
 		<RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-			<Label x:Name="from" TextColor="Teal" FontSize="23" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+			<BoxView BackgroundColor="#009a9a"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.2,Constant=-10}"
+			/>
+			<Label x:Name="from" TextColor="White" FontSize="23" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=15}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-15}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=0}"/>
-			<Label x:Name="date" TextColor="Teal" FontSize="23" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+			<Label x:Name="date" TextColor="White" FontSize="23" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=0}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-15}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=0}"/>
+			<Button x:Name="optionsBtn" BackgroundColor="#009a9a" Text="..." TextColor="White" FontSize="24" Clicked="openOptions"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.05,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=-5}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.2,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=-10}"
+			/>
+			<Picker x:Name="userOptions" IsVisible="false"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"
+			/>
 			<Label x:Name="content" HorizontalTextAlignment="Start" TextColor="Teal" FontSize="18"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=15}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.1,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.2,Constant=0}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=-15}"
-				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.7,Constant=0}"/>
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.7,Constant=-15}"/>
 			<Button Text="Reply" TextColor="White" BackgroundColor="Teal" Clicked="reply"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.25,Constant=-60}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.9,Constant=-25}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.9,Constant=-15}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=120}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=50}"/>
 			<Button Text="Delete" TextColor="White" BackgroundColor="Teal" Clicked="delete"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.75,Constant=-60}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.9,Constant=-25}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.9,Constant=-15}"
 				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=120}"
 				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=50}"/>
 		</RelativeLayout>

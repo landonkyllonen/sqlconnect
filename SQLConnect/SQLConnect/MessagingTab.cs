@@ -108,6 +108,7 @@ namespace SQLConnect
 				Text = "Compose Message",
 				BackgroundColor = Color.Teal,
 				TextColor = Color.White,
+				FontSize=16,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.Center
 			};
@@ -132,7 +133,7 @@ namespace SQLConnect
 			relativeLayout.Children.Add(messageList, Constraint.RelativeToParent((parent) => { return 0; }),
 										Constraint.RelativeToParent((parent) => { return 0; }),
 			                            Constraint.RelativeToParent((parent) => { return parent.Width; }),
-			                            Constraint.RelativeToParent((parent) => { return parent.Height*.85; }));
+			                            Constraint.RelativeToParent((parent) => { return parent.Height*.85-5; }));
 
 			relativeLayout.Children.Add(contacts, Constraint.RelativeToParent((parent) =>
 										{
@@ -153,13 +154,13 @@ namespace SQLConnect
 											return parent.Width/3+10;
 										}), Constraint.RelativeToParent((parent) =>
 										{
-											return parent.Height * .80;
+											return parent.Height * .85-5;
 										}), Constraint.RelativeToParent((parent) =>
 										{
 											return parent.Width*.3;
 										}), Constraint.RelativeToParent((parent) =>
 										{
-											return parent.Height * .20;
+											return parent.Height * .15+10;
 										}));
 
 			relativeLayout.Children.Add(blacklist, Constraint.RelativeToParent((parent) =>
