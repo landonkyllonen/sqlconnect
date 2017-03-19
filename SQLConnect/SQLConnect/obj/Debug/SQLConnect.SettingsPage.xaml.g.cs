@@ -17,8 +17,24 @@ namespace SQLConnect {
     public partial class SettingsPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label lbl1;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label lbl2;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Switch hideSwitch;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Switch blockSwitch;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(SettingsPage));
+            lbl1 = this.FindByName <global::Xamarin.Forms.Label>("lbl1");
+            lbl2 = this.FindByName <global::Xamarin.Forms.Label>("lbl2");
+            hideSwitch = this.FindByName <global::Xamarin.Forms.Switch>("hideSwitch");
+            blockSwitch = this.FindByName <global::Xamarin.Forms.Switch>("blockSwitch");
         }
     }
 }

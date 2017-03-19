@@ -1,12 +1,8 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/BlacklistPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/ProductPage.xaml.cs">
     <Files>
-      <File FileName="SQLConnect/To Do List.txt" Line="50" Column="48" />
-      <File FileName="SQLConnect/MessagePage.xaml" Line="23" Column="100" />
-      <File FileName="SQLConnect/MessagePage.xaml.cs" Line="24" Column="31" />
-      <File FileName="SQLConnect/MessagingTab.cs" Line="111" Column="16" />
-      <File FileName="SQLConnect/BlacklistPage.xaml" Line="14" Column="46" />
-      <File FileName="SQLConnect/ContactsPage.xaml" Line="14" Column="49" />
+      <File FileName="SQLConnect/To Do List.txt" Line="56" Column="1" />
+      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="35" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />

@@ -26,7 +26,7 @@ namespace SQLConnect
 			medicalAmounts = new string[] { "Gram", "Eighth\n(~3.5g)", "Quarter\n(~7g)", "Half Oz\n(~14g)", "Ounce\n(~28g)" };
 			//Discount?
 			discountType = product.prodBulkType;
-			bulkDiscountRate = product.prodBulkDiscount;
+			bulkDiscountRate = 1-product.prodBulkDiscount;
 			//Populate price list for flowers.
 			//If discount available, it is applied iteratively to amounts greater than a gram. This value could be set by the dispensary, maybe for each item?
 			//1 gram is base price
@@ -34,7 +34,7 @@ namespace SQLConnect
 			{
 				case 0:
 					//No discount.
-					medicalPrices = new double[4];
+					medicalPrices = new double[5];
 					medicalPrices[0] = product.prodUnitPrice;
 					medicalPrices[1] = 3.54688 * product.prodUnitPrice;
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice;
@@ -54,7 +54,7 @@ namespace SQLConnect
 					break;
 				case 2:
 					//each step up gives half the discount of the previous step.
-					medicalPrices = new double[4];
+					medicalPrices = new double[5];
 					medicalPrices[0] = product.prodUnitPrice;
 					medicalPrices[1] = 3.54688 * product.prodUnitPrice * bulkDiscountRate;
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (bulkDiscountRate - .025);
@@ -63,7 +63,7 @@ namespace SQLConnect
 					break;
 				default:
 					//No discount.
-					medicalPrices = new double[4];
+					medicalPrices = new double[5];
 					medicalPrices[0] = product.prodUnitPrice;
 					medicalPrices[1] = 3.54688 * product.prodUnitPrice;
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice;

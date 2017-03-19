@@ -23,6 +23,12 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Label date;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button optionsBtn;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker userOptions;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label content;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -30,6 +36,8 @@ namespace SQLConnect {
             this.LoadFromXaml(typeof(MessagePage));
             from = this.FindByName <global::Xamarin.Forms.Label>("from");
             date = this.FindByName <global::Xamarin.Forms.Label>("date");
+            optionsBtn = this.FindByName <global::Xamarin.Forms.Button>("optionsBtn");
+            userOptions = this.FindByName <global::Xamarin.Forms.Picker>("userOptions");
             content = this.FindByName <global::Xamarin.Forms.Label>("content");
         }
     }
