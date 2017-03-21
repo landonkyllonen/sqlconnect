@@ -1,5 +1,64 @@
 dyld: warning: could not load inserted library '/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/monotouch-fixes.dylib' because no suitable image found.  Did find:
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/monotouch-fixes.dylib: required code signature missing for '/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/monotouch-fixes.dylib'
 
-objc[52715]: Class VCWeakObjectHolder is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace (0x11f728988) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference (0x11f65fc38). One of the two will be used. Which one is undefined.
-objc[52715]: Class PLBuildVersion is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices (0x120fe6998) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices (0x120a19880). One of the two will be used. Which one is undefined.
+objc[59859]: Class VCWeakObjectHolder is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace (0x12312c988) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference (0x123063c38). One of the two will be used. Which one is undefined.
+objc[59859]: Class PLBuildVersion is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices (0x1249ea998) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices (0x12441d880). One of the two will be used. Which one is undefined.
+2017-03-20 20:53:51.256 SQLConnect.iOS[59859:6148620] 
+Unhandled Exception:
+System.NullReferenceException: Object reference not set to an instance of an object
+  at Xamarin.Forms.Platform.iOS.Platform.DidAppear () [0x0000d] in <ac56591e1d894d6e9d75eb79d488af29>:0 
+  at Xamarin.Forms.Platform.iOS.PlatformRenderer.ViewDidAppear (System.Boolean animated) [0x00006] in <ac56591e1d894d6e9d75eb79d488af29>:0 
+  at (wrapper managed-to-native) UIKit.UIApplication:UIApplicationMain (int,string[],intptr,intptr)
+  at UIKit.UIApplication.Main (System.String[] args, System.IntPtr principal, System.IntPtr delegate) [0x00005] in <d9a64a30a9e54cff99bd5519750ca6b8>:0 
+  at UIKit.UIApplication.Main (System.String[] args, System.String principalClassName, System.String delegateClassName) [0x00038] in <d9a64a30a9e54cff99bd5519750ca6b8>:0 
+  at SQLConnect.iOS.Application.Main (System.String[] args) [0x00000] in <5abd27750ff84388900863df8dd91bd3>:0 
+2017-03-20 20:53:51.257 SQLConnect.iOS[59859:6148620] Unhandled managed exception:
+Object reference not set to an instance of an object (System.NullReferenceException)
+  at Xamarin.Forms.Platform.iOS.Platform.DidAppear () [0x0000d] in <ac56591e1d894d6e9d75eb79d488af29>:0 
+  at Xamarin.Forms.Platform.iOS.PlatformRenderer.ViewDidAppear (System.Boolean animated) [0x00006] in <ac56591e1d894d6e9d75eb79d488af29>:0 
+  at (wrapper managed-to-native) UIKit.UIApplication:UIApplicationMain (int,string[],intptr,intptr)
+  at UIKit.UIApplication.Main (System.String[] args, System.IntPtr principal, System.IntPtr delegate) [0x00005] in <d9a64a30a9e54cff99bd5519750ca6b8>:0 
+  at UIKit.UIApplication.Main (System.String[] args, System.String principalClassName, System.String delegateClassName) [0x00038] in <d9a64a30a9e54cff99bd5519750ca6b8>:0 
+  at SQLConnect.iOS.Application.Main (System.String[] args) [0x00000] in <5abd27750ff84388900863df8dd91bd3>:0 
+2017-03-20 20:53:51.258 SQLConnect.iOS[59859:6148620] critical: Stacktrace:
+
+2017-03-20 20:53:51.258 SQLConnect.iOS[59859:6148620] critical: 
+Native stacktrace:
+
+2017-03-20 20:53:51.325 SQLConnect.iOS[59859:6148620] critical: 	0   SQLConnect.iOS                      0x000000010ad275ad mono_handle_native_sigsegv + 253
+2017-03-20 20:53:51.326 SQLConnect.iOS[59859:6148620] critical: 	1   libsystem_platform.dylib            0x0000000117743bba _sigtramp + 26
+2017-03-20 20:53:51.326 SQLConnect.iOS[59859:6148620] critical: 	2   ???                                 0x000000010b2aa0d0 0x0 + 4482310352
+2017-03-20 20:53:51.327 SQLConnect.iOS[59859:6148620] critical: 	3   libsystem_c.dylib                   0x000000011749afd7 abort + 129
+2017-03-20 20:53:51.327 SQLConnect.iOS[59859:6148620] critical: 	4   SQLConnect.iOS                      0x000000010aea3b72 xamarin_unhandled_exception_handler + 34
+2017-03-20 20:53:51.327 SQLConnect.iOS[59859:6148620] critical: 	5   SQLConnect.iOS                      0x000000010ad27e3c mono_invoke_unhandled_exception_hook + 92
+2017-03-20 20:53:51.328 SQLConnect.iOS[59859:6148620] critical: 	6   SQLConnect.iOS                      0x000000010ad26dff mono_handle_exception_internal + 5119
+2017-03-20 20:53:51.328 SQLConnect.iOS[59859:6148620] critical: 	7   SQLConnect.iOS                      0x000000010ad259f8 mono_handle_exception + 24
+2017-03-20 20:53:51.328 SQLConnect.iOS[59859:6148620] critical: 	8   SQLConnect.iOS                      0x000000010aca452b altstack_handle_and_restore + 59
+2017-03-20 20:53:51.329 SQLConnect.iOS[59859:6148620] critical: 	9   ???                                 0x000000012f23b153 0x0 + 5085835603
+2017-03-20 20:53:51.329 SQLConnect.iOS[59859:6148620] critical: 	10  SQLConnect.iOS                      0x000000010ad36507 mono_jit_runtime_invoke + 2183
+2017-03-20 20:53:51.329 SQLConnect.iOS[59859:6148620] critical: 	11  SQLConnect.iOS                      0x000000010add6fd8 do_runtime_invoke + 88
+2017-03-20 20:53:51.330 SQLConnect.iOS[59859:6148620] critical: 	12  SQLConnect.iOS                      0x000000010add6f50 mono_runtime_invoke + 208
+2017-03-20 20:53:51.330 SQLConnect.iOS[59859:6148620] critical: 	13  SQLConnect.iOS                      0x000000010aea6f05 xamarin_invoke_trampoline + 3365
+2017-03-20 20:53:51.330 SQLConnect.iOS[59859:6148620] critical: 	14  SQLConnect.iOS                      0x000000010aea8a8e xamarin_arch_trampoline + 78
+2017-03-20 20:53:51.331 SQLConnect.iOS[59859:6148620] critical: 	15  SQLConnect.iOS                      0x000000010aea976a xamarin_x86_64_common_trampoline + 110
+2017-03-20 20:53:51.331 SQLConnect.iOS[59859:6148620] critical: 	16  UIKit                               0x000000010c823a6c -[UIViewController _setViewAppearState:isAnimating:] + 945
+2017-03-20 20:53:51.331 SQLConnect.iOS[59859:6148620] critical: 	17  UIKit                               0x000000010c8267da __64-[UIViewController viewDidMoveToWindow:shouldAppearOrDisappear:]_block_invoke + 42
+2017-03-20 20:53:51.331 SQLConnect.iOS[59859:6148620] critical: 	18  UIKit                               0x000000010c824ac4 -[UIViewController _executeAfterAppearanceBlock] + 86
+2017-03-20 20:53:51.332 SQLConnect.iOS[59859:6148620] critical: 	19  UIKit                               0x000000010c68877c _runAfterCACommitDeferredBlocks + 653
+2017-03-20 20:53:51.332 SQLConnect.iOS[59859:6148620] critical: 	20  UIKit                               0x000000010c675273 _cleanUpAfterCAFlushAndRunDeferredBlocks + 566
+2017-03-20 20:53:51.332 SQLConnect.iOS[59859:6148620] critical: 	21  UIKit                               0x000000010c6a6746 _afterCACommitHandler + 176
+2017-03-20 20:53:51.332 SQLConnect.iOS[59859:6148620] critical: 	22  CoreFoundation                      0x00000001161c0267 __CFRUNLOOP_IS_CALLING_OUT_TO_AN_OBSERVER_CALLBACK_FUNCTION__ + 23
+2017-03-20 20:53:51.333 SQLConnect.iOS[59859:6148620] critical: 	23  CoreFoundation                      0x00000001161c01d7 __CFRunLoopDoObservers + 391
+2017-03-20 20:53:51.333 SQLConnect.iOS[59859:6148620] critical: 	24  CoreFoundation                      0x00000001161a4f8e __CFRunLoopRun + 1198
+2017-03-20 20:53:51.333 SQLConnect.iOS[59859:6148620] critical: 	25  CoreFoundation                      0x00000001161a4884 CFRunLoopRunSpecific + 420
+2017-03-20 20:53:51.333 SQLConnect.iOS[59859:6148620] critical: 	26  GraphicsServices                    0x0000000116e1fa6f GSEventRunModal + 161
+2017-03-20 20:53:51.333 SQLConnect.iOS[59859:6148620] critical: 	27  UIKit                               0x000000010c67bc68 UIApplicationMain + 159
+2017-03-20 20:53:51.334 SQLConnect.iOS[59859:6148620] critical: 	28  ???                                 0x000000012bcdc612 0x0 + 5029873170
+2017-03-20 20:53:51.334 SQLConnect.iOS[59859:6148620] critical: 	29  ???                                 0x000000012bcdc4a0 0x0 + 5029872800
+2017-03-20 20:53:51.334 SQLConnect.iOS[59859:6148620] critical: 
+=================================================================
+Got a SIGABRT while executing native code. This usually indicates
+a fatal error in the mono runtime or one of the native libraries 
+used by your application.
+=================================================================
+

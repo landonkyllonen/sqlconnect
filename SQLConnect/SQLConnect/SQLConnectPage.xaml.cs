@@ -11,12 +11,22 @@ namespace SQLConnect
 	{
 		string[] credentials;
 		string user;
+		string logoUrl;
 			
 		public SQLConnectPage()
 		{
 			Application.Current.MainPage = this;
 
 			InitializeComponent();
+
+			if (Application.Current.Properties.ContainsKey("dispLogo"))
+			{
+				var id = Application.Current.Properties["dispLogo"] as string;
+				logo.Source = id;
+			}
+			else {
+				logo.Source = "logo.png";
+			}
 
 			userentry.SetValue(Entry.TextProperty, "l");
 			userentry.Completed += (sender, e) => passentry.Focus();
@@ -86,6 +96,8 @@ namespace SQLConnect
 				//await asyncLoadDispensaries();
 				console.Text = "Loading Messages...";
 				await asyncLoadMessages(user);
+				console.Text = "Loading Dispensaries...";
+				await asyncLoadDispensaries();
 				console.Text = "Loading Products...";
 				await asyncLoadProducts(credentials[16]);
 				console.Text = "Loading Orders...";
@@ -98,15 +110,15 @@ namespace SQLConnect
 				console.Text = "Success!";
 
 				//If user has no dispensary, display possible choices. Otherwise, go to home page.
-				/*if (credentials[16].Equals(""))
+				if (credentials[16].Equals(""))
 				{
 					await Navigation.PushModalAsync(new DispensaryPage());
 				}
 				else {
 					await Navigation.PushModalAsync(new MasterPage());
-				}*/
+				}
 
-				await Navigation.PushModalAsync(new DispensaryPage());
+				//await Navigation.PushModalAsync(new DispensaryPage());
 			}
 			else {//Show error
 				console.SetValue(Label.TextProperty, determinant);
@@ -178,6 +190,12 @@ namespace SQLConnect
 
 			//Process the output.
 			string[] dispensaryObjects = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+			if (dispensaryObjects[0].Length < 2)
+			{
+				//empty, dont know why output.split would say there is one "" object.
+				Debug.WriteLine("There was no dispensary info available.");
+				return;
+			}
 
 			//bound as 
 			foreach (string obj in dispensaryObjects)
@@ -192,7 +210,8 @@ namespace SQLConnect
 				}
 				Debug.WriteLine(comps);
 
-				dispensaries.Add(new DispListItem { });
+				dispensaries.Add(new DispListItem { dispName=dispensaryComponents[0], dispId=dispensaryComponents[1], dispCity=dispensaryComponents[2],
+					dispAddress=dispensaryComponents[3], dispLogoPath=dispensaryComponents[4], dispImgPath=dispensaryComponents[5]});
 			}
 
 			//products now contains all the products loaded from a certain dispensary, save to static for use in deal on front page,
@@ -206,7 +225,6 @@ namespace SQLConnect
 		{
 			Debug.WriteLine(dispId);
 
-			Product[] products;
 			ObservableCollection<ProductListItem> prods;
 
 			//Connect to url.

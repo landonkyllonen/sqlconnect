@@ -145,7 +145,7 @@ namespace SQLConnect
 		{
 			this.dispensaries = dispensaries;
 		}
-		public ObservableCollection<DispListItem> setDispensaries()
+		public ObservableCollection<DispListItem> getDispensaries()
 		{
 			return dispensaries;
 		}

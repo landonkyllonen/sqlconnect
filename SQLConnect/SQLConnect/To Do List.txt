@@ -9,23 +9,17 @@ Change auths in db. Change meds in db.
 Implement phps and format default values once able to access ftp and SQL. Get products working again.
 
 Add labels to medication list.
-
 Setup log creation scheme on db and change phps to support this.
-
 Get profile saving working properly. (Update phps and save med/conds upon addition.)
 /
 Limit feedback to med/cond combinations that havent been done already.
-
 Implement med/cond deletion.
-
 Make all current entries progress to the next entry when done is pressed on the keyboard.
 /
 On reply, fill title with a default and lock 'to' field to the sender's name.
-
 Implement log uploads (input validation) and imports properly. (CreateLogPage.cs)
 /
 Started layout for a product's page when tapped. currently available for regular increment types only.
-
 Introduced feedback from db operations through the use of DisplayAlert, which is not as good as toast, but works.
 /
 Prototype for layout supporting adding to cart from enumerated and incremental types completed, room for improvement?
@@ -51,10 +45,17 @@ Implement a contacts list on the messaging tab.
 /
 Finish blacklist and contactspage addition methods, make new features look better.
 Add code to change blacklist/contacts on db when adding/removing.
+/
+Finish dispensary import code.
+Create code to handle changing dispensaries and reloading the products for the new dispensary.
+Fixed bug where products in medical search were not being displayed.
+Create code to set logo to the current dispensaries' logo on startup.
+Implement search of dispensary names carrying certain product
+							////////////////////NEEDS TESTING///////////////////
 /-----------Complete ^
 Implement settings to:  Allow message filtering.
 
-Implement search of dispensary names carrying certain product?
+Implement saving logo image to phone instead of image url for faster loading?
 
 Implement sharing log viewing between contacts?
 

@@ -32,7 +32,7 @@ namespace SQLConnect
 
 			choices = new string[] {"Select", "Product Info", "Users" };
 
-			piChoices = new string[] {"Select", "Most Popular", "Most Popular by Condition", "Specific Product" };
+			piChoices = new string[] {"Select", "Most Popular", "Most Popular by Condition", "Specific Product Stats", "Locations selling..." };
 
 			userChoices = new string[] { "Select", "That have used...", "With condition..." };
 
@@ -105,7 +105,7 @@ namespace SQLConnect
 
 				var title = new Label { FontSize = 26, TextColor = Color.Teal, VerticalTextAlignment = TextAlignment.Center, HorizontalTextAlignment = TextAlignment.Start };
 
-				title.SetBinding(Label.TextProperty, "condName");
+				title.SetBinding(Label.TextProperty, "labelName");
 				//Reusing condlistitem template.
 
 				templateHolder.Children.Add(title, Constraint.Constant(40), Constraint.Constant(0),
@@ -123,7 +123,7 @@ namespace SQLConnect
 
 			resultList = new ListView { 
 				IsVisible=false,
-				RowHeight=60
+				RowHeight=80
 			};
 			resultList.ItemTemplate = simpleDataTemplate;
 			holder.Children.Add(resultList, Constraint.Constant(0), Constraint.Constant(65),
@@ -196,6 +196,9 @@ namespace SQLConnect
 				case 31://Specific Product...
 					three.IsEnabled = true;
 					//Need to collect more info.
+					break;
+				case 41://Locations selling...
+					three.IsEnabled = true;
 					break;
 				case 12://Users that have used med...
 					three.IsEnabled = true;
@@ -284,6 +287,18 @@ namespace SQLConnect
 						//Output is a string that should be displayed.
 						result.IsVisible = true;
 						result.Text = output;
+						break;
+					case 41://Locations with product...
+							//Process php dispensary output.
+						string[] objects = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+						//End if no output
+						if (objects[0].Length < 1){break;}
+						//Otherwise, process output.
+						foreach (string o in objects)
+						{
+							string[] components = o.Split(new string[] { "--" }, StringSplitOptions.None);
+							ranks.Add(new SimpleListItem { labelName = components[1] + " in " + components[2] });
+						}
 						break;
 					case 12://Users that have used med...
 						//Output is a string that should be displayed... for now.
