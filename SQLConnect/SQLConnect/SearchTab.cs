@@ -103,7 +103,7 @@ namespace SQLConnect
 			{
 				RelativeLayout templateHolder = new RelativeLayout { HorizontalOptions = LayoutOptions.Fill, VerticalOptions = LayoutOptions.Fill };
 
-				var title = new Label { FontSize = 26, TextColor = Color.Teal, VerticalTextAlignment = TextAlignment.Center, HorizontalTextAlignment = TextAlignment.Start };
+				var title = new Label { FontSize = 22, TextColor = Color.Teal, VerticalTextAlignment = TextAlignment.Center, HorizontalTextAlignment = TextAlignment.Start };
 
 				title.SetBinding(Label.TextProperty, "labelName");
 				//Reusing condlistitem template.
@@ -299,6 +299,8 @@ namespace SQLConnect
 							string[] components = o.Split(new string[] { "--" }, StringSplitOptions.None);
 							ranks.Add(new SimpleListItem { labelName = components[1] + " in " + components[2] });
 						}
+						resultList.ItemsSource = ranks;
+						resultList.IsVisible = true;
 						break;
 					case 12://Users that have used med...
 						//Output is a string that should be displayed... for now.

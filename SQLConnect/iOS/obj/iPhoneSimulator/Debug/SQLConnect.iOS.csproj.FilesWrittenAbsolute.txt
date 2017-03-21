@@ -27,3 +27,9 @@
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Debug/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Debug/SQLConnect.dll.mdb
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Debug/CryptSharp.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Debug/optimized/logout.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Debug/optimized/medkit.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Debug/optimized/pill.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Debug/optimized/important.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Debug/optimized/group.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhoneSimulator/Debug/optimized/pillblank.png

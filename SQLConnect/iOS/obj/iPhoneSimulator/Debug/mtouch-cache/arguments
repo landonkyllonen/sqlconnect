@@ -332,8 +332,6 @@
 	/Users/kellypowers/Projects/SQLConnect/packages/PCLCrypto.2.0.147/lib/xamarinios10/PCLCrypto.dll \
 	-r \
 	/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/SQLConnect.dll \
-	-r \
-	/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/CryptSharp.dll \
 	--target-framework \
 	"Xamarin.iOS,v1.0" \
 	/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhoneSimulator/Debug//SQLConnect.iOS.exe \

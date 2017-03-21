@@ -11,7 +11,6 @@ namespace SQLConnect
 	{
 		string[] credentials;
 		string user;
-		string logoUrl;
 			
 		public SQLConnectPage()
 		{
