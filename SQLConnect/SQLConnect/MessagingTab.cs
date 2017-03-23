@@ -51,12 +51,12 @@ namespace SQLConnect
 
 				date.SetBinding(Label.TextProperty, "msgDate");
 
-				/*title.SetBinding(Label.TextColorProperty, new Binding("msgViewed", BindingMode.Default,
-																	  new BinaryToColorConverter(), null));
+				title.SetBinding(Label.TextColorProperty, new Binding("msgViewed", BindingMode.Default,
+																	  new BoolToColorConverter(), null));
 				from.SetBinding(Label.TextColorProperty, new Binding("msgViewed", BindingMode.Default,
-																	  new BinaryToColorConverter(), null));
+																	  new BoolToColorConverter(), null));
 				date.SetBinding(Label.TextColorProperty, new Binding("msgViewed", BindingMode.Default,
-																	  new BinaryToColorConverter(), null));*/
+																	  new BoolToColorConverter(), null));
 				
 				holder.Children.Add(title, Constraint.Constant(15), Constraint.Constant(10),
 									Constraint.RelativeToParent((parent) =>
@@ -106,7 +106,6 @@ namespace SQLConnect
 			messages = Statics.Default.getMessages();
 			messagesFiltered = new ObservableCollection<MessageListItem>();
 
-
 			messageList.ItemsSource = messages;
 			messageList.ItemTapped += onMessageSelect;
 
@@ -132,7 +131,7 @@ namespace SQLConnect
 
 			Button functionToggle = new Button
 			{
-				Text = "Compose Message",
+				Text = "Compose",
 				BackgroundColor = Color.Teal,
 				TextColor = Color.White,
 				FontSize=16,

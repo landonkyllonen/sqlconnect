@@ -7,9 +7,19 @@ namespace SQLConnect
 	public class HomeTab : ContentPage
 	{
 		string[] credentials;
+		ProductListItem deal;
 
 		public HomeTab()
 		{
+			if (Statics.Default.isOffline())
+			{
+				deal = new ProductListItem { prodName = "Product Name", prodUnitPrice = 10.00, prodCategory = "Category"};
+			}
+			else
+			{
+				deal = Statics.Default.getDeal();
+			}
+
 			RelativeLayout rel = new RelativeLayout
 			{
 				HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -41,7 +51,7 @@ namespace SQLConnect
 
 				Label dealPrice = new Label
 				{
-					Text = "Price/g",
+				Text = "$"+deal.prodUnitPrice+"/g",
 					FontSize = 15,
 					TextColor = Color.Teal,
 					HorizontalOptions=LayoutOptions.CenterAndExpand
@@ -55,7 +65,7 @@ namespace SQLConnect
 
 					Label dealName = new Label
 					{
-						Text = "Name of product",
+						Text = deal.prodName,
 						TextColor = Color.Teal,
 						FontSize=15,
 						HorizontalOptions=LayoutOptions.CenterAndExpand,
@@ -65,7 +75,7 @@ namespace SQLConnect
 					Label dealCategory = new Label
 					{
 						TextColor = Color.Teal,
-						Text = "Category",
+						Text = deal.prodCategory,
 						HorizontalOptions = LayoutOptions.CenterAndExpand,
 						VerticalOptions = LayoutOptions.CenterAndExpand
 					};
@@ -93,6 +103,7 @@ namespace SQLConnect
 					Color = Color.FromHex("#006767")
 				};
 
+
 				Button toMyID = new Button
 				{
 					FontSize = 20,
@@ -100,6 +111,7 @@ namespace SQLConnect
 					Text="My Card",
 					TextColor=Color.White
 				};
+				toMyID.Clicked += toBarcodePage;
 
 				Button toProducts = new Button
 				{
@@ -108,6 +120,7 @@ namespace SQLConnect
 					Text="Browse Products",
 					TextColor = Color.White
 				};
+				toProducts.Clicked += toProductsTab;
 
 				Button toHelp = new Button
 				{
@@ -116,6 +129,7 @@ namespace SQLConnect
 					Text="Help",
 					TextColor = Color.White
 				};
+				toHelp.Clicked += toHelpPage;
 
 				rel.Children.Add(welcome, Constraint.RelativeToParent((parent) =>
 							{
@@ -282,13 +296,45 @@ namespace SQLConnect
 			//Initializations
 			credentials = Statics.Default.getCreds();
 
+			//If a dispensary owner(authorized), show link to owner controls.
+			if (credentials[12].Equals("1"))
+			{
+				toMyID.Text = "Manage Dispensary";
+				toMyID.Clicked += toDispensaryManagement;
+			}
+
 			welcome.SetValue(Label.TextProperty, "Hello, " + credentials[0] + "!");
 		}
 
 		public void goToDeal(object s, EventArgs e)
 		{
-			//IMPLEMENT GO TO DEAL'S PAGE, IF NO DEAL, GO TO PRODUCTS TABHOST
-			//Statics.Default.getMaster.Detail
+			Statics.Default.getMaster().Detail = new NavigationPage(new ProductPage());
+		}
+
+		public void toProductsTab(object s, EventArgs e)
+		{
+			Statics.Default.getMaster().Detail = new NavigationPage(new ProductsPage());
+		}
+
+		public void toBarcodePage(object s, EventArgs e)
+		{
+			NavigationPage nav = new NavigationPage(new BarcodePage());
+			NavigationPage.SetHasBackButton(nav, true);
+			Navigation.PushModalAsync(nav);
+		}
+
+		public void toHelpPage(object s, EventArgs e)
+		{
+			NavigationPage nav = new NavigationPage(new BarcodePage());
+			NavigationPage.SetHasBackButton(nav, true);
+			Navigation.PushModalAsync(nav);
+		}
+
+		public void toDispensaryManagement(object s, EventArgs e)
+		{
+			NavigationPage nav = new NavigationPage(new DispensaryManagementPage());
+			NavigationPage.SetHasBackButton(nav, true);
+			Navigation.PushModalAsync(nav);
 		}
 	}
 }

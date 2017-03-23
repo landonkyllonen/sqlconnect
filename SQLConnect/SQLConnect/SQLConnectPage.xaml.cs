@@ -260,11 +260,26 @@ namespace SQLConnect
 				if (productComponents[8].Equals("1")) { deal = true; }
 				if (productComponents[9].Equals("1")) { incentive = true; }
 
+				var prod = new ProductListItem
+				{
+					prodName = productComponents[0],
+					prodCategory = productComponents[1],
+					prodDescription = productComponents[2],
+					prodImgUrl = productComponents[3],
+					prodIncrementType = productComponents[4],
+					prodUnitPrice = double.Parse(productComponents[5]),
+					prodUnitPriceIncentive = double.Parse(productComponents[6]),
+					prodDiscount = double.Parse(productComponents[7]),
+					prodDealFlag = deal,
+					prodIncentiveFlag = incentive,
+					prodBulkDiscount = double.Parse(productComponents[10]),
+					prodBulkType = int.Parse(productComponents[11])
+				};
+
+				if (prod.prodDealFlag) { Statics.Default.setDeal(prod); }
+
 				//bound as name--category--description--imageurl--incrementtype--baseprice--incbaseprice--dealdiscount--dealflag-incflag--bulkdis--bulkdistype;;
-				prods.Add(new ProductListItem { prodName=productComponents[0], prodCategory=productComponents[1], prodDescription=productComponents[2],
-					prodImgUrl=productComponents[3], prodIncrementType=productComponents[4], prodUnitPrice=double.Parse(productComponents[5]), prodUnitPriceIncentive=double.Parse(productComponents[6]),
-					prodDiscount=double.Parse(productComponents[7]), prodDealFlag=deal, prodIncentiveFlag=incentive, prodBulkDiscount=double.Parse(productComponents[10]),
-					prodBulkType=int.Parse(productComponents[11])});
+				prods.Add(prod);
 			}
 
 			//products now contains all the products loaded from a certain dispensary, save to static for use in deal on front page,

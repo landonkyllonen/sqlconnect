@@ -11,6 +11,7 @@ namespace SQLConnect
 			InitializeComponent();
 
 			Statics.Default.setMaster(this);
+			Statics.Default.setMasterList(masterPage);
 
 			masterPage.ListView.ItemSelected += OnItemSelected;
 		}

@@ -55,10 +55,14 @@ Implement search of dispensary names carrying certain product.
 Fixed bug with user filtering.
 Allow message filtering.
 Added cart total to cart tab.
+/
+Fixed bug with settings
+enabled products button(now know how to programmatically change detail page)
+Got property binding to work for viewed messages vs unviewed messages.
+Inserted values for deal on home page(there can only be one atm, it is whichever is flagged and appears last)
+Go to deal button should now go to the deal.
 /-----------Complete ^
-Home page, implement card for users, enable products button, create help page for app.
-
-Try to get property binding to work for viewed messages vs unviewed messages.
+Home page: implement card for users, create help page for app.
 
 Implement 1 more analytics tab.
 
@@ -66,6 +70,8 @@ Allow placing an order with checkout.
 
 Implement owner controls: Add item to dispensaries inventory
 						  Whitelist users?
+						  Suspend transactions of something suspicious is happening.
+						  (Suspend with random password so it cannot be undone by anyone except one who suspended, alternatively contact support to reenable)
 
 Find a better method of feedback than displayalert?
 
@@ -74,3 +80,5 @@ Find better way to dismiss searchbar keyboard(should hide whenever search is pre
 Implement saving logo image to phone instead of image url for faster loading? Loads pretty fast already
 
 Implement sharing log viewing between contacts?
+
+Right now product pictures are global for all dispensaries, make this different for each, with choice of stock photo or uploading own?

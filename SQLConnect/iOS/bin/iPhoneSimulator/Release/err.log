@@ -1,5 +1,100 @@
-dyld: warning: could not load inserted library '/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/monotouch-fixes.dylib' because no suitable image found.  Did find:
-	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/monotouch-fixes.dylib: required code signature missing for '/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/monotouch-fixes.dylib'
+objc[1567]: Class VCWeakObjectHolder is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace (0x11bb26988) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference (0x11ba5dc38). One of the two will be used. Which one is undefined.
+objc[1567]: Class PLBuildVersion is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices (0x11d3e4998) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices (0x11ce17880). One of the two will be used. Which one is undefined.
+2017-03-23 16:32:31.645 SQLConnect.iOS[1567:33488] 
+Unhandled Exception:
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at SQLConnect.HomeTab..ctor () [0x0012f] in <0626c9d53e81433384751dd8bbeb7ff6>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&)
+  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) [0x00002] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) [0x0001c] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceMono (System.Boolean nonPublic) [0x000ca] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceSlow (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x0001a] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceDefaultCtor (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x0002a] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Activator.CreateInstance (System.Type type, System.Boolean nonPublic) [0x00040] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Activator.CreateInstance (System.Type type) [0x00000] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at Xamarin.Forms.Xaml.CreateValuesVisitor.Visit (Xamarin.Forms.Xaml.ElementNode node, Xamarin.Forms.Xaml.INode parentNode) [0x0021f] in <a162cd63395e4f2dab76edb5673146ca>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) [0x0001c] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceMono (System.Boolean nonPublic) [0x000ca] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceSlow (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x0001a] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceDefaultCtor (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x0002a] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Activator.CreateInstance (System.Type type, System.Boolean nonPublic) [0x00040] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Activator.CreateInstance (System.Type type) [0x00000] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at Xamarin.Forms.Xaml.CreateValuesVisitor.Visit (Xamarin.Forms.Xaml.ElementNode node, Xamarin.Forms.Xaml.INode parentNode) [0x0021f] in <a162cd63395e4f2dab76edb5673146ca>:0 
+--- End of stack trace from previous location where exception was thrown ---
+  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw () [0x0000c] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore.<ThrowAsync>m__0 (System.Object state) [0x00000] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at UIKit.UIKitSynchronizationContext+<Post>c__AnonStorey0.<>m__0 () [0x00000] in <0e19e41004734f038ea3619b2ae7197a>:0 
+  at Foundation.NSAsyncActionDispatcher.Apply () [0x00000] in <0e19e41004734f038ea3619b2ae7197a>:0 
+--- End of stack trace from previous location where exception was thrown ---
+  at (wrapper managed-to-native) UIKit.UIApplication:UIApplicationMain (int,string[],intptr,intptr)
+  at UIKit.UIApplication.Main (System.String[] args, System.IntPtr principal, System.IntPtr delegate) [0x00005] in <0e19e41004734f038ea3619b2ae7197a>:0 
+  at UIKit.UIApplication.Main (System.String[] args, System.String principalClassName, System.String delegateClassName) [0x00038] in <0e19e41004734f038ea3619b2ae7197a>:0 
+  at SQLConnect.iOS.Application.Main (System.String[] args) [0x00000] in <92b43eebc76b4b93954282f514be6cf5>:0 
+2017-03-23 16:32:31.647 SQLConnect.iOS[1567:33488] Unhandled managed exception:
+Exception has been thrown by the target of an invocation. (System.Reflection.TargetInvocationException)
+  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) [0x0001c] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceMono (System.Boolean nonPublic) [0x000ca] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceSlow (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x0001a] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceDefaultCtor (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x0002a] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Activator.CreateInstance (System.Type type, System.Boolean nonPublic) [0x00040] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Activator.CreateInstance (System.Type type) [0x00000] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at Xamarin.Forms.Xaml.CreateValuesVisitor.Visit (Xamarin.Forms.Xaml.ElementNode node, Xamarin.Forms.Xaml.INode parentNode) [0x0021f] in <a162cd63395e4f2dab76edb5673146ca>:0 
+--- End of stack trace from previous location where exception was thrown ---
+  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw () [0x0000c] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore.<ThrowAsync>m__0 (System.Object state) [0x00000] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at UIKit.UIKitSynchronizationContext+<Post>c__AnonStorey0.<>m__0 () [0x00000] in <0e19e41004734f038ea3619b2ae7197a>:0 
+  at Foundation.NSAsyncActionDispatcher.Apply () [0x00000] in <0e19e41004734f038ea3619b2ae7197a>:0 
+--- End of stack trace from previous location where exception was thrown ---
+  at (wrapper managed-to-native) UIKit.UIApplication:UIApplicationMain (int,string[],intptr,intptr)
+  at UIKit.UIApplication.Main (System.String[] args, System.IntPtr principal, System.IntPtr delegate) [0x00005] in <0e19e41004734f038ea3619b2ae7197a>:0 
+  at UIKit.UIApplication.Main (System.String[] args, System.String principalClassName, System.String delegateClassName) [0x00038] in <0e19e41004734f038ea3619b2ae7197a>:0 
+  at SQLConnect.iOS.Application.Main (System.String[] args) [0x00000] in <92b43eebc76b4b93954282f514be6cf5>:0 
+ --- inner exception ---
+Exception has been thrown by the target of an invocation. (System.Reflection.TargetInvocationException)
+  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) [0x0001c] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceMono (System.Boolean nonPublic) [0x000ca] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceSlow (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x0001a] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.RuntimeType.CreateInstanceDefaultCtor (System.Boolean publicOnly, System.Boolean skipCheckThis, System.Boolean fillCache, System.Threading.StackCrawlMark& stackMark) [0x0002a] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Activator.CreateInstance (System.Type type, System.Boolean nonPublic) [0x00040] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at System.Activator.CreateInstance (System.Type type) [0x00000] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+  at Xamarin.Forms.Xaml.CreateValuesVisitor.Visit (Xamarin.Forms.Xaml.ElementNode node, Xamarin.Forms.Xaml.INode parentNode) [0x0021f] in <a162cd63395e4f2dab76edb5673146ca>:0 
+ --- inner exception ---
+Object reference not set to an instance of an object (System.NullReferenceException)
+  at SQLConnect.HomeTab..ctor () [0x0012f] in <0626c9d53e81433384751dd8bbeb7ff6>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoCMethod:InternalInvoke (System.Reflection.MonoCMethod,object,object[],System.Exception&)
+  at System.Reflection.MonoCMethod.InternalInvoke (System.Object obj, System.Object[] parameters) [0x00002] in <54e129cad3ee4c61a6b46c3680ddc69a>:0 
+2017-03-23 16:32:31.647 SQLConnect.iOS[1567:33488] critical: Stacktrace:
 
-objc[60140]: Class VCWeakObjectHolder is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace (0x124272988) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference (0x1241a9c38). One of the two will be used. Which one is undefined.
-objc[60140]: Class PLBuildVersion is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices (0x125b30998) and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices (0x125563880). One of the two will be used. Which one is undefined.
+2017-03-23 16:32:31.648 SQLConnect.iOS[1567:33488] critical: 
+Native stacktrace:
+
+2017-03-23 16:32:31.650 SQLConnect.iOS[1567:33488] critical: 	0   SQLConnect.iOS                      0x0000000103716bbd mono_handle_native_sigsegv + 253
+2017-03-23 16:32:31.650 SQLConnect.iOS[1567:33488] critical: 	1   libsystem_platform.dylib            0x00000001101cabba _sigtramp + 26
+2017-03-23 16:32:31.651 SQLConnect.iOS[1567:33488] critical: 	2   ???                                 0x0000000103c9199b 0x0 + 4358478235
+2017-03-23 16:32:31.651 SQLConnect.iOS[1567:33488] critical: 	3   libsystem_c.dylib                   0x000000010ff21fd7 abort + 129
+2017-03-23 16:32:31.651 SQLConnect.iOS[1567:33488] critical: 	4   SQLConnect.iOS                      0x0000000103898382 xamarin_unhandled_exception_handler + 34
+2017-03-23 16:32:31.651 SQLConnect.iOS[1567:33488] critical: 	5   SQLConnect.iOS                      0x00000001037729ab mono_invoke_unhandled_exception_hook + 139
+2017-03-23 16:32:31.651 SQLConnect.iOS[1567:33488] critical: 	6   SQLConnect.iOS                      0x000000010371640f mono_handle_exception_internal + 5135
+2017-03-23 16:32:31.652 SQLConnect.iOS[1567:33488] critical: 	7   SQLConnect.iOS                      0x0000000103714ff8 mono_handle_exception + 24
+2017-03-23 16:32:31.652 SQLConnect.iOS[1567:33488] critical: 	8   SQLConnect.iOS                      0x000000010368e51f mono_amd64_throw_exception + 143
+2017-03-23 16:32:31.652 SQLConnect.iOS[1567:33488] critical: 	9   ???                                 0x00000001223b49e7 0x0 + 4869278183
+2017-03-23 16:32:31.652 SQLConnect.iOS[1567:33488] critical: 	10  SQLConnect.iOS                      0x00000001038a5287 _Z31native_to_managed_trampoline_11P11objc_objectP13objc_selectorPP11_MonoMethodPKcS7_ + 295
+2017-03-23 16:32:31.652 SQLConnect.iOS[1567:33488] critical: 	11  SQLConnect.iOS                      0x00000001038b008d -[__MonoMac_NSAsyncActionDispatcher xamarinApplySelector] + 61
+2017-03-23 16:32:31.653 SQLConnect.iOS[1567:33488] critical: 	12  Foundation                          0x0000000106083e9e __NSThreadPerformPerform + 326
+2017-03-23 16:32:31.653 SQLConnect.iOS[1567:33488] critical: 	13  CoreFoundation                      0x000000010ec47761 __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17
+2017-03-23 16:32:31.653 SQLConnect.iOS[1567:33488] critical: 	14  CoreFoundation                      0x000000010ec2c98c __CFRunLoopDoSources0 + 556
+2017-03-23 16:32:31.653 SQLConnect.iOS[1567:33488] critical: 	15  CoreFoundation                      0x000000010ec2be76 __CFRunLoopRun + 918
+2017-03-23 16:32:31.653 SQLConnect.iOS[1567:33488] critical: 	16  CoreFoundation                      0x000000010ec2b884 CFRunLoopRunSpecific + 420
+2017-03-23 16:32:31.653 SQLConnect.iOS[1567:33488] critical: 	17  GraphicsServices                    0x000000010f8a6a6f GSEventRunModal + 161
+2017-03-23 16:32:31.654 SQLConnect.iOS[1567:33488] critical: 	18  UIKit                               0x00000001043f4c68 UIApplicationMain + 159
+2017-03-23 16:32:31.654 SQLConnect.iOS[1567:33488] critical: 	19  ???                                 0x00000001246eadf5 0x0 + 4906200565
+2017-03-23 16:32:31.654 SQLConnect.iOS[1567:33488] critical: 	20  ???                                 0x00000001246eac60 0x0 + 4906200160
+2017-03-23 16:32:31.654 SQLConnect.iOS[1567:33488] critical: 
+=================================================================
+Got a SIGABRT while executing native code. This usually indicates
+a fatal error in the mono runtime or one of the native libraries 
+used by your application.
+=================================================================
+

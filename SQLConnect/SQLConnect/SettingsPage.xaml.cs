@@ -25,7 +25,7 @@ namespace SQLConnect
 		{
 			s.ToString();
 			e.ToString();
-			if (!hideSwitch.IsToggled)
+			if (hideSwitch.IsToggled)
 			{
 				appear = 0;
 				var answer = await DisplayAlert("Are you sure?", "Turning this on means that your username will appear to users looking for others with " +
@@ -70,7 +70,7 @@ namespace SQLConnect
 		{
 			s.ToString();
 			e.ToString();
-			if (!blockSwitch.IsToggled)
+			if (blockSwitch.IsToggled)
 			{
 				block = 0;
 				var answer = await DisplayAlert("Are you sure?", "Turning this on means that users will be told that they must be your contact to send you a message.", "Okay", "Nevermind");

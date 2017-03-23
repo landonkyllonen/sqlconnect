@@ -17,6 +17,7 @@ namespace SQLConnect
 
 
 		//Products Tab
+		ProductListItem deal;
 		ObservableCollection<ProductListItem> products; //Dispensary specific item info, only has url for pic to be downloaded.
 		ObservableCollection<CartListItem> cartItems;
 		ObservableCollection<OrderListItem> orders;
@@ -34,6 +35,7 @@ namespace SQLConnect
 
 		//To manipulate navigation
 		MasterPage master;
+		MasterList masterList;
 
 		//Passing ListClicked Info to other pages
 		MessageListItem msgClicked;
@@ -103,6 +105,15 @@ namespace SQLConnect
 		public ObservableCollection<MedListItem> getMeds()
 		{
 			return meds;
+		}
+
+		public void setDeal(ProductListItem deal)
+		{
+			this.deal = deal;
+		}
+		public ProductListItem getDeal()
+		{
+			return deal;
 		}
 
 		public void setProducts(ObservableCollection<ProductListItem> products)
@@ -193,6 +204,15 @@ namespace SQLConnect
 		public MasterPage getMaster()
 		{
 			return master;
+		}
+
+		public void setMasterList(MasterList masterList)
+		{
+			this.masterList = masterList;
+		}
+		public MasterList getMasterList()
+		{
+			return masterList;
 		}
 
 		public void setMsgClicked(MessageListItem msgClicked)
