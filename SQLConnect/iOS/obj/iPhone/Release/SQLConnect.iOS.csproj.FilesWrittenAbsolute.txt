@@ -9,6 +9,12 @@
 /Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/store.png
 /Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/settings.png
 /Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/logo.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/logout.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/medkit.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/pill.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/important.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/group.png
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/pillblank.png
 /Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/SQLConnect.iOS.exe.mdb
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/SQLConnect.iOS.exe
@@ -25,10 +31,3 @@
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/Validation.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/PCLCrypto.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/SQLConnect.dll
-/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/CryptSharp.dll
-/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/logout.png
-/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/medkit.png
-/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/pill.png
-/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/important.png
-/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/group.png
-/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/pillblank.png

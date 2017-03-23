@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
@@ -57,8 +56,10 @@ namespace SQLConnect
 			return;
 		}
 
-		async void addToBlacklist(object sender, System.EventArgs e)
+		async void addToBlacklist(object sender, EventArgs e)
 		{
+			sender.ToString();
+			e.ToString();
 			//Display confirmation dialog.
 			var answer = await DisplayAlert("Blacklist?", "Do you want to reject future messages from this user?", "Yes", "No");
 
@@ -68,7 +69,7 @@ namespace SQLConnect
 				console.Text = "";
 				//add contact listed in entry.
 				string name = nameEntry.Text;
-				if (String.IsNullOrEmpty(name))
+				if (string.IsNullOrEmpty(name))
 				{
 					console.Text = "You must enter a name.";
 					return;

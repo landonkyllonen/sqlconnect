@@ -50,15 +50,27 @@ Finish dispensary import code.
 Create code to handle changing dispensaries and reloading the products for the new dispensary.
 Fixed bug where products in medical search were not being displayed.
 Create code to set logo to the current dispensaries' logo on startup.
-Implement search of dispensary names carrying certain product
-							////////////////////NEEDS TESTING///////////////////
+Implement search of dispensary names carrying certain product.
+/
+Fixed bug with user filtering.
+Allow message filtering.
+Added cart total to cart tab.
 /-----------Complete ^
-Implement settings to:  Allow message filtering.
+Home page, implement card for users, enable products button, create help page for app.
 
-Implement saving logo image to phone instead of image url for faster loading?
-
-Implement sharing log viewing between contacts?
+Try to get property binding to work for viewed messages vs unviewed messages.
 
 Implement 1 more analytics tab.
 
+Allow placing an order with checkout.
+
+Implement owner controls: Add item to dispensaries inventory
+						  Whitelist users?
+
 Find a better method of feedback than displayalert?
+
+Find better way to dismiss searchbar keyboard(should hide whenever search is pressed, and whenever cancel is pressed) this may need to be done platform-specific.
+/--------------Unsure v
+Implement saving logo image to phone instead of image url for faster loading? Loads pretty fast already
+
+Implement sharing log viewing between contacts?

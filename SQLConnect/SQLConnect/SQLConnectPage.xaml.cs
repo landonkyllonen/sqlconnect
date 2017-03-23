@@ -547,8 +547,8 @@ namespace SQLConnect
 				}
 				catch (IndexOutOfRangeException e)
 				{
-					System.Diagnostics.Debug.WriteLine("Medications received from server were not in proper format. w--x--y--z##");
-					System.Diagnostics.Debug.WriteLine(e.StackTrace);
+					Debug.WriteLine("Medications received from server were not in proper format. w--x--y--z##");
+					Debug.WriteLine(e.StackTrace);
 				}
 			}
 			Statics.Default.setMeds(medications);
@@ -556,7 +556,7 @@ namespace SQLConnect
 
 		public static string UrlEncodeParameter(string paramToEncode)
 		{
-			return System.Net.WebUtility.UrlEncode(paramToEncode);
+			return WebUtility.UrlEncode(paramToEncode);
 		}
 	}
 }

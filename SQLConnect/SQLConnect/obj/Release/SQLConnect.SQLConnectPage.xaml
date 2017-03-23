@@ -15,7 +15,7 @@
 				         "{ConstraintExpression Type=RelativeToParent,
 				                                Property=Height,
 				                                Factor=1}">
-					<Image x:Name="logo" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="125" WidthRequest="200" Aspect="AspectFit"/>
+					<Image x:Name="logo" Source="http://cbd-online.net/landon/appResources/dispensaryInfo/theHealingCenter/storefront.jpg" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="125" WidthRequest="200" Aspect="AspectFit"/>
 					<Entry x:Name="userentry" Placeholder="Username" WidthRequest="250" HorizontalOptions="Center"/>
 					<Entry x:Name="passentry" Placeholder="Password" IsPassword="true" WidthRequest="250" HorizontalOptions="Center"/>
 					<StackLayout Orientation="Horizontal" HorizontalOptions="Start">

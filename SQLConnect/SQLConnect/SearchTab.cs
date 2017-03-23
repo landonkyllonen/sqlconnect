@@ -217,7 +217,7 @@ namespace SQLConnect
 		async void executeSearch(object s, EventArgs e)
 		{
 			console.Text = "";
-			if (String.IsNullOrEmpty(three.Text) && queryId != 11)
+			if (string.IsNullOrEmpty(three.Text) && queryId != 11)
 			{
 				console.Text = "You must enter something in the query!";
 				return;

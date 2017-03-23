@@ -16,9 +16,11 @@ namespace SQLConnect
 
 		public async void addMedication(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			MedListItem newMed = new MedListItem { medName = medNameEntry.Text, medDose = medDoseEntry.Text, medFrequency = medFreqEntry.Text, medMethod = medMethodEntry.Text };
 			//Check that fields are not empty and that medication does not already exist.
-			if (String.IsNullOrEmpty(medNameEntry.Text) || String.IsNullOrEmpty(medDoseEntry.Text) || String.IsNullOrEmpty(medFreqEntry.Text) || String.IsNullOrEmpty(medMethodEntry.Text))
+			if (string.IsNullOrEmpty(medNameEntry.Text) || string.IsNullOrEmpty(medDoseEntry.Text) || string.IsNullOrEmpty(medFreqEntry.Text) || string.IsNullOrEmpty(medMethodEntry.Text))
 			{
 				console.Text = "Fields cannot be blank.";
 				return;
@@ -66,16 +68,22 @@ namespace SQLConnect
 
 		public void toDose(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			medDoseEntry.Focus();
 		}
 
 		public void toFreq(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			medFreqEntry.Focus();
 		}
 
 		public void toMethod(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			medMethodEntry.Focus();
 		}
 	}

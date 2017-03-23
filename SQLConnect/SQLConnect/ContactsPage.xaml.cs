@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
@@ -57,12 +56,12 @@ namespace SQLConnect
 			return;
 		}
 
-		async void addContact(object sender, System.EventArgs e)
+		async void addContact(object sender, EventArgs e)
 		{
 			console.Text = "";
 			//add contact listed in entry.
 			string name = nameEntry.Text;
-			if (String.IsNullOrEmpty(name))
+			if (string.IsNullOrEmpty(name))
 			{
 				console.Text = "You must enter a name.";
 				return;

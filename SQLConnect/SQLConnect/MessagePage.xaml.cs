@@ -112,11 +112,15 @@ namespace SQLConnect
 
 		void openOptions(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			userOptions.Focus();
 		}
 
 		async void addToContacts(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			//Display confirmation dialog.
 			var answer = await DisplayAlert("Add to contacts?", "Do you want to add this user to your contacts?", "Yes", "No");
 
@@ -132,7 +136,7 @@ namespace SQLConnect
 
 				//Show that we are waiting for a response and wait for it.
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
+				await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
 													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
 													 "&type=" + System.Net.WebUtility.UrlEncode("Contacts") +
 													 "&itemname=" + System.Net.WebUtility.UrlEncode(name) +
@@ -157,6 +161,8 @@ namespace SQLConnect
 
 		async void addToBlacklist(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			//Display confirmation dialog.
 			var answer = await DisplayAlert("Blacklist?", "Do you want to reject future messages from this user?", "Yes", "No");
 
@@ -172,7 +178,7 @@ namespace SQLConnect
 
 				//Show that we are waiting for a response and wait for it.
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
+				await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
 													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
 													 "&type=" + System.Net.WebUtility.UrlEncode("Blacklist") +
 													 "&itemname=" + System.Net.WebUtility.UrlEncode(name) +

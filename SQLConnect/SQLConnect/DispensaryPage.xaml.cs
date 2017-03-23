@@ -31,6 +31,10 @@ namespace SQLConnect
 			else {
 				//Import dispensaries
 				dispItems = Statics.Default.getDispensaries();
+				foreach (DispListItem d in dispItems)
+				{
+					Debug.WriteLine(d.dispImgPath);
+				}
 			}
 
 			//if not first time login, make top message invisible and label as choose your dispensary
@@ -41,6 +45,8 @@ namespace SQLConnect
 
 			dispList.ItemsSource = dispItems;
 			dispList.ItemTapped += onDispSelect;
+
+			dispSearch.SearchButtonPressed += (sender, e) => dispSearch.Unfocus();
 		}
 
 		public async void onDispSelect(object s, ItemTappedEventArgs e)
@@ -56,7 +62,7 @@ namespace SQLConnect
 
 				//Show that we are waiting for a response and wait for it.
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/changeDispensary.php?" +
+				await client.GetAsync("http://cbd-online.net/landon/changeDispensary.php?" +
 													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
 													 "&disp=" + System.Net.WebUtility.UrlEncode(newDispensary));
 
@@ -75,11 +81,13 @@ namespace SQLConnect
 		{
 			if (!Statics.Default.isOffline())
 			{
+
 				dispList.BeginRefresh();
 
 				if (string.IsNullOrWhiteSpace(e.NewTextValue))
+				{
 					dispList.ItemsSource = dispItems;
-				else {
+				}else {
 					dispItemsFiltered.Clear();
 					foreach (DispListItem item in dispItems)
 					{

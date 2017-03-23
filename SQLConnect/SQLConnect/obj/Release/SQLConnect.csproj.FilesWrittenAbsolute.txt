@@ -20,6 +20,9 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.AddConditionPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.CreateLogPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ViewLogPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ProductPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BlacklistPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ContactsPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.App.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.SQLConnectPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.SocialPage.xaml.g.cs
@@ -41,6 +44,9 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.AddConditionPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.CreateLogPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ViewLogPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ProductPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BlacklistPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ContactsPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/Xamarin.Forms.Core.dll
@@ -52,9 +58,3 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/CryptSharp.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/Validation.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/PCLCrypto.dll
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ProductPage.xaml
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ProductPage.xaml.g.cs
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BlacklistPage.xaml
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ContactsPage.xaml
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BlacklistPage.xaml.g.cs
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ContactsPage.xaml.g.cs

@@ -60,7 +60,7 @@ namespace SQLConnect
 			if (meds.Count > 1) { med2Lbl.Text = medNames[1]; }
 			if (meds.Count > 2) { med3Lbl.Text = medNames[2]; }
 
-			string[] quickEntries = new string[]{
+			string[] quickEntries = {
 				"I'm feeling excellent today.",
 				"I'm feeling well today.",
 				"I'm feeling a little off today.",
@@ -76,11 +76,15 @@ namespace SQLConnect
 
 		public void activatePicker(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			quickPick.Focus();
 		}
 
 		public void setQuickEntry(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			string selection = quickPick.Items[quickPick.SelectedIndex];
 			logTextBox.Text = selection;
 		}
@@ -119,6 +123,8 @@ namespace SQLConnect
 
 		public void toggleFeedback(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			if (extraComponent.IsVisible){startExtraBtn.Text = "Start Feedback";}
 			else {startExtraBtn.Text = "Cancel";}
 
@@ -128,8 +134,10 @@ namespace SQLConnect
 
 		public async void submitLog(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			//Check to see that values are given.
-			if (String.IsNullOrEmpty(title.Text) || String.IsNullOrEmpty(logTextBox.Text))
+			if (string.IsNullOrEmpty(title.Text) || string.IsNullOrEmpty(logTextBox.Text))
 			{
 				//Give error.
 				await DisplayAlert("Error", "No fields can be left blank. (Title and log entry)", "OK");
@@ -159,7 +167,7 @@ namespace SQLConnect
 
 				//Show that we are waiting for a response and wait for it.
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/uploadOneLog.php?" +
+				await client.GetAsync("http://cbd-online.net/landon/uploadOneLog.php?" +
 													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
 													 "&log=" + System.Net.WebUtility.UrlEncode(logstring));
 
@@ -176,8 +184,10 @@ namespace SQLConnect
 
 		public async void submitLogFeedback(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			//Check to see that values are given.
-			if (String.IsNullOrEmpty(title.Text) || String.IsNullOrEmpty(logTextBox.Text)||extraMed.SelectedIndex==0||extraCond.SelectedIndex==0)
+			if (string.IsNullOrEmpty(title.Text) || string.IsNullOrEmpty(logTextBox.Text)||extraMed.SelectedIndex==0||extraCond.SelectedIndex==0)
 			{
 				//Give error.
 				await DisplayAlert("Error", "No fields can be left blank. Press cancel if you do no not want to provide feedback.", "OK");
@@ -222,7 +232,7 @@ namespace SQLConnect
 				                                     "&neg=" + System.Net.WebUtility.UrlEncode(neg) +
 				                                     "&note=" + System.Net.WebUtility.UrlEncode(negText.Text));
 
-				var output = await response.Content.ReadAsStringAsync();
+				await response.Content.ReadAsStringAsync();
 
 				//Add to local and update statics.
 				ObservableCollection<LogListItem> pulled = Statics.Default.getLogs();
@@ -249,6 +259,8 @@ namespace SQLConnect
 
 		public void toggleUserClarification(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			negText.IsVisible = !negText.IsVisible;
 		}
 	}

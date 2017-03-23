@@ -117,7 +117,7 @@ namespace SQLConnect
 			}
 
 			//Initialize sortPicker.
-			string[] sortTypes = new string[] { "Date", "Public", "Importance" };
+			string[] sortTypes = { "Date", "Public", "Importance" };
 			Picker sorting = new Picker
 			{
 				TextColor = Color.White,

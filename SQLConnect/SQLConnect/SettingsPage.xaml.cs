@@ -23,6 +23,8 @@ namespace SQLConnect
 
 		async void hideWarning(object s, ToggledEventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			if (!hideSwitch.IsToggled)
 			{
 				appear = 0;
@@ -42,7 +44,7 @@ namespace SQLConnect
 														 "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
 														 "&pref=" + 0 + "&state=" + appear);
 
-					var output = await response.Content.ReadAsStringAsync();
+					await response.Content.ReadAsStringAsync();
 				}
 				else {
 					hideSwitch.IsToggled = false;
@@ -60,12 +62,14 @@ namespace SQLConnect
 													 "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
 													 "&pref=" + 0 + "&state=" + appear);
 
-				var output = await response.Content.ReadAsStringAsync();
+				await response.Content.ReadAsStringAsync();
 			}
 		}
 
 		async void blockWarning(object s, ToggledEventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			if (!blockSwitch.IsToggled)
 			{
 				block = 0;
@@ -83,7 +87,7 @@ namespace SQLConnect
 														 "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
 														 "&pref=" + 1 + "&state=" + block);
 
-					var output = await response.Content.ReadAsStringAsync();
+					await response.Content.ReadAsStringAsync();
 				}
 				else {
 					blockSwitch.IsToggled = false;
@@ -101,7 +105,7 @@ namespace SQLConnect
 													 "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
 													 "&pref=" + 1 + "&state=" + block);
 
-				var output = await response.Content.ReadAsStringAsync();
+				await response.Content.ReadAsStringAsync();
 			}
 		}
 	}

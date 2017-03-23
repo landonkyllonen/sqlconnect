@@ -20,12 +20,16 @@ namespace SQLConnect {
         private global::Xamarin.Forms.StackLayout firstTimeLbls;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.SearchBar dispSearch;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.ListView dispList;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(DispensaryPage));
             firstTimeLbls = this.FindByName <global::Xamarin.Forms.StackLayout>("firstTimeLbls");
+            dispSearch = this.FindByName <global::Xamarin.Forms.SearchBar>("dispSearch");
             dispList = this.FindByName <global::Xamarin.Forms.ListView>("dispList");
         }
     }

@@ -91,6 +91,8 @@ namespace SQLConnect
 
 		void increment(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			if (int.Parse(value.Text) > 9) { return; }
 			else {
 				value.Text = (int.Parse(value.Text) + 1).ToString();
@@ -100,6 +102,8 @@ namespace SQLConnect
 
 		void decrement(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			if (int.Parse(value.Text) < 2) { return; }
 			else {
 				value.Text = (int.Parse(value.Text) - 1).ToString();
@@ -109,6 +113,8 @@ namespace SQLConnect
 
 		void previous(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			if (index == 0)
 			{
 				return;
@@ -125,6 +131,8 @@ namespace SQLConnect
 
 		void next(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			if (index == 4)
 			{
 				return;
@@ -141,6 +149,8 @@ namespace SQLConnect
 
 		async void addToCart(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			CartListItem cartItem;
 			if (product.prodCategory.Equals("Flowers"))
 			{
@@ -166,7 +176,7 @@ namespace SQLConnect
 				cartItem = new CartListItem { prodName = product.prodName, prodAmount = amount, prodUnitType = "oz.", prodTotal = medicalPrices[index].ToString("C")};
 			}
 			else {
-				cartItem = new CartListItem { prodName = product.prodName, prodAmount = Double.Parse(value.Text), prodUnitType = "", prodTotal = (product.prodUnitPrice * Double.Parse(value.Text)).ToString("C") };
+				cartItem = new CartListItem { prodName = product.prodName, prodAmount = double.Parse(value.Text), prodUnitType = "", prodTotal = (product.prodUnitPrice * double.Parse(value.Text)).ToString("C") };
 			}
 			ObservableCollection<CartListItem> pulled = Statics.Default.getCartItems();
 

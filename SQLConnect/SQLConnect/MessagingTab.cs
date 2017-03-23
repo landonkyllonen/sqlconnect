@@ -7,8 +7,12 @@ namespace SQLConnect
 	public class MessagingTab : ContentPage
 	{
 		ObservableCollection<MessageListItem> messages;
+		ObservableCollection<MessageListItem> messagesFiltered;
 
 		ListView messageList;
+		SearchBar userFilter;
+
+		bool searching;
 
 		public Command LoadMessagesCommand
 		{
@@ -23,6 +27,8 @@ namespace SQLConnect
 
 		public MessagingTab()
 		{
+			searching = false;
+
 			//Initialize list
 			messageList = new ListView();
 			messageList.IsPullToRefreshEnabled = true;
@@ -40,9 +46,18 @@ namespace SQLConnect
 				var date = new Label {FontSize = 15, TextColor = Color.Teal, VerticalTextAlignment = TextAlignment.End, HorizontalTextAlignment = TextAlignment.End};
 
 				title.SetBinding(Label.TextProperty, "msgTitle");
+
 				from.SetBinding(Label.TextProperty, "msgFrom");
+
 				date.SetBinding(Label.TextProperty, "msgDate");
 
+				/*title.SetBinding(Label.TextColorProperty, new Binding("msgViewed", BindingMode.Default,
+																	  new BinaryToColorConverter(), null));
+				from.SetBinding(Label.TextColorProperty, new Binding("msgViewed", BindingMode.Default,
+																	  new BinaryToColorConverter(), null));
+				date.SetBinding(Label.TextColorProperty, new Binding("msgViewed", BindingMode.Default,
+																	  new BinaryToColorConverter(), null));*/
+				
 				holder.Children.Add(title, Constraint.Constant(15), Constraint.Constant(10),
 									Constraint.RelativeToParent((parent) =>
 									{
@@ -89,9 +104,21 @@ namespace SQLConnect
 
 			//Get messages from static loaded at login
 			messages = Statics.Default.getMessages();
+			messagesFiltered = new ObservableCollection<MessageListItem>();
+
 
 			messageList.ItemsSource = messages;
 			messageList.ItemTapped += onMessageSelect;
+
+			userFilter = new SearchBar
+			{
+				TextColor = Color.Teal,
+				CancelButtonColor = Color.Teal,
+				Placeholder = "Filter by username",
+				PlaceholderColor=Color.Gray
+			};
+			userFilter.TextChanged += Handle_TextChanged;
+			userFilter.SearchButtonPressed += (sender, e) => userFilter.Unfocus();
 
 			Button contacts = new Button
 			{
@@ -131,9 +158,13 @@ namespace SQLConnect
 
 			//Add to container
 			relativeLayout.Children.Add(messageList, Constraint.RelativeToParent((parent) => { return 0; }),
-										Constraint.RelativeToParent((parent) => { return 0; }),
+										Constraint.RelativeToParent((parent) => { return parent.Height * .1+5; }),
 			                            Constraint.RelativeToParent((parent) => { return parent.Width; }),
-			                            Constraint.RelativeToParent((parent) => { return parent.Height*.85-5; }));
+			                            Constraint.RelativeToParent((parent) => { return parent.Height*.75-5; }));
+
+			relativeLayout.Children.Add(userFilter, Constraint.RelativeToParent((parent) => { return parent.Width / 2 - 125; }),
+										Constraint.RelativeToParent((parent) => { return 5; }),
+										Constraint.Constant(220), Constraint.RelativeToParent((parent) => { return parent.Height * .1; }));
 
 			relativeLayout.Children.Add(contacts, Constraint.RelativeToParent((parent) =>
 										{
@@ -180,6 +211,35 @@ namespace SQLConnect
 			Content = relativeLayout;
 		}
 
+		void Handle_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			if (!Statics.Default.isOffline())
+			{
+				searching = true;
+
+				messageList.BeginRefresh();
+
+				if (string.IsNullOrWhiteSpace(e.NewTextValue))
+				{
+					messageList.ItemsSource = messages;
+				}else {
+					messagesFiltered.Clear();
+					foreach (MessageListItem item in messages)
+					{
+						if (item.msgFrom.ToLower().Contains(e.NewTextValue.ToLower()))
+						{
+							messagesFiltered.Add(item);
+						}
+					}
+					messageList.ItemsSource = messagesFiltered;
+				}
+
+				messageList.EndRefresh();
+
+				searching = false;
+			}
+		}
+
 		public async void onMessageSelect(object s, ItemTappedEventArgs e)
 		{
 			//Pass to messagePage activity to display in full screen and allow reply/delete
@@ -215,7 +275,7 @@ namespace SQLConnect
 
 		private async void ExecuteLoadMessagesCommand()
 		{
-			if (IsBusy)
+			if (IsBusy||searching)
 				return;
 
 			IsBusy = true;

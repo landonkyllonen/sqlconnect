@@ -14,8 +14,10 @@ namespace SQLConnect
 
 		public async void addCondition(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			//Check if condition is empty or already existing.
-			if (String.IsNullOrEmpty(condNameEntry.Text))
+			if (string.IsNullOrEmpty(condNameEntry.Text))
 			{
 				console.Text = "Condition cannot be blank.";
 				return;

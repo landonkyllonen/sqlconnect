@@ -89,6 +89,22 @@ namespace SQLConnect
 
 			cartList.ItemsSource = cartItems;
 
+			double totalprice = 0;
+			foreach (CartListItem c in cartItems)
+			{
+				double number = double.Parse(c.prodTotal.Substring(1));
+				totalprice += number;
+			}
+
+			Label totalLbl = new Label
+			{
+				TextColor = Color.Teal,
+				Text = "Total: $" + totalprice,
+				FontSize=20,
+				HorizontalTextAlignment=TextAlignment.Center,
+				VerticalTextAlignment=TextAlignment.Center
+			};
+
 			Button checkoutButton = new Button
 			{
 				Text = "Checkout",
@@ -108,18 +124,18 @@ namespace SQLConnect
 			relativeLayout.Children.Add(cartList, Constraint.RelativeToParent((parent) => { return 0; }),
 										Constraint.RelativeToParent((parent) => { return 0; }),
 										Constraint.RelativeToParent((parent) => { return parent.Width; }),
-										Constraint.RelativeToParent((parent) => { return parent.Height * .85; }));
+										Constraint.RelativeToParent((parent) => { return parent.Height * .77; }));
+
+			relativeLayout.Children.Add(totalLbl, Constraint.Constant(0), Constraint.RelativeToParent((parent) => { return parent.Height * .77; }),
+										Constraint.RelativeToParent((parent) => { return parent.Width; }), Constraint.RelativeToParent((parent) => { return parent.Height * .1; }));
 
 			relativeLayout.Children.Add(checkoutButton, Constraint.RelativeToParent((parent) =>
 										{
-											return parent.Width / 2 - parent.Width * .3;
+											return parent.Width / 2 - 80;
 										}), Constraint.RelativeToParent((parent) =>
 										{
-											return parent.Height * .85;
-										}), Constraint.RelativeToParent((parent) =>
-										{
-											return parent.Width * .6;
-										}), Constraint.RelativeToParent((parent) =>
+											return parent.Height * .87;
+										}), Constraint.Constant(160), Constraint.RelativeToParent((parent) =>
 										{
 											return parent.Height * .1;
 										}));

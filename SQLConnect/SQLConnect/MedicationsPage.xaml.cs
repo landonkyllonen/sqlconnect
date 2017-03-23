@@ -34,7 +34,7 @@ namespace SQLConnect
 														 "&type=" + System.Net.WebUtility.UrlEncode("ProductUsageInfo") +
 				                                     "&itemname=" + System.Net.WebUtility.UrlEncode(((MedListItem)e.Item).medName));
 
-				var output = await response.Content.ReadAsStringAsync();
+				await response.Content.ReadAsStringAsync();
 
 				//and locally.
 				ObservableCollection<MedListItem> pulled = Statics.Default.getMeds();

@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Net;
-using System.Collections.ObjectModel;
 
 namespace SQLConnect
 {
@@ -11,7 +10,7 @@ namespace SQLConnect
 		{
 			InitializeComponent();
 
-			if (!String.IsNullOrEmpty(replytitle) && !String.IsNullOrEmpty(replyto))
+			if (!string.IsNullOrEmpty(replytitle) && !string.IsNullOrEmpty(replyto))
 			{
 				title.Text = replytitle;
 				to.Text = replyto;
@@ -21,8 +20,6 @@ namespace SQLConnect
 
 			title.Completed += (sender, e) => to.Focus();
 			to.Completed += (sender, e) => content.Focus();
-
-			ObservableCollection<SimpleListItem> obsContacts = Statics.Default.getContacts();
 
 			//Initialize contacts list for quick contact select.
 			foreach (SimpleListItem item in Statics.Default.getContacts())
@@ -95,6 +92,8 @@ namespace SQLConnect
 
 		public void pickContact(object s, EventArgs e)
 		{
+			s.ToString();
+			e.ToString();
 			contactPick.Focus();
 			return;
 		}

@@ -34,7 +34,7 @@ namespace SQLConnect
 														 "&type=" + System.Net.WebUtility.UrlEncode("Conditions") +
 				                                     "&itemname=" + System.Net.WebUtility.UrlEncode(((SimpleListItem)e.Item).labelName));
 
-				var output = await response.Content.ReadAsStringAsync();
+				await response.Content.ReadAsStringAsync();
 
 				//and locally.
 				ObservableCollection<SimpleListItem> pulled = Statics.Default.getConds();
