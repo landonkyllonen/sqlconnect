@@ -11,15 +11,6 @@ namespace SQLConnect
 
 		public HomeTab()
 		{
-			if (Statics.Default.isOffline())
-			{
-				deal = new ProductListItem { prodName = "Product Name", prodUnitPrice = 10.00, prodCategory = "Category"};
-			}
-			else
-			{
-				deal = Statics.Default.getDeal();
-			}
-
 			RelativeLayout rel = new RelativeLayout
 			{
 				HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -51,7 +42,7 @@ namespace SQLConnect
 
 				Label dealPrice = new Label
 				{
-				Text = "$"+deal.prodUnitPrice+"/g",
+				Text = "price/g",
 					FontSize = 15,
 					TextColor = Color.Teal,
 					HorizontalOptions=LayoutOptions.CenterAndExpand
@@ -65,7 +56,7 @@ namespace SQLConnect
 
 					Label dealName = new Label
 					{
-						Text = deal.prodName,
+						Text = "Product Name",
 						TextColor = Color.Teal,
 						FontSize=15,
 						HorizontalOptions=LayoutOptions.CenterAndExpand,
@@ -75,7 +66,7 @@ namespace SQLConnect
 					Label dealCategory = new Label
 					{
 						TextColor = Color.Teal,
-						Text = deal.prodCategory,
+						Text = "Category",
 						HorizontalOptions = LayoutOptions.CenterAndExpand,
 						VerticalOptions = LayoutOptions.CenterAndExpand
 					};
@@ -301,6 +292,19 @@ namespace SQLConnect
 			{
 				toMyID.Text = "Manage Dispensary";
 				toMyID.Clicked += toDispensaryManagement;
+			}
+
+			//If online and there is a deal, show it.
+			if (!Statics.Default.isOffline() && Statics.Default.getDeal() != null)
+			{
+				deal = Statics.Default.getDeal();
+				dealName.Text = deal.prodName;
+				dealPrice.Text = "$" + deal.prodUnitPrice + "/g";
+				dealCategory.Text = deal.prodCategory;
+			}
+			else
+			{
+				toDeal.IsEnabled = false;
 			}
 
 			welcome.SetValue(Label.TextProperty, "Hello, " + credentials[0] + "!");

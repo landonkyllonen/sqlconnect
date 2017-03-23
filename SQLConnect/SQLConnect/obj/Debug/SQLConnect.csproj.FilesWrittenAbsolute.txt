@@ -60,3 +60,7 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ContactsPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.BlacklistPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.ContactsPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.BarcodePage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.DispensaryManagementPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.BarcodePage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.DispensaryManagementPage.xaml.g.cs

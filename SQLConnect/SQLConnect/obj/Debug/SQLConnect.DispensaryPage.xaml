@@ -11,7 +11,7 @@
 				<Label TextColor="White" Text="Don't worry, you can change your dispensary at any time."
 					HorizontalOptions="Center" FontSize="15"/>
 			</StackLayout>
-			<SearchBar Placeholder="Enter City Name" TextChanged = "Handle_TextChanged" PlaceholderColor = "#E5E2DD" TextColor="White" 
+			<SearchBar x:Name="dispSearch" Placeholder="Enter City Name" TextChanged = "Handle_TextChanged" PlaceholderColor = "#E5E2DD" TextColor="White" 
 				CancelButtonColor = "White" />
 			<ListView  x:Name="dispList" RowHeight="230" SeparatorVisibility="Default" SeparatorColor="Silver">
             	<ListView.ItemTemplate>

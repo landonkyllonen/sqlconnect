@@ -61,6 +61,8 @@ enabled products button(now know how to programmatically change detail page)
 Got property binding to work for viewed messages vs unviewed messages.
 Inserted values for deal on home page(there can only be one atm, it is whichever is flagged and appears last)
 Go to deal button should now go to the deal.
+/
+Viewing an image greys it out and updates the viewed value on the database.
 /-----------Complete ^
 Home page: implement card for users, create help page for app.
 

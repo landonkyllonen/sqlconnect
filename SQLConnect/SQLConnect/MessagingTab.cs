@@ -241,8 +241,31 @@ namespace SQLConnect
 
 		public async void onMessageSelect(object s, ItemTappedEventArgs e)
 		{
-			//Pass to messagePage activity to display in full screen and allow reply/delete
 			var message = e.Item as MessageListItem;
+
+			//Set this message to viewed in db.
+			var client = new System.Net.Http.HttpClient();
+
+			//Show that we are waiting for a response and wait for it.
+
+			var response = await client.GetAsync("http://cbd-online.net/landon/markMessageRead.php?" +
+			                                     "id=" + System.Net.WebUtility.UrlEncode(message.msgId.ToString()));
+
+			//...and locally.
+			int counter = 0;
+			message.msgViewed = true;
+			foreach (MessageListItem m in messages)
+			{
+				if (m.msgId == message.msgId)
+				{
+					messages.RemoveAt(counter);
+					messages.Insert(counter, message);
+					break;
+				}
+				counter++;
+			}
+
+			//Pass to messagePage activity to display in full screen and allow reply/delete
 			Statics.Default.setMsgClicked(message);
 
 			NavigationPage nav = new NavigationPage(new MessagePage());
