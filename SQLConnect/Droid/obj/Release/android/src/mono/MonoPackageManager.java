@@ -122,9 +122,6 @@ class MonoPackageManager_Resources {
 		"Toasts.Forms.Plugin.Abstractions.dll",
 		"Toasts.Forms.Plugin.Droid.dll",
 		"SQLConnect.dll",
-		"ZXing.Net.Mobile.Forms.dll",
-		"zxing.portable.dll",
-		"ZXing.Net.Mobile.Core.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

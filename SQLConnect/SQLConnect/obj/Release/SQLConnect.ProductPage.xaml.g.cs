@@ -50,6 +50,9 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Label priceExact;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label priceExactRate;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(ProductPage));
             image = this.FindByName <global::Xamarin.Forms.Image>("image");
@@ -63,6 +66,7 @@ namespace SQLConnect {
             valueRight = this.FindByName <global::Xamarin.Forms.Label>("valueRight");
             priceLblExact = this.FindByName <global::Xamarin.Forms.Label>("priceLblExact");
             priceExact = this.FindByName <global::Xamarin.Forms.Label>("priceExact");
+            priceExactRate = this.FindByName <global::Xamarin.Forms.Label>("priceExactRate");
         }
     }
 }

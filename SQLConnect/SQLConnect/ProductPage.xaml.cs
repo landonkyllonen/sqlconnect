@@ -42,24 +42,22 @@ namespace SQLConnect
 					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice;
 					break;
 				case 1:
-					//eighth is 3.54688 grams with a 5% discount
-					//quarter is 2 eighths price with another 5% discount
-					//half oz is 2 quarters price with another 5% discount
+					//Linear discount progression, 1 oz being the maximum discount(specified amount)
 					medicalPrices = new double[5];
-					medicalPrices[0] = product.prodUnitPrice;
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice * bulkDiscountRate;
-					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (bulkDiscountRate-.05);
-					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (bulkDiscountRate-.1);
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (bulkDiscountRate-.15);
+					medicalPrices[0] = product.prodUnitPrice;//None
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1-product.prodBulkDiscount*1/4);// fourth of discount
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 1 / 2);// half of discount
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 3 / 4);// three/fourths of discount
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount);// max discount
 					break;
 				case 2:
 					//each step up gives half the discount of the previous step.
 					medicalPrices = new double[5];
 					medicalPrices[0] = product.prodUnitPrice;
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice * bulkDiscountRate;
-					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (bulkDiscountRate - .025);
-					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (bulkDiscountRate - .0375);
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (bulkDiscountRate - .04375);
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1-(product.prodBulkDiscount/2));//Half discount
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount* 3/4));//Fourth more
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount*7/8));//Eighth more
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount*15/16));//Sixteenth more
 					break;
 				default:
 					//No discount.
@@ -74,6 +72,7 @@ namespace SQLConnect
 
 			index = 0;
 			priceExact.Text = medicalPrices[0].ToString("C");
+			priceExactRate.Text = "(" + medicalPrices[0].ToString("C") + "/g)";
 
 			//Get information on what type of choices to display.
 			//For now, display simple.
@@ -125,7 +124,29 @@ namespace SQLConnect
 				else { valueLeft.Text = medicalAmounts[index -1]; }
 				valueMid.Text = medicalAmounts[index];
 				valueRight.Text = medicalAmounts[index + 1];
+				double grams = 0;
+				switch (index)
+				{
+					case 0:
+						grams = 1;
+						break;
+					case 1:
+						grams = 3.54688;
+						break;
+					case 2:
+						grams = 3.54688 * 2;
+						break;
+					case 3:
+						grams = 3.54688 * 4;
+						break;
+					case 4:
+						grams = 3.54688 * 8;
+						break;
+					default:
+						break;
+				}
 				priceExact.Text = medicalPrices[index].ToString("C");
+				priceExactRate.Text = "(" + (medicalPrices[index] / grams).ToString("C") + "/g)";
 			}
 		}
 
@@ -143,7 +164,29 @@ namespace SQLConnect
 				else {valueRight.Text = medicalAmounts[index + 1];}
 				valueMid.Text = medicalAmounts[index];
 				valueLeft.Text = medicalAmounts[index - 1];
+				double grams = 0;
+				switch (index)
+				{
+					case 0:
+						grams = 1;
+						break;
+					case 1:
+						grams = 3.54688;
+						break;
+					case 2:
+						grams = 3.54688 * 2;
+						break;
+					case 3:
+						grams = 3.54688 * 4;
+						break;
+					case 4:
+						grams = 3.54688 * 8;
+						break;
+					default:
+						break;
+				}
 				priceExact.Text = medicalPrices[index].ToString("C");
+				priceExactRate.Text = "(" + (medicalPrices[index] / grams).ToString("C") + "/g)";
 			}
 		}
 
@@ -155,28 +198,40 @@ namespace SQLConnect
 			if (product.prodCategory.Equals("Flowers"))
 			{
 				double amount;
+				string unit;
+				string rate;
 				switch (index)
 				{
 					case 0:
-						amount = 1;
+						amount = (double)1;
+						unit = "g";
+						rate = "(" + (medicalPrices[0]).ToString("C") + "/g)";
 						break;
 					case 1:
-						amount = 1 / 8;
+						amount = (double)1 / 8;
+						unit = "oz";
+						rate = "("+(medicalPrices[1]/3.54688).ToString("C")+"/g)";
 						break;
 					case 2:
-						amount = 1 / 4;
+						amount = (double)1 / 4;
+						unit = "oz";
+						rate = "(" + (medicalPrices[2] / (3.54688*2)).ToString("C") + "/g)";
 						break;
 					case 3:
-						amount = 1 / 2;
+						amount = (double)1 / 2;
+						unit = "oz";
+						rate = "(" + (medicalPrices[3] / (3.54688 * 4)).ToString("C") + "/g)";
 						break;
 					default:
-						amount = 1;
+						amount = (double)1;
+						unit = "oz";
+						rate = "(" + (medicalPrices[4] / (3.54688 * 8)).ToString("C") + "/g)";
 						break;
 				}
-				cartItem = new CartListItem { prodName = product.prodName, prodAmount = amount, prodUnitType = "oz.", prodTotal = medicalPrices[index].ToString("C")};
+				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular=false, prodIsFlower=true, prodAmount = amount, prodRate = rate, prodUnitType = unit, prodTotal = medicalPrices[index].ToString("C")};
 			}
 			else {
-				cartItem = new CartListItem { prodName = product.prodName, prodAmount = double.Parse(value.Text), prodUnitType = "", prodTotal = (product.prodUnitPrice * double.Parse(value.Text)).ToString("C") };
+				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular=true, prodIsFlower = false, prodAmount = double.Parse(value.Text), prodUnitType = "", prodTotal = (product.prodUnitPrice * double.Parse(value.Text)).ToString("C") };
 			}
 			ObservableCollection<CartListItem> pulled = Statics.Default.getCartItems();
 

@@ -24,7 +24,10 @@ namespace SQLConnect
 				RelativeLayout holder = new RelativeLayout {HorizontalOptions=LayoutOptions.Fill, VerticalOptions=LayoutOptions.Fill};
 
 				var img = new Image { Aspect = Aspect.AspectFill };
-				var tintbox = new BoxView { Color=Color.Teal, Opacity = 0.2};
+				var tintbox = new BoxView { Color=Color.Teal, Opacity = 0.1};
+				var strip = new BoxView { Color = Color.Teal, Opacity = 0.7 };
+				var striptrimtop = new BoxView { Color = Color.FromHex("#eeca0a"), Opacity = 0.9 };
+				var striptrimbottom = new BoxView { Color = Color.FromHex("#eeca0a"), Opacity = 0.9 };
 				var nameLabel = new Label { TextColor = Color.White, FontSize=28, HorizontalTextAlignment = TextAlignment.Center,VerticalTextAlignment=TextAlignment.Center };
 
 				nameLabel.SetBinding(Label.TextProperty, "catName");
@@ -48,6 +51,36 @@ namespace SQLConnect
 									{
 										return parent.Height;
 									}));
+				holder.Children.Add(strip, Constraint.Constant(0),
+									Constraint.RelativeToParent((parent) =>
+									{
+										return parent.Height / 2 - 18;
+									}),
+									Constraint.RelativeToParent((parent) =>
+									{
+										return parent.Width;
+									}),
+									Constraint.Constant(36));
+				holder.Children.Add(striptrimtop, Constraint.Constant(0),
+									Constraint.RelativeToParent((parent) =>
+									{
+										return parent.Height / 2 - 19;
+									}),
+									Constraint.RelativeToParent((parent) =>
+									{
+										return parent.Width;
+									}),
+									Constraint.Constant(1));
+				holder.Children.Add(striptrimbottom, Constraint.Constant(0),
+									Constraint.RelativeToParent((parent) =>
+									{
+										return parent.Height / 2 +18;
+									}),
+									Constraint.RelativeToParent((parent) =>
+									{
+										return parent.Width;
+									}),
+									Constraint.Constant(1));
 				holder.Children.Add(nameLabel, Constraint.Constant(0),
 				                    Constraint.RelativeToParent((parent) =>
 									{

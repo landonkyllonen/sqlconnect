@@ -63,6 +63,10 @@ Inserted values for deal on home page(there can only be one atm, it is whichever
 Go to deal button should now go to the deal.
 /
 Viewing an image greys it out and updates the viewed value on the database.
+Centered top middle component of profile page.
+Discounts were being applied incorrectly, fixed values.
+edited cart items to include the rate per gram, product page also displays these values.
+Added visuals to product category list similar to original app.
 /-----------Complete ^
 Home page: implement card for users, create help page for app.
 
@@ -80,6 +84,8 @@ Find a better method of feedback than displayalert?
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed, and whenever cancel is pressed) this may need to be done platform-specific.
 /--------------Unsure v
 Implement saving logo image to phone instead of image url for faster loading? Loads pretty fast already
+
+Implement control on purchasing over legal limit of flowers?
 
 Implement sharing log viewing between contacts?
 

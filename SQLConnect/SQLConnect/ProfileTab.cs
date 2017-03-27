@@ -34,63 +34,68 @@ namespace SQLConnect
 			//Name portion
 			Label name = new Label
 			{
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalTextAlignment = TextAlignment.Center,
 				Text = credentials[0] +" "+ credentials[1],
 				TextColor = Color.White
 			};
 
-			StackLayout upperOne = new StackLayout
+			RelativeLayout upperOne = new RelativeLayout
 			{
-				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
 				HeightRequest = 50
 			};
-			upperOne.Children.Add(new Label { Text = "Name", TextColor=Color.White, HorizontalOptions = LayoutOptions.Start,VerticalOptions = LayoutOptions.CenterAndExpand });
-			upperOne.Children.Add(name);
+			upperOne.Children.Add(new Label { Text = "Name", TextColor=Color.White, VerticalTextAlignment = TextAlignment.Center },
+			                      Constraint.Constant(0), Constraint.Constant(0),Constraint.RelativeToParent((parent) => { return parent.Width * 0.25; }),
+			                      Constraint.RelativeToParent((parent) => { return parent.Height; }));
+			upperOne.Children.Add(name,
+								  Constraint.RelativeToParent((parent) => { return parent.Width * .25; }), Constraint.Constant(0), Constraint.RelativeToParent((parent) => { return parent.Width * 0.5; }),
+								  Constraint.RelativeToParent((parent) => { return parent.Height; }));
 
 			//Email portion
 			email = new Label
 			{
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalTextAlignment = TextAlignment.Center,
 				Text = credentials[2],
 				TextColor = Color.White
 			};
 
-			StackLayout upperTwo = new StackLayout
+			RelativeLayout upperTwo = new RelativeLayout
 			{
-				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HeightRequest = 50
 			};
-			upperTwo.Children.Add(new Label { Text = "Email", TextColor = Color.White, HorizontalOptions = LayoutOptions.Start,VerticalOptions = LayoutOptions.CenterAndExpand });
-			upperTwo.Children.Add(email);
+			upperTwo.Children.Add(new Label { Text = "Email", TextColor = Color.White, VerticalTextAlignment = TextAlignment.Center },
+								  Constraint.Constant(0), Constraint.Constant(0), Constraint.RelativeToParent((parent) => { return parent.Width * 0.25; }),
+								  Constraint.RelativeToParent((parent) => { return parent.Height; }));
+			upperTwo.Children.Add(email,
+			                      Constraint.RelativeToParent((parent) => { return parent.Width * .25;}), Constraint.Constant(0), Constraint.RelativeToParent((parent) => { return parent.Width * 0.5; }),
+								  Constraint.RelativeToParent((parent) => { return parent.Height; }));
 
 			//Phone portion
 			phone = new Entry
 			{
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand,
 				HorizontalTextAlignment = TextAlignment.Center,
-				WidthRequest = 125,
 				Text = credentials[3],
 				TextColor = Color.White,
 				Keyboard = Keyboard.Telephone
 			};
 
-			StackLayout upperThree = new StackLayout
+			RelativeLayout upperThree = new RelativeLayout
 			{
-				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
-				WidthRequest=80,
 				HeightRequest = 50
 			};
-			upperThree.Children.Add(new Label { Text = "Phone", TextColor = Color.White, HorizontalOptions = LayoutOptions.Start, VerticalOptions = LayoutOptions.CenterAndExpand });
-			upperThree.Children.Add(phone);
+			upperThree.Children.Add(new Label { Text = "Phone", TextColor = Color.White, VerticalTextAlignment = TextAlignment.Center },
+								  Constraint.Constant(0), Constraint.Constant(0), Constraint.RelativeToParent((parent) => { return parent.Width * 0.25; }),
+								  Constraint.RelativeToParent((parent) => { return parent.Height; }));
+			upperThree.Children.Add(phone,
+			                        Constraint.RelativeToParent((parent) =>{return parent.Width * .5 - 65;}), Constraint.Constant(0), Constraint.Constant(130),
+								  Constraint.RelativeToParent((parent) => { return parent.Height; }));
 
 			upperComponent.Children.Add(upperOne);
 			upperComponent.Children.Add(upperTwo);

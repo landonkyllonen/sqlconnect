@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SQLConnect.ProductPage">
 	<ContentPage.Content>
 		<RelativeLayout>
@@ -91,7 +91,12 @@
 				<Label x:Name="priceExact" TextColor="White" Text = "$0.00" HorizontalTextAlignment="Start" FontSize="20"
 					RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=0}"
 					RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2, Constant=125}"
-					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=0}"
+					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25, Constant=0}"
+					RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=0,Constant=40}"/>
+				<Label x:Name="priceExactRate" TextColor="#edf2ef" Text = "" HorizontalTextAlignment="Start" FontSize="17"
+					RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75, Constant=0}"
+					RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2, Constant=125}"
+					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25, Constant=0}"
 					RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=0,Constant=40}"/>
 			</RelativeLayout>
 			

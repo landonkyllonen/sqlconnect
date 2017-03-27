@@ -60,3 +60,4 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/ZXing.Net.Mobile.Forms.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/zxing.portable.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/ZXing.Net.Mobile.Core.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/MonoAndroid,Version=v7.1.AssemblyAttribute.cs
