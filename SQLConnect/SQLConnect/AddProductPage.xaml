@@ -5,11 +5,16 @@
 	Title="Add a Product">
 	<ContentPage.Content>
 		<ScrollView Orientation="Vertical">
-			<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" x:Name="editView" IsVisible="false" Padding="10,0,10,0">
+			<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" x:Name="editView" Padding="10,10,10,0">
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Label Text="Name:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="newName" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+					<Entry x:Name="newName" TextColor="Teal" HorizontalOptions="End" WidthRequest="175"/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Label Text="Category:" VerticalOptions="Center" TextColor="Teal"/>
+					<Picker x:Name="newCat" TextColor="Teal" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="175"/>
 				</StackLayout>
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -17,13 +22,8 @@
 					<Button x:Name="newPicBtn" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
 				</StackLayout>
 
-				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-					<Label Text="Category:" VerticalOptions="Center" TextColor="Teal"/>
-					<Picker x:Name="newCat" TextColor="Teal" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="150"/>
-				</StackLayout>
-				
-				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-					<Editor x:Name="newDesc" TextColor="Teal" HeightRequest="100" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="This is a sample description, it could be quite long, so I am making this text long in order to determine how I should be wrapping this text properly."/>
+				<StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Start">
+					<Editor x:Name="newDesc" TextColor="Teal" HeightRequest="100" HorizontalOptions="Fill" WidthRequest="300" VerticalOptions="Center" Text="This is a sample description, it could be quite long, so I am making this text long in order to determine how I should be wrapping this text properly."/>
 				</StackLayout>
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -39,7 +39,7 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Points/unit:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="newIncUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+					<Entry x:Name="newIncUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=newIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -49,7 +49,7 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Discount:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="newDiscount" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+					<Entry x:Name="newDiscount" TextColor="Teal" HorizontalOptions="End" WidthRequest="50" BindingContext="{x:Reference Name=newDealFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 					<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 				</StackLayout>
 
@@ -60,7 +60,7 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Max bulk discount:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="newBulk" TextColor="Teal" WidthRequest="100"/>
+					<Entry x:Name="newBulk" TextColor="Teal" WidthRequest="50"/>
 					<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 				</StackLayout>
 				

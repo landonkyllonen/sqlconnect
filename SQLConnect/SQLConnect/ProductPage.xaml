@@ -108,7 +108,7 @@
 			</RelativeLayout>
 
 
-			<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" x:Name="editView" IsVisible="false" Padding="10,0,10,0">
+			<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" x:Name="editView" IsVisible="false" Padding="10,10,10,0">
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Image x:Name="editPic" Source="product.png" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="150"/>
@@ -132,7 +132,7 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Points/unit:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="editIncUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+					<Entry x:Name="editIncUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=editIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -142,7 +142,7 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Discount:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="editDiscount" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+					<Entry x:Name="editDiscount" TextColor="Teal" HorizontalOptions="End" WidthRequest="50" BindingContext="{x:Reference Name=editDealFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 					<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 				</StackLayout>
 
@@ -153,7 +153,7 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Max bulk discount:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="editBulk" TextColor="Teal" WidthRequest="100"/>
+					<Entry x:Name="editBulk" TextColor="Teal" WidthRequest="50"/>
 					<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 				</StackLayout>
 				

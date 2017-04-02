@@ -99,7 +99,6 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "SQLConnect.Droid.dll" comes first in this list. */
 		"SQLConnect.Droid.dll",
-		"System.Runtime.dll",
 		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
@@ -123,29 +122,8 @@ class MonoPackageManager_Resources {
 		"Toasts.Forms.Plugin.Abstractions.dll",
 		"Toasts.Forms.Plugin.Droid.dll",
 		"SQLConnect.dll",
-		"System.Threading.dll",
-		"System.Collections.dll",
-		"System.Collections.Concurrent.dll",
-		"System.Diagnostics.Debug.dll",
-		"System.Reflection.dll",
-		"System.Linq.dll",
-		"System.Runtime.InteropServices.dll",
-		"System.Runtime.Extensions.dll",
-		"System.Reflection.Extensions.dll",
-		"System.Resources.ResourceManager.dll",
-		"System.Threading.Tasks.dll",
-		"System.ObjectModel.dll",
-		"System.Globalization.dll",
-		"System.ComponentModel.dll",
-		"System.Xml.ReaderWriter.dll",
-		"System.Linq.Expressions.dll",
-		"System.IO.dll",
-		"System.Dynamic.Runtime.dll",
-		"System.Text.RegularExpressions.dll",
-		"System.Diagnostics.Tools.dll",
-		"System.Text.Encoding.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_23";
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_25";
 }

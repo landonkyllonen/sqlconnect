@@ -314,6 +314,7 @@ namespace SQLConnect
 				var response = await client.GetAsync("http://cbd-online.net/landon/addOrEditProduct.php?" +
 				                                     "operation=" + WebUtility.UrlEncode("1") +//0 add, 1 edit.
 				                                     "&dispId=" + WebUtility.UrlEncode(Statics.Default.getCreds()[16]) +
+				                                     "&name=" + WebUtility.UrlEncode(product.prodName) +
 													 "&desc=" + WebUtility.UrlEncode(editDesc.Text) +
 				                                     "&pic=" + WebUtility.UrlEncode(product.prodImgUrl) +
 				                                     "&unitPrice=" + WebUtility.UrlEncode(editUnit.Text) +
@@ -326,11 +327,30 @@ namespace SQLConnect
 
 				var output = await response.Content.ReadAsStringAsync();
 
+				string[] components = output.Split(new string[] { "\n" }, StringSplitOptions.None);
+
 				Debug.WriteLine(output);
 
-				if (output.Equals("true"))
+				if (components[0].Equals("true"))
 				{
-					await DisplayAlert("Success", "Item values modified. You can see what your new inventory list by logging in again.", "Okay");
+					await DisplayAlert("Success", "Item values modified. You can see your new inventory list by logging in again.", "Okay");
+					//change locally
+					ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
+					pulled.Remove(product);
+					product.prodDescription = editDesc.Text;
+					//Change img
+					product.prodUnitPrice = double.Parse(editUnit.Text);
+					product.prodIncentiveFlag = editIncFlag.IsToggled;
+					product.prodUnitPriceIncentive = double.Parse(editIncUnit.Text);
+					product.prodDealFlag = editDealFlag.IsToggled;
+					product.prodDiscount = double.Parse(editDiscount.Text);
+					product.prodBulkType = editBulkType.SelectedIndex;
+					product.prodBulkDiscount = bulkDiscount;
+
+					pulled.Add(product);
+					Statics.Default.setProducts(pulled);
+
+					await Navigation.PopModalAsync();
 				}
 				else
 				{

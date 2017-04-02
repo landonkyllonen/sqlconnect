@@ -27,9 +27,9 @@ namespace SQLConnect
 				logo.Source = "logo.png";
 			}
 
-			userentry.SetValue(Entry.TextProperty, "l");
+			userentry.SetValue(Entry.TextProperty, "landon");
 			userentry.Completed += (sender, e) => passentry.Focus();
-			passentry.SetValue(Entry.TextProperty, "l");
+			passentry.SetValue(Entry.TextProperty, "mypass");
 			passentry.Completed += (sender, e) => logIn(sender,e);
 			rememberSwitch.SetValue(Switch.IsToggledProperty, true);
 		}

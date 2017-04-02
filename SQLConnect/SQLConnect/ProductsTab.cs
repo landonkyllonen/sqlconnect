@@ -11,6 +11,7 @@ namespace SQLConnect
 
 		public ProductsTab()
 		{
+			Title = "Categories";
 			//Instantiate Products
 			loadedProducts = Statics.Default.getProducts();
 

@@ -4,7 +4,7 @@
 	x:Class="SQLConnect.DispensaryManagementPage"
 	Title="Dispensary Management">
 	<ContentPage.Content>
-		<StackLayout Orientation="Vertical" Spacing="15">
+		<StackLayout Orientation="Vertical" Spacing="15" Padding="10,10,10,0">
 			<Button Text="Add Item to Inventory" TextColor="White" BackgroundColor="Teal" HorizontalOptions="Center" Clicked="toAddItem"/>
 			<Button Text="Browse/Edit Inventory" TextColor="White" BackgroundColor="Teal" HorizontalOptions="Center" Clicked="toBrowseEdit"/>
 			<Button x:Name="suspendBtn" Text="Suspend Transactions" TextColor="White" BackgroundColor="Red" HorizontalOptions="Center" Clicked="suspendTransactions"/>

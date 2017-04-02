@@ -23,13 +23,13 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Entry newName;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker newCat;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image newPic;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Button newPicBtn;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Picker newCat;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Editor newDesc;
@@ -60,9 +60,9 @@ namespace SQLConnect {
             this.LoadFromXaml(typeof(AddProductPage));
             editView = this.FindByName <global::Xamarin.Forms.StackLayout>("editView");
             newName = this.FindByName <global::Xamarin.Forms.Entry>("newName");
+            newCat = this.FindByName <global::Xamarin.Forms.Picker>("newCat");
             newPic = this.FindByName <global::Xamarin.Forms.Image>("newPic");
             newPicBtn = this.FindByName <global::Xamarin.Forms.Button>("newPicBtn");
-            newCat = this.FindByName <global::Xamarin.Forms.Picker>("newCat");
             newDesc = this.FindByName <global::Xamarin.Forms.Editor>("newDesc");
             newUnit = this.FindByName <global::Xamarin.Forms.Entry>("newUnit");
             newIncFlag = this.FindByName <global::Xamarin.Forms.Switch>("newIncFlag");

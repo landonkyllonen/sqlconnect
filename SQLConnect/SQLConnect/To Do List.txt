@@ -84,6 +84,7 @@ Allow placing an order with checkout.
 
 Implement owner controls: Add item to dispensaries inventory
 						  Allow existing item name search when adding new item?
+						  Fix productpage's edit layout to only show when accessing through dispensary management.
 						  desc and img disp specific with choice of stock photo or description?
 						  Whitelist users?
 						  Implement code to support suspending transactions if something suspicious is happening.
