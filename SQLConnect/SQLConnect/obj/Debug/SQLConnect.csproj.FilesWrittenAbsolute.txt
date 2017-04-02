@@ -64,3 +64,5 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.DispensaryManagementPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.BarcodePage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.DispensaryManagementPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.AddProductPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.AddProductPage.xaml.g.cs

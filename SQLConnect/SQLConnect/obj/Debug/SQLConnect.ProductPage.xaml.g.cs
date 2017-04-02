@@ -17,6 +17,9 @@ namespace SQLConnect {
     public partial class ProductPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.RelativeLayout browseView;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image image;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -50,8 +53,45 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Label priceExact;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label priceExactRate;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout editView;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Image editPic;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button editPicBtn;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Editor editDesc;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry editUnit;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Switch editIncFlag;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry editIncUnit;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Switch editDealFlag;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry editDiscount;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker editBulkType;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry editBulk;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(ProductPage));
+            browseView = this.FindByName <global::Xamarin.Forms.RelativeLayout>("browseView");
             image = this.FindByName <global::Xamarin.Forms.Image>("image");
             componentRegular = this.FindByName <global::Xamarin.Forms.RelativeLayout>("componentRegular");
             value = this.FindByName <global::Xamarin.Forms.Label>("value");
@@ -63,6 +103,18 @@ namespace SQLConnect {
             valueRight = this.FindByName <global::Xamarin.Forms.Label>("valueRight");
             priceLblExact = this.FindByName <global::Xamarin.Forms.Label>("priceLblExact");
             priceExact = this.FindByName <global::Xamarin.Forms.Label>("priceExact");
+            priceExactRate = this.FindByName <global::Xamarin.Forms.Label>("priceExactRate");
+            editView = this.FindByName <global::Xamarin.Forms.StackLayout>("editView");
+            editPic = this.FindByName <global::Xamarin.Forms.Image>("editPic");
+            editPicBtn = this.FindByName <global::Xamarin.Forms.Button>("editPicBtn");
+            editDesc = this.FindByName <global::Xamarin.Forms.Editor>("editDesc");
+            editUnit = this.FindByName <global::Xamarin.Forms.Entry>("editUnit");
+            editIncFlag = this.FindByName <global::Xamarin.Forms.Switch>("editIncFlag");
+            editIncUnit = this.FindByName <global::Xamarin.Forms.Entry>("editIncUnit");
+            editDealFlag = this.FindByName <global::Xamarin.Forms.Switch>("editDealFlag");
+            editDiscount = this.FindByName <global::Xamarin.Forms.Entry>("editDiscount");
+            editBulkType = this.FindByName <global::Xamarin.Forms.Picker>("editBulkType");
+            editBulk = this.FindByName <global::Xamarin.Forms.Entry>("editBulk");
         }
     }
 }

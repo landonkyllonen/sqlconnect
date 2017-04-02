@@ -66,3 +66,5 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/ZXing.Net.Mobile.Forms.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.DispensaryManagementPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.DispensaryManagementPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.AddProductPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.AddProductPage.xaml.g.cs

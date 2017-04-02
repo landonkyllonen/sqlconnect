@@ -102,7 +102,6 @@ namespace SQLConnect
 					Text="My Card",
 					TextColor=Color.White
 				};
-				toMyID.Clicked += toBarcodePage;
 
 				Button toProducts = new Button
 				{
@@ -292,6 +291,9 @@ namespace SQLConnect
 			{
 				toMyID.Text = "Manage Dispensary";
 				toMyID.Clicked += toDispensaryManagement;
+			}else
+			{
+				toMyID.Clicked += toBarcodePage;
 			}
 
 			//If online and there is a deal, show it.

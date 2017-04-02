@@ -1,5 +1,14 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SQLConnect.DispensaryManagementPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="SQLConnect.DispensaryManagementPage"
+	Title="Dispensary Management">
 	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Spacing="15">
+			<Button Text="Add Item to Inventory" TextColor="White" BackgroundColor="Teal" HorizontalOptions="Center" Clicked="toAddItem"/>
+			<Button Text="Browse/Edit Inventory" TextColor="White" BackgroundColor="Teal" HorizontalOptions="Center" Clicked="toBrowseEdit"/>
+			<Button x:Name="suspendBtn" Text="Suspend Transactions" TextColor="White" BackgroundColor="Red" HorizontalOptions="Center" Clicked="suspendTransactions"/>
+			<Label HorizontalTextAlignment="Center" VerticalOptions="End" TextColor="Teal" Text="Note: If you have lost your code to re-enable transactions, or are having problems with any other managerial task please contact the support team."/>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

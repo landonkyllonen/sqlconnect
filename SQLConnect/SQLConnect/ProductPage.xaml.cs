@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Net;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -11,7 +13,6 @@ namespace SQLConnect
 		string[] medicalAmounts;
 		double[] medicalPrices;
 		int discountType;
-		double bulkDiscountRate;
 		int index;
 
 		public ProductPage()
@@ -26,7 +27,6 @@ namespace SQLConnect
 			medicalAmounts = new string[] { "Gram", "Eighth\n(~3.5g)", "Quarter\n(~7g)", "Half Oz\n(~14g)", "Ounce\n(~28g)" };
 			//Discount?
 			discountType = product.prodBulkType;
-			bulkDiscountRate = 1-product.prodBulkDiscount;
 			//Populate price list for flowers.
 			//If discount available, it is applied iteratively to amounts greater than a gram. This value could be set by the dispensary, maybe for each item?
 			//1 gram is base price
@@ -75,14 +75,39 @@ namespace SQLConnect
 			priceExactRate.Text = "(" + medicalPrices[0].ToString("C") + "/g)";
 
 			//Get information on what type of choices to display.
-			//For now, display simple.
 
-			if (product.prodIncrementType.Equals("Flower"))
+			if (Statics.Default.getCreds()[12].Equals("1"))
 			{
-				componentExact.IsVisible = true;
+				editView.IsVisible = true;
+				browseView.IsVisible = false;
+
+				//Init edit values.
+				editPic.Source = product.prodImgUrl;
+				editDesc.Text = product.prodDescription;
+				editBulk.Text = (product.prodBulkDiscount * 100).ToString();
+				editUnit.Text = product.prodUnitPrice.ToString("F");
+				editIncUnit.Text = product.prodUnitPriceIncentive.ToString();
+				editIncFlag.IsToggled = product.prodIncentiveFlag;
+				//Select proper bulk type
+				string[] bulkTypes = new string[] { "None", "Linear", "Diminishing" };
+				foreach (string s in bulkTypes)
+				{
+					editBulkType.Items.Add(s);
+				}
+				editBulkType.SelectedIndex = discountType;
+				editDealFlag.IsToggled = product.prodDealFlag;
+				editDiscount.Text = (product.prodDiscount * 100).ToString();
 			}
-			else {
-				componentRegular.IsVisible = true;
+			else
+			{
+				if (product.prodCategory.Equals("Flowers"))
+				{
+					componentExact.IsVisible = true;
+				}
+				else
+				{
+					componentRegular.IsVisible = true;
+				}
 			}
 
 			price.Text = product.prodUnitPrice.ToString("C");
@@ -250,6 +275,79 @@ namespace SQLConnect
 				NavigationPage.SetHasBackButton(nav, true);
 				await Navigation.PushModalAsync(nav);
 			}
+		}
+
+		async void saveEdits(object s, EventArgs e)
+		{
+			s.ToString();
+			e.ToString();
+
+			var answer = await DisplayAlert("Save Changes", "Review your changes for accuracy. Are you sure you want to make these changes?", "Yes", "No");
+
+			if (answer)
+			{
+				//Upload changes, notify manager that they can browse products normally to see exactly how these changes look to the users.
+
+				//Check inputs
+				string deal, inc;
+				if (editDealFlag.IsToggled) { deal = "1"; } else { deal = "0"; }
+				if (editIncFlag.IsToggled) { inc = "1"; } else { inc = "0"; }
+				double discount = double.Parse(editDiscount.Text) / 100;
+				double bulkDiscount = double.Parse(editBulk.Text) / 100;
+
+				//Connect to url.
+				var client = new System.Net.Http.HttpClient();
+
+				//Show that we are waiting for a response and wait for it.
+
+				Debug.WriteLine(Statics.Default.getCreds()[16]);
+				Debug.WriteLine(editDesc.Text);
+				Debug.WriteLine(product.prodImgUrl);
+				Debug.WriteLine(editUnit.Text);
+				Debug.WriteLine(inc);
+				Debug.WriteLine(editIncUnit.Text);
+				Debug.WriteLine(deal);
+				Debug.WriteLine(discount.ToString());
+				Debug.WriteLine(editBulkType.SelectedIndex.ToString());
+				Debug.WriteLine(bulkDiscount.ToString());
+
+				var response = await client.GetAsync("http://cbd-online.net/landon/addOrEditProduct.php?" +
+				                                     "operation=" + WebUtility.UrlEncode("1") +//0 add, 1 edit.
+				                                     "&dispId=" + WebUtility.UrlEncode(Statics.Default.getCreds()[16]) +
+													 "&desc=" + WebUtility.UrlEncode(editDesc.Text) +
+				                                     "&pic=" + WebUtility.UrlEncode(product.prodImgUrl) +
+				                                     "&unitPrice=" + WebUtility.UrlEncode(editUnit.Text) +
+				                                     "&incFlag=" + WebUtility.UrlEncode(inc) +
+				                                     "&incUnitPrice=" + WebUtility.UrlEncode(editIncUnit.Text) +
+				                                     "&dealFlag=" + WebUtility.UrlEncode(deal) +
+				                                     "&discount=" + WebUtility.UrlEncode(discount.ToString()) +
+				                                     "&bulkType=" + WebUtility.UrlEncode(editBulkType.SelectedIndex.ToString()) +
+				                                     "&bulkDiscount=" + WebUtility.UrlEncode(bulkDiscount.ToString()));
+
+				var output = await response.Content.ReadAsStringAsync();
+
+				Debug.WriteLine(output);
+
+				if (output.Equals("true"))
+				{
+					await DisplayAlert("Success", "Item values modified. You can see what your new inventory list by logging in again.", "Okay");
+				}
+				else
+				{
+					await DisplayAlert("Error", "Sorry, there was a problem uploading your changes.", "Okay");
+
+				}
+			}
+			else
+			{
+				//Cancel operation.
+			}
+		}
+
+		void cancelEdits(object s, EventArgs e)
+		{
+			//Abort changes.
+			Navigation.PopModalAsync();
 		}
 	}
 }

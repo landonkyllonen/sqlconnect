@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="SQLConnect.AddProductPage"
+	Title="Add a Product">
+	<ContentPage.Content>
+		<ScrollView Orientation="Vertical">
+			<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" x:Name="editView" IsVisible="false" Padding="10,0,10,0">
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Label Text="Name:" VerticalOptions="Center" TextColor="Teal"/>
+					<Entry x:Name="newName" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+				</StackLayout>
+				
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Image x:Name="newPic" Source="product.png" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="150"/>
+					<Button x:Name="newPicBtn" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Label Text="Category:" VerticalOptions="Center" TextColor="Teal"/>
+					<Picker x:Name="newCat" TextColor="Teal" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="150"/>
+				</StackLayout>
+				
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Editor x:Name="newDesc" TextColor="Teal" HeightRequest="100" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="This is a sample description, it could be quite long, so I am making this text long in order to determine how I should be wrapping this text properly."/>
+				</StackLayout>
+				
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Label Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
+					<Label Text=" $" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
+					<Entry x:Name="newUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Label Text="Purchasable with points:" VerticalOptions="Center" TextColor="Teal"/>
+					<Switch x:Name="newIncFlag" HorizontalOptions="End"/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
+					<Label Text="Points/unit:" VerticalOptions="Center" TextColor="Teal"/>
+					<Entry x:Name="newIncUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Label Text="Discount Applied:" VerticalOptions="Center" TextColor="Teal"/>
+					<Switch x:Name="newDealFlag" HorizontalOptions="End"/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
+					<Label Text="Discount:" VerticalOptions="Center" TextColor="Teal"/>
+					<Entry x:Name="newDiscount" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+					<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Label Text="Bulk discount type:" VerticalOptions="Center" TextColor="Teal"/>
+					<Picker x:Name="newBulkType" TextColor="Teal" HorizontalOptions="End" WidthRequest="175"/>
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
+					<Label Text="Max bulk discount:" VerticalOptions="Center" TextColor="Teal"/>
+					<Entry x:Name="newBulk" TextColor="Teal" WidthRequest="100"/>
+					<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
+				</StackLayout>
+				
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<Button Text="Save Changes" Clicked="saveNew" TextColor="White" BackgroundColor="Teal" HorizontalOptions="CenterAndExpand"/>
+					<Button Text="Cancel Changes" Clicked="cancelNew" TextColor="White" BackgroundColor="Gray" HorizontalOptions="CenterAndExpand"/>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

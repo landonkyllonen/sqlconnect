@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="SQLConnect.CategoryListPage"
@@ -7,7 +7,7 @@
 		<StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Teal">
 			<SearchBar Placeholder="Search by name" TextChanged = "filterItems" PlaceholderColor = "#E5E2DD" TextColor="White"
 				CancelButtonColor = "White" />
-			<ListView  x:Name="prodList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver">
+			<ListView  x:Name="prodList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver" BackgroundColor="Teal">
             	<ListView.ItemTemplate>
 	                <DataTemplate>
 	                    <ViewCell>

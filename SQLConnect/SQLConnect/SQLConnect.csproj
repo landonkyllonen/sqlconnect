@@ -102,6 +102,9 @@
     <EmbeddedResource Include="DispensaryManagementPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddProductPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -205,6 +208,9 @@
     </Compile>
     <Compile Include="DispensaryManagementPage.xaml.cs">
       <DependentUpon>DispensaryManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddProductPage.xaml.cs">
+      <DependentUpon>AddProductPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
