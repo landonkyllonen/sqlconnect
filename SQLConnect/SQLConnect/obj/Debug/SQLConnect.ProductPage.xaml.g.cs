@@ -35,6 +35,9 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Label price;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label priceRegRate;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.RelativeLayout componentExact;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -97,6 +100,7 @@ namespace SQLConnect {
             value = this.FindByName <global::Xamarin.Forms.Label>("value");
             priceLbl = this.FindByName <global::Xamarin.Forms.Label>("priceLbl");
             price = this.FindByName <global::Xamarin.Forms.Label>("price");
+            priceRegRate = this.FindByName <global::Xamarin.Forms.Label>("priceRegRate");
             componentExact = this.FindByName <global::Xamarin.Forms.RelativeLayout>("componentExact");
             valueLeft = this.FindByName <global::Xamarin.Forms.Label>("valueLeft");
             valueMid = this.FindByName <global::Xamarin.Forms.Label>("valueMid");

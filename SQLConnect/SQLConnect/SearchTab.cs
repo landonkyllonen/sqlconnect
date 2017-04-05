@@ -32,7 +32,8 @@ namespace SQLConnect
 
 			choices = new string[] {"Select", "Product Info", "Users" };
 
-			piChoices = new string[] {"Select", "Most Popular", "Most Popular by Condition", "Specific Product Stats", "Locations selling..." };
+			piChoices = new string[] {"Select", "Most Popular", "Most Popular by Condition", "Specific Product Stats" };
+			//"Locations selling..." temporarily removed.
 
 			userChoices = new string[] { "Select", "That have used...", "With condition..." };
 

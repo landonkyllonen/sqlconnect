@@ -10,6 +10,8 @@ namespace SQLConnect
 		{
 			InitializeComponent();
 
+			id.Text = "#" + Statics.Default.getCreds()[15];
+
 			/*barcode = new ZXingBarcodeImageView
 			{
 				HorizontalOptions = LayoutOptions.FillAndExpand,

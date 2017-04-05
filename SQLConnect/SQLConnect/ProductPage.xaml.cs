@@ -15,11 +15,17 @@ namespace SQLConnect
 		int discountType;
 		int index;
 
-		public ProductPage()
+		public ProductPage(bool dealLink)
 		{
 			InitializeComponent();
 
-			product = Statics.Default.getProdClicked();
+			if (dealLink)
+			{
+				product = Statics.Default.getDeal();
+			}else
+			{
+				product = Statics.Default.getProdClicked();
+			}
 
 			Title = product.prodName;
 			image.Source = product.prodImgUrl;
@@ -76,7 +82,7 @@ namespace SQLConnect
 
 			//Get information on what type of choices to display.
 
-			if (Statics.Default.getCreds()[12].Equals("1"))
+			if (Statics.Default.getCreds()[12].Equals("1")&&Statics.Default.IsEditing())
 			{
 				editView.IsVisible = true;
 				browseView.IsVisible = false;
@@ -111,6 +117,8 @@ namespace SQLConnect
 			}
 
 			price.Text = product.prodUnitPrice.ToString("C");
+
+			Debug.WriteLine("editView: " + editView.IsVisible + " browse: " + browseView.IsVisible);
 		}
 
 		void increment(object s, EventArgs e)

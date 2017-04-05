@@ -31,12 +31,12 @@ namespace SQLConnect
 				IconSource = "polyline.png",
 				TargetType = typeof(AnalyticsPage)
 			});
-			masterPageItems.Add(new MasterPageItem
+			/*masterPageItems.Add(new MasterPageItem
 			{
 				Title = "Change Dispensary",
 				IconSource = "store.png",
 				TargetType = typeof(DispensaryPage)
-			});
+			});*/
 			masterPageItems.Add(new MasterPageItem
 			{
 				Title = "Settings",

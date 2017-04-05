@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="SQLConnect.DispensaryPage"
@@ -8,8 +8,8 @@
 			<StackLayout x:Name="firstTimeLbls" Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Start" Padding="7" Spacing = "10">
 				<Label TextColor="White" Text="First, select your dispensary."
 					HorizontalOptions="Center" FontSize="25"/>
-				<Label TextColor="White" Text="Don't worry, you can change your dispensary at any time."
-					HorizontalOptions="Center" FontSize="15"/>
+				<!--Label TextColor="White" Text="Don't worry, you can change your dispensary at any time."
+					HorizontalOptions="Center" FontSize="15"/>-->
 			</StackLayout>
 			<SearchBar x:Name="dispSearch" Placeholder="Enter City Name" TextChanged = "Handle_TextChanged" PlaceholderColor = "#E5E2DD" TextColor="White" 
 				CancelButtonColor = "White" />

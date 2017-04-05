@@ -53,7 +53,7 @@ namespace SQLConnect
 		void onItemSelect(object sender, ItemTappedEventArgs e)
 		{
 			Statics.Default.setProdClicked((ProductListItem)e.Item);
-			NavigationPage nav = new NavigationPage(new ProductPage());
+			NavigationPage nav = new NavigationPage(new ProductPage(false));
 			NavigationPage.SetHasBackButton(nav, true);
 			Navigation.PushModalAsync(nav);
 		}

@@ -73,7 +73,24 @@ Alternate page layout created for editing a dispensary's product.
 Make description and product picture dispensary specific.
 Created phps to support:adding/editing dispensary products.
 UI for management options implemented, functionality not fully implemented yet.
+/
+Functionality for adding and editing items fully implemented, changes now appear locally as well.
+Figured out how ios distribution works
+Limit users 1 device, custom limit on admins
+Made userid shorter, autoincrement from 1005
+User id is now displayed on user id page.
+remove choose dispensary
+remove search dispensary by product
+Fixed bug in changing dispensaries
+Got deal on home working as well as link to deal
+Distinguished between going to product as manager for edit and going for viewing
+Fixed Productpage layout (scrollview can only hold 1 layout child)
 /-----------Complete ^
+Get cross-platform device id for connection verification.
+orders placed in app, payment separate through interac
+login with storefront pic
+allow user to unlink their device id from settings
+
 Home page: implement card for users, create help page for app.
 
 Implement 1 more analytics tab.
@@ -82,12 +99,13 @@ Implement bulk discount option for non-flowers.
 
 Allow placing an order with checkout.
 
-Implement owner controls: Add item to dispensaries inventory
-						  Allow existing item name search when adding new item?
-						  Fix productpage's edit layout to only show when accessing through dispensary management.
-						  desc and img disp specific with choice of stock photo or description?
-						  Whitelist users?
-						  Implement code to support suspending transactions if something suspicious is happening.
+Allow existing item name search when adding new item?
+
+desc and img disp specific with choice of stock photo or description?
+
+Whitelist users?
+
+Implement code to support suspending transactions if something suspicious is happening.
 
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed, and whenever cancel is pressed) this may need to be done platform-specific.
 /--------------Unsure v

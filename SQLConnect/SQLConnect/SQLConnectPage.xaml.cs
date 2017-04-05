@@ -237,13 +237,13 @@ namespace SQLConnect
 			var output = await response.Content.ReadAsStringAsync();
 
 			//Process the output.
-			string[] productObjects = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+			string[] productObjects = output.Split(new string[] { ";;" }, StringSplitOptions.RemoveEmptyEntries);
 
 			//Separate into product components and turn into product objects.
 			prods = new ObservableCollection<ProductListItem>();
 			foreach (string obj in productObjects)
 			{
-				string[] productComponents = obj.Split(new string[] { "--" }, StringSplitOptions.None);
+				string[] productComponents = obj.Split(new string[] { "--" }, StringSplitOptions.RemoveEmptyEntries);
 
 				Debug.WriteLine(obj);
 				//FOR DEBUGGING--

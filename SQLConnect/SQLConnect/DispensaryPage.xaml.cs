@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -115,18 +116,18 @@ namespace SQLConnect
 			//Show that we are waiting for a response and wait for it.
 
 			var response = await client.GetAsync("http://cbd-online.net/landon/getItemInfo.php?" +
-			                                     "dispId=" + System.Net.WebUtility.UrlEncode(dispId));
+			                                     "dispId=" + WebUtility.UrlEncode(dispId));
 
 			var output = await response.Content.ReadAsStringAsync();
 
 			//Process the output.
-			string[] productObjects = output.Split(new string[] { ";;" }, StringSplitOptions.None);
+			string[] productObjects = output.Split(new string[] { ";;" }, StringSplitOptions.RemoveEmptyEntries);
 
 			//Separate into product components and turn into product objects.
 			prods = new ObservableCollection<ProductListItem>();
 			foreach (string obj in productObjects)
 			{
-				string[] productComponents = obj.Split(new string[] { "--" }, StringSplitOptions.None);
+				string[] productComponents = obj.Split(new string[] { "--" }, StringSplitOptions.RemoveEmptyEntries);
 
 				Debug.WriteLine(obj);
 				//FOR DEBUGGING--
@@ -138,27 +139,32 @@ namespace SQLConnect
 				Debug.WriteLine(comps);
 				//FOR DEBUGGING--
 
+				//  0    1   2       3          4       5            6                7                8            9           10                11
+				//Name, Id, Cat, Description, PicUrl, BasePrice, IncentiveFlag, IncentiveBasePrice, DealFlag, DealDiscount, BulkDiscountType, BulkDiscount
 				bool deal = false;
 				bool incentive = false;
 				if (productComponents[8].Equals("1")) { deal = true; }
-				if (productComponents[9].Equals("1")) { incentive = true; }
+				if (productComponents[6].Equals("1")) { incentive = true; }
 
-				//bound as name--category--description--imageurl--incrementtype--baseprice--incbaseprice--dealdiscount--dealflag-incflag--bulkdis--bulkdistype;;
-				prods.Add(new ProductListItem
+				var prod = new ProductListItem
 				{
 					prodName = productComponents[0],
-					prodCategory = productComponents[1],
-					prodDescription = productComponents[2],
-					prodImgUrl = productComponents[3],
-					prodIncrementType = productComponents[4],
+					prodCategory = productComponents[2],
+					prodDescription = productComponents[3],
+					prodImgUrl = productComponents[4],
 					prodUnitPrice = double.Parse(productComponents[5]),
-					prodUnitPriceIncentive = double.Parse(productComponents[6]),
-					prodDiscount = double.Parse(productComponents[7]),
+					prodUnitPriceIncentive = double.Parse(productComponents[7]),
+					prodDiscount = double.Parse(productComponents[9]),
 					prodDealFlag = deal,
 					prodIncentiveFlag = incentive,
-					prodBulkDiscount = double.Parse(productComponents[10]),
-					prodBulkType = int.Parse(productComponents[11])
-				});
+					prodBulkDiscount = double.Parse(productComponents[11]),
+					prodBulkType = int.Parse(productComponents[10])
+				};
+
+				if (prod.prodDealFlag) { Statics.Default.setDeal(prod); }
+
+				//bound as name--category--description--imageurl--incrementtype--baseprice--incbaseprice--dealdiscount--dealflag-incflag--bulkdis--bulkdistype;;
+				prods.Add(prod);
 			}
 
 			//products now contains all the products loaded from a certain dispensary, save to static for use in deal on front page,

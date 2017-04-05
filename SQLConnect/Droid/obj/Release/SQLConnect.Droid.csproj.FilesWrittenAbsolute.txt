@@ -1,4 +1,4 @@
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/MonoAndroid,Version=v7.1.AssemblyAttribute.cs
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/MonoAndroid,Version=v6.0.AssemblyAttribute.cs
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.Droid.dll.mdb
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.Droid.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/com.landonkyllonen.sqlconnect.apk
@@ -57,3 +57,4 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Toasts.Forms.Plugin.Abstractions.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/Toasts.Forms.Plugin.Droid.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/MonoAndroid,Version=v7.1.AssemblyAttribute.cs

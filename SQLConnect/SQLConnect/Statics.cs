@@ -5,7 +5,9 @@ namespace SQLConnect
 {
 	public class Statics
 	{
+		//States
 		bool offline = true;
+		bool editing = false;
 
 		//Profile page, etc
 		string[] credentials;
@@ -55,6 +57,15 @@ namespace SQLConnect
 		public bool isOffline()
 		{
 			return offline;
+		}
+
+		public void setEditing(bool state)
+		{
+			editing = state;
+		}
+		public bool IsEditing()
+		{
+			return editing;
 		}
 
 		public void setCreds(string[] credentials)

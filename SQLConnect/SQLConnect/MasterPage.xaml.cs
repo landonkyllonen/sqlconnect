@@ -26,6 +26,7 @@ namespace SQLConnect
 				Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
 				masterPage.ListView.SelectedItem = null;
 				IsPresented = false;
+				Statics.Default.setEditing(false);
 			}
 		}
 	}

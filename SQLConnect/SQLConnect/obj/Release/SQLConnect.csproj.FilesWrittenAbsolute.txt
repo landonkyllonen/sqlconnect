@@ -24,6 +24,8 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BlacklistPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ContactsPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BarcodePage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.DispensaryManagementPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.AddProductPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.App.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.SQLConnectPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.SocialPage.xaml.g.cs
@@ -49,6 +51,8 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BlacklistPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.ContactsPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.BarcodePage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.DispensaryManagementPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.AddProductPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/Xamarin.Forms.Core.dll
@@ -60,11 +64,3 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/CryptSharp.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/Validation.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/PCLCrypto.dll
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/ZXing.Net.Mobile.Core.dll
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/zxing.portable.dll
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/ZXingNetMobile.dll
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/ZXing.Net.Mobile.Forms.dll
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.DispensaryManagementPage.xaml
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.DispensaryManagementPage.xaml.g.cs
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.AddProductPage.xaml
-/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Release/SQLConnect.AddProductPage.xaml.g.cs

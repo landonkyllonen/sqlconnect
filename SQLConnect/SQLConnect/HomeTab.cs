@@ -11,6 +11,8 @@ namespace SQLConnect
 
 		public HomeTab()
 		{
+			Statics.Default.setEditing(false);
+
 			RelativeLayout rel = new RelativeLayout
 			{
 				HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -63,15 +65,22 @@ namespace SQLConnect
 						VerticalOptions=LayoutOptions.CenterAndExpand
 					};
 
-					Label dealCategory = new Label
+					/*Label dealCategory = new Label
 					{
 						TextColor = Color.Teal,
 						Text = "Category",
 						HorizontalOptions = LayoutOptions.CenterAndExpand,
 						VerticalOptions = LayoutOptions.CenterAndExpand
-					};
+					};*/
 					dealInfoLayout.Children.Add(dealName);
-					dealInfoLayout.Children.Add(dealCategory);
+				//dealInfoLayout.Children.Add(dealCategory);
+
+				Image dealImg = new Image
+				{
+					Aspect = Aspect.AspectFill,
+					HorizontalOptions = LayoutOptions.CenterAndExpand,
+					VerticalOptions = LayoutOptions.CenterAndExpand
+				};	
 
 				Button toDeal = new Button
 				{
@@ -99,7 +108,7 @@ namespace SQLConnect
 				{
 					FontSize = 20,
 					BackgroundColor = Color.FromHex("#009a9a"),
-					Text="My Card",
+					Text="My ID",
 					TextColor=Color.White
 				};
 
@@ -190,11 +199,23 @@ namespace SQLConnect
 							}),
 							Constraint.RelativeToParent((parent) =>
 							{
-								return parent.Width * .6;
+								return parent.Width * .3;
 							}),
 								 Constraint.Constant(50));
 
-
+			rel.Children.Add(dealImg, Constraint.RelativeToParent((parent) =>
+							{
+								return parent.X + parent.Width * .5;
+							}),
+								 Constraint.RelativeToView(dealsTag, (parent, sibling) =>
+							{
+								return sibling.Y + 30;
+							}),
+							Constraint.RelativeToParent((parent) =>
+							{
+								return parent.Width * .3;
+							}),
+								 Constraint.Constant(50));
 
 			rel.Children.Add(dealPrice, Constraint.RelativeToParent((parent) =>
 							{
@@ -302,7 +323,7 @@ namespace SQLConnect
 				deal = Statics.Default.getDeal();
 				dealName.Text = deal.prodName;
 				dealPrice.Text = "$" + deal.prodUnitPrice + "/g";
-				dealCategory.Text = deal.prodCategory;
+				dealImg.Source = deal.prodImgUrl;
 			}
 			else
 			{
@@ -314,7 +335,9 @@ namespace SQLConnect
 
 		public void goToDeal(object s, EventArgs e)
 		{
-			Statics.Default.getMaster().Detail = new NavigationPage(new ProductPage());
+			NavigationPage nav = new NavigationPage(new ProductPage(true));
+			NavigationPage.SetHasBackButton(nav, true);
+			Navigation.PushModalAsync(nav);
 		}
 
 		public void toProductsTab(object s, EventArgs e)
@@ -338,6 +361,7 @@ namespace SQLConnect
 
 		public void toDispensaryManagement(object s, EventArgs e)
 		{
+			Statics.Default.setEditing(true);
 			NavigationPage nav = new NavigationPage(new DispensaryManagementPage());
 			NavigationPage.SetHasBackButton(nav, true);
 			Navigation.PushModalAsync(nav);
