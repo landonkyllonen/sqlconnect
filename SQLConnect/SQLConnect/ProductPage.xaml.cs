@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Xamarin.Forms;
+using System.Threading.Tasks;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using System.IO;
 
 namespace SQLConnect
 {
@@ -14,6 +19,8 @@ namespace SQLConnect
 		double[] medicalPrices;
 		int discountType;
 		int index;
+		byte[] imageBytes;
+
 
 		public ProductPage(bool dealLink)
 		{
@@ -121,6 +128,8 @@ namespace SQLConnect
 			Debug.WriteLine("editView: " + editView.IsVisible + " browse: " + browseView.IsVisible);
 		}
 
+
+
 		void increment(object s, EventArgs e)
 		{
 			s.ToString();
@@ -132,6 +141,8 @@ namespace SQLConnect
 			}
 		}
 
+
+
 		void decrement(object s, EventArgs e)
 		{
 			s.ToString();
@@ -142,6 +153,8 @@ namespace SQLConnect
 				price.Text = (int.Parse(value.Text) * product.prodUnitPrice).ToString("C");
 			}
 		}
+
+
 
 		void previous(object s, EventArgs e)
 		{
@@ -183,6 +196,8 @@ namespace SQLConnect
 			}
 		}
 
+
+
 		void next(object s, EventArgs e)
 		{
 			s.ToString();
@@ -222,6 +237,99 @@ namespace SQLConnect
 				priceExactRate.Text = "(" + (medicalPrices[index] / grams).ToString("C") + "/g)";
 			}
 		}
+
+
+
+
+		public async void pickPic(object s, EventArgs e)
+		{
+			//Get byte[] of selected pic.
+			imageBytes = await PickPictureAsync(null);
+			if (imageBytes != null)
+			{
+				Debug.WriteLine("ImageBytes is no longer empty.");
+
+				/*//UNCOMMENT THIS FOR QUICK IMAGE UPDATE THROUGH UPLOADPICTURE.PHP CHECK SQL COMMAND FOR SAFETY
+				//Connect to url.
+				var client = new HttpClient();
+
+				var contentSent = new MultipartFormDataContent();
+
+				if (imageBytes != null)
+				{
+					contentSent.Add(new ByteArrayContent(imageBytes), "image");
+				}
+
+				//Show that we are waiting for a response and wait for it.
+				var response = await client.PostAsync("http://cbd-online.net/landon/uploadPicture.php", contentSent);
+
+				var output = await response.Content.ReadAsStringAsync();
+
+				Debug.WriteLine(output);
+				*/
+
+				//Direct FTP attempt that was alternative to saving images on SQL
+				/*if (Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS)
+					DependencyService.Get<IFtpWebRequest>().upload("ftp://82.221.139.182", localpath, "landon@cbd-online.net", "Sol@rwind99", "/landon");
+					//await DisplayAlert("Upload", DependencyService.Get<IFtpWebRequest>().upload("ftp://82.221.139.182", localpath, "landon@cbd-online.net", "Sol@rwind99", "/landon"), "Ok");
+				*/
+			}
+			else
+			{
+				Debug.WriteLine("No image data was collected.");
+			}
+		}
+
+
+
+
+		/// <summary>
+		/// Allows the user to pick a photo on their device using the native photo handlers and returns a stream, which is converted to a byte[].
+		/// </summary>
+		/// <returns>string, the name of the image if everything went ok, 'false' if an exception was generated, and 'notfalse' if they simply canceled.</returns>
+		//Leaving useless parts in case needed later for customization.
+		public async Task<byte[]> PickPictureAsync(PickMediaOptions options = null)
+		{
+			await CrossMedia.Current.Initialize();
+
+			MediaFile file = null;
+			string filePath = string.Empty;
+			string imageName = string.Empty;
+
+			try
+			{
+				file = await CrossMedia.Current.PickPhotoAsync();
+
+				if (file == null)
+				{
+					return null;
+				}//Not returning false here so we do not show an error if they simply hit cancel from the device's image picker
+				else
+				{
+					filePath = file.Path;/* Add your own logic here for where to save the file */ //_fileHelper.CopyFile(file.Path, imageName);
+					imageName = "SomeImageName.jpg";
+
+					var memoryStream = new MemoryStream();
+					file.GetStream().CopyTo(memoryStream);
+					file.Dispose();
+					return memoryStream.ToArray();
+				}
+
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("\nIn PictureViewModel.PickPictureAsync() - Exception:\n{0}\n", ex);//TODO: Do something more useful
+				return null;
+			}
+			//Receipts.Add(ImageSource.FromFile(filePath));
+
+			//Uris.Add(filePath);
+
+			//return imageName;
+		}
+
+
+
 
 		async void addToCart(object s, EventArgs e)
 		{
@@ -285,6 +393,9 @@ namespace SQLConnect
 			}
 		}
 
+
+
+
 		async void saveEdits(object s, EventArgs e)
 		{
 			s.ToString();
@@ -292,7 +403,31 @@ namespace SQLConnect
 
 			var answer = await DisplayAlert("Save Changes", "Review your changes for accuracy. Are you sure you want to make these changes?", "Yes", "No");
 
-			if (answer)
+			bool valid = true;
+			string error = "";
+
+			/*Checklist*/
+
+			//Fails if any info is empty.
+			if(String.IsNullOrEmpty(editDesc.Text) ||
+			   String.IsNullOrEmpty(editUnit.Text) ||
+			   //String.IsNullOrEmpty(newIncUnit.Text) || NOT REQUIRED YET
+			   String.IsNullOrEmpty(editBulkType.Items[editBulkType.SelectedIndex]))
+			{
+				valid = false;
+				error = "No fields can be empty.";
+			}
+
+			//Fails if either discount is applied but set to less than 5%.
+			if ((int.Parse(editDiscount.Text) < 5 && editDealFlag.IsToggled) || (int.Parse(editBulk.Text) < 5 && editBulkType.SelectedIndex > 0))
+			{
+				valid = false;
+				error = "Discount cannot be less than 5%, increase discount % or disable the discount(Set 'Bulk discount' to none or disable 'Discount applied'";
+			}
+
+			//Possibly create safeguards for someone trying to set an item to be free.
+
+			if (answer&&valid)
 			{
 				//Upload changes, notify manager that they can browse products normally to see exactly how these changes look to the users.
 
@@ -304,9 +439,26 @@ namespace SQLConnect
 				double bulkDiscount = double.Parse(editBulk.Text) / 100;
 
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
+
+				var contentSent = new MultipartFormDataContent();
+				contentSent.Add(new StringContent("1"), "operation");
+				contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
+				contentSent.Add(new StringContent(editDesc.Text), "desc");
+				if (imageBytes != null)
+				{
+					contentSent.Add(new ByteArrayContent(imageBytes), "picBytes");
+				}
+				contentSent.Add(new StringContent(editUnit.Text), "unitPrice");
+				contentSent.Add(new StringContent(editIncFlag.IsToggled.ToString()), "incFlag");
+				contentSent.Add(new StringContent(editIncUnit.Text), "incUnitPrice");
+				contentSent.Add(new StringContent(editDealFlag.IsToggled.ToString()), "dealFlag");
+				contentSent.Add(new StringContent(editDiscount.Text), "discount");
+				contentSent.Add(new StringContent(editBulkType.Items[editBulkType.SelectedIndex]), "bulkType");
+				contentSent.Add(new StringContent(editBulk.Text), "bulkDiscount");
 
 				//Show that we are waiting for a response and wait for it.
+				var response = await client.PostAsync("http://cbd-online.net/landon/addOrEditProduct.php", contentSent);
 
 				Debug.WriteLine(Statics.Default.getCreds()[16]);
 				Debug.WriteLine(editDesc.Text);
@@ -318,20 +470,6 @@ namespace SQLConnect
 				Debug.WriteLine(discount.ToString());
 				Debug.WriteLine(editBulkType.SelectedIndex.ToString());
 				Debug.WriteLine(bulkDiscount.ToString());
-
-				var response = await client.GetAsync("http://cbd-online.net/landon/addOrEditProduct.php?" +
-				                                     "operation=" + WebUtility.UrlEncode("1") +//0 add, 1 edit.
-				                                     "&dispId=" + WebUtility.UrlEncode(Statics.Default.getCreds()[16]) +
-				                                     "&name=" + WebUtility.UrlEncode(product.prodName) +
-													 "&desc=" + WebUtility.UrlEncode(editDesc.Text) +
-				                                     "&pic=" + WebUtility.UrlEncode(product.prodImgUrl) +
-				                                     "&unitPrice=" + WebUtility.UrlEncode(editUnit.Text) +
-				                                     "&incFlag=" + WebUtility.UrlEncode(inc) +
-				                                     "&incUnitPrice=" + WebUtility.UrlEncode(editIncUnit.Text) +
-				                                     "&dealFlag=" + WebUtility.UrlEncode(deal) +
-				                                     "&discount=" + WebUtility.UrlEncode(discount.ToString()) +
-				                                     "&bulkType=" + WebUtility.UrlEncode(editBulkType.SelectedIndex.ToString()) +
-				                                     "&bulkDiscount=" + WebUtility.UrlEncode(bulkDiscount.ToString()));
 
 				var output = await response.Content.ReadAsStringAsync();
 
@@ -368,9 +506,12 @@ namespace SQLConnect
 			}
 			else
 			{
-				//Cancel operation.
+				//Display error
+				await DisplayAlert("Error", error, "Okay");
 			}
 		}
+
+
 
 		void cancelEdits(object s, EventArgs e)
 		{

@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using Plugin.Media;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -572,6 +573,12 @@ namespace SQLConnect
 		public static string UrlEncodeParameter(string paramToEncode)
 		{
 			return WebUtility.UrlEncode(paramToEncode);
+		}
+
+		public string getDeviceID()
+		{
+			//Platform-specific.
+			return null;
 		}
 	}
 }

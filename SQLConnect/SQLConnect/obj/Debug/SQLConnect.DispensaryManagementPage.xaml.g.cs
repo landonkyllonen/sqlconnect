@@ -9,20 +9,18 @@
 // ------------------------------------------------------------------------------
 
 namespace SQLConnect {
-    using System;
-    using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
     
     
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/kellypowers/Projects/SQLConnect/SQLConnect/DispensaryManagementPage.xaml")]
     public partial class DispensaryManagementPage : global::Xamarin.Forms.ContentPage {
         
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Button suspendBtn;
         
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(DispensaryManagementPage));
-            suspendBtn = this.FindByName <global::Xamarin.Forms.Button>("suspendBtn");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(DispensaryManagementPage));
+            suspendBtn = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Button>(this, "suspendBtn");
         }
     }
 }

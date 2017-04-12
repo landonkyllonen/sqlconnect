@@ -85,13 +85,20 @@ Fixed bug in changing dispensaries
 Got deal on home working as well as link to deal
 Distinguished between going to product as manager for edit and going for viewing
 Fixed Productpage layout (scrollview can only hold 1 layout child)
+/
+Image selection from device functional.
+Input checks implemented on adding/editing products.
+addOrEditProduct.php now includes the upload of images when necessary.
+Edited db tables to be more efficient/to work.
+Created downloadPictures.php.
 /-----------Complete ^
+Get image binding/downloading functional from byte[]s from SQL.(currently no byte[] received on app end even though data exists)
 Get cross-platform device id for connection verification.
 orders placed in app, payment separate through interac
 login with storefront pic
 allow user to unlink their device id from settings
 
-Home page: implement card for users, create help page for app.
+create help page for app.
 
 Implement 1 more analytics tab.
 
@@ -99,16 +106,16 @@ Implement bulk discount option for non-flowers.
 
 Allow placing an order with checkout.
 
-Allow existing item name search when adding new item?
-
-desc and img disp specific with choice of stock photo or description?
-
 Whitelist users?
 
 Implement code to support suspending transactions if something suspicious is happening.
 
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed, and whenever cancel is pressed) this may need to be done platform-specific.
 /--------------Unsure v
+Allow existing item name search when adding new item for quick fill?
+
+Allow dispensary owners to view average, min, and max price/unit of products being offered by other dispensaries?
+
 Convert all connection calls to POST instead of GET. Safer that way?
 
 Implement saving logo image to phone instead of image url for faster loading? Loads pretty fast already

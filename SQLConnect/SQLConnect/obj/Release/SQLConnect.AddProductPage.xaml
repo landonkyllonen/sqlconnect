@@ -19,7 +19,7 @@
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Image x:Name="newPic" Source="product.png" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="150"/>
-					<Button x:Name="newPicBtn" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
+					<Button x:Name="newPicBtn" Clicked="PickPictureAsync" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Start">

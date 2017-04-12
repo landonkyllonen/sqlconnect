@@ -13,7 +13,7 @@
 	                <DataTemplate>
 	                    <ViewCell>
 	                        <RelativeLayout>
-	                        	<Image Source="{Binding prodImgUrl}" Aspect="AspectFill"
+	                        	<Image Source="{Binding prodImgSrc}" Aspect="AspectFill"
 									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=5}"
 									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=5}"
 									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=-10}"
