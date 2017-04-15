@@ -91,8 +91,18 @@ Input checks implemented on adding/editing products.
 addOrEditProduct.php now includes the upload of images when necessary.
 Edited db tables to be more efficient/to work.
 Created downloadPictures.php.
+/
+Image binding/downloading functional from byte[]s from SQL.(Implemented INotifyPropertyChanged interface)
+Images that are downloaded stay in storage for later use and are not reloaded.
+Debugged adding and editing products(focus on image mainly)
+Implemented product picture loading for home page.
+/
+Fixed problem where image was being placed as the wrong id.
+Fixed problem where if item was selected before it's picture loaded, its picture wouldn't be displayed on next page.
+/
+Implemented uploaded picture compression and resizing through dependancy injection.(IFileProcessing)
 /-----------Complete ^
-Get image binding/downloading functional from byte[]s from SQL.(currently no byte[] received on app end even though data exists)
+Test uploaded picture compression
 Get cross-platform device id for connection verification.
 orders placed in app, payment separate through interac
 login with storefront pic
@@ -113,6 +123,8 @@ Implement code to support suspending transactions if something suspicious is hap
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed, and whenever cancel is pressed) this may need to be done platform-specific.
 /--------------Unsure v
 Allow existing item name search when adding new item for quick fill?
+
+Explore change in speed between downloading all pictures at login vs all picture in category vs pics in category one by one?
 
 Allow dispensary owners to view average, min, and max price/unit of products being offered by other dispensaries?
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
 using System.IO;
 using Xamarin.Forms;
@@ -9,6 +8,8 @@ using Plugin.Media.Abstractions;
 using System.Diagnostics;
 using Plugin.Media;
 using System.Threading.Tasks;
+using System.Text;
+using System.Linq;
 
 namespace SQLConnect
 {
@@ -51,8 +52,6 @@ namespace SQLConnect
 
 		async void saveNew(object s, EventArgs e)
 		{
-			var answer = await DisplayAlert("Add this Item", "Review your submission for accuracy. Are you sure you want to make this product available for sale with these values?", "Yes", "No");
-
 			bool valid = true;
 			string error = "";
 
@@ -69,7 +68,7 @@ namespace SQLConnect
 			   String.IsNullOrEmpty(newDesc.Text) ||
 			   String.IsNullOrEmpty(newUnit.Text) ||
 			   //String.IsNullOrEmpty(newIncUnit.Text) || NOT REQUIRED YET
-			   String.IsNullOrEmpty(newBulkType.Items[newBulkType.SelectedIndex]))
+			   newBulkType.SelectedIndex<0)
 			{
 				valid = false; 
 				error = "You must fill in all fields.";
@@ -85,67 +84,71 @@ namespace SQLConnect
 				error = "Discount cannot be less than 5%, increase discount % or disable the discount(Set 'Bulk discount' to none or disable 'Discount applied'";
 			}
 
-			if (answer && valid)
+			if (valid)
 			{
-				//Connect to url.
-				var client = new HttpClient();
-
-				//Format inputs.
-				string deal, inc;
-				if (newDealFlag.IsToggled) { deal = "1"; } else { deal = "0"; }
-				if (newIncFlag.IsToggled) { inc = "1"; } else { inc = "0"; }
-				double discount = double.Parse(newDiscount.Text) / 100;
-				double bulkDiscount = double.Parse(newBulk.Text) / 100;
-
-				var contentSent = new MultipartFormDataContent();
-				contentSent.Add(new StringContent("0"), "operation");
-				contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
-				contentSent.Add(new StringContent(newName.Text), "name");
-				contentSent.Add(new StringContent(newCat.Items[newCat.SelectedIndex]), "cat");
-				contentSent.Add(new StringContent(newDesc.Text), "desc");
-				contentSent.Add(new ByteArrayContent(imageBytes), "picBytes");
-				contentSent.Add(new StringContent(newUnit.Text), "unitPrice");
-				contentSent.Add(new StringContent(inc), "incFlag");
-				contentSent.Add(new StringContent(newIncUnit.Text), "incUnitPrice");
-				contentSent.Add(new StringContent(deal), "dealFlag");
-				contentSent.Add(new StringContent(discount.ToString()), "discount");
-				contentSent.Add(new StringContent(newBulkType.Items[newBulkType.SelectedIndex]), "bulkType");
-				contentSent.Add(new StringContent(bulkDiscount.ToString()), "bulkDiscount");
-
-				//Show that we are waiting for a response and wait for it.
-				var response = await client.PostAsync("http://cbd-online.net/landon/addOrEditProduct.php", contentSent);
-
-				var output = await response.Content.ReadAsStringAsync();
-
-				string[] components = output.Split(new string[] { "\n" }, StringSplitOptions.None);
-
-				if (components[0].Equals("true"))
+				var answer = await DisplayAlert("Add this Item", "Review your submission for accuracy. Are you sure you want to make this product available for sale with these values?", "Yes", "No");
+				if (answer)
 				{
-					await DisplayAlert("Success", "Item values modified. You can see your edited inventory list by navigating to products section.", "Okay");
-					//Change locally.
-					ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
-					ProductListItem product = new ProductListItem();
+					//Connect to url.
+					var client = new HttpClient();
 
-					product.prodName = newName.Text;
-					product.prodCategory = newCat.Items[newCat.SelectedIndex];
-					product.prodDescription = newDesc.Text;
-					//Change img
-					product.prodUnitPrice = double.Parse(newUnit.Text);
-					product.prodIncentiveFlag = newIncFlag.IsToggled;
-					product.prodUnitPriceIncentive = double.Parse(newIncUnit.Text);
-					product.prodDealFlag = newDealFlag.IsToggled;
-					product.prodDiscount = double.Parse(newDiscount.Text);
-					product.prodBulkType = newBulkType.SelectedIndex;
-					product.prodBulkDiscount = double.Parse(newBulk.Text);
+					//Format inputs.
+					string deal, inc;
+					if (newDealFlag.IsToggled) { deal = "1"; } else { deal = "0"; }
+					if (newIncFlag.IsToggled) { inc = "1"; } else { inc = "0"; }
+					double discount = double.Parse(newDiscount.Text) / 100;
+					double bulkDiscount = double.Parse(newBulk.Text) / 100;
 
-					pulled.Add(product);
-					Statics.Default.setProducts(pulled);
+					var contentSent = new MultipartFormDataContent();
+					contentSent.Add(new StringContent("0"), "operation");
+					contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
+					contentSent.Add(new StringContent(newName.Text), "name");
+					contentSent.Add(new StringContent(newCat.Items[newCat.SelectedIndex]), "cat");
+					contentSent.Add(new StringContent(newDesc.Text), "desc");
+					contentSent.Add(new ByteArrayContent(imageBytes), "picBytes");
+					contentSent.Add(new StringContent(newUnit.Text), "unitPrice");
+					contentSent.Add(new StringContent(inc), "incFlag");
+					contentSent.Add(new StringContent(newIncUnit.Text), "incUnitPrice");
+					contentSent.Add(new StringContent(deal), "dealFlag");
+					contentSent.Add(new StringContent(discount.ToString()), "discount");
+					contentSent.Add(new StringContent(newBulkType.Items[newBulkType.SelectedIndex].ToString()), "bulkType");
+					contentSent.Add(new StringContent(bulkDiscount.ToString()), "bulkDiscount");
 
-					await Navigation.PopModalAsync();
-				}
-				else
-				{
-					await DisplayAlert("Error", "Sorry, there was a problem uploading your changes.", "Okay");
+					//Show that we are waiting for a response and wait for it.
+					var response = await client.PostAsync("http://cbd-online.net/landon/addOrEditProduct.php", contentSent);
+
+					var output = await response.Content.ReadAsStringAsync();
+
+					string[] components = output.Split(new string[] { "\n" }, StringSplitOptions.None);
+
+					if (components[0].Equals("true"))
+					{
+						await DisplayAlert("Success", "Item values modified. You can see your edited inventory list by navigating to products section.", "Okay");
+						//Change locally.
+						ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
+						ProductListItem product = new ProductListItem();
+
+						product.prodName = newName.Text;
+						product.prodCategory = newCat.Items[newCat.SelectedIndex];
+						product.prodDescription = newDesc.Text;
+						//Change img
+						product.prodUnitPrice = double.Parse(newUnit.Text);
+						product.prodIncentiveFlag = newIncFlag.IsToggled;
+						product.prodUnitPriceIncentive = double.Parse(newIncUnit.Text);
+						product.prodDealFlag = newDealFlag.IsToggled;
+						product.prodDiscount = double.Parse(newDiscount.Text);
+						product.prodBulkType = newBulkType.SelectedIndex;
+						product.prodBulkDiscount = double.Parse(newBulk.Text);
+
+						pulled.Add(product);
+						Statics.Default.setProducts(pulled);
+
+						await Navigation.PopModalAsync();
+					}
+					else
+					{
+						await DisplayAlert("Error", "Sorry, there was a problem uploading your changes.", "Okay");
+					}
 				}
 			}
 			else
@@ -162,8 +165,8 @@ namespace SQLConnect
 			if (imageBytes != null)
 			{
 				Debug.WriteLine("ImageBytes is no longer empty.");
-
-
+				ImageSource src = ImageSource.FromStream(() => new MemoryStream(imageBytes));
+				newPic.Source = src;
 
 				//Direct FTP attempt that was alternative to saving images on SQL
 				/*if (Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS)
@@ -206,7 +209,18 @@ namespace SQLConnect
 					var memoryStream = new MemoryStream();
 					file.GetStream().CopyTo(memoryStream);
 					file.Dispose();
-					return memoryStream.ToArray();
+
+					byte[] uncompressed = memoryStream.ToArray();
+					var compressed = DependencyService.Get<IFileProcessing>().compress(uncompressed, GetImageFormat(uncompressed));
+					if (compressed != null)
+					{
+						return compressed;
+					}
+					else
+					{
+						Debug.WriteLine("Compression did not work properly.");
+						return null;
+					}
 				}
 			
 			}catch (Exception ex)
@@ -219,6 +233,31 @@ namespace SQLConnect
 			//Uris.Add(filePath);
 
 			//return imageName;
+		}
+
+		public string GetImageFormat(byte[] bytes)
+		{
+			// see http://www.mikekunz.com/image_file_header.html
+			var png = new byte[] { 137, 80, 78, 71 };    // PNG
+			var jpeg = new byte[] { 255, 216, 255, 224 }; // jpeg
+			var jpeg2 = new byte[] { 255, 216, 255, 225 }; // jpeg canon
+
+			var buffer = new byte[4];
+			buffer[0] = bytes[0];
+			buffer[1] = bytes[1];
+			buffer[2] = bytes[2];
+			buffer[3] = bytes[3];
+
+			if (png.SequenceEqual(buffer.Take(png.Length)))
+				return "png";
+
+			if (jpeg.SequenceEqual(buffer.Take(jpeg.Length)))
+				return "jpg";
+
+			if (jpeg2.SequenceEqual(buffer.Take(jpeg2.Length)))
+				return "jpg";
+
+			throw new NotSupportedException("The image type is not supported, supported types are of type PNG or JPEG.");
 		}
 
 		void cancelNew(object s, EventArgs e)

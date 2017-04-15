@@ -125,7 +125,7 @@
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 						<Image x:Name="editPic" Source="product.png" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="150"/>
-						<Button x:Name="editPicBtn" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
+						<Button x:Name="editPicBtn" Text="Upload" Clicked="pickPic" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
 					</StackLayout>
 					
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -135,7 +135,7 @@
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 						<Label Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
 						<Label Text=" $" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
-						<Entry x:Name="editUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+						<Entry x:Name="editUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100"/>
 					</StackLayout>
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -145,7 +145,7 @@
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 						<Label Text="Points/unit:" VerticalOptions="Center" TextColor="Teal"/>
-						<Entry x:Name="editIncUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=editIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
+						<Entry x:Name="editIncUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=editIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 					</StackLayout>
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -155,7 +155,7 @@
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 						<Label Text="Discount:" VerticalOptions="Center" TextColor="Teal"/>
-						<Entry x:Name="editDiscount" TextColor="Teal" HorizontalOptions="End" WidthRequest="50" BindingContext="{x:Reference Name=editDealFlag}" IsEnabled="{Binding Path=IsToggled}"/>
+						<Entry x:Name="editDiscount" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="50" BindingContext="{x:Reference Name=editDealFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 						<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 					</StackLayout>
 
@@ -166,7 +166,7 @@
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 						<Label Text="Max bulk discount:" VerticalOptions="Center" TextColor="Teal"/>
-						<Entry x:Name="editBulk" TextColor="Teal" WidthRequest="50"/>
+						<Entry x:Name="editBulk" TextColor="Teal" Keyboard="Numeric" WidthRequest="50"/>
 						<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 					</StackLayout>
 					

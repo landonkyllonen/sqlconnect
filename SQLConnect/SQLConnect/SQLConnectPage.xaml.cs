@@ -244,7 +244,7 @@ namespace SQLConnect
 			prods = new ObservableCollection<ProductListItem>();
 			foreach (string obj in productObjects)
 			{
-				string[] productComponents = obj.Split(new string[] { "--" }, StringSplitOptions.RemoveEmptyEntries);
+				string[] productComponents = obj.Split(new string[] { "--" }, StringSplitOptions.None);
 
 				Debug.WriteLine(obj);
 				//FOR DEBUGGING--

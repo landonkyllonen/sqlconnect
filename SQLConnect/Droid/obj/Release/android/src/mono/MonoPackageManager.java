@@ -116,6 +116,8 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"Plugin.Media.Abstractions.dll",
+		"Plugin.Media.dll",
 		"Xamarin.Android.Support.Compat.dll",
 		"Xamarin.Android.Support.Core.UI.dll",
 		"Xamarin.Android.Support.Core.Utils.dll",
@@ -132,8 +134,6 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.Design.dll",
 		"Xamarin.Android.Support.v7.MediaRouter.dll",
 		"SQLConnect.dll",
-		"Plugin.Media.Abstractions.dll",
-		"Plugin.Media.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

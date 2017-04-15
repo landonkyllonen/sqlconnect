@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System.IO;
+using System.Linq;
 
 namespace SQLConnect
 {
@@ -15,12 +16,13 @@ namespace SQLConnect
 	{
 		ProductListItem product;
 
+		ImageSource ogSrc;
+
 		string[] medicalAmounts;
 		double[] medicalPrices;
 		int discountType;
 		int index;
 		byte[] imageBytes;
-
 
 		public ProductPage(bool dealLink)
 		{
@@ -35,7 +37,8 @@ namespace SQLConnect
 			}
 
 			Title = product.prodName;
-			image.Source = product.prodImgUrl;
+			image.Source = product.prodImgSrc;
+			ogSrc = product.prodImgSrc;
 
 			medicalAmounts = new string[] { "Gram", "Eighth\n(~3.5g)", "Quarter\n(~7g)", "Half Oz\n(~14g)", "Ounce\n(~28g)" };
 			//Discount?
@@ -120,6 +123,12 @@ namespace SQLConnect
 				else
 				{
 					componentRegular.IsVisible = true;
+				}
+
+				//If image not loaded, load it.
+				if (product.prodImgSrc == null)
+				{
+					gatherItemImage();
 				}
 			}
 
@@ -249,6 +258,9 @@ namespace SQLConnect
 			{
 				Debug.WriteLine("ImageBytes is no longer empty.");
 
+				ImageSource src = ImageSource.FromStream(() => new MemoryStream(imageBytes));
+				editPic.Source = src;
+
 				/*//UNCOMMENT THIS FOR QUICK IMAGE UPDATE THROUGH UPLOADPICTURE.PHP CHECK SQL COMMAND FOR SAFETY
 				//Connect to url.
 				var client = new HttpClient();
@@ -312,7 +324,18 @@ namespace SQLConnect
 					var memoryStream = new MemoryStream();
 					file.GetStream().CopyTo(memoryStream);
 					file.Dispose();
-					return memoryStream.ToArray();
+
+					byte[] uncompressed = memoryStream.ToArray();
+					var compressed = DependencyService.Get<IFileProcessing>().compress(uncompressed, GetImageFormat(uncompressed));
+					if (compressed != null)
+					{
+						return compressed;
+					}
+					else
+					{
+						Debug.WriteLine("Compression did not work properly.");
+						return null;
+					}
 				}
 
 			}
@@ -442,20 +465,21 @@ namespace SQLConnect
 				var client = new HttpClient();
 
 				var contentSent = new MultipartFormDataContent();
-				contentSent.Add(new StringContent("1"), "operation");
 				contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
+				contentSent.Add(new StringContent("1"), "operation");
+				contentSent.Add(new StringContent(product.prodName), "name");
 				contentSent.Add(new StringContent(editDesc.Text), "desc");
 				if (imageBytes != null)
 				{
 					contentSent.Add(new ByteArrayContent(imageBytes), "picBytes");
 				}
 				contentSent.Add(new StringContent(editUnit.Text), "unitPrice");
-				contentSent.Add(new StringContent(editIncFlag.IsToggled.ToString()), "incFlag");
+				contentSent.Add(new StringContent(inc), "incFlag");
 				contentSent.Add(new StringContent(editIncUnit.Text), "incUnitPrice");
-				contentSent.Add(new StringContent(editDealFlag.IsToggled.ToString()), "dealFlag");
-				contentSent.Add(new StringContent(editDiscount.Text), "discount");
+				contentSent.Add(new StringContent(deal), "dealFlag");
+				contentSent.Add(new StringContent(discount.ToString()), "discount");
 				contentSent.Add(new StringContent(editBulkType.Items[editBulkType.SelectedIndex]), "bulkType");
-				contentSent.Add(new StringContent(editBulk.Text), "bulkDiscount");
+				contentSent.Add(new StringContent(bulkDiscount.ToString()), "bulkDiscount");
 
 				//Show that we are waiting for a response and wait for it.
 				var response = await client.PostAsync("http://cbd-online.net/landon/addOrEditProduct.php", contentSent);
@@ -489,7 +513,7 @@ namespace SQLConnect
 					product.prodIncentiveFlag = editIncFlag.IsToggled;
 					product.prodUnitPriceIncentive = double.Parse(editIncUnit.Text);
 					product.prodDealFlag = editDealFlag.IsToggled;
-					product.prodDiscount = double.Parse(editDiscount.Text);
+					product.prodDiscount = discount;
 					product.prodBulkType = editBulkType.SelectedIndex;
 					product.prodBulkDiscount = bulkDiscount;
 
@@ -511,7 +535,81 @@ namespace SQLConnect
 			}
 		}
 
+		async void gatherItemImage()
+		{
+			var client = new HttpClient();
 
+			ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
+			int place;
+
+			//Get place for update
+			place = pulled.IndexOf(product);
+
+			var contentSent = new MultipartFormDataContent();
+			contentSent.Add(new StringContent(product.prodName), "name");
+			contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
+
+			Debug.WriteLine("Getting pic for " + product.prodName + " with dispId " + Statics.Default.getCreds()[16]);
+
+			var response = await client.PostAsync("http://cbd-online.net/landon/downloadPictures.php", contentSent);
+
+			byte[] output = await response.Content.ReadAsByteArrayAsync();
+
+			if (output.Length < 1)
+			{
+				Debug.WriteLine("No data for " + product.prodName + " gathered.");
+			}
+			else
+			{
+				Debug.WriteLine("Printing byte[] length for " + product.prodName + ":");
+				Debug.WriteLine(output.Length);
+			}
+
+			//Update picture
+			ImageSource src = ImageSource.FromStream(() => new MemoryStream(output));
+			product.prodImgSrc = src;
+			image.Source = src;
+
+			//If picture was not already loaded upon reaching page, and is now being loaded, commit it to memory.
+			if (product.prodImgSrc != ogSrc)
+			{
+				pulled.RemoveAt(place);
+				pulled.Insert(place, product);
+			}
+			//Update static to save pictures for future use.
+			Statics.Default.setProducts(pulled);
+		}
+
+		public string GetImageFormat(byte[] bytes)
+		{
+			// see http://www.mikekunz.com/image_file_header.html
+			var png = new byte[] { 137, 80, 78, 71 };    // PNG
+			var jpeg = new byte[] { 255, 216, 255, 224 }; // jpeg
+			var jpeg2 = new byte[] { 255, 216, 255, 225 }; // jpeg canon
+
+			var buffer = new byte[4];
+			buffer[0] = bytes[0];
+			buffer[1] = bytes[1];
+			buffer[2] = bytes[2];
+			buffer[3] = bytes[3];
+
+			if (png.SequenceEqual(buffer.Take(png.Length)))
+				return "png";
+
+			if (jpeg.SequenceEqual(buffer.Take(jpeg.Length)))
+				return "jpg";
+
+			if (jpeg2.SequenceEqual(buffer.Take(jpeg2.Length)))
+				return "jpg";
+
+			return "unknown";
+		}
+
+		void cancelNew(object s, EventArgs e)
+		{
+			Navigation.PopModalAsync();
+		}
+	}
 
 		void cancelEdits(object s, EventArgs e)
 		{

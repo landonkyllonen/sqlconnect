@@ -213,6 +213,7 @@
       <DependentUpon>AddProductPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="IFtpWebRequest.cs" />
+    <Compile Include="IFileProcessing.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">

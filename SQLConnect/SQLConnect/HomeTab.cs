@@ -1,5 +1,9 @@
 ﻿using System;
-
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -8,6 +12,8 @@ namespace SQLConnect
 	{
 		string[] credentials;
 		ProductListItem deal;
+
+		Image dealImage;
 
 		public HomeTab()
 		{
@@ -75,7 +81,7 @@ namespace SQLConnect
 					dealInfoLayout.Children.Add(dealName);
 				//dealInfoLayout.Children.Add(dealCategory);
 
-				Image dealImg = new Image
+				dealImage = new Image
 				{
 					Aspect = Aspect.AspectFill,
 					HorizontalOptions = LayoutOptions.CenterAndExpand,
@@ -203,7 +209,7 @@ namespace SQLConnect
 							}),
 								 Constraint.Constant(50));
 
-			rel.Children.Add(dealImg, Constraint.RelativeToParent((parent) =>
+			rel.Children.Add(dealImage, Constraint.RelativeToParent((parent) =>
 							{
 								return parent.X + parent.Width * .5;
 							}),
@@ -323,7 +329,14 @@ namespace SQLConnect
 				deal = Statics.Default.getDeal();
 				dealName.Text = deal.prodName;
 				dealPrice.Text = "$" + deal.prodUnitPrice + "/g";
-				dealImg.Source = deal.prodImgUrl;
+				if (deal.prodImgSrc != null)
+				{
+					dealImage.Source = deal.prodImgSrc;
+				}
+				else
+				{
+					gatherItemImage();
+				}
 			}
 			else
 			{
@@ -365,6 +378,51 @@ namespace SQLConnect
 			NavigationPage nav = new NavigationPage(new DispensaryManagementPage());
 			NavigationPage.SetHasBackButton(nav, true);
 			Navigation.PushModalAsync(nav);
+		}
+
+		async void gatherItemImage()
+		{
+			var client = new HttpClient();
+
+			ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
+			int place;
+
+			//Get place for update
+			place = pulled.IndexOf(deal);
+
+			var contentSent = new MultipartFormDataContent();
+			contentSent.Add(new StringContent(deal.prodName), "name");
+			contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
+
+			Debug.WriteLine("Getting pic for " + deal.prodName + " with dispId " + Statics.Default.getCreds()[16]);
+
+			var response = await client.PostAsync("http://cbd-online.net/landon/downloadPictures.php", contentSent);
+
+			byte[] output = await response.Content.ReadAsByteArrayAsync();
+
+			if (output.Length < 1)
+			{
+				Debug.WriteLine("No data for " + deal.prodName + " gathered.");
+			}
+			else
+			{
+				Debug.WriteLine("Printing byte[] length for " + deal.prodName + ":");
+				Debug.WriteLine(output.Length);
+			}
+
+			//Update picture
+			ImageSource src = ImageSource.FromStream(() => new MemoryStream(output));
+			deal.prodImgSrc = src;
+			dealImage.Source = src;
+
+			//If was updated, update the static list.
+			if (deal.prodImgSrc != null)
+			{
+				pulled.RemoveAt(place);
+				pulled.Insert(place, deal);
+			}
+			//Update static to save pictures for future use.
+			Statics.Default.setProducts(pulled);
 		}
 	}
 }

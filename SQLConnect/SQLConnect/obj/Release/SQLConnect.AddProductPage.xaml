@@ -19,7 +19,7 @@
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Image x:Name="newPic" Source="product.png" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="150"/>
-					<Button x:Name="newPicBtn" Clicked="PickPictureAsync" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
+					<Button x:Name="newPicBtn" Clicked="pickPic" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Start">
@@ -29,17 +29,17 @@
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Label Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
 					<Label Text=" $" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
-					<Entry x:Name="newUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100"/>
+					<Entry x:Name="newUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Label Text="Purchasable with points:" VerticalOptions="Center" TextColor="Teal"/>
-					<Switch x:Name="newIncFlag" HorizontalOptions="End"/>
+					<Switch x:Name="newIncFlag" HorizontalOptions="End" IsToggled="false" IsEnabled="false"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Points/unit:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="newIncUnit" TextColor="Teal" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=newIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
+					<Entry x:Name="newIncUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=newIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -49,7 +49,7 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Discount:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="newDiscount" TextColor="Teal" HorizontalOptions="End" WidthRequest="50" BindingContext="{x:Reference Name=newDealFlag}" IsEnabled="{Binding Path=IsToggled}"/>
+					<Entry x:Name="newDiscount" Text="10" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="50" BindingContext="{x:Reference Name=newDealFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 					<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 				</StackLayout>
 
@@ -60,7 +60,7 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Max bulk discount:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="newBulk" TextColor="Teal" WidthRequest="50"/>
+					<Entry x:Name="newBulk" Text="10" TextColor="Teal" WidthRequest="50" Keyboard="Numeric"/>
 					<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 				</StackLayout>
 				

@@ -62,39 +62,61 @@ namespace SQLConnect
 			Debug.WriteLine("Gathering images for " + prodItems.Count + " items...");
 			var client = new HttpClient();
 
+			ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
+			int place;
+
 			//Download image for each item.
 			foreach (ProductListItem p in prodItems)
 			{
-				var contentSent = new MultipartFormDataContent();
-				contentSent.Add(new StringContent(p.prodName), "name");
-				contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
-				var response = await client.PostAsync("http://cbd-online.net/landon/downloadPictures.php", contentSent);
-
-				byte[] output = await response.Content.ReadAsByteArrayAsync();
-
-				if (output == null)
+				if (p.prodImgSrc == null)
 				{
-					Debug.WriteLine("No data for " + p.prodName + " gathered.");
-				}
-				else
-				{
-					Debug.WriteLine("Printing output for " + p.prodName + ":");
-					Debug.WriteLine(output.Length);
-				}
+					//Get place for update
+					place = pulled.IndexOf(p);
 
-				//Update list picture
-				p.prodImgSrc = ImageSource.FromStream(() => new MemoryStream(output));
+					var contentSent = new MultipartFormDataContent();
+					contentSent.Add(new StringContent(p.prodName), "name");
+					contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
 
-				//Find and update the filtered list pic as well.
-				foreach (ProductListItem f in prodItemsFiltered)
-				{
-					if (p.prodName.Equals(f.prodName))
+					Debug.WriteLine("Sending " + p.prodName + " with dispId " + Statics.Default.getCreds()[16]);
+
+					var response = await client.PostAsync("http://cbd-online.net/landon/downloadPictures.php", contentSent);
+
+					byte[] output = await response.Content.ReadAsByteArrayAsync();
+
+					if (output.Length < 1)
 					{
-						f.prodImgSrc = p.prodImgSrc;
-						break;
+						Debug.WriteLine("No data for " + p.prodName + " gathered.");
+					}
+					else
+					{
+						Debug.WriteLine("Printing byte[] length for " + p.prodName + ":");
+						Debug.WriteLine(output.Length);
+					}
+
+					//Update list picture
+					ImageSource src = ImageSource.FromStream(() => new MemoryStream(output));
+					p.prodImgSrc = src;
+
+					//Find and update the filtered list pic as well.
+					foreach (ProductListItem f in prodItemsFiltered)
+					{
+						if (p.prodName.Equals(f.prodName))
+						{
+							f.prodImgSrc = p.prodImgSrc;
+							break;
+						}
+					}
+
+					//If was updated, update the static list.
+					if (p.prodImgSrc != null)
+					{
+						pulled.RemoveAt(place);
+						pulled.Insert(place, p);
 					}
 				}
 			}
+			//Update static to save pictures for future use.
+			Statics.Default.setProducts(pulled);
 		}
 
 

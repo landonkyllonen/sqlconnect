@@ -156,6 +156,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="FTP.cs" />
+    <Compile Include="FileProcessing.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\jarspic.jpg" />

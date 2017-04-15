@@ -161,9 +161,9 @@ namespace SQLConnect
 			                            Constraint.RelativeToParent((parent) => { return parent.Width; }),
 			                            Constraint.RelativeToParent((parent) => { return parent.Height*.75-5; }));
 
-			relativeLayout.Children.Add(userFilter, Constraint.RelativeToParent((parent) => { return parent.Width / 2 - 125; }),
+			relativeLayout.Children.Add(userFilter, Constraint.RelativeToParent((parent) => { return parent.Width / 2 - 145; }),
 										Constraint.RelativeToParent((parent) => { return 5; }),
-										Constraint.Constant(220), Constraint.RelativeToParent((parent) => { return parent.Height * .1; }));
+										Constraint.Constant(260), Constraint.RelativeToParent((parent) => { return parent.Height * .1; }));
 
 			relativeLayout.Children.Add(contacts, Constraint.RelativeToParent((parent) =>
 										{

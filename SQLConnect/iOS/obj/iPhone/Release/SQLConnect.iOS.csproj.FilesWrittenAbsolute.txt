@@ -33,3 +33,5 @@
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/Plugin.Media.Abstractions.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/Plugin.Media.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/Plugin.Permissions.Abstractions.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/Plugin.Permissions.dll

@@ -1,15 +1,35 @@
-﻿using Xamarin.Forms;
+﻿using System.ComponentModel;
+using Xamarin.Forms;
 
 namespace SQLConnect
 {
-	public class ProductListItem
+	public class ProductListItem : INotifyPropertyChanged
 	{
-		public string prodName { get; set; }
+		public event PropertyChangedEventHandler PropertyChanged;
+		protected virtual void OnPropertyChanged(string propertyName)
+		{
+			if (PropertyChanged != null)
+			{
+				PropertyChanged(this,
+					new PropertyChangedEventArgs(propertyName));
+			}
+		}
+
+		string name;
+		ImageSource imgsrc;
+		
+		public string prodName { 
+			get { return name; }
+			set { name = value; OnPropertyChanged("prodName"); }
+		}
 		public string prodCategory { get; set; }
 		public string prodDescription { get; set; }
 
 		public string prodImgUrl { get; set; }
-		public ImageSource prodImgSrc { get; set; }
+		public ImageSource prodImgSrc {
+			get { return imgsrc; }
+			set { imgsrc = value; OnPropertyChanged("prodImgSrc"); }
+		}
 
 		public double prodUnitPrice { get; set; }
 		public string prodIncrementType { get; set; }

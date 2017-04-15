@@ -22,6 +22,8 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Xamarin.Forms.Platform.Android.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Xamarin.Forms.Platform.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Xamarin.Forms.Xaml.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Plugin.Media.Abstractions.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Plugin.Media.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Xamarin.Android.Support.Compat.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Xamarin.Android.Support.Core.UI.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Xamarin.Android.Support.Core.Utils.dll
@@ -63,6 +65,4 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/System.IO.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/System.Dynamic.Runtime.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/System.Text.RegularExpressions.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Plugin.Media.Abstractions.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/System.Text.Encoding.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/android/assets/Plugin.Media.dll
