@@ -45,7 +45,7 @@ namespace SQLConnect
 		OrderListItem orderClicked;
 		LogListItem logClicked;
 		string catClicked;
-		List<ProductListItem> catClickedContents;
+		ObservableCollection<ProductListItem> catClickedContents;
 
 		// this is the default static instance you'd use like string text = Settings.Default.SomeSetting;
 		public readonly static Statics Default = new Statics();
@@ -271,11 +271,11 @@ namespace SQLConnect
 			return catClicked;
 		}
 
-		public void setCatClickedContents(List<ProductListItem> catClickedContents)
+		public void setCatClickedContents(ObservableCollection<ProductListItem> catClickedContents)
 		{
 			this.catClickedContents = catClickedContents;
 		}
-		public List<ProductListItem> getCatClickedContents()
+		public ObservableCollection<ProductListItem> getCatClickedContents()
 		{
 			return catClickedContents;
 		}

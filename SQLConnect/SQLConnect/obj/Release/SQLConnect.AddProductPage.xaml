@@ -23,7 +23,7 @@
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Start">
-					<Editor x:Name="newDesc" TextColor="Teal" HeightRequest="100" HorizontalOptions="Fill" WidthRequest="300" VerticalOptions="Center" Text="This is a sample description, it could be quite long, so I am making this text long in order to determine how I should be wrapping this text properly."/>
+					<Editor x:Name="newDesc" TextColor="Teal" HeightRequest="100" HorizontalOptions="Fill" WidthRequest="300" VerticalOptions="Center" Text="Enter your description."/>
 				</StackLayout>
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
@@ -39,7 +39,7 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Points/unit:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="newIncUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=newIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
+					<Entry x:Name="newIncUnit" TextColor="Teal" Keyboard="Numeric" Text="100" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=newIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">

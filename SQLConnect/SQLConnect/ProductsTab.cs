@@ -120,7 +120,7 @@ namespace SQLConnect
 
 			//Initialize container
 
-			List<ProductListItem> catProducts = new List<ProductListItem>();
+			ObservableCollection<ProductListItem> catProducts = new ObservableCollection<ProductListItem>();
 
 			//Linear search all products
 			foreach (ProductListItem p in loadedProducts)

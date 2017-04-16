@@ -355,6 +355,7 @@ namespace SQLConnect
 
 		public void toProductsTab(object s, EventArgs e)
 		{
+			Statics.Default.setEditing(false);
 			Statics.Default.getMaster().Detail = new NavigationPage(new ProductsPage());
 		}
 

@@ -1,17 +1,35 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/AddProductPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/HomeTab.cs">
     <Files>
-      <File FileName="SQLConnect/To Do List.txt" Line="101" Column="117" />
-      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="338" Column="7" />
-      <File FileName="SQLConnect/AddProductPage.xaml.cs" Line="217" Column="25" />
+      <File FileName="SQLConnect/To Do List.txt" Line="108" Column="109" />
+      <File FileName="SQLConnect/AddProductPage.xaml.cs" Line="175" Column="7" />
+      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="524" Column="58" />
+      <File FileName="Droid/FileProcessing.cs" Line="59" Column="19" />
+      <File FileName="SQLConnect/HomeTab.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="213" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="214" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="215" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="217" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="216" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="601" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="602" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="603" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="612" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="611" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="614" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="615" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="617" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="618" column="1" />
+      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/ProductPage.xaml.cs" relfile="SQLConnect/ProductPage.xaml.cs" line="620" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.LGH8126e5714a3" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.SQLConnect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2B0F6819-9E52-4C2C-8AEB-BB137A18C606" />
 </Properties>

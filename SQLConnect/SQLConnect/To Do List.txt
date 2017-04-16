@@ -101,8 +101,13 @@ Fixed problem where image was being placed as the wrong id.
 Fixed problem where if item was selected before it's picture loaded, its picture wouldn't be displayed on next page.
 /
 Implemented uploaded picture compression and resizing through dependancy injection.(IFileProcessing)
+/
+Fixed bug where after editing or adding a picture, it wouldn't update locally.
+Fixed bug where picture wasn't appearing when opening editing page.
+Test uploaded picture compression, now working on android.
+Fixed bug where app will open the editing interface when pressing the Browse Products button from home page.
 /-----------Complete ^
-Test uploaded picture compression
+
 Get cross-platform device id for connection verification.
 orders placed in app, payment separate through interac
 login with storefront pic

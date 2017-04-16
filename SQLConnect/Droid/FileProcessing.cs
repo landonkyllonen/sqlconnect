@@ -3,9 +3,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using Android.Graphics;
+using Java.Nio;
 using SQLConnect.Droid; //My droid project
 
-[assembly: Xamarin.Forms.Dependency(typeof(FTP))] //You need to put this on iOS/droid class or uwp/etc if you wrote
+[assembly: Xamarin.Forms.Dependency(typeof(FileProcessing))] //You need to put this on iOS/droid class or uwp/etc if you wrote
 namespace SQLConnect.Droid
 {
 	class FileProcessing : IFileProcessing
@@ -25,10 +26,10 @@ namespace SQLConnect.Droid
 		{
 			try
 			{
-				byte[] uncompressed = bytes;
-
 				Bitmap bmp = BitmapFactory.DecodeByteArray(bytes, 0, bytes.Length);
 				Bitmap scaled;
+				float maxHeight = 400;
+				float maxWidth = 600;
 				float originalWidth = bmp.Width;
 				float originalHeight = bmp.Height;
 				float ratio;
@@ -64,11 +65,11 @@ namespace SQLConnect.Droid
 				{
 					case "jpg":
 						ms = new MemoryStream();
-						bmp.Compress(Bitmap.CompressFormat.Jpeg, 50, ms);
+						scaled.Compress(Bitmap.CompressFormat.Jpeg, 50, ms);
 						return ms.ToArray();
 					case "png":
 						ms = new MemoryStream();
-						bmp.Compress(Bitmap.CompressFormat.Jpeg, 50, ms);
+						scaled.Compress(Bitmap.CompressFormat.Jpeg, 50, ms);
 						return ms.ToArray();
 					default:
 						Debug.WriteLine("This format is not accepted.");

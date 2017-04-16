@@ -17,15 +17,10 @@ namespace SQLConnect
 		{
 			InitializeComponent();
 
-			List<ProductListItem> prods = Statics.Default.getCatClickedContents();
+			prodItems = Statics.Default.getCatClickedContents();
 			Title = Statics.Default.getCatClicked();
 
-			prodItems = new ObservableCollection<ProductListItem>();
 			prodItemsFiltered = new ObservableCollection<ProductListItem>();
-			foreach (ProductListItem prod in prods)
-			{
-				prodItems.Add(prod);
-			}
 
 			prodList.ItemsSource = prodItems;
 			prodList.ItemTapped += onItemSelect;
@@ -128,6 +123,4 @@ namespace SQLConnect
 			Navigation.PushModalAsync(nav);
 		}
 	}
-
-
 }

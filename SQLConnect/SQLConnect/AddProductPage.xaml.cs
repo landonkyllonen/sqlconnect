@@ -131,7 +131,7 @@ namespace SQLConnect
 						product.prodName = newName.Text;
 						product.prodCategory = newCat.Items[newCat.SelectedIndex];
 						product.prodDescription = newDesc.Text;
-						//Change img
+						product.prodImgSrc = newPic.Source;
 						product.prodUnitPrice = double.Parse(newUnit.Text);
 						product.prodIncentiveFlag = newIncFlag.IsToggled;
 						product.prodUnitPriceIncentive = double.Parse(newIncUnit.Text);

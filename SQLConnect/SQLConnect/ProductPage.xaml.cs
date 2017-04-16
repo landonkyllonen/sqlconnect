@@ -31,7 +31,8 @@ namespace SQLConnect
 			if (dealLink)
 			{
 				product = Statics.Default.getDeal();
-			}else
+			}
+			else
 			{
 				product = Statics.Default.getProdClicked();
 			}
@@ -61,7 +62,7 @@ namespace SQLConnect
 					//Linear discount progression, 1 oz being the maximum discount(specified amount)
 					medicalPrices = new double[5];
 					medicalPrices[0] = product.prodUnitPrice;//None
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1-product.prodBulkDiscount*1/4);// fourth of discount
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 1 / 4);// fourth of discount
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 1 / 2);// half of discount
 					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 3 / 4);// three/fourths of discount
 					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount);// max discount
@@ -70,10 +71,10 @@ namespace SQLConnect
 					//each step up gives half the discount of the previous step.
 					medicalPrices = new double[5];
 					medicalPrices[0] = product.prodUnitPrice;
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1-(product.prodBulkDiscount/2));//Half discount
-					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount* 3/4));//Fourth more
-					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount*7/8));//Eighth more
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount*15/16));//Sixteenth more
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1 - (product.prodBulkDiscount / 2));//Half discount
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 3 / 4));//Fourth more
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 7 / 8));//Eighth more
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 15 / 16));//Sixteenth more
 					break;
 				default:
 					//No discount.
@@ -92,13 +93,13 @@ namespace SQLConnect
 
 			//Get information on what type of choices to display.
 
-			if (Statics.Default.getCreds()[12].Equals("1")&&Statics.Default.IsEditing())
+			if (Statics.Default.getCreds()[12].Equals("1") && Statics.Default.IsEditing())
 			{
 				editView.IsVisible = true;
 				browseView.IsVisible = false;
 
 				//Init edit values.
-				editPic.Source = product.prodImgUrl;
+				editPic.Source = product.prodImgSrc;
 				editDesc.Text = product.prodDescription;
 				editBulk.Text = (product.prodBulkDiscount * 100).ToString();
 				editUnit.Text = product.prodUnitPrice.ToString("F");
@@ -144,7 +145,8 @@ namespace SQLConnect
 			s.ToString();
 			e.ToString();
 			if (int.Parse(value.Text) > 9) { return; }
-			else {
+			else
+			{
 				value.Text = (int.Parse(value.Text) + 1).ToString();
 				price.Text = (int.Parse(value.Text) * product.prodUnitPrice).ToString("C");
 			}
@@ -157,7 +159,8 @@ namespace SQLConnect
 			s.ToString();
 			e.ToString();
 			if (int.Parse(value.Text) < 2) { return; }
-			else {
+			else
+			{
 				value.Text = (int.Parse(value.Text) - 1).ToString();
 				price.Text = (int.Parse(value.Text) * product.prodUnitPrice).ToString("C");
 			}
@@ -173,10 +176,11 @@ namespace SQLConnect
 			{
 				return;
 			}
-			else {
+			else
+			{
 				index--;
 				if (index == 0) { valueLeft.Text = ""; }
-				else { valueLeft.Text = medicalAmounts[index -1]; }
+				else { valueLeft.Text = medicalAmounts[index - 1]; }
 				valueMid.Text = medicalAmounts[index];
 				valueRight.Text = medicalAmounts[index + 1];
 				double grams = 0;
@@ -215,10 +219,11 @@ namespace SQLConnect
 			{
 				return;
 			}
-			else {
+			else
+			{
 				index++;
 				if (index == 4) { valueRight.Text = ""; }
-				else {valueRight.Text = medicalAmounts[index + 1];}
+				else { valueRight.Text = medicalAmounts[index + 1]; }
 				valueMid.Text = medicalAmounts[index];
 				valueLeft.Text = medicalAmounts[index - 1];
 				double grams = 0;
@@ -326,7 +331,7 @@ namespace SQLConnect
 					file.Dispose();
 
 					byte[] uncompressed = memoryStream.ToArray();
-					var compressed = DependencyService.Get<IFileProcessing>().compress(uncompressed, GetImageFormat(uncompressed));
+					byte[] compressed = DependencyService.Get<IFileProcessing>().compress(uncompressed, "png");
 					if (compressed != null)
 					{
 						return compressed;
@@ -334,8 +339,9 @@ namespace SQLConnect
 					else
 					{
 						Debug.WriteLine("Compression did not work properly.");
-						return null;
+						return uncompressed;
 					}
+					//return uncompressed;
 				}
 
 			}
@@ -374,12 +380,12 @@ namespace SQLConnect
 					case 1:
 						amount = (double)1 / 8;
 						unit = "oz";
-						rate = "("+(medicalPrices[1]/3.54688).ToString("C")+"/g)";
+						rate = "(" + (medicalPrices[1] / 3.54688).ToString("C") + "/g)";
 						break;
 					case 2:
 						amount = (double)1 / 4;
 						unit = "oz";
-						rate = "(" + (medicalPrices[2] / (3.54688*2)).ToString("C") + "/g)";
+						rate = "(" + (medicalPrices[2] / (3.54688 * 2)).ToString("C") + "/g)";
 						break;
 					case 3:
 						amount = (double)1 / 2;
@@ -392,10 +398,11 @@ namespace SQLConnect
 						rate = "(" + (medicalPrices[4] / (3.54688 * 8)).ToString("C") + "/g)";
 						break;
 				}
-				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular=false, prodIsFlower=true, prodAmount = amount, prodRate = rate, prodUnitType = unit, prodTotal = medicalPrices[index].ToString("C")};
+				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular = false, prodIsFlower = true, prodAmount = amount, prodRate = rate, prodUnitType = unit, prodTotal = medicalPrices[index].ToString("C") };
 			}
-			else {
-				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular=true, prodIsFlower = false, prodAmount = double.Parse(value.Text), prodUnitType = "", prodTotal = (product.prodUnitPrice * double.Parse(value.Text)).ToString("C") };
+			else
+			{
+				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular = true, prodIsFlower = false, prodAmount = double.Parse(value.Text), prodUnitType = "", prodTotal = (product.prodUnitPrice * double.Parse(value.Text)).ToString("C") };
 			}
 			ObservableCollection<CartListItem> pulled = Statics.Default.getCartItems();
 
@@ -409,7 +416,8 @@ namespace SQLConnect
 			{
 				await Navigation.PopModalAsync();
 			}
-			else {
+			else
+			{
 				NavigationPage nav = new NavigationPage(new CartTab { Title = "Your Cart" });
 				NavigationPage.SetHasBackButton(nav, true);
 				await Navigation.PushModalAsync(nav);
@@ -432,7 +440,7 @@ namespace SQLConnect
 			/*Checklist*/
 
 			//Fails if any info is empty.
-			if(String.IsNullOrEmpty(editDesc.Text) ||
+			if (String.IsNullOrEmpty(editDesc.Text) ||
 			   String.IsNullOrEmpty(editUnit.Text) ||
 			   //String.IsNullOrEmpty(newIncUnit.Text) || NOT REQUIRED YET
 			   String.IsNullOrEmpty(editBulkType.Items[editBulkType.SelectedIndex]))
@@ -450,7 +458,7 @@ namespace SQLConnect
 
 			//Possibly create safeguards for someone trying to set an item to be free.
 
-			if (answer&&valid)
+			if (answer && valid)
 			{
 				//Upload changes, notify manager that they can browse products normally to see exactly how these changes look to the users.
 
@@ -506,9 +514,13 @@ namespace SQLConnect
 					await DisplayAlert("Success", "Item values modified. You can see your new inventory list by logging in again.", "Okay");
 					//change locally
 					ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
+					ObservableCollection<ProductListItem> pulledCat = Statics.Default.getCatClickedContents();
+					int place = pulled.IndexOf(product);
 					pulled.Remove(product);
+					int placeCat = pulledCat.IndexOf(product);
+					pulledCat.Remove(product);
 					product.prodDescription = editDesc.Text;
-					//Change img
+					product.prodImgSrc = editPic.Source;
 					product.prodUnitPrice = double.Parse(editUnit.Text);
 					product.prodIncentiveFlag = editIncFlag.IsToggled;
 					product.prodUnitPriceIncentive = double.Parse(editIncUnit.Text);
@@ -517,8 +529,10 @@ namespace SQLConnect
 					product.prodBulkType = editBulkType.SelectedIndex;
 					product.prodBulkDiscount = bulkDiscount;
 
-					pulled.Add(product);
+					pulled.Insert(place, product);
+					pulledCat.Insert(placeCat, product);
 					Statics.Default.setProducts(pulled);
+					Statics.Default.setCatClickedContents(pulledCat);
 
 					await Navigation.PopModalAsync();
 				}
@@ -568,6 +582,7 @@ namespace SQLConnect
 			//Update picture
 			ImageSource src = ImageSource.FromStream(() => new MemoryStream(output));
 			product.prodImgSrc = src;
+			editPic.Source = src;
 			image.Source = src;
 
 			//If picture was not already loaded upon reaching page, and is now being loaded, commit it to memory.
@@ -609,7 +624,6 @@ namespace SQLConnect
 		{
 			Navigation.PopModalAsync();
 		}
-	}
 
 		void cancelEdits(object s, EventArgs e)
 		{
