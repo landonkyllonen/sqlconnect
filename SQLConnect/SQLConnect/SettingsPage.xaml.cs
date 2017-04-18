@@ -1,6 +1,9 @@
 ﻿using Xamarin.Forms;
 using System.Net;
+using System.Net.Http;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using System;
 
 namespace SQLConnect
 {
@@ -28,8 +31,7 @@ namespace SQLConnect
 			if (hideSwitch.IsToggled)
 			{
 				appear = 0;
-				var answer = await DisplayAlert("Are you sure?", "Turning this on means that your username will appear to users looking for others with " +
-									  "similar conditions/medications, and also that they may try to send you messages.", "Okay", "Nevermind");
+				var answer = await DisplayAlert("Are you sure?", "If this is ON, your name can appear if a user performs a search for other users with similar conditions/medications. These users may try to message you.", "Okay", "Nevermind");
 
 
 				if (answer)
@@ -73,7 +75,7 @@ namespace SQLConnect
 			if (blockSwitch.IsToggled)
 			{
 				block = 0;
-				var answer = await DisplayAlert("Are you sure?", "Turning this on means that users will be told that they must be your contact to send you a message.", "Okay", "Nevermind");
+				var answer = await DisplayAlert("Are you sure?", "Turning this on will disallow non-contacts from sending messages to you.", "Okay", "Nevermind");
 
 				if (answer)
 				{
@@ -104,6 +106,31 @@ namespace SQLConnect
 				var response = await client.GetAsync("http://cbd-online.net/landon/changePref.php?" +
 													 "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
 													 "&pref=" + 1 + "&state=" + block);
+
+				await response.Content.ReadAsStringAsync();
+			}
+		}
+
+		async void unlink(object s, EventArgs e)
+		{
+			s.ToString();
+			e.ToString();
+			string id = DependencyService.Get<IDeviceId>().getDeviceId();
+			var answer = await DisplayAlert("Are you sure?", "Unlinking this device will unregister it, allowing 1 new device to login using your credentials.", "Okay", "Nevermind");
+
+			if (answer)
+			{
+				//Upload changes.
+				//Connect to url.
+				var client = new HttpClient();
+
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(id), "id");
+				content.Add(new StringContent(Statics.Default.getUser()), "username");
+
+				//Show that we are waiting for a response and wait for it.
+
+				var response = await client.PostAsync("http://cbd-online.net/landon/unlink.php", content);
 
 				await response.Content.ReadAsStringAsync();
 			}

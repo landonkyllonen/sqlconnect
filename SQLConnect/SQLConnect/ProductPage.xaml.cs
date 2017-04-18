@@ -362,6 +362,13 @@ namespace SQLConnect
 
 		async void addToCart(object s, EventArgs e)
 		{
+			//Check for suspension, if transactions suspended, disallow new additions and disallow checkout.
+			if (Statics.Default.getCreds()[17] != "0")
+			{
+				await DisplayAlert("Transactions suspended", "Transactions for all users have been suspended temporarily by the dispensary owner. Try again later. (You will have to log out and back in)", "Okay");
+				return;
+			}
+
 			s.ToString();
 			e.ToString();
 			CartListItem cartItem;

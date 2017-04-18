@@ -54,7 +54,8 @@ namespace SQLConnect
 			string pass = passentry.Text;
 			DateTime date = DateTime.Today;
 			//Replace this with a functional cross-platform device id.
-			string id = "placeholder";
+			string id = DependencyService.Get<IDeviceId>().getDeviceId();
+			Debug.WriteLine("Your device id is: " + id);
 
 			//Connect to url.
 			var client = new System.Net.Http.HttpClient();
@@ -80,7 +81,7 @@ namespace SQLConnect
 			if (determinant.Equals("True")){
 				/*$firstname; ;$lastname; ;$email; ;$phone; ;$body; ;$blood; ;$energy; ;$ctype; ;$ancestry; ;$condInfo; 
 				 ;$medInfo; ;$auth; ;$authorized; ;$admin; ;$reviewed; ;$userID; ;$dispensary"*/
-				credentials = new string[17];
+				credentials = new string[18];
 
 				for (int i = 1; i < words.Length; i++)
 				{
@@ -337,14 +338,6 @@ namespace SQLConnect
 			foreach (string obj in messageObjects)
 			{
 				string[] messageComponents = obj.Split(new string[] { "--" }, StringSplitOptions.None);
-				Debug.WriteLine(obj);
-
-				string comps = "";
-				foreach (string s in messageComponents)
-				{
-					comps = comps + " " + s;
-				}
-				Debug.WriteLine(comps);
 
 				bool viewed = false;
 				if (messageComponents[3].Equals("1")) { viewed = true; }

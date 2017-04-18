@@ -1,25 +1,30 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="SQLConnect.SettingsPage"
 		Title = "Settings">
 	<ContentPage.Content>
 		<RelativeLayout>
-			<Label x:Name="lbl1" Text="Appear in search results" TextColor="Teal"
+			<Label x:Name="lbl1" Text="Appear in search results" TextColor="Teal" FontSize="18" VerticalTextAlignment="Center"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
 			/>
-			<Label x:Name="lbl2" Text="Block messages from non-contacts" TextColor="Teal"
+			<Label x:Name="lbl2" Text="Block messages from non-contacts" TextColor="Teal" FontSize="18" VerticalTextAlignment="Center"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl1, Property=Height, Factor=1, Constant=30}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl1, Property=Height, Factor=1, Constant=45}"
 			/>
 			<Switch x:Name="hideSwitch" Toggled="hideWarning"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8, Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl1, Property=Y, Factor=1, Constant=-3}"
 			/>
 			<Switch x:Name="blockSwitch" Toggled="blockWarning"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8, Constant=0}"
-				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl2, Property=Y, Factor=1, Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl2, Property=Y, Factor=1, Constant=-3}"
+			/>
+			<Button Clicked="unlink" Text="Unlink Device" BackgroundColor="Teal" TextColor="White"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-90}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=blockSwitch, Property=Y, Factor=1, Constant=45}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=180}"
 			/>
 		</RelativeLayout>
 	</ContentPage.Content>

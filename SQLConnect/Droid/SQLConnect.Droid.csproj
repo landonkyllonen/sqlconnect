@@ -161,6 +161,7 @@
     <Compile Include="MainApplication.cs" />
     <Compile Include="FTP.cs" />
     <Compile Include="FileProcessing.cs" />
+    <Compile Include="DeviceId.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

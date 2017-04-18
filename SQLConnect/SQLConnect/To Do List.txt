@@ -106,12 +106,15 @@ Fixed bug where after editing or adding a picture, it wouldn't update locally.
 Fixed bug where picture wasn't appearing when opening editing page.
 Test uploaded picture compression, now working on android.
 Fixed bug where app will open the editing interface when pressing the Browse Products button from home page.
-/-----------Complete ^
-
+/
 Get cross-platform device id for connection verification.
+allow user to unlink their device id from settings.
+Implement code to support suspending transactions if something suspicious is happening.(FINISH CODE TO ALLOW ENTERING UNLOCK CODE)
+/-----------Complete ^
+Check suspension status on attempted purchase.
+Change suspend transactions button text based on value loaded on login
 orders placed in app, payment separate through interac
-login with storefront pic
-allow user to unlink their device id from settings
+login with storefront pic?
 
 create help page for app.
 
@@ -123,7 +126,7 @@ Allow placing an order with checkout.
 
 Whitelist users?
 
-Implement code to support suspending transactions if something suspicious is happening.
+
 
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed, and whenever cancel is pressed) this may need to be done platform-specific.
 /--------------Unsure v
