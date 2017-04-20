@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -6,11 +8,12 @@ namespace SQLConnect
 	public class CartTab : ContentPage
 	{
 		ObservableCollection<CartListItem> cartItems;
+		ListView cartList;
 
 		public CartTab()
 		{
 			//Initialize list
-			ListView cartList = new ListView();
+			cartList = new ListView();
 			cartList.RowHeight = 70;
 
 			//Create row layouts
@@ -124,6 +127,7 @@ namespace SQLConnect
 			cartItems.Add(new CartListItem { prodName = "Glass Pipe", prodAmount = 1, prodUnitType = "", prodTotal = "$10.75" });*/
 
 			cartList.ItemsSource = cartItems;
+			cartList.ItemSelected += removeFromCart;
 
 			double totalprice = 0;
 			foreach (CartListItem c in cartItems)
@@ -180,13 +184,34 @@ namespace SQLConnect
 			Content = relativeLayout;
 		}
 
-		async void checkout(object sender, System.EventArgs e)
+		async void checkout(object sender, EventArgs e)
 		{
 			//Check for suspension, if transactions suspended, disallow new additions and disallow checkout.
 			if (Statics.Default.getCreds()[17] != "0")
 			{
 				await DisplayAlert("Transactions suspended", "Transactions for all users have been suspended temporarily by the dispensary owner. Try again later. (You will have to log out and back in)", "Okay");
 				return;
+			}
+		}
+
+		async Task<CartListItem> removeFromCart(object s, ItemTappedEventArgs e)
+		{
+			bool answer = await DisplayAlert("Remove From Cart?", "Are you sure you want to remove this item?", "Yes", "No");
+
+			if (answer)
+			{
+				CartListItem pressed = (CartListItem)e.Item;
+				cartItems.Remove(pressed);
+				cartList.ItemsSource = cartItems;
+				//Update statics.
+				Statics.Default.setCartItems(cartItems);
+				//Save changes for reload.
+				Statics.Default.serializeAndSave("cart");
+				return pressed;
+			}
+			else
+			{
+				return null;
 			}
 		}
 	}

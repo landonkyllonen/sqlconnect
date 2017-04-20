@@ -110,9 +110,18 @@ Fixed bug where app will open the editing interface when pressing the Browse Pro
 Get cross-platform device id for connection verification.
 allow user to unlink their device id from settings.
 Implement code to support suspending transactions if something suspicious is happening.(FINISH CODE TO ALLOW ENTERING UNLOCK CODE)
+/
+Made edits to the way prices are calculated to include deal discount, if available.
+Created static methods for loading/saving information that should be kept on restart.
+Created method for removing cart items.
+Change suspend transactions button text based on value loaded on login.
+User cannot checkout if the dispensary has suspended orders.
+When reloading cart from last session, cart prices are compared against loaded values and updated accordingly.
+/
+
 /-----------Complete ^
-Check suspension status on attempted purchase.
-Change suspend transactions button text based on value loaded on login
+Research displayalert with entry so owner can enter unlock code.
+Test device id for IOS
 orders placed in app, payment separate through interac
 login with storefront pic?
 
@@ -126,10 +135,12 @@ Allow placing an order with checkout.
 
 Whitelist users?
 
-
-
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed, and whenever cancel is pressed) this may need to be done platform-specific.
 /--------------Unsure v
+Consider removing offline mode?
+
+Implement saving of credentials for offline mode.
+
 Allow existing item name search when adding new item for quick fill?
 
 Explore change in speed between downloading all pictures at login vs all picture in category vs pics in category one by one?

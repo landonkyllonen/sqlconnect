@@ -47,43 +47,53 @@ namespace SQLConnect
 			//Populate price list for flowers.
 			//If discount available, it is applied iteratively to amounts greater than a gram. This value could be set by the dispensary, maybe for each item?
 			//1 gram is base price
+
+			double discountMult;
+			if (product.prodDealFlag)
+			{
+				discountMult = 1 - product.prodDiscount;
+			}
+			else
+			{
+				discountMult = 1;
+			}
 			switch (discountType)
 			{
 				case 0:
 					//No discount.
 					medicalPrices = new double[5];
-					medicalPrices[0] = product.prodUnitPrice;
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice;
-					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice;
-					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice;
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice;
+					medicalPrices[0] = product.prodUnitPrice*discountMult;
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice* discountMult;
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice* discountMult;
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice* discountMult;
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice* discountMult;
 					break;
 				case 1:
 					//Linear discount progression, 1 oz being the maximum discount(specified amount)
 					medicalPrices = new double[5];
-					medicalPrices[0] = product.prodUnitPrice;//None
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 1 / 4);// fourth of discount
-					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 1 / 2);// half of discount
-					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 3 / 4);// three/fourths of discount
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount);// max discount
+					medicalPrices[0] = product.prodUnitPrice* discountMult;//None
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 1 / 4)* discountMult;// fourth of discount
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 1 / 2)* discountMult;// half of discount
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 3 / 4)* discountMult;// three/fourths of discount
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount)* discountMult;// max discount
 					break;
 				case 2:
 					//each step up gives half the discount of the previous step.
 					medicalPrices = new double[5];
-					medicalPrices[0] = product.prodUnitPrice;
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1 - (product.prodBulkDiscount / 2));//Half discount
-					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 3 / 4));//Fourth more
-					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 7 / 8));//Eighth more
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 15 / 16));//Sixteenth more
+					medicalPrices[0] = product.prodUnitPrice* discountMult;
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1 - (product.prodBulkDiscount / 2))* discountMult;//Half discount
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 3 / 4))* discountMult;//Fourth more
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 7 / 8))* discountMult;//Eighth more
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 15 / 16))* discountMult;//Sixteenth more
 					break;
 				default:
 					//No discount.
 					medicalPrices = new double[5];
-					medicalPrices[0] = product.prodUnitPrice;
-					medicalPrices[1] = 3.54688 * product.prodUnitPrice;
-					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice;
-					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice;
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice;
+					medicalPrices[0] = product.prodUnitPrice* discountMult;
+					medicalPrices[1] = 3.54688 * product.prodUnitPrice* discountMult;
+					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice* discountMult;
+					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice* discountMult;
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice* discountMult;
 					break;
 			}
 
@@ -405,10 +415,12 @@ namespace SQLConnect
 						rate = "(" + (medicalPrices[4] / (3.54688 * 8)).ToString("C") + "/g)";
 						break;
 				}
-				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular = false, prodIsFlower = true, prodAmount = amount, prodRate = rate, prodUnitType = unit, prodTotal = medicalPrices[index].ToString("C") };
+				//Medicalprices takes the amount into account already.
+				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular = false, prodIsFlower = true, prodAmount = amount, prodRate = rate, prodUnitType = unit, prodTotal = (medicalPrices[index]).ToString("C") };
 			}
 			else
 			{
+				//Non-flowers does not, so we multiply unit price by amount.
 				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular = true, prodIsFlower = false, prodAmount = double.Parse(value.Text), prodUnitType = "", prodTotal = (product.prodUnitPrice * double.Parse(value.Text)).ToString("C") };
 			}
 			ObservableCollection<CartListItem> pulled = Statics.Default.getCartItems();

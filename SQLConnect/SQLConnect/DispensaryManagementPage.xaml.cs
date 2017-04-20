@@ -13,6 +13,10 @@ namespace SQLConnect
 			InitializeComponent();
 
 			//If suspended = 1, set btn text to Enable Transactions
+			if (Statics.Default.getCreds()[17].Equals("1"))
+			{
+				suspendBtn.Text = "Enable Transactions";
+			}
 		}
 
 		void toAddItem(object s, EventArgs e)

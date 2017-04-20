@@ -28,6 +28,9 @@ namespace SQLConnect
 				logo.Source = "logo.png";
 			}
 
+			//Load values saved for restart.
+			Statics.Default.deconstructAndLoad("cart");
+
 			userentry.SetValue(Entry.TextProperty, "landon");
 			userentry.Completed += (sender, e) => passentry.Focus();
 			passentry.SetValue(Entry.TextProperty, "mypass");

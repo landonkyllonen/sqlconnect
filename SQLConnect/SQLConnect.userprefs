@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/CartTab.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/SQLConnectPage.xaml.cs">
     <Files>
-      <File FileName="SQLConnect/To Do List.txt" Line="115" Column="27" />
-      <File FileName="SQLConnect/SettingsPage.xaml.cs" Line="34" Column="203" />
-      <File FileName="SQLConnect/DispensaryManagementPage.xaml.cs" Line="51" Column="28" />
-      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="370" Column="5" />
-      <File FileName="SQLConnect/CartTab.cs" Line="1" Column="1" />
+      <File FileName="SQLConnect/To Do List.txt" Line="117" Column="72" />
+      <File FileName="SQLConnect/Statics.cs" Line="145" Column="35" />
+      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="31" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -19,7 +17,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.LGH8126e5714a3" />
+  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.SQLConnect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2B0F6819-9E52-4C2C-8AEB-BB137A18C606" />
 </Properties>
