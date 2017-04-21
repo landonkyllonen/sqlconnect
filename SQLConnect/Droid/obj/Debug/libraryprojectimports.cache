@@ -9,6 +9,12 @@
     <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Forms.Platform.Android/library_project_imports/res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Forms.Platform/library_project_imports/res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Plugin.Media/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Acr.Support.Android/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/AndHUD/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Splat/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Acr.UserDialogs/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/XLabs.Platform.Droid/library_project_imports/res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/XLabs.Forms.Droid/library_project_imports/res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Android.Support.Transition/library_project_imports/res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Android.Support.v7.CardView/library_project_imports/res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Android.Support.v7.RecyclerView/library_project_imports/res</ResolvedResourceDirectory>
@@ -24,6 +30,12 @@
     <ResolvedAssetDirectory>obj/Debug/__library_projects__/Xamarin.Forms.Platform.Android/library_project_imports/assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj/Debug/__library_projects__/Xamarin.Forms.Platform/library_project_imports/assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj/Debug/__library_projects__/Plugin.Media/library_project_imports/assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj/Debug/__library_projects__/Acr.Support.Android/library_project_imports/assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj/Debug/__library_projects__/AndHUD/library_project_imports/assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj/Debug/__library_projects__/Splat/library_project_imports/assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj/Debug/__library_projects__/Acr.UserDialogs/library_project_imports/assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj/Debug/__library_projects__/XLabs.Platform.Droid/library_project_imports/assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj/Debug/__library_projects__/XLabs.Forms.Droid/library_project_imports/assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
@@ -34,6 +46,12 @@
     <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Forms.Platform.Android.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Forms.Platform.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Plugin.Media.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Acr.Support.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/AndHUD.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Splat.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Acr.UserDialogs.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/XLabs.Platform.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/XLabs.Forms.Droid.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Android.Support.Transition.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Android.Support.v7.CardView.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/__library_projects__/Xamarin.Android.Support.v7.RecyclerView.stamp</ResolvedResourceDirectoryStamp>

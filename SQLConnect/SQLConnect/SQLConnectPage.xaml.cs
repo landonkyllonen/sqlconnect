@@ -1,5 +1,4 @@
 ﻿using Xamarin.Forms;
-using Plugin.Media;
 using System;
 using System.Net;
 using System.Threading.Tasks;

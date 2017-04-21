@@ -1551,6 +1551,1402 @@ namespace SQLConnect.Droid
 			global::Plugin.Toasts.Resource.Styleable.ViewStubCompat_android_inflatedId = global::SQLConnect.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::Plugin.Toasts.Resource.Styleable.ViewStubCompat_android_layout = global::SQLConnect.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::SQLConnect.Droid.Resource.Attribute.actionBarSize;
+			global::AndroidHUD.Resource.Attribute.ahBarColor = global::SQLConnect.Droid.Resource.Attribute.ahBarColor;
+			global::AndroidHUD.Resource.Attribute.ahBarLength = global::SQLConnect.Droid.Resource.Attribute.ahBarLength;
+			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::SQLConnect.Droid.Resource.Attribute.ahBarWidth;
+			global::AndroidHUD.Resource.Attribute.ahCircleColor = global::SQLConnect.Droid.Resource.Attribute.ahCircleColor;
+			global::AndroidHUD.Resource.Attribute.ahDelayMillis = global::SQLConnect.Droid.Resource.Attribute.ahDelayMillis;
+			global::AndroidHUD.Resource.Attribute.ahRadius = global::SQLConnect.Droid.Resource.Attribute.ahRadius;
+			global::AndroidHUD.Resource.Attribute.ahRimColor = global::SQLConnect.Droid.Resource.Attribute.ahRimColor;
+			global::AndroidHUD.Resource.Attribute.ahRimWidth = global::SQLConnect.Droid.Resource.Attribute.ahRimWidth;
+			global::AndroidHUD.Resource.Attribute.ahSpinSpeed = global::SQLConnect.Droid.Resource.Attribute.ahSpinSpeed;
+			global::AndroidHUD.Resource.Attribute.ahText = global::SQLConnect.Droid.Resource.Attribute.ahText;
+			global::AndroidHUD.Resource.Attribute.ahTextColor = global::SQLConnect.Droid.Resource.Attribute.ahTextColor;
+			global::AndroidHUD.Resource.Attribute.ahTextSize = global::SQLConnect.Droid.Resource.Attribute.ahTextSize;
+			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::SQLConnect.Droid.Resource.Drawable.ic_errorstatus;
+			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::SQLConnect.Droid.Resource.Drawable.ic_successstatus;
+			global::AndroidHUD.Resource.Drawable.roundedbg = global::SQLConnect.Droid.Resource.Drawable.roundedbg;
+			global::AndroidHUD.Resource.Drawable.roundedbgdark = global::SQLConnect.Droid.Resource.Drawable.roundedbgdark;
+			global::AndroidHUD.Resource.Id.loadingImage = global::SQLConnect.Droid.Resource.Id.loadingImage;
+			global::AndroidHUD.Resource.Id.loadingProgressBar = global::SQLConnect.Droid.Resource.Id.loadingProgressBar;
+			global::AndroidHUD.Resource.Id.loadingProgressWheel = global::SQLConnect.Droid.Resource.Id.loadingProgressWheel;
+			global::AndroidHUD.Resource.Id.textViewStatus = global::SQLConnect.Droid.Resource.Id.textViewStatus;
+			global::AndroidHUD.Resource.Layout.loading = global::SQLConnect.Droid.Resource.Layout.loading;
+			global::AndroidHUD.Resource.Layout.loadingimage = global::SQLConnect.Droid.Resource.Layout.loadingimage;
+			global::AndroidHUD.Resource.Layout.loadingprogress = global::SQLConnect.Droid.Resource.Layout.loadingprogress;
+			global::AndroidHUD.Resource.String.library_name = global::SQLConnect.Droid.Resource.String.library_name;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarColor = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarLength = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarWidth = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahCircleColor = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahDelayMillis = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRadius = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahRadius;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimColor = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimWidth = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahText;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::SQLConnect.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::Splat.Resource.String.library_name = global::SQLConnect.Droid.Resource.String.library_name;
+			global::XLabs.Platform.Resource.String.ApplicationName = global::SQLConnect.Droid.Resource.String.ApplicationName;
+			global::XLabs.Platform.Resource.String.Hello = global::SQLConnect.Droid.Resource.String.Hello;
+			global::XLabs.Forms.Resource.Animation.abc_fade_in = global::SQLConnect.Droid.Resource.Animation.abc_fade_in;
+			global::XLabs.Forms.Resource.Animation.abc_fade_out = global::SQLConnect.Droid.Resource.Animation.abc_fade_out;
+			global::XLabs.Forms.Resource.Animation.abc_grow_fade_in_from_bottom = global::SQLConnect.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::XLabs.Forms.Resource.Animation.abc_popup_enter = global::SQLConnect.Droid.Resource.Animation.abc_popup_enter;
+			global::XLabs.Forms.Resource.Animation.abc_popup_exit = global::SQLConnect.Droid.Resource.Animation.abc_popup_exit;
+			global::XLabs.Forms.Resource.Animation.abc_shrink_fade_out_from_bottom = global::SQLConnect.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::XLabs.Forms.Resource.Animation.abc_slide_in_bottom = global::SQLConnect.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::XLabs.Forms.Resource.Animation.abc_slide_in_top = global::SQLConnect.Droid.Resource.Animation.abc_slide_in_top;
+			global::XLabs.Forms.Resource.Animation.abc_slide_out_bottom = global::SQLConnect.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::XLabs.Forms.Resource.Animation.abc_slide_out_top = global::SQLConnect.Droid.Resource.Animation.abc_slide_out_top;
+			global::XLabs.Forms.Resource.Animation.design_fab_in = global::SQLConnect.Droid.Resource.Animation.design_fab_in;
+			global::XLabs.Forms.Resource.Animation.design_fab_out = global::SQLConnect.Droid.Resource.Animation.design_fab_out;
+			global::XLabs.Forms.Resource.Animation.design_snackbar_in = global::SQLConnect.Droid.Resource.Animation.design_snackbar_in;
+			global::XLabs.Forms.Resource.Animation.design_snackbar_out = global::SQLConnect.Droid.Resource.Animation.design_snackbar_out;
+			global::XLabs.Forms.Resource.Attribute.actionBarDivider = global::SQLConnect.Droid.Resource.Attribute.actionBarDivider;
+			global::XLabs.Forms.Resource.Attribute.actionBarItemBackground = global::SQLConnect.Droid.Resource.Attribute.actionBarItemBackground;
+			global::XLabs.Forms.Resource.Attribute.actionBarPopupTheme = global::SQLConnect.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::XLabs.Forms.Resource.Attribute.actionBarSize = global::SQLConnect.Droid.Resource.Attribute.actionBarSize;
+			global::XLabs.Forms.Resource.Attribute.actionBarSplitStyle = global::SQLConnect.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::XLabs.Forms.Resource.Attribute.actionBarStyle = global::SQLConnect.Droid.Resource.Attribute.actionBarStyle;
+			global::XLabs.Forms.Resource.Attribute.actionBarTabBarStyle = global::SQLConnect.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::XLabs.Forms.Resource.Attribute.actionBarTabStyle = global::SQLConnect.Droid.Resource.Attribute.actionBarTabStyle;
+			global::XLabs.Forms.Resource.Attribute.actionBarTabTextStyle = global::SQLConnect.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::XLabs.Forms.Resource.Attribute.actionBarTheme = global::SQLConnect.Droid.Resource.Attribute.actionBarTheme;
+			global::XLabs.Forms.Resource.Attribute.actionBarWidgetTheme = global::SQLConnect.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::XLabs.Forms.Resource.Attribute.actionButtonStyle = global::SQLConnect.Droid.Resource.Attribute.actionButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.actionDropDownStyle = global::SQLConnect.Droid.Resource.Attribute.actionDropDownStyle;
+			global::XLabs.Forms.Resource.Attribute.actionLayout = global::SQLConnect.Droid.Resource.Attribute.actionLayout;
+			global::XLabs.Forms.Resource.Attribute.actionMenuTextAppearance = global::SQLConnect.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.actionMenuTextColor = global::SQLConnect.Droid.Resource.Attribute.actionMenuTextColor;
+			global::XLabs.Forms.Resource.Attribute.actionModeBackground = global::SQLConnect.Droid.Resource.Attribute.actionModeBackground;
+			global::XLabs.Forms.Resource.Attribute.actionModeCloseButtonStyle = global::SQLConnect.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.actionModeCloseDrawable = global::SQLConnect.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::XLabs.Forms.Resource.Attribute.actionModeCopyDrawable = global::SQLConnect.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::XLabs.Forms.Resource.Attribute.actionModeCutDrawable = global::SQLConnect.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::XLabs.Forms.Resource.Attribute.actionModeFindDrawable = global::SQLConnect.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::XLabs.Forms.Resource.Attribute.actionModePasteDrawable = global::SQLConnect.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::XLabs.Forms.Resource.Attribute.actionModePopupWindowStyle = global::SQLConnect.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::XLabs.Forms.Resource.Attribute.actionModeSelectAllDrawable = global::SQLConnect.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::XLabs.Forms.Resource.Attribute.actionModeShareDrawable = global::SQLConnect.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::XLabs.Forms.Resource.Attribute.actionModeSplitBackground = global::SQLConnect.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::XLabs.Forms.Resource.Attribute.actionModeStyle = global::SQLConnect.Droid.Resource.Attribute.actionModeStyle;
+			global::XLabs.Forms.Resource.Attribute.actionModeWebSearchDrawable = global::SQLConnect.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::XLabs.Forms.Resource.Attribute.actionOverflowButtonStyle = global::SQLConnect.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.actionOverflowMenuStyle = global::SQLConnect.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::XLabs.Forms.Resource.Attribute.actionProviderClass = global::SQLConnect.Droid.Resource.Attribute.actionProviderClass;
+			global::XLabs.Forms.Resource.Attribute.actionViewClass = global::SQLConnect.Droid.Resource.Attribute.actionViewClass;
+			global::XLabs.Forms.Resource.Attribute.activityChooserViewStyle = global::SQLConnect.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::XLabs.Forms.Resource.Attribute.alertDialogButtonGroupStyle = global::SQLConnect.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::XLabs.Forms.Resource.Attribute.alertDialogCenterButtons = global::SQLConnect.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::XLabs.Forms.Resource.Attribute.alertDialogStyle = global::SQLConnect.Droid.Resource.Attribute.alertDialogStyle;
+			global::XLabs.Forms.Resource.Attribute.alertDialogTheme = global::SQLConnect.Droid.Resource.Attribute.alertDialogTheme;
+			global::XLabs.Forms.Resource.Attribute.arrowHeadLength = global::SQLConnect.Droid.Resource.Attribute.arrowHeadLength;
+			global::XLabs.Forms.Resource.Attribute.arrowShaftLength = global::SQLConnect.Droid.Resource.Attribute.arrowShaftLength;
+			global::XLabs.Forms.Resource.Attribute.autoCompleteTextViewStyle = global::SQLConnect.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::XLabs.Forms.Resource.Attribute.background = global::SQLConnect.Droid.Resource.Attribute.background;
+			global::XLabs.Forms.Resource.Attribute.backgroundSplit = global::SQLConnect.Droid.Resource.Attribute.backgroundSplit;
+			global::XLabs.Forms.Resource.Attribute.backgroundStacked = global::SQLConnect.Droid.Resource.Attribute.backgroundStacked;
+			global::XLabs.Forms.Resource.Attribute.backgroundTint = global::SQLConnect.Droid.Resource.Attribute.backgroundTint;
+			global::XLabs.Forms.Resource.Attribute.backgroundTintMode = global::SQLConnect.Droid.Resource.Attribute.backgroundTintMode;
+			global::XLabs.Forms.Resource.Attribute.barLength = global::SQLConnect.Droid.Resource.Attribute.barLength;
+			global::XLabs.Forms.Resource.Attribute.behavior_overlapTop = global::SQLConnect.Droid.Resource.Attribute.behavior_overlapTop;
+			global::XLabs.Forms.Resource.Attribute.borderWidth = global::SQLConnect.Droid.Resource.Attribute.borderWidth;
+			global::XLabs.Forms.Resource.Attribute.borderlessButtonStyle = global::SQLConnect.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.buttonBarButtonStyle = global::SQLConnect.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.buttonBarNegativeButtonStyle = global::SQLConnect.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.buttonBarNeutralButtonStyle = global::SQLConnect.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.buttonBarPositiveButtonStyle = global::SQLConnect.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.buttonBarStyle = global::SQLConnect.Droid.Resource.Attribute.buttonBarStyle;
+			global::XLabs.Forms.Resource.Attribute.buttonPanelSideLayout = global::SQLConnect.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::XLabs.Forms.Resource.Attribute.buttonStyle = global::SQLConnect.Droid.Resource.Attribute.buttonStyle;
+			global::XLabs.Forms.Resource.Attribute.buttonStyleSmall = global::SQLConnect.Droid.Resource.Attribute.buttonStyleSmall;
+			global::XLabs.Forms.Resource.Attribute.buttonTint = global::SQLConnect.Droid.Resource.Attribute.buttonTint;
+			global::XLabs.Forms.Resource.Attribute.buttonTintMode = global::SQLConnect.Droid.Resource.Attribute.buttonTintMode;
+			global::XLabs.Forms.Resource.Attribute.cardBackgroundColor = global::SQLConnect.Droid.Resource.Attribute.cardBackgroundColor;
+			global::XLabs.Forms.Resource.Attribute.cardCornerRadius = global::SQLConnect.Droid.Resource.Attribute.cardCornerRadius;
+			global::XLabs.Forms.Resource.Attribute.cardElevation = global::SQLConnect.Droid.Resource.Attribute.cardElevation;
+			global::XLabs.Forms.Resource.Attribute.cardMaxElevation = global::SQLConnect.Droid.Resource.Attribute.cardMaxElevation;
+			global::XLabs.Forms.Resource.Attribute.cardPreventCornerOverlap = global::SQLConnect.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::XLabs.Forms.Resource.Attribute.cardUseCompatPadding = global::SQLConnect.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::XLabs.Forms.Resource.Attribute.checkboxStyle = global::SQLConnect.Droid.Resource.Attribute.checkboxStyle;
+			global::XLabs.Forms.Resource.Attribute.checkedTextViewStyle = global::SQLConnect.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::XLabs.Forms.Resource.Attribute.closeIcon = global::SQLConnect.Droid.Resource.Attribute.closeIcon;
+			global::XLabs.Forms.Resource.Attribute.closeItemLayout = global::SQLConnect.Droid.Resource.Attribute.closeItemLayout;
+			global::XLabs.Forms.Resource.Attribute.collapseContentDescription = global::SQLConnect.Droid.Resource.Attribute.collapseContentDescription;
+			global::XLabs.Forms.Resource.Attribute.collapseIcon = global::SQLConnect.Droid.Resource.Attribute.collapseIcon;
+			global::XLabs.Forms.Resource.Attribute.collapsedTitleGravity = global::SQLConnect.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::XLabs.Forms.Resource.Attribute.collapsedTitleTextAppearance = global::SQLConnect.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.color = global::SQLConnect.Droid.Resource.Attribute.color;
+			global::XLabs.Forms.Resource.Attribute.colorAccent = global::SQLConnect.Droid.Resource.Attribute.colorAccent;
+			global::XLabs.Forms.Resource.Attribute.colorButtonNormal = global::SQLConnect.Droid.Resource.Attribute.colorButtonNormal;
+			global::XLabs.Forms.Resource.Attribute.colorControlActivated = global::SQLConnect.Droid.Resource.Attribute.colorControlActivated;
+			global::XLabs.Forms.Resource.Attribute.colorControlHighlight = global::SQLConnect.Droid.Resource.Attribute.colorControlHighlight;
+			global::XLabs.Forms.Resource.Attribute.colorControlNormal = global::SQLConnect.Droid.Resource.Attribute.colorControlNormal;
+			global::XLabs.Forms.Resource.Attribute.colorPrimary = global::SQLConnect.Droid.Resource.Attribute.colorPrimary;
+			global::XLabs.Forms.Resource.Attribute.colorPrimaryDark = global::SQLConnect.Droid.Resource.Attribute.colorPrimaryDark;
+			global::XLabs.Forms.Resource.Attribute.colorSwitchThumbNormal = global::SQLConnect.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::XLabs.Forms.Resource.Attribute.commitIcon = global::SQLConnect.Droid.Resource.Attribute.commitIcon;
+			global::XLabs.Forms.Resource.Attribute.contentInsetEnd = global::SQLConnect.Droid.Resource.Attribute.contentInsetEnd;
+			global::XLabs.Forms.Resource.Attribute.contentInsetLeft = global::SQLConnect.Droid.Resource.Attribute.contentInsetLeft;
+			global::XLabs.Forms.Resource.Attribute.contentInsetRight = global::SQLConnect.Droid.Resource.Attribute.contentInsetRight;
+			global::XLabs.Forms.Resource.Attribute.contentInsetStart = global::SQLConnect.Droid.Resource.Attribute.contentInsetStart;
+			global::XLabs.Forms.Resource.Attribute.contentPadding = global::SQLConnect.Droid.Resource.Attribute.contentPadding;
+			global::XLabs.Forms.Resource.Attribute.contentPaddingBottom = global::SQLConnect.Droid.Resource.Attribute.contentPaddingBottom;
+			global::XLabs.Forms.Resource.Attribute.contentPaddingLeft = global::SQLConnect.Droid.Resource.Attribute.contentPaddingLeft;
+			global::XLabs.Forms.Resource.Attribute.contentPaddingRight = global::SQLConnect.Droid.Resource.Attribute.contentPaddingRight;
+			global::XLabs.Forms.Resource.Attribute.contentPaddingTop = global::SQLConnect.Droid.Resource.Attribute.contentPaddingTop;
+			global::XLabs.Forms.Resource.Attribute.contentScrim = global::SQLConnect.Droid.Resource.Attribute.contentScrim;
+			global::XLabs.Forms.Resource.Attribute.controlBackground = global::SQLConnect.Droid.Resource.Attribute.controlBackground;
+			global::XLabs.Forms.Resource.Attribute.customNavigationLayout = global::SQLConnect.Droid.Resource.Attribute.customNavigationLayout;
+			global::XLabs.Forms.Resource.Attribute.defaultQueryHint = global::SQLConnect.Droid.Resource.Attribute.defaultQueryHint;
+			global::XLabs.Forms.Resource.Attribute.dialogPreferredPadding = global::SQLConnect.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::XLabs.Forms.Resource.Attribute.dialogTheme = global::SQLConnect.Droid.Resource.Attribute.dialogTheme;
+			global::XLabs.Forms.Resource.Attribute.displayOptions = global::SQLConnect.Droid.Resource.Attribute.displayOptions;
+			global::XLabs.Forms.Resource.Attribute.divider = global::SQLConnect.Droid.Resource.Attribute.divider;
+			global::XLabs.Forms.Resource.Attribute.dividerHorizontal = global::SQLConnect.Droid.Resource.Attribute.dividerHorizontal;
+			global::XLabs.Forms.Resource.Attribute.dividerPadding = global::SQLConnect.Droid.Resource.Attribute.dividerPadding;
+			global::XLabs.Forms.Resource.Attribute.dividerVertical = global::SQLConnect.Droid.Resource.Attribute.dividerVertical;
+			global::XLabs.Forms.Resource.Attribute.drawableSize = global::SQLConnect.Droid.Resource.Attribute.drawableSize;
+			global::XLabs.Forms.Resource.Attribute.drawerArrowStyle = global::SQLConnect.Droid.Resource.Attribute.drawerArrowStyle;
+			global::XLabs.Forms.Resource.Attribute.dropDownListViewStyle = global::SQLConnect.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::XLabs.Forms.Resource.Attribute.dropdownListPreferredItemHeight = global::SQLConnect.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::XLabs.Forms.Resource.Attribute.editTextBackground = global::SQLConnect.Droid.Resource.Attribute.editTextBackground;
+			global::XLabs.Forms.Resource.Attribute.editTextColor = global::SQLConnect.Droid.Resource.Attribute.editTextColor;
+			global::XLabs.Forms.Resource.Attribute.editTextStyle = global::SQLConnect.Droid.Resource.Attribute.editTextStyle;
+			global::XLabs.Forms.Resource.Attribute.elevation = global::SQLConnect.Droid.Resource.Attribute.elevation;
+			global::XLabs.Forms.Resource.Attribute.errorEnabled = global::SQLConnect.Droid.Resource.Attribute.errorEnabled;
+			global::XLabs.Forms.Resource.Attribute.errorTextAppearance = global::SQLConnect.Droid.Resource.Attribute.errorTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.expandActivityOverflowButtonDrawable = global::SQLConnect.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::XLabs.Forms.Resource.Attribute.expanded = global::SQLConnect.Droid.Resource.Attribute.expanded;
+			global::XLabs.Forms.Resource.Attribute.expandedTitleGravity = global::SQLConnect.Droid.Resource.Attribute.expandedTitleGravity;
+			global::XLabs.Forms.Resource.Attribute.expandedTitleMargin = global::SQLConnect.Droid.Resource.Attribute.expandedTitleMargin;
+			global::XLabs.Forms.Resource.Attribute.expandedTitleMarginBottom = global::SQLConnect.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::XLabs.Forms.Resource.Attribute.expandedTitleMarginEnd = global::SQLConnect.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::XLabs.Forms.Resource.Attribute.expandedTitleMarginStart = global::SQLConnect.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::XLabs.Forms.Resource.Attribute.expandedTitleMarginTop = global::SQLConnect.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::XLabs.Forms.Resource.Attribute.expandedTitleTextAppearance = global::SQLConnect.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.externalRouteEnabledDrawable = global::SQLConnect.Droid.Resource.Attribute.externalRouteEnabledDrawable;
+			global::XLabs.Forms.Resource.Attribute.fabSize = global::SQLConnect.Droid.Resource.Attribute.fabSize;
+			global::XLabs.Forms.Resource.Attribute.gapBetweenBars = global::SQLConnect.Droid.Resource.Attribute.gapBetweenBars;
+			global::XLabs.Forms.Resource.Attribute.goIcon = global::SQLConnect.Droid.Resource.Attribute.goIcon;
+			global::XLabs.Forms.Resource.Attribute.headerLayout = global::SQLConnect.Droid.Resource.Attribute.headerLayout;
+			global::XLabs.Forms.Resource.Attribute.height = global::SQLConnect.Droid.Resource.Attribute.height;
+			global::XLabs.Forms.Resource.Attribute.hideOnContentScroll = global::SQLConnect.Droid.Resource.Attribute.hideOnContentScroll;
+			global::XLabs.Forms.Resource.Attribute.hintAnimationEnabled = global::SQLConnect.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::XLabs.Forms.Resource.Attribute.hintTextAppearance = global::SQLConnect.Droid.Resource.Attribute.hintTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.homeAsUpIndicator = global::SQLConnect.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::XLabs.Forms.Resource.Attribute.homeLayout = global::SQLConnect.Droid.Resource.Attribute.homeLayout;
+			global::XLabs.Forms.Resource.Attribute.icon = global::SQLConnect.Droid.Resource.Attribute.icon;
+			global::XLabs.Forms.Resource.Attribute.iconifiedByDefault = global::SQLConnect.Droid.Resource.Attribute.iconifiedByDefault;
+			global::XLabs.Forms.Resource.Attribute.indeterminateProgressStyle = global::SQLConnect.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::XLabs.Forms.Resource.Attribute.initialActivityCount = global::SQLConnect.Droid.Resource.Attribute.initialActivityCount;
+			global::XLabs.Forms.Resource.Attribute.insetForeground = global::SQLConnect.Droid.Resource.Attribute.insetForeground;
+			global::XLabs.Forms.Resource.Attribute.isLightTheme = global::SQLConnect.Droid.Resource.Attribute.isLightTheme;
+			global::XLabs.Forms.Resource.Attribute.itemBackground = global::SQLConnect.Droid.Resource.Attribute.itemBackground;
+			global::XLabs.Forms.Resource.Attribute.itemIconTint = global::SQLConnect.Droid.Resource.Attribute.itemIconTint;
+			global::XLabs.Forms.Resource.Attribute.itemPadding = global::SQLConnect.Droid.Resource.Attribute.itemPadding;
+			global::XLabs.Forms.Resource.Attribute.itemTextAppearance = global::SQLConnect.Droid.Resource.Attribute.itemTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.itemTextColor = global::SQLConnect.Droid.Resource.Attribute.itemTextColor;
+			global::XLabs.Forms.Resource.Attribute.keylines = global::SQLConnect.Droid.Resource.Attribute.keylines;
+			global::XLabs.Forms.Resource.Attribute.layout = global::SQLConnect.Droid.Resource.Attribute.layout;
+			global::XLabs.Forms.Resource.Attribute.layout_anchor = global::SQLConnect.Droid.Resource.Attribute.layout_anchor;
+			global::XLabs.Forms.Resource.Attribute.layout_anchorGravity = global::SQLConnect.Droid.Resource.Attribute.layout_anchorGravity;
+			global::XLabs.Forms.Resource.Attribute.layout_behavior = global::SQLConnect.Droid.Resource.Attribute.layout_behavior;
+			global::XLabs.Forms.Resource.Attribute.layout_collapseMode = global::SQLConnect.Droid.Resource.Attribute.layout_collapseMode;
+			global::XLabs.Forms.Resource.Attribute.layout_collapseParallaxMultiplier = global::SQLConnect.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::XLabs.Forms.Resource.Attribute.layout_keyline = global::SQLConnect.Droid.Resource.Attribute.layout_keyline;
+			global::XLabs.Forms.Resource.Attribute.layout_scrollFlags = global::SQLConnect.Droid.Resource.Attribute.layout_scrollFlags;
+			global::XLabs.Forms.Resource.Attribute.layout_scrollInterpolator = global::SQLConnect.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::XLabs.Forms.Resource.Attribute.listChoiceBackgroundIndicator = global::SQLConnect.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::XLabs.Forms.Resource.Attribute.listDividerAlertDialog = global::SQLConnect.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::XLabs.Forms.Resource.Attribute.listItemLayout = global::SQLConnect.Droid.Resource.Attribute.listItemLayout;
+			global::XLabs.Forms.Resource.Attribute.listLayout = global::SQLConnect.Droid.Resource.Attribute.listLayout;
+			global::XLabs.Forms.Resource.Attribute.listPopupWindowStyle = global::SQLConnect.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::XLabs.Forms.Resource.Attribute.listPreferredItemHeight = global::SQLConnect.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::XLabs.Forms.Resource.Attribute.listPreferredItemHeightLarge = global::SQLConnect.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::XLabs.Forms.Resource.Attribute.listPreferredItemHeightSmall = global::SQLConnect.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::XLabs.Forms.Resource.Attribute.listPreferredItemPaddingLeft = global::SQLConnect.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::XLabs.Forms.Resource.Attribute.listPreferredItemPaddingRight = global::SQLConnect.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::XLabs.Forms.Resource.Attribute.logo = global::SQLConnect.Droid.Resource.Attribute.logo;
+			global::XLabs.Forms.Resource.Attribute.logoDescription = global::SQLConnect.Droid.Resource.Attribute.logoDescription;
+			global::XLabs.Forms.Resource.Attribute.maxActionInlineWidth = global::SQLConnect.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::XLabs.Forms.Resource.Attribute.maxButtonHeight = global::SQLConnect.Droid.Resource.Attribute.maxButtonHeight;
+			global::XLabs.Forms.Resource.Attribute.measureWithLargestChild = global::SQLConnect.Droid.Resource.Attribute.measureWithLargestChild;
+			global::XLabs.Forms.Resource.Attribute.mediaRouteButtonStyle = global::SQLConnect.Droid.Resource.Attribute.mediaRouteButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.mediaRoutePauseDrawable = global::SQLConnect.Droid.Resource.Attribute.mediaRoutePauseDrawable;
+			global::XLabs.Forms.Resource.Attribute.mediaRoutePlayDrawable = global::SQLConnect.Droid.Resource.Attribute.mediaRoutePlayDrawable;
+			global::XLabs.Forms.Resource.Attribute.menu = global::SQLConnect.Droid.Resource.Attribute.menu;
+			global::XLabs.Forms.Resource.Attribute.multiChoiceItemLayout = global::SQLConnect.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::XLabs.Forms.Resource.Attribute.navigationContentDescription = global::SQLConnect.Droid.Resource.Attribute.navigationContentDescription;
+			global::XLabs.Forms.Resource.Attribute.navigationIcon = global::SQLConnect.Droid.Resource.Attribute.navigationIcon;
+			global::XLabs.Forms.Resource.Attribute.navigationMode = global::SQLConnect.Droid.Resource.Attribute.navigationMode;
+			global::XLabs.Forms.Resource.Attribute.overlapAnchor = global::SQLConnect.Droid.Resource.Attribute.overlapAnchor;
+			global::XLabs.Forms.Resource.Attribute.paddingEnd = global::SQLConnect.Droid.Resource.Attribute.paddingEnd;
+			global::XLabs.Forms.Resource.Attribute.paddingStart = global::SQLConnect.Droid.Resource.Attribute.paddingStart;
+			global::XLabs.Forms.Resource.Attribute.panelBackground = global::SQLConnect.Droid.Resource.Attribute.panelBackground;
+			global::XLabs.Forms.Resource.Attribute.panelMenuListTheme = global::SQLConnect.Droid.Resource.Attribute.panelMenuListTheme;
+			global::XLabs.Forms.Resource.Attribute.panelMenuListWidth = global::SQLConnect.Droid.Resource.Attribute.panelMenuListWidth;
+			global::XLabs.Forms.Resource.Attribute.popupMenuStyle = global::SQLConnect.Droid.Resource.Attribute.popupMenuStyle;
+			global::XLabs.Forms.Resource.Attribute.popupTheme = global::SQLConnect.Droid.Resource.Attribute.popupTheme;
+			global::XLabs.Forms.Resource.Attribute.popupWindowStyle = global::SQLConnect.Droid.Resource.Attribute.popupWindowStyle;
+			global::XLabs.Forms.Resource.Attribute.preserveIconSpacing = global::SQLConnect.Droid.Resource.Attribute.preserveIconSpacing;
+			global::XLabs.Forms.Resource.Attribute.pressedTranslationZ = global::SQLConnect.Droid.Resource.Attribute.pressedTranslationZ;
+			global::XLabs.Forms.Resource.Attribute.progressBarPadding = global::SQLConnect.Droid.Resource.Attribute.progressBarPadding;
+			global::XLabs.Forms.Resource.Attribute.progressBarStyle = global::SQLConnect.Droid.Resource.Attribute.progressBarStyle;
+			global::XLabs.Forms.Resource.Attribute.queryBackground = global::SQLConnect.Droid.Resource.Attribute.queryBackground;
+			global::XLabs.Forms.Resource.Attribute.queryHint = global::SQLConnect.Droid.Resource.Attribute.queryHint;
+			global::XLabs.Forms.Resource.Attribute.radioButtonStyle = global::SQLConnect.Droid.Resource.Attribute.radioButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.ratingBarStyle = global::SQLConnect.Droid.Resource.Attribute.ratingBarStyle;
+			global::XLabs.Forms.Resource.Attribute.rippleColor = global::SQLConnect.Droid.Resource.Attribute.rippleColor;
+			global::XLabs.Forms.Resource.Attribute.searchHintIcon = global::SQLConnect.Droid.Resource.Attribute.searchHintIcon;
+			global::XLabs.Forms.Resource.Attribute.searchIcon = global::SQLConnect.Droid.Resource.Attribute.searchIcon;
+			global::XLabs.Forms.Resource.Attribute.searchViewStyle = global::SQLConnect.Droid.Resource.Attribute.searchViewStyle;
+			global::XLabs.Forms.Resource.Attribute.selectableItemBackground = global::SQLConnect.Droid.Resource.Attribute.selectableItemBackground;
+			global::XLabs.Forms.Resource.Attribute.selectableItemBackgroundBorderless = global::SQLConnect.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::XLabs.Forms.Resource.Attribute.showAsAction = global::SQLConnect.Droid.Resource.Attribute.showAsAction;
+			global::XLabs.Forms.Resource.Attribute.showDividers = global::SQLConnect.Droid.Resource.Attribute.showDividers;
+			global::XLabs.Forms.Resource.Attribute.showText = global::SQLConnect.Droid.Resource.Attribute.showText;
+			global::XLabs.Forms.Resource.Attribute.singleChoiceItemLayout = global::SQLConnect.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::XLabs.Forms.Resource.Attribute.spinBars = global::SQLConnect.Droid.Resource.Attribute.spinBars;
+			global::XLabs.Forms.Resource.Attribute.spinnerDropDownItemStyle = global::SQLConnect.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::XLabs.Forms.Resource.Attribute.spinnerStyle = global::SQLConnect.Droid.Resource.Attribute.spinnerStyle;
+			global::XLabs.Forms.Resource.Attribute.splitTrack = global::SQLConnect.Droid.Resource.Attribute.splitTrack;
+			global::XLabs.Forms.Resource.Attribute.state_above_anchor = global::SQLConnect.Droid.Resource.Attribute.state_above_anchor;
+			global::XLabs.Forms.Resource.Attribute.statusBarBackground = global::SQLConnect.Droid.Resource.Attribute.statusBarBackground;
+			global::XLabs.Forms.Resource.Attribute.statusBarScrim = global::SQLConnect.Droid.Resource.Attribute.statusBarScrim;
+			global::XLabs.Forms.Resource.Attribute.submitBackground = global::SQLConnect.Droid.Resource.Attribute.submitBackground;
+			global::XLabs.Forms.Resource.Attribute.subtitle = global::SQLConnect.Droid.Resource.Attribute.subtitle;
+			global::XLabs.Forms.Resource.Attribute.subtitleTextAppearance = global::SQLConnect.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.subtitleTextColor = global::SQLConnect.Droid.Resource.Attribute.subtitleTextColor;
+			global::XLabs.Forms.Resource.Attribute.subtitleTextStyle = global::SQLConnect.Droid.Resource.Attribute.subtitleTextStyle;
+			global::XLabs.Forms.Resource.Attribute.suggestionRowLayout = global::SQLConnect.Droid.Resource.Attribute.suggestionRowLayout;
+			global::XLabs.Forms.Resource.Attribute.switchMinWidth = global::SQLConnect.Droid.Resource.Attribute.switchMinWidth;
+			global::XLabs.Forms.Resource.Attribute.switchPadding = global::SQLConnect.Droid.Resource.Attribute.switchPadding;
+			global::XLabs.Forms.Resource.Attribute.switchStyle = global::SQLConnect.Droid.Resource.Attribute.switchStyle;
+			global::XLabs.Forms.Resource.Attribute.switchTextAppearance = global::SQLConnect.Droid.Resource.Attribute.switchTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.tabBackground = global::SQLConnect.Droid.Resource.Attribute.tabBackground;
+			global::XLabs.Forms.Resource.Attribute.tabContentStart = global::SQLConnect.Droid.Resource.Attribute.tabContentStart;
+			global::XLabs.Forms.Resource.Attribute.tabGravity = global::SQLConnect.Droid.Resource.Attribute.tabGravity;
+			global::XLabs.Forms.Resource.Attribute.tabIndicatorColor = global::SQLConnect.Droid.Resource.Attribute.tabIndicatorColor;
+			global::XLabs.Forms.Resource.Attribute.tabIndicatorHeight = global::SQLConnect.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::XLabs.Forms.Resource.Attribute.tabMaxWidth = global::SQLConnect.Droid.Resource.Attribute.tabMaxWidth;
+			global::XLabs.Forms.Resource.Attribute.tabMinWidth = global::SQLConnect.Droid.Resource.Attribute.tabMinWidth;
+			global::XLabs.Forms.Resource.Attribute.tabMode = global::SQLConnect.Droid.Resource.Attribute.tabMode;
+			global::XLabs.Forms.Resource.Attribute.tabPadding = global::SQLConnect.Droid.Resource.Attribute.tabPadding;
+			global::XLabs.Forms.Resource.Attribute.tabPaddingBottom = global::SQLConnect.Droid.Resource.Attribute.tabPaddingBottom;
+			global::XLabs.Forms.Resource.Attribute.tabPaddingEnd = global::SQLConnect.Droid.Resource.Attribute.tabPaddingEnd;
+			global::XLabs.Forms.Resource.Attribute.tabPaddingStart = global::SQLConnect.Droid.Resource.Attribute.tabPaddingStart;
+			global::XLabs.Forms.Resource.Attribute.tabPaddingTop = global::SQLConnect.Droid.Resource.Attribute.tabPaddingTop;
+			global::XLabs.Forms.Resource.Attribute.tabSelectedTextColor = global::SQLConnect.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::XLabs.Forms.Resource.Attribute.tabTextAppearance = global::SQLConnect.Droid.Resource.Attribute.tabTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.tabTextColor = global::SQLConnect.Droid.Resource.Attribute.tabTextColor;
+			global::XLabs.Forms.Resource.Attribute.textAllCaps = global::SQLConnect.Droid.Resource.Attribute.textAllCaps;
+			global::XLabs.Forms.Resource.Attribute.textAppearanceLargePopupMenu = global::SQLConnect.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::XLabs.Forms.Resource.Attribute.textAppearanceListItem = global::SQLConnect.Droid.Resource.Attribute.textAppearanceListItem;
+			global::XLabs.Forms.Resource.Attribute.textAppearanceListItemSmall = global::SQLConnect.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::XLabs.Forms.Resource.Attribute.textAppearanceSearchResultSubtitle = global::SQLConnect.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::XLabs.Forms.Resource.Attribute.textAppearanceSearchResultTitle = global::SQLConnect.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::XLabs.Forms.Resource.Attribute.textAppearanceSmallPopupMenu = global::SQLConnect.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::XLabs.Forms.Resource.Attribute.textColorAlertDialogListItem = global::SQLConnect.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::XLabs.Forms.Resource.Attribute.textColorSearchUrl = global::SQLConnect.Droid.Resource.Attribute.textColorSearchUrl;
+			global::XLabs.Forms.Resource.Attribute.theme = global::SQLConnect.Droid.Resource.Attribute.theme;
+			global::XLabs.Forms.Resource.Attribute.thickness = global::SQLConnect.Droid.Resource.Attribute.thickness;
+			global::XLabs.Forms.Resource.Attribute.thumbTextPadding = global::SQLConnect.Droid.Resource.Attribute.thumbTextPadding;
+			global::XLabs.Forms.Resource.Attribute.title = global::SQLConnect.Droid.Resource.Attribute.title;
+			global::XLabs.Forms.Resource.Attribute.titleEnabled = global::SQLConnect.Droid.Resource.Attribute.titleEnabled;
+			global::XLabs.Forms.Resource.Attribute.titleMarginBottom = global::SQLConnect.Droid.Resource.Attribute.titleMarginBottom;
+			global::XLabs.Forms.Resource.Attribute.titleMarginEnd = global::SQLConnect.Droid.Resource.Attribute.titleMarginEnd;
+			global::XLabs.Forms.Resource.Attribute.titleMarginStart = global::SQLConnect.Droid.Resource.Attribute.titleMarginStart;
+			global::XLabs.Forms.Resource.Attribute.titleMarginTop = global::SQLConnect.Droid.Resource.Attribute.titleMarginTop;
+			global::XLabs.Forms.Resource.Attribute.titleMargins = global::SQLConnect.Droid.Resource.Attribute.titleMargins;
+			global::XLabs.Forms.Resource.Attribute.titleTextAppearance = global::SQLConnect.Droid.Resource.Attribute.titleTextAppearance;
+			global::XLabs.Forms.Resource.Attribute.titleTextColor = global::SQLConnect.Droid.Resource.Attribute.titleTextColor;
+			global::XLabs.Forms.Resource.Attribute.titleTextStyle = global::SQLConnect.Droid.Resource.Attribute.titleTextStyle;
+			global::XLabs.Forms.Resource.Attribute.toolbarId = global::SQLConnect.Droid.Resource.Attribute.toolbarId;
+			global::XLabs.Forms.Resource.Attribute.toolbarNavigationButtonStyle = global::SQLConnect.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::XLabs.Forms.Resource.Attribute.toolbarStyle = global::SQLConnect.Droid.Resource.Attribute.toolbarStyle;
+			global::XLabs.Forms.Resource.Attribute.track = global::SQLConnect.Droid.Resource.Attribute.track;
+			global::XLabs.Forms.Resource.Attribute.voiceIcon = global::SQLConnect.Droid.Resource.Attribute.voiceIcon;
+			global::XLabs.Forms.Resource.Attribute.windowActionBar = global::SQLConnect.Droid.Resource.Attribute.windowActionBar;
+			global::XLabs.Forms.Resource.Attribute.windowActionBarOverlay = global::SQLConnect.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::XLabs.Forms.Resource.Attribute.windowActionModeOverlay = global::SQLConnect.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::XLabs.Forms.Resource.Attribute.windowFixedHeightMajor = global::SQLConnect.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::XLabs.Forms.Resource.Attribute.windowFixedHeightMinor = global::SQLConnect.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::XLabs.Forms.Resource.Attribute.windowFixedWidthMajor = global::SQLConnect.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::XLabs.Forms.Resource.Attribute.windowFixedWidthMinor = global::SQLConnect.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::XLabs.Forms.Resource.Attribute.windowMinWidthMajor = global::SQLConnect.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::XLabs.Forms.Resource.Attribute.windowMinWidthMinor = global::SQLConnect.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::XLabs.Forms.Resource.Attribute.windowNoTitle = global::SQLConnect.Droid.Resource.Attribute.windowNoTitle;
+			global::XLabs.Forms.Resource.Boolean.abc_action_bar_embed_tabs = global::SQLConnect.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::XLabs.Forms.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::SQLConnect.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::XLabs.Forms.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::SQLConnect.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::XLabs.Forms.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::SQLConnect.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::XLabs.Forms.Resource.Color.abc_background_cache_hint_selector_material_dark = global::SQLConnect.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::XLabs.Forms.Resource.Color.abc_background_cache_hint_selector_material_light = global::SQLConnect.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::XLabs.Forms.Resource.Color.abc_color_highlight_material = global::SQLConnect.Droid.Resource.Color.abc_color_highlight_material;
+			global::XLabs.Forms.Resource.Color.abc_input_method_navigation_guard = global::SQLConnect.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::XLabs.Forms.Resource.Color.abc_primary_text_disable_only_material_dark = global::SQLConnect.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::XLabs.Forms.Resource.Color.abc_primary_text_disable_only_material_light = global::SQLConnect.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::XLabs.Forms.Resource.Color.abc_primary_text_material_dark = global::SQLConnect.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::XLabs.Forms.Resource.Color.abc_primary_text_material_light = global::SQLConnect.Droid.Resource.Color.abc_primary_text_material_light;
+			global::XLabs.Forms.Resource.Color.abc_search_url_text = global::SQLConnect.Droid.Resource.Color.abc_search_url_text;
+			global::XLabs.Forms.Resource.Color.abc_search_url_text_normal = global::SQLConnect.Droid.Resource.Color.abc_search_url_text_normal;
+			global::XLabs.Forms.Resource.Color.abc_search_url_text_pressed = global::SQLConnect.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::XLabs.Forms.Resource.Color.abc_search_url_text_selected = global::SQLConnect.Droid.Resource.Color.abc_search_url_text_selected;
+			global::XLabs.Forms.Resource.Color.abc_secondary_text_material_dark = global::SQLConnect.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::XLabs.Forms.Resource.Color.abc_secondary_text_material_light = global::SQLConnect.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::XLabs.Forms.Resource.Color.accent_material_dark = global::SQLConnect.Droid.Resource.Color.accent_material_dark;
+			global::XLabs.Forms.Resource.Color.accent_material_light = global::SQLConnect.Droid.Resource.Color.accent_material_light;
+			global::XLabs.Forms.Resource.Color.background_floating_material_dark = global::SQLConnect.Droid.Resource.Color.background_floating_material_dark;
+			global::XLabs.Forms.Resource.Color.background_floating_material_light = global::SQLConnect.Droid.Resource.Color.background_floating_material_light;
+			global::XLabs.Forms.Resource.Color.background_material_dark = global::SQLConnect.Droid.Resource.Color.background_material_dark;
+			global::XLabs.Forms.Resource.Color.background_material_light = global::SQLConnect.Droid.Resource.Color.background_material_light;
+			global::XLabs.Forms.Resource.Color.bright_foreground_disabled_material_dark = global::SQLConnect.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::XLabs.Forms.Resource.Color.bright_foreground_disabled_material_light = global::SQLConnect.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::XLabs.Forms.Resource.Color.bright_foreground_inverse_material_dark = global::SQLConnect.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::XLabs.Forms.Resource.Color.bright_foreground_inverse_material_light = global::SQLConnect.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::XLabs.Forms.Resource.Color.bright_foreground_material_dark = global::SQLConnect.Droid.Resource.Color.bright_foreground_material_dark;
+			global::XLabs.Forms.Resource.Color.bright_foreground_material_light = global::SQLConnect.Droid.Resource.Color.bright_foreground_material_light;
+			global::XLabs.Forms.Resource.Color.button_material_dark = global::SQLConnect.Droid.Resource.Color.button_material_dark;
+			global::XLabs.Forms.Resource.Color.button_material_light = global::SQLConnect.Droid.Resource.Color.button_material_light;
+			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::SQLConnect.Droid.Resource.Color.calendar_active_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_bg = global::SQLConnect.Droid.Resource.Color.calendar_bg;
+			global::XLabs.Forms.Resource.Color.calendar_divider = global::SQLConnect.Droid.Resource.Color.calendar_divider;
+			global::XLabs.Forms.Resource.Color.calendar_highlighted_day_bg = global::SQLConnect.Droid.Resource.Color.calendar_highlighted_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_inactive_month_bg = global::SQLConnect.Droid.Resource.Color.calendar_inactive_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_day_bg = global::SQLConnect.Droid.Resource.Color.calendar_selected_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_range_bg = global::SQLConnect.Droid.Resource.Color.calendar_selected_range_bg;
+			global::XLabs.Forms.Resource.Color.calendar_text_active = global::SQLConnect.Droid.Resource.Color.calendar_text_active;
+			global::XLabs.Forms.Resource.Color.calendar_text_inactive = global::SQLConnect.Droid.Resource.Color.calendar_text_inactive;
+			global::XLabs.Forms.Resource.Color.calendar_text_selected = global::SQLConnect.Droid.Resource.Color.calendar_text_selected;
+			global::XLabs.Forms.Resource.Color.calendar_text_selector = global::SQLConnect.Droid.Resource.Color.calendar_text_selector;
+			global::XLabs.Forms.Resource.Color.calendar_text_unselectable = global::SQLConnect.Droid.Resource.Color.calendar_text_unselectable;
+			global::XLabs.Forms.Resource.Color.cardview_dark_background = global::SQLConnect.Droid.Resource.Color.cardview_dark_background;
+			global::XLabs.Forms.Resource.Color.cardview_light_background = global::SQLConnect.Droid.Resource.Color.cardview_light_background;
+			global::XLabs.Forms.Resource.Color.cardview_shadow_end_color = global::SQLConnect.Droid.Resource.Color.cardview_shadow_end_color;
+			global::XLabs.Forms.Resource.Color.cardview_shadow_start_color = global::SQLConnect.Droid.Resource.Color.cardview_shadow_start_color;
+			global::XLabs.Forms.Resource.Color.design_fab_shadow_end_color = global::SQLConnect.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::XLabs.Forms.Resource.Color.design_fab_shadow_mid_color = global::SQLConnect.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::XLabs.Forms.Resource.Color.design_fab_shadow_start_color = global::SQLConnect.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::XLabs.Forms.Resource.Color.design_fab_stroke_end_inner_color = global::SQLConnect.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::XLabs.Forms.Resource.Color.design_fab_stroke_end_outer_color = global::SQLConnect.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::XLabs.Forms.Resource.Color.design_fab_stroke_top_inner_color = global::SQLConnect.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::XLabs.Forms.Resource.Color.design_fab_stroke_top_outer_color = global::SQLConnect.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::XLabs.Forms.Resource.Color.design_snackbar_background_color = global::SQLConnect.Droid.Resource.Color.design_snackbar_background_color;
+			global::XLabs.Forms.Resource.Color.dim_foreground_disabled_material_dark = global::SQLConnect.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::XLabs.Forms.Resource.Color.dim_foreground_disabled_material_light = global::SQLConnect.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::XLabs.Forms.Resource.Color.dim_foreground_material_dark = global::SQLConnect.Droid.Resource.Color.dim_foreground_material_dark;
+			global::XLabs.Forms.Resource.Color.dim_foreground_material_light = global::SQLConnect.Droid.Resource.Color.dim_foreground_material_light;
+			global::XLabs.Forms.Resource.Color.foreground_material_dark = global::SQLConnect.Droid.Resource.Color.foreground_material_dark;
+			global::XLabs.Forms.Resource.Color.foreground_material_light = global::SQLConnect.Droid.Resource.Color.foreground_material_light;
+			global::XLabs.Forms.Resource.Color.highlighted_text_material_dark = global::SQLConnect.Droid.Resource.Color.highlighted_text_material_dark;
+			global::XLabs.Forms.Resource.Color.highlighted_text_material_light = global::SQLConnect.Droid.Resource.Color.highlighted_text_material_light;
+			global::XLabs.Forms.Resource.Color.material_blue_grey_800 = global::SQLConnect.Droid.Resource.Color.material_blue_grey_800;
+			global::XLabs.Forms.Resource.Color.material_blue_grey_900 = global::SQLConnect.Droid.Resource.Color.material_blue_grey_900;
+			global::XLabs.Forms.Resource.Color.material_blue_grey_950 = global::SQLConnect.Droid.Resource.Color.material_blue_grey_950;
+			global::XLabs.Forms.Resource.Color.material_deep_teal_200 = global::SQLConnect.Droid.Resource.Color.material_deep_teal_200;
+			global::XLabs.Forms.Resource.Color.material_deep_teal_500 = global::SQLConnect.Droid.Resource.Color.material_deep_teal_500;
+			global::XLabs.Forms.Resource.Color.material_grey_100 = global::SQLConnect.Droid.Resource.Color.material_grey_100;
+			global::XLabs.Forms.Resource.Color.material_grey_300 = global::SQLConnect.Droid.Resource.Color.material_grey_300;
+			global::XLabs.Forms.Resource.Color.material_grey_50 = global::SQLConnect.Droid.Resource.Color.material_grey_50;
+			global::XLabs.Forms.Resource.Color.material_grey_600 = global::SQLConnect.Droid.Resource.Color.material_grey_600;
+			global::XLabs.Forms.Resource.Color.material_grey_800 = global::SQLConnect.Droid.Resource.Color.material_grey_800;
+			global::XLabs.Forms.Resource.Color.material_grey_850 = global::SQLConnect.Droid.Resource.Color.material_grey_850;
+			global::XLabs.Forms.Resource.Color.material_grey_900 = global::SQLConnect.Droid.Resource.Color.material_grey_900;
+			global::XLabs.Forms.Resource.Color.primary_dark_material_dark = global::SQLConnect.Droid.Resource.Color.primary_dark_material_dark;
+			global::XLabs.Forms.Resource.Color.primary_dark_material_light = global::SQLConnect.Droid.Resource.Color.primary_dark_material_light;
+			global::XLabs.Forms.Resource.Color.primary_material_dark = global::SQLConnect.Droid.Resource.Color.primary_material_dark;
+			global::XLabs.Forms.Resource.Color.primary_material_light = global::SQLConnect.Droid.Resource.Color.primary_material_light;
+			global::XLabs.Forms.Resource.Color.primary_text_default_material_dark = global::SQLConnect.Droid.Resource.Color.primary_text_default_material_dark;
+			global::XLabs.Forms.Resource.Color.primary_text_default_material_light = global::SQLConnect.Droid.Resource.Color.primary_text_default_material_light;
+			global::XLabs.Forms.Resource.Color.primary_text_disabled_material_dark = global::SQLConnect.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::XLabs.Forms.Resource.Color.primary_text_disabled_material_light = global::SQLConnect.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::XLabs.Forms.Resource.Color.ripple_material_dark = global::SQLConnect.Droid.Resource.Color.ripple_material_dark;
+			global::XLabs.Forms.Resource.Color.ripple_material_light = global::SQLConnect.Droid.Resource.Color.ripple_material_light;
+			global::XLabs.Forms.Resource.Color.secondary_text_default_material_dark = global::SQLConnect.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::XLabs.Forms.Resource.Color.secondary_text_default_material_light = global::SQLConnect.Droid.Resource.Color.secondary_text_default_material_light;
+			global::XLabs.Forms.Resource.Color.secondary_text_disabled_material_dark = global::SQLConnect.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::XLabs.Forms.Resource.Color.secondary_text_disabled_material_light = global::SQLConnect.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::XLabs.Forms.Resource.Color.switch_thumb_disabled_material_dark = global::SQLConnect.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::XLabs.Forms.Resource.Color.switch_thumb_disabled_material_light = global::SQLConnect.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::XLabs.Forms.Resource.Color.switch_thumb_material_dark = global::SQLConnect.Droid.Resource.Color.switch_thumb_material_dark;
+			global::XLabs.Forms.Resource.Color.switch_thumb_material_light = global::SQLConnect.Droid.Resource.Color.switch_thumb_material_light;
+			global::XLabs.Forms.Resource.Color.switch_thumb_normal_material_dark = global::SQLConnect.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::XLabs.Forms.Resource.Color.switch_thumb_normal_material_light = global::SQLConnect.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_content_inset_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_default_height_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_default_padding_end_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_default_padding_start_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_progress_bar_size = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_stacked_max_height = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_button_min_height_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_button_min_width_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::XLabs.Forms.Resource.Dimension.abc_action_button_min_width_overflow_material = global::SQLConnect.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::XLabs.Forms.Resource.Dimension.abc_alert_dialog_button_bar_height = global::SQLConnect.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::XLabs.Forms.Resource.Dimension.abc_button_inset_horizontal_material = global::SQLConnect.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::XLabs.Forms.Resource.Dimension.abc_button_inset_vertical_material = global::SQLConnect.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::XLabs.Forms.Resource.Dimension.abc_button_padding_horizontal_material = global::SQLConnect.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::XLabs.Forms.Resource.Dimension.abc_button_padding_vertical_material = global::SQLConnect.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::XLabs.Forms.Resource.Dimension.abc_config_prefDialogWidth = global::SQLConnect.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::XLabs.Forms.Resource.Dimension.abc_control_corner_material = global::SQLConnect.Droid.Resource.Dimension.abc_control_corner_material;
+			global::XLabs.Forms.Resource.Dimension.abc_control_inset_material = global::SQLConnect.Droid.Resource.Dimension.abc_control_inset_material;
+			global::XLabs.Forms.Resource.Dimension.abc_control_padding_material = global::SQLConnect.Droid.Resource.Dimension.abc_control_padding_material;
+			global::XLabs.Forms.Resource.Dimension.abc_dialog_min_width_major = global::SQLConnect.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::XLabs.Forms.Resource.Dimension.abc_dialog_min_width_minor = global::SQLConnect.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::XLabs.Forms.Resource.Dimension.abc_dialog_padding_material = global::SQLConnect.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::XLabs.Forms.Resource.Dimension.abc_dialog_padding_top_material = global::SQLConnect.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::XLabs.Forms.Resource.Dimension.abc_disabled_alpha_material_dark = global::SQLConnect.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::XLabs.Forms.Resource.Dimension.abc_disabled_alpha_material_light = global::SQLConnect.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::XLabs.Forms.Resource.Dimension.abc_dropdownitem_icon_width = global::SQLConnect.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::XLabs.Forms.Resource.Dimension.abc_dropdownitem_text_padding_left = global::SQLConnect.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::XLabs.Forms.Resource.Dimension.abc_dropdownitem_text_padding_right = global::SQLConnect.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::XLabs.Forms.Resource.Dimension.abc_edit_text_inset_bottom_material = global::SQLConnect.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::XLabs.Forms.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::SQLConnect.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::XLabs.Forms.Resource.Dimension.abc_edit_text_inset_top_material = global::SQLConnect.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::XLabs.Forms.Resource.Dimension.abc_floating_window_z = global::SQLConnect.Droid.Resource.Dimension.abc_floating_window_z;
+			global::XLabs.Forms.Resource.Dimension.abc_list_item_padding_horizontal_material = global::SQLConnect.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::XLabs.Forms.Resource.Dimension.abc_panel_menu_list_width = global::SQLConnect.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::XLabs.Forms.Resource.Dimension.abc_search_view_preferred_width = global::SQLConnect.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::XLabs.Forms.Resource.Dimension.abc_switch_padding = global::SQLConnect.Droid.Resource.Dimension.abc_switch_padding;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_body_1_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_body_2_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_button_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_caption_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_display_1_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_display_2_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_display_3_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_display_4_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_headline_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_large_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_medium_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_menu_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_small_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_subhead_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_title_material = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::XLabs.Forms.Resource.Dimension.abc_text_size_title_material_toolbar = global::SQLConnect.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::XLabs.Forms.Resource.Dimension.calendar_day_headers_paddingbottom = global::SQLConnect.Droid.Resource.Dimension.calendar_day_headers_paddingbottom;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_title_bottommargin = global::SQLConnect.Droid.Resource.Dimension.calendar_month_title_bottommargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_topmargin = global::SQLConnect.Droid.Resource.Dimension.calendar_month_topmargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_medium = global::SQLConnect.Droid.Resource.Dimension.calendar_text_medium;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_small = global::SQLConnect.Droid.Resource.Dimension.calendar_text_small;
+			global::XLabs.Forms.Resource.Dimension.cardview_compat_inset_shadow = global::SQLConnect.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::XLabs.Forms.Resource.Dimension.cardview_default_elevation = global::SQLConnect.Droid.Resource.Dimension.cardview_default_elevation;
+			global::XLabs.Forms.Resource.Dimension.cardview_default_radius = global::SQLConnect.Droid.Resource.Dimension.cardview_default_radius;
+			global::XLabs.Forms.Resource.Dimension.design_appbar_elevation = global::SQLConnect.Droid.Resource.Dimension.design_appbar_elevation;
+			global::XLabs.Forms.Resource.Dimension.design_fab_border_width = global::SQLConnect.Droid.Resource.Dimension.design_fab_border_width;
+			global::XLabs.Forms.Resource.Dimension.design_fab_elevation = global::SQLConnect.Droid.Resource.Dimension.design_fab_elevation;
+			global::XLabs.Forms.Resource.Dimension.design_fab_size_mini = global::SQLConnect.Droid.Resource.Dimension.design_fab_size_mini;
+			global::XLabs.Forms.Resource.Dimension.design_fab_size_normal = global::SQLConnect.Droid.Resource.Dimension.design_fab_size_normal;
+			global::XLabs.Forms.Resource.Dimension.design_fab_translation_z_pressed = global::SQLConnect.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::XLabs.Forms.Resource.Dimension.design_navigation_elevation = global::SQLConnect.Droid.Resource.Dimension.design_navigation_elevation;
+			global::XLabs.Forms.Resource.Dimension.design_navigation_icon_padding = global::SQLConnect.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::XLabs.Forms.Resource.Dimension.design_navigation_icon_size = global::SQLConnect.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::XLabs.Forms.Resource.Dimension.design_navigation_max_width = global::SQLConnect.Droid.Resource.Dimension.design_navigation_max_width;
+			global::XLabs.Forms.Resource.Dimension.design_navigation_padding_bottom = global::SQLConnect.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::XLabs.Forms.Resource.Dimension.design_navigation_separator_vertical_padding = global::SQLConnect.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_action_inline_max_width = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_background_corner_radius = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_elevation = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_max_width = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_min_width = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_padding_horizontal = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_padding_vertical = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::XLabs.Forms.Resource.Dimension.design_snackbar_text_size = global::SQLConnect.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::XLabs.Forms.Resource.Dimension.design_tab_max_width = global::SQLConnect.Droid.Resource.Dimension.design_tab_max_width;
+			global::XLabs.Forms.Resource.Dimension.disabled_alpha_material_dark = global::SQLConnect.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::XLabs.Forms.Resource.Dimension.disabled_alpha_material_light = global::SQLConnect.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::XLabs.Forms.Resource.Dimension.highlight_alpha_material_colored = global::SQLConnect.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::XLabs.Forms.Resource.Dimension.highlight_alpha_material_dark = global::SQLConnect.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::XLabs.Forms.Resource.Dimension.highlight_alpha_material_light = global::SQLConnect.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::XLabs.Forms.Resource.Dimension.notification_large_icon_height = global::SQLConnect.Droid.Resource.Dimension.notification_large_icon_height;
+			global::XLabs.Forms.Resource.Dimension.notification_large_icon_width = global::SQLConnect.Droid.Resource.Dimension.notification_large_icon_width;
+			global::XLabs.Forms.Resource.Dimension.notification_subtext_size = global::SQLConnect.Droid.Resource.Dimension.notification_subtext_size;
+			global::XLabs.Forms.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_action_bar_item_background_material = global::SQLConnect.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_borderless_material = global::SQLConnect.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_check_material = global::SQLConnect.Droid.Resource.Drawable.abc_btn_check_material;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::SQLConnect.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::SQLConnect.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_colored_material = global::SQLConnect.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_default_mtrl_shape = global::SQLConnect.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_radio_material = global::SQLConnect.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::SQLConnect.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::SQLConnect.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::SQLConnect.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::XLabs.Forms.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::SQLConnect.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::XLabs.Forms.Resource.Drawable.abc_cab_background_internal_bg = global::SQLConnect.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::XLabs.Forms.Resource.Drawable.abc_cab_background_top_material = global::SQLConnect.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::XLabs.Forms.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_control_background_material = global::SQLConnect.Droid.Resource.Drawable.abc_control_background_material;
+			global::XLabs.Forms.Resource.Drawable.abc_edit_text_material = global::SQLConnect.Droid.Resource.Drawable.abc_edit_text_material;
+			global::XLabs.Forms.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_item_background_holo_dark = global::SQLConnect.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::XLabs.Forms.Resource.Drawable.abc_item_background_holo_light = global::SQLConnect.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::XLabs.Forms.Resource.Drawable.abc_list_divider_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_list_focused_holo = global::SQLConnect.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::XLabs.Forms.Resource.Drawable.abc_list_longpressed_holo = global::SQLConnect.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::XLabs.Forms.Resource.Drawable.abc_list_pressed_holo_dark = global::SQLConnect.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::XLabs.Forms.Resource.Drawable.abc_list_pressed_holo_light = global::SQLConnect.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::XLabs.Forms.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::SQLConnect.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::XLabs.Forms.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::SQLConnect.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::XLabs.Forms.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::SQLConnect.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::XLabs.Forms.Resource.Drawable.abc_list_selector_disabled_holo_light = global::SQLConnect.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::XLabs.Forms.Resource.Drawable.abc_list_selector_holo_dark = global::SQLConnect.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::XLabs.Forms.Resource.Drawable.abc_list_selector_holo_light = global::SQLConnect.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::XLabs.Forms.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::SQLConnect.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::XLabs.Forms.Resource.Drawable.abc_popup_background_mtrl_mult = global::SQLConnect.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::XLabs.Forms.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_spinner_textfield_background_material = global::SQLConnect.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::XLabs.Forms.Resource.Drawable.abc_switch_thumb_material = global::SQLConnect.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::XLabs.Forms.Resource.Drawable.abc_switch_track_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_tab_indicator_material = global::SQLConnect.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::XLabs.Forms.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_text_cursor_material = global::SQLConnect.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::XLabs.Forms.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::SQLConnect.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::XLabs.Forms.Resource.Drawable.abc_textfield_search_material = global::SQLConnect.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::XLabs.Forms.Resource.Drawable.ad16 = global::SQLConnect.Droid.Resource.Drawable.ad16;
+			global::XLabs.Forms.Resource.Drawable.calendar_bg_selector = global::SQLConnect.Droid.Resource.Drawable.calendar_bg_selector;
+			global::XLabs.Forms.Resource.Drawable.design_fab_background = global::SQLConnect.Droid.Resource.Drawable.design_fab_background;
+			global::XLabs.Forms.Resource.Drawable.design_snackbar_background = global::SQLConnect.Droid.Resource.Drawable.design_snackbar_background;
+			global::XLabs.Forms.Resource.Drawable.notification_template_icon_bg = global::SQLConnect.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::XLabs.Forms.Resource.Id.action0 = global::SQLConnect.Droid.Resource.Id.action0;
+			global::XLabs.Forms.Resource.Id.action_bar = global::SQLConnect.Droid.Resource.Id.action_bar;
+			global::XLabs.Forms.Resource.Id.action_bar_activity_content = global::SQLConnect.Droid.Resource.Id.action_bar_activity_content;
+			global::XLabs.Forms.Resource.Id.action_bar_container = global::SQLConnect.Droid.Resource.Id.action_bar_container;
+			global::XLabs.Forms.Resource.Id.action_bar_root = global::SQLConnect.Droid.Resource.Id.action_bar_root;
+			global::XLabs.Forms.Resource.Id.action_bar_spinner = global::SQLConnect.Droid.Resource.Id.action_bar_spinner;
+			global::XLabs.Forms.Resource.Id.action_bar_subtitle = global::SQLConnect.Droid.Resource.Id.action_bar_subtitle;
+			global::XLabs.Forms.Resource.Id.action_bar_title = global::SQLConnect.Droid.Resource.Id.action_bar_title;
+			global::XLabs.Forms.Resource.Id.action_context_bar = global::SQLConnect.Droid.Resource.Id.action_context_bar;
+			global::XLabs.Forms.Resource.Id.action_divider = global::SQLConnect.Droid.Resource.Id.action_divider;
+			global::XLabs.Forms.Resource.Id.action_menu_divider = global::SQLConnect.Droid.Resource.Id.action_menu_divider;
+			global::XLabs.Forms.Resource.Id.action_menu_presenter = global::SQLConnect.Droid.Resource.Id.action_menu_presenter;
+			global::XLabs.Forms.Resource.Id.action_mode_bar = global::SQLConnect.Droid.Resource.Id.action_mode_bar;
+			global::XLabs.Forms.Resource.Id.action_mode_bar_stub = global::SQLConnect.Droid.Resource.Id.action_mode_bar_stub;
+			global::XLabs.Forms.Resource.Id.action_mode_close_button = global::SQLConnect.Droid.Resource.Id.action_mode_close_button;
+			global::XLabs.Forms.Resource.Id.activity_chooser_view_content = global::SQLConnect.Droid.Resource.Id.activity_chooser_view_content;
+			global::XLabs.Forms.Resource.Id.alertTitle = global::SQLConnect.Droid.Resource.Id.alertTitle;
+			global::XLabs.Forms.Resource.Id.always = global::SQLConnect.Droid.Resource.Id.always;
+			global::XLabs.Forms.Resource.Id.beginning = global::SQLConnect.Droid.Resource.Id.beginning;
+			global::XLabs.Forms.Resource.Id.bottom = global::SQLConnect.Droid.Resource.Id.bottom;
+			global::XLabs.Forms.Resource.Id.buttonPanel = global::SQLConnect.Droid.Resource.Id.buttonPanel;
+			global::XLabs.Forms.Resource.Id.calendar_grid = global::SQLConnect.Droid.Resource.Id.calendar_grid;
+			global::XLabs.Forms.Resource.Id.calendar_view = global::SQLConnect.Droid.Resource.Id.calendar_view;
+			global::XLabs.Forms.Resource.Id.cancel_action = global::SQLConnect.Droid.Resource.Id.cancel_action;
+			global::XLabs.Forms.Resource.Id.center = global::SQLConnect.Droid.Resource.Id.center;
+			global::XLabs.Forms.Resource.Id.center_horizontal = global::SQLConnect.Droid.Resource.Id.center_horizontal;
+			global::XLabs.Forms.Resource.Id.center_vertical = global::SQLConnect.Droid.Resource.Id.center_vertical;
+			global::XLabs.Forms.Resource.Id.checkbox = global::SQLConnect.Droid.Resource.Id.checkbox;
+			global::XLabs.Forms.Resource.Id.chronometer = global::SQLConnect.Droid.Resource.Id.chronometer;
+			global::XLabs.Forms.Resource.Id.clip_horizontal = global::SQLConnect.Droid.Resource.Id.clip_horizontal;
+			global::XLabs.Forms.Resource.Id.clip_vertical = global::SQLConnect.Droid.Resource.Id.clip_vertical;
+			global::XLabs.Forms.Resource.Id.collapseActionView = global::SQLConnect.Droid.Resource.Id.collapseActionView;
+			global::XLabs.Forms.Resource.Id.contentPanel = global::SQLConnect.Droid.Resource.Id.contentPanel;
+			global::XLabs.Forms.Resource.Id.custom = global::SQLConnect.Droid.Resource.Id.custom;
+			global::XLabs.Forms.Resource.Id.customPanel = global::SQLConnect.Droid.Resource.Id.customPanel;
+			global::XLabs.Forms.Resource.Id.decor_content_parent = global::SQLConnect.Droid.Resource.Id.decor_content_parent;
+			global::XLabs.Forms.Resource.Id.default_activity_button = global::SQLConnect.Droid.Resource.Id.default_activity_button;
+			global::XLabs.Forms.Resource.Id.disableHome = global::SQLConnect.Droid.Resource.Id.disableHome;
+			global::XLabs.Forms.Resource.Id.edit_query = global::SQLConnect.Droid.Resource.Id.edit_query;
+			global::XLabs.Forms.Resource.Id.end = global::SQLConnect.Droid.Resource.Id.end;
+			global::XLabs.Forms.Resource.Id.end_padder = global::SQLConnect.Droid.Resource.Id.end_padder;
+			global::XLabs.Forms.Resource.Id.enterAlways = global::SQLConnect.Droid.Resource.Id.enterAlways;
+			global::XLabs.Forms.Resource.Id.enterAlwaysCollapsed = global::SQLConnect.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::XLabs.Forms.Resource.Id.exitUntilCollapsed = global::SQLConnect.Droid.Resource.Id.exitUntilCollapsed;
+			global::XLabs.Forms.Resource.Id.expand_activities_button = global::SQLConnect.Droid.Resource.Id.expand_activities_button;
+			global::XLabs.Forms.Resource.Id.expanded_menu = global::SQLConnect.Droid.Resource.Id.expanded_menu;
+			global::XLabs.Forms.Resource.Id.fill = global::SQLConnect.Droid.Resource.Id.fill;
+			global::XLabs.Forms.Resource.Id.fill_horizontal = global::SQLConnect.Droid.Resource.Id.fill_horizontal;
+			global::XLabs.Forms.Resource.Id.fill_vertical = global::SQLConnect.Droid.Resource.Id.fill_vertical;
+			global::XLabs.Forms.Resource.Id.@fixed = global::SQLConnect.Droid.Resource.Id.@fixed;
+			global::XLabs.Forms.Resource.Id.home = global::SQLConnect.Droid.Resource.Id.home;
+			global::XLabs.Forms.Resource.Id.homeAsUp = global::SQLConnect.Droid.Resource.Id.homeAsUp;
+			global::XLabs.Forms.Resource.Id.icon = global::SQLConnect.Droid.Resource.Id.icon;
+			global::XLabs.Forms.Resource.Id.ifRoom = global::SQLConnect.Droid.Resource.Id.ifRoom;
+			global::XLabs.Forms.Resource.Id.image = global::SQLConnect.Droid.Resource.Id.image;
+			global::XLabs.Forms.Resource.Id.info = global::SQLConnect.Droid.Resource.Id.info;
+			global::XLabs.Forms.Resource.Id.left = global::SQLConnect.Droid.Resource.Id.left;
+			global::XLabs.Forms.Resource.Id.left_arrow = global::SQLConnect.Droid.Resource.Id.left_arrow;
+			global::XLabs.Forms.Resource.Id.line1 = global::SQLConnect.Droid.Resource.Id.line1;
+			global::XLabs.Forms.Resource.Id.line3 = global::SQLConnect.Droid.Resource.Id.line3;
+			global::XLabs.Forms.Resource.Id.listMode = global::SQLConnect.Droid.Resource.Id.listMode;
+			global::XLabs.Forms.Resource.Id.list_item = global::SQLConnect.Droid.Resource.Id.list_item;
+			global::XLabs.Forms.Resource.Id.media_actions = global::SQLConnect.Droid.Resource.Id.media_actions;
+			global::XLabs.Forms.Resource.Id.middle = global::SQLConnect.Droid.Resource.Id.middle;
+			global::XLabs.Forms.Resource.Id.mini = global::SQLConnect.Droid.Resource.Id.mini;
+			global::XLabs.Forms.Resource.Id.multiply = global::SQLConnect.Droid.Resource.Id.multiply;
+			global::XLabs.Forms.Resource.Id.never = global::SQLConnect.Droid.Resource.Id.never;
+			global::XLabs.Forms.Resource.Id.none = global::SQLConnect.Droid.Resource.Id.none;
+			global::XLabs.Forms.Resource.Id.normal = global::SQLConnect.Droid.Resource.Id.normal;
+			global::XLabs.Forms.Resource.Id.parallax = global::SQLConnect.Droid.Resource.Id.parallax;
+			global::XLabs.Forms.Resource.Id.parentPanel = global::SQLConnect.Droid.Resource.Id.parentPanel;
+			global::XLabs.Forms.Resource.Id.pin = global::SQLConnect.Droid.Resource.Id.pin;
+			global::XLabs.Forms.Resource.Id.progress_circular = global::SQLConnect.Droid.Resource.Id.progress_circular;
+			global::XLabs.Forms.Resource.Id.progress_horizontal = global::SQLConnect.Droid.Resource.Id.progress_horizontal;
+			global::XLabs.Forms.Resource.Id.radio = global::SQLConnect.Droid.Resource.Id.radio;
+			global::XLabs.Forms.Resource.Id.right = global::SQLConnect.Droid.Resource.Id.right;
+			global::XLabs.Forms.Resource.Id.right_arrow = global::SQLConnect.Droid.Resource.Id.right_arrow;
+			global::XLabs.Forms.Resource.Id.screen = global::SQLConnect.Droid.Resource.Id.screen;
+			global::XLabs.Forms.Resource.Id.scroll = global::SQLConnect.Droid.Resource.Id.scroll;
+			global::XLabs.Forms.Resource.Id.scrollView = global::SQLConnect.Droid.Resource.Id.scrollView;
+			global::XLabs.Forms.Resource.Id.scrollable = global::SQLConnect.Droid.Resource.Id.scrollable;
+			global::XLabs.Forms.Resource.Id.search_badge = global::SQLConnect.Droid.Resource.Id.search_badge;
+			global::XLabs.Forms.Resource.Id.search_bar = global::SQLConnect.Droid.Resource.Id.search_bar;
+			global::XLabs.Forms.Resource.Id.search_button = global::SQLConnect.Droid.Resource.Id.search_button;
+			global::XLabs.Forms.Resource.Id.search_close_btn = global::SQLConnect.Droid.Resource.Id.search_close_btn;
+			global::XLabs.Forms.Resource.Id.search_edit_frame = global::SQLConnect.Droid.Resource.Id.search_edit_frame;
+			global::XLabs.Forms.Resource.Id.search_go_btn = global::SQLConnect.Droid.Resource.Id.search_go_btn;
+			global::XLabs.Forms.Resource.Id.search_mag_icon = global::SQLConnect.Droid.Resource.Id.search_mag_icon;
+			global::XLabs.Forms.Resource.Id.search_plate = global::SQLConnect.Droid.Resource.Id.search_plate;
+			global::XLabs.Forms.Resource.Id.search_src_text = global::SQLConnect.Droid.Resource.Id.search_src_text;
+			global::XLabs.Forms.Resource.Id.search_voice_btn = global::SQLConnect.Droid.Resource.Id.search_voice_btn;
+			global::XLabs.Forms.Resource.Id.select_dialog_listview = global::SQLConnect.Droid.Resource.Id.select_dialog_listview;
+			global::XLabs.Forms.Resource.Id.shortcut = global::SQLConnect.Droid.Resource.Id.shortcut;
+			global::XLabs.Forms.Resource.Id.showCustom = global::SQLConnect.Droid.Resource.Id.showCustom;
+			global::XLabs.Forms.Resource.Id.showHome = global::SQLConnect.Droid.Resource.Id.showHome;
+			global::XLabs.Forms.Resource.Id.showTitle = global::SQLConnect.Droid.Resource.Id.showTitle;
+			global::XLabs.Forms.Resource.Id.snackbar_action = global::SQLConnect.Droid.Resource.Id.snackbar_action;
+			global::XLabs.Forms.Resource.Id.snackbar_text = global::SQLConnect.Droid.Resource.Id.snackbar_text;
+			global::XLabs.Forms.Resource.Id.split_action_bar = global::SQLConnect.Droid.Resource.Id.split_action_bar;
+			global::XLabs.Forms.Resource.Id.src_atop = global::SQLConnect.Droid.Resource.Id.src_atop;
+			global::XLabs.Forms.Resource.Id.src_in = global::SQLConnect.Droid.Resource.Id.src_in;
+			global::XLabs.Forms.Resource.Id.src_over = global::SQLConnect.Droid.Resource.Id.src_over;
+			global::XLabs.Forms.Resource.Id.start = global::SQLConnect.Droid.Resource.Id.start;
+			global::XLabs.Forms.Resource.Id.status_bar_latest_event_content = global::SQLConnect.Droid.Resource.Id.status_bar_latest_event_content;
+			global::XLabs.Forms.Resource.Id.submit_area = global::SQLConnect.Droid.Resource.Id.submit_area;
+			global::XLabs.Forms.Resource.Id.tabMode = global::SQLConnect.Droid.Resource.Id.tabMode;
+			global::XLabs.Forms.Resource.Id.text = global::SQLConnect.Droid.Resource.Id.text;
+			global::XLabs.Forms.Resource.Id.text2 = global::SQLConnect.Droid.Resource.Id.text2;
+			global::XLabs.Forms.Resource.Id.textSpacerNoButtons = global::SQLConnect.Droid.Resource.Id.textSpacerNoButtons;
+			global::XLabs.Forms.Resource.Id.time = global::SQLConnect.Droid.Resource.Id.time;
+			global::XLabs.Forms.Resource.Id.title = global::SQLConnect.Droid.Resource.Id.title;
+			global::XLabs.Forms.Resource.Id.title_template = global::SQLConnect.Droid.Resource.Id.title_template;
+			global::XLabs.Forms.Resource.Id.top = global::SQLConnect.Droid.Resource.Id.top;
+			global::XLabs.Forms.Resource.Id.topPanel = global::SQLConnect.Droid.Resource.Id.topPanel;
+			global::XLabs.Forms.Resource.Id.up = global::SQLConnect.Droid.Resource.Id.up;
+			global::XLabs.Forms.Resource.Id.useLogo = global::SQLConnect.Droid.Resource.Id.useLogo;
+			global::XLabs.Forms.Resource.Id.view_offset_helper = global::SQLConnect.Droid.Resource.Id.view_offset_helper;
+			global::XLabs.Forms.Resource.Id.withText = global::SQLConnect.Droid.Resource.Id.withText;
+			global::XLabs.Forms.Resource.Id.wrap_content = global::SQLConnect.Droid.Resource.Id.wrap_content;
+			global::XLabs.Forms.Resource.Integer.abc_config_activityDefaultDur = global::SQLConnect.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::XLabs.Forms.Resource.Integer.abc_config_activityShortDur = global::SQLConnect.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::XLabs.Forms.Resource.Integer.cancel_button_image_alpha = global::SQLConnect.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::XLabs.Forms.Resource.Integer.design_snackbar_text_max_lines = global::SQLConnect.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::XLabs.Forms.Resource.Integer.status_bar_notification_info_maxnum = global::SQLConnect.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::XLabs.Forms.Resource.Layout.abc_action_bar_title_item = global::SQLConnect.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::XLabs.Forms.Resource.Layout.abc_action_bar_up_container = global::SQLConnect.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::XLabs.Forms.Resource.Layout.abc_action_bar_view_list_nav_layout = global::SQLConnect.Droid.Resource.Layout.abc_action_bar_view_list_nav_layout;
+			global::XLabs.Forms.Resource.Layout.abc_action_menu_item_layout = global::SQLConnect.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::XLabs.Forms.Resource.Layout.abc_action_menu_layout = global::SQLConnect.Droid.Resource.Layout.abc_action_menu_layout;
+			global::XLabs.Forms.Resource.Layout.abc_action_mode_bar = global::SQLConnect.Droid.Resource.Layout.abc_action_mode_bar;
+			global::XLabs.Forms.Resource.Layout.abc_action_mode_close_item_material = global::SQLConnect.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::XLabs.Forms.Resource.Layout.abc_activity_chooser_view = global::SQLConnect.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::XLabs.Forms.Resource.Layout.abc_activity_chooser_view_list_item = global::SQLConnect.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::XLabs.Forms.Resource.Layout.abc_alert_dialog_material = global::SQLConnect.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::XLabs.Forms.Resource.Layout.abc_dialog_title_material = global::SQLConnect.Droid.Resource.Layout.abc_dialog_title_material;
+			global::XLabs.Forms.Resource.Layout.abc_expanded_menu_layout = global::SQLConnect.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::XLabs.Forms.Resource.Layout.abc_list_menu_item_checkbox = global::SQLConnect.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::XLabs.Forms.Resource.Layout.abc_list_menu_item_icon = global::SQLConnect.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::XLabs.Forms.Resource.Layout.abc_list_menu_item_layout = global::SQLConnect.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::XLabs.Forms.Resource.Layout.abc_list_menu_item_radio = global::SQLConnect.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::XLabs.Forms.Resource.Layout.abc_popup_menu_item_layout = global::SQLConnect.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::XLabs.Forms.Resource.Layout.abc_screen_content_include = global::SQLConnect.Droid.Resource.Layout.abc_screen_content_include;
+			global::XLabs.Forms.Resource.Layout.abc_screen_simple = global::SQLConnect.Droid.Resource.Layout.abc_screen_simple;
+			global::XLabs.Forms.Resource.Layout.abc_screen_simple_overlay_action_mode = global::SQLConnect.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::XLabs.Forms.Resource.Layout.abc_screen_toolbar = global::SQLConnect.Droid.Resource.Layout.abc_screen_toolbar;
+			global::XLabs.Forms.Resource.Layout.abc_search_dropdown_item_icons_2line = global::SQLConnect.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::XLabs.Forms.Resource.Layout.abc_search_view = global::SQLConnect.Droid.Resource.Layout.abc_search_view;
+			global::XLabs.Forms.Resource.Layout.abc_select_dialog_material = global::SQLConnect.Droid.Resource.Layout.abc_select_dialog_material;
+			global::XLabs.Forms.Resource.Layout.calendar_pager_layout = global::SQLConnect.Droid.Resource.Layout.calendar_pager_layout;
+			global::XLabs.Forms.Resource.Layout.calendar_picker = global::SQLConnect.Droid.Resource.Layout.calendar_picker;
+			global::XLabs.Forms.Resource.Layout.design_layout_snackbar = global::SQLConnect.Droid.Resource.Layout.design_layout_snackbar;
+			global::XLabs.Forms.Resource.Layout.design_layout_snackbar_include = global::SQLConnect.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::XLabs.Forms.Resource.Layout.design_layout_tab_icon = global::SQLConnect.Droid.Resource.Layout.design_layout_tab_icon;
+			global::XLabs.Forms.Resource.Layout.design_layout_tab_text = global::SQLConnect.Droid.Resource.Layout.design_layout_tab_text;
+			global::XLabs.Forms.Resource.Layout.design_navigation_item = global::SQLConnect.Droid.Resource.Layout.design_navigation_item;
+			global::XLabs.Forms.Resource.Layout.design_navigation_item_header = global::SQLConnect.Droid.Resource.Layout.design_navigation_item_header;
+			global::XLabs.Forms.Resource.Layout.design_navigation_item_separator = global::SQLConnect.Droid.Resource.Layout.design_navigation_item_separator;
+			global::XLabs.Forms.Resource.Layout.design_navigation_item_subheader = global::SQLConnect.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::XLabs.Forms.Resource.Layout.design_navigation_menu = global::SQLConnect.Droid.Resource.Layout.design_navigation_menu;
+			global::XLabs.Forms.Resource.Layout.dialog = global::SQLConnect.Droid.Resource.Layout.dialog;
+			global::XLabs.Forms.Resource.Layout.month = global::SQLConnect.Droid.Resource.Layout.month;
+			global::XLabs.Forms.Resource.Layout.notification_media_action = global::SQLConnect.Droid.Resource.Layout.notification_media_action;
+			global::XLabs.Forms.Resource.Layout.notification_media_cancel_action = global::SQLConnect.Droid.Resource.Layout.notification_media_cancel_action;
+			global::XLabs.Forms.Resource.Layout.notification_template_big_media = global::SQLConnect.Droid.Resource.Layout.notification_template_big_media;
+			global::XLabs.Forms.Resource.Layout.notification_template_big_media_narrow = global::SQLConnect.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::XLabs.Forms.Resource.Layout.notification_template_media = global::SQLConnect.Droid.Resource.Layout.notification_template_media;
+			global::XLabs.Forms.Resource.Layout.notification_template_part_chronometer = global::SQLConnect.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::XLabs.Forms.Resource.Layout.notification_template_part_time = global::SQLConnect.Droid.Resource.Layout.notification_template_part_time;
+			global::XLabs.Forms.Resource.Layout.select_dialog_item_material = global::SQLConnect.Droid.Resource.Layout.select_dialog_item_material;
+			global::XLabs.Forms.Resource.Layout.select_dialog_multichoice_material = global::SQLConnect.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::XLabs.Forms.Resource.Layout.select_dialog_singlechoice_material = global::SQLConnect.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::XLabs.Forms.Resource.Layout.support_simple_spinner_dropdown_item = global::SQLConnect.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::XLabs.Forms.Resource.Layout.week = global::SQLConnect.Droid.Resource.Layout.week;
+			global::XLabs.Forms.Resource.String.ApplicationName = global::SQLConnect.Droid.Resource.String.ApplicationName;
+			global::XLabs.Forms.Resource.String.Hello = global::SQLConnect.Droid.Resource.String.Hello;
+			global::XLabs.Forms.Resource.String.abc_action_bar_home_description = global::SQLConnect.Droid.Resource.String.abc_action_bar_home_description;
+			global::XLabs.Forms.Resource.String.abc_action_bar_home_description_format = global::SQLConnect.Droid.Resource.String.abc_action_bar_home_description_format;
+			global::XLabs.Forms.Resource.String.abc_action_bar_home_subtitle_description_format = global::SQLConnect.Droid.Resource.String.abc_action_bar_home_subtitle_description_format;
+			global::XLabs.Forms.Resource.String.abc_action_bar_up_description = global::SQLConnect.Droid.Resource.String.abc_action_bar_up_description;
+			global::XLabs.Forms.Resource.String.abc_action_menu_overflow_description = global::SQLConnect.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::XLabs.Forms.Resource.String.abc_action_mode_done = global::SQLConnect.Droid.Resource.String.abc_action_mode_done;
+			global::XLabs.Forms.Resource.String.abc_activity_chooser_view_see_all = global::SQLConnect.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::XLabs.Forms.Resource.String.abc_activitychooserview_choose_application = global::SQLConnect.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::XLabs.Forms.Resource.String.abc_search_hint = global::SQLConnect.Droid.Resource.String.abc_search_hint;
+			global::XLabs.Forms.Resource.String.abc_searchview_description_clear = global::SQLConnect.Droid.Resource.String.abc_searchview_description_clear;
+			global::XLabs.Forms.Resource.String.abc_searchview_description_query = global::SQLConnect.Droid.Resource.String.abc_searchview_description_query;
+			global::XLabs.Forms.Resource.String.abc_searchview_description_search = global::SQLConnect.Droid.Resource.String.abc_searchview_description_search;
+			global::XLabs.Forms.Resource.String.abc_searchview_description_submit = global::SQLConnect.Droid.Resource.String.abc_searchview_description_submit;
+			global::XLabs.Forms.Resource.String.abc_searchview_description_voice = global::SQLConnect.Droid.Resource.String.abc_searchview_description_voice;
+			global::XLabs.Forms.Resource.String.abc_shareactionprovider_share_with = global::SQLConnect.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::XLabs.Forms.Resource.String.abc_shareactionprovider_share_with_application = global::SQLConnect.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::XLabs.Forms.Resource.String.abc_toolbar_collapse_description = global::SQLConnect.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::XLabs.Forms.Resource.String.appbar_scrolling_view_behavior = global::SQLConnect.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::XLabs.Forms.Resource.String.day_name_format = global::SQLConnect.Droid.Resource.String.day_name_format;
+			global::XLabs.Forms.Resource.String.full_date_format = global::SQLConnect.Droid.Resource.String.full_date_format;
+			global::XLabs.Forms.Resource.String.invalid_date = global::SQLConnect.Droid.Resource.String.invalid_date;
+			global::XLabs.Forms.Resource.String.library_name = global::SQLConnect.Droid.Resource.String.library_name;
+			global::XLabs.Forms.Resource.String.month_name_format = global::SQLConnect.Droid.Resource.String.month_name_format;
+			global::XLabs.Forms.Resource.String.mr_system_route_name = global::SQLConnect.Droid.Resource.String.mr_system_route_name;
+			global::XLabs.Forms.Resource.String.mr_user_route_category_name = global::SQLConnect.Droid.Resource.String.mr_user_route_category_name;
+			global::XLabs.Forms.Resource.String.status_bar_notification_info_overflow = global::SQLConnect.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::XLabs.Forms.Resource.Style.AlertDialog_AppCompat = global::SQLConnect.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::XLabs.Forms.Resource.Style.AlertDialog_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Animation_AppCompat_Dialog = global::SQLConnect.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::XLabs.Forms.Resource.Style.Animation_AppCompat_DropDownUp = global::SQLConnect.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::XLabs.Forms.Resource.Style.Base_AlertDialog_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_AlertDialog_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Base_Animation_AppCompat_Dialog = global::SQLConnect.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::XLabs.Forms.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::SQLConnect.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::XLabs.Forms.Resource.Style.Base_DialogWindowTitle_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Button = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Large = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Small = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Title = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::XLabs.Forms.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::SQLConnect.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Dialog = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::XLabs.Forms.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::SQLConnect.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::SQLConnect.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::SQLConnect.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::SQLConnect.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::XLabs.Forms.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::SQLConnect.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::XLabs.Forms.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::SQLConnect.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::XLabs.Forms.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::SQLConnect.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::XLabs.Forms.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::SQLConnect.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::XLabs.Forms.Resource.Style.Base_V21_Theme_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::SQLConnect.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::XLabs.Forms.Resource.Style.Base_V21_Theme_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::SQLConnect.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::XLabs.Forms.Resource.Style.Base_V22_Theme_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_V22_Theme_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Base_V23_Theme_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_V23_Theme_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Base_V7_Theme_AppCompat = global::SQLConnect.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::XLabs.Forms.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::SQLConnect.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::XLabs.Forms.Resource.Style.Base_V7_Theme_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::SQLConnect.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::XLabs.Forms.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::SQLConnect.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::XLabs.Forms.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::SQLConnect.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionButton = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActionMode = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Button_Small = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_EditText = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ListView = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_RatingBar = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_SearchView = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Spinner = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Toolbar = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::XLabs.Forms.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::SQLConnect.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::XLabs.Forms.Resource.Style.Base_Widget_Design_TabLayout = global::SQLConnect.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::XLabs.Forms.Resource.Style.CalendarCell = global::SQLConnect.Droid.Resource.Style.CalendarCell;
+			global::XLabs.Forms.Resource.Style.CalendarCell_CalendarDate = global::SQLConnect.Droid.Resource.Style.CalendarCell_CalendarDate;
+			global::XLabs.Forms.Resource.Style.CalendarCell_DayHeader = global::SQLConnect.Droid.Resource.Style.CalendarCell_DayHeader;
+			global::XLabs.Forms.Resource.Style.CalendarTitle = global::SQLConnect.Droid.Resource.Style.CalendarTitle;
+			global::XLabs.Forms.Resource.Style.CardView = global::SQLConnect.Droid.Resource.Style.CardView;
+			global::XLabs.Forms.Resource.Style.CardView_Dark = global::SQLConnect.Droid.Resource.Style.CardView_Dark;
+			global::XLabs.Forms.Resource.Style.CardView_Light = global::SQLConnect.Droid.Resource.Style.CardView_Light;
+			global::XLabs.Forms.Resource.Style.Platform_AppCompat = global::SQLConnect.Droid.Resource.Style.Platform_AppCompat;
+			global::XLabs.Forms.Resource.Style.Platform_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Platform_ThemeOverlay_AppCompat = global::SQLConnect.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::XLabs.Forms.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::SQLConnect.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::XLabs.Forms.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Platform_V11_AppCompat = global::SQLConnect.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::XLabs.Forms.Resource.Style.Platform_V11_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Platform_V14_AppCompat = global::SQLConnect.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::XLabs.Forms.Resource.Style.Platform_V14_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Platform_Widget_AppCompat_Spinner = global::SQLConnect.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::SQLConnect.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::XLabs.Forms.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::SQLConnect.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Body1 = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Body2 = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Button = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Caption = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Display1 = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Display2 = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Display3 = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Display4 = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Headline = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Large = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Medium = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Menu = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Small = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Subhead = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Title = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::XLabs.Forms.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SQLConnect.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::XLabs.Forms.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::SQLConnect.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::XLabs.Forms.Resource.Style.TextAppearance_Design_Error = global::SQLConnect.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::XLabs.Forms.Resource.Style.TextAppearance_Design_Hint = global::SQLConnect.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::XLabs.Forms.Resource.Style.TextAppearance_Design_Snackbar_Message = global::SQLConnect.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::XLabs.Forms.Resource.Style.TextAppearance_Design_Tab = global::SQLConnect.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::XLabs.Forms.Resource.Style.TextAppearance_StatusBar_EventContent = global::SQLConnect.Droid.Resource.Style.TextAppearance_StatusBar_EventContent;
+			global::XLabs.Forms.Resource.Style.TextAppearance_StatusBar_EventContent_Info = global::SQLConnect.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Info;
+			global::XLabs.Forms.Resource.Style.TextAppearance_StatusBar_EventContent_Line2 = global::SQLConnect.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Line2;
+			global::XLabs.Forms.Resource.Style.TextAppearance_StatusBar_EventContent_Time = global::SQLConnect.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Time;
+			global::XLabs.Forms.Resource.Style.TextAppearance_StatusBar_EventContent_Title = global::SQLConnect.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Title;
+			global::XLabs.Forms.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SQLConnect.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::XLabs.Forms.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SQLConnect.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::XLabs.Forms.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::SQLConnect.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_CompactMenu = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Dialog = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Dialog_Alert = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_Dialog = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::XLabs.Forms.Resource.Style.Theme_AppCompat_NoActionBar = global::SQLConnect.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::XLabs.Forms.Resource.Style.Theme_MediaRouter = global::SQLConnect.Droid.Resource.Style.Theme_MediaRouter;
+			global::XLabs.Forms.Resource.Style.Theme_MediaRouter_Light = global::SQLConnect.Droid.Resource.Style.Theme_MediaRouter_Light;
+			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat = global::SQLConnect.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::SQLConnect.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat_Dark = global::SQLConnect.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::SQLConnect.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::XLabs.Forms.Resource.Style.ThemeOverlay_AppCompat_Light = global::SQLConnect.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionButton = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActionMode = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ActivityChooserView = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_Borderless = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_Colored = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Button_Small = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ButtonBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_EditText = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionButton = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_SearchView = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ListPopupWindow = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ListView = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ListView_DropDown = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ListView_Menu = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_PopupMenu = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_PopupWindow = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ProgressBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_RatingBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_SearchView = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Spinner = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Toolbar = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::XLabs.Forms.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::SQLConnect.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::XLabs.Forms.Resource.Style.Widget_Design_AppBarLayout = global::SQLConnect.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::XLabs.Forms.Resource.Style.Widget_Design_CollapsingToolbar = global::SQLConnect.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::XLabs.Forms.Resource.Style.Widget_Design_CoordinatorLayout = global::SQLConnect.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
+			global::XLabs.Forms.Resource.Style.Widget_Design_FloatingActionButton = global::SQLConnect.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::XLabs.Forms.Resource.Style.Widget_Design_NavigationView = global::SQLConnect.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::XLabs.Forms.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::SQLConnect.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::XLabs.Forms.Resource.Style.Widget_Design_Snackbar = global::SQLConnect.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::XLabs.Forms.Resource.Style.Widget_Design_TabLayout = global::SQLConnect.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::XLabs.Forms.Resource.Style.Widget_Design_TextInputLayout = global::SQLConnect.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::XLabs.Forms.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::SQLConnect.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
+			global::XLabs.Forms.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::SQLConnect.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
+			global::XLabs.Forms.Resource.Styleable.ActionBar = global::SQLConnect.Droid.Resource.Styleable.ActionBar;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_background = global::SQLConnect.Droid.Resource.Styleable.ActionBar_background;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_backgroundSplit = global::SQLConnect.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_backgroundStacked = global::SQLConnect.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_contentInsetEnd = global::SQLConnect.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_contentInsetLeft = global::SQLConnect.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_contentInsetRight = global::SQLConnect.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_contentInsetStart = global::SQLConnect.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_customNavigationLayout = global::SQLConnect.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_displayOptions = global::SQLConnect.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_divider = global::SQLConnect.Droid.Resource.Styleable.ActionBar_divider;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_elevation = global::SQLConnect.Droid.Resource.Styleable.ActionBar_elevation;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_height = global::SQLConnect.Droid.Resource.Styleable.ActionBar_height;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_hideOnContentScroll = global::SQLConnect.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_homeAsUpIndicator = global::SQLConnect.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_homeLayout = global::SQLConnect.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_icon = global::SQLConnect.Droid.Resource.Styleable.ActionBar_icon;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::SQLConnect.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_itemPadding = global::SQLConnect.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_logo = global::SQLConnect.Droid.Resource.Styleable.ActionBar_logo;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_navigationMode = global::SQLConnect.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_popupTheme = global::SQLConnect.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_progressBarPadding = global::SQLConnect.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_progressBarStyle = global::SQLConnect.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_subtitle = global::SQLConnect.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_subtitleTextStyle = global::SQLConnect.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_title = global::SQLConnect.Droid.Resource.Styleable.ActionBar_title;
+			global::XLabs.Forms.Resource.Styleable.ActionBar_titleTextStyle = global::SQLConnect.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::XLabs.Forms.Resource.Styleable.ActionBarLayout = global::SQLConnect.Droid.Resource.Styleable.ActionBarLayout;
+			global::XLabs.Forms.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::SQLConnect.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::XLabs.Forms.Resource.Styleable.ActionMenuItemView = global::SQLConnect.Droid.Resource.Styleable.ActionMenuItemView;
+			global::XLabs.Forms.Resource.Styleable.ActionMenuItemView_android_minWidth = global::SQLConnect.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::XLabs.Forms.Resource.Styleable.ActionMenuView = global::SQLConnect.Droid.Resource.Styleable.ActionMenuView;
+			global::XLabs.Forms.Resource.Styleable.ActionMode = global::SQLConnect.Droid.Resource.Styleable.ActionMode;
+			global::XLabs.Forms.Resource.Styleable.ActionMode_background = global::SQLConnect.Droid.Resource.Styleable.ActionMode_background;
+			global::XLabs.Forms.Resource.Styleable.ActionMode_backgroundSplit = global::SQLConnect.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::XLabs.Forms.Resource.Styleable.ActionMode_closeItemLayout = global::SQLConnect.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::XLabs.Forms.Resource.Styleable.ActionMode_height = global::SQLConnect.Droid.Resource.Styleable.ActionMode_height;
+			global::XLabs.Forms.Resource.Styleable.ActionMode_subtitleTextStyle = global::SQLConnect.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::XLabs.Forms.Resource.Styleable.ActionMode_titleTextStyle = global::SQLConnect.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::XLabs.Forms.Resource.Styleable.ActivityChooserView = global::SQLConnect.Droid.Resource.Styleable.ActivityChooserView;
+			global::XLabs.Forms.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::SQLConnect.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::XLabs.Forms.Resource.Styleable.ActivityChooserView_initialActivityCount = global::SQLConnect.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::XLabs.Forms.Resource.Styleable.AlertDialog = global::SQLConnect.Droid.Resource.Styleable.AlertDialog;
+			global::XLabs.Forms.Resource.Styleable.AlertDialog_android_layout = global::SQLConnect.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::XLabs.Forms.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::SQLConnect.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::XLabs.Forms.Resource.Styleable.AlertDialog_listItemLayout = global::SQLConnect.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::XLabs.Forms.Resource.Styleable.AlertDialog_listLayout = global::SQLConnect.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::XLabs.Forms.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::SQLConnect.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::XLabs.Forms.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::SQLConnect.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::XLabs.Forms.Resource.Styleable.AppBarLayout = global::SQLConnect.Droid.Resource.Styleable.AppBarLayout;
+			global::XLabs.Forms.Resource.Styleable.AppBarLayout_android_background = global::SQLConnect.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::XLabs.Forms.Resource.Styleable.AppBarLayout_elevation = global::SQLConnect.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::XLabs.Forms.Resource.Styleable.AppBarLayout_expanded = global::SQLConnect.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::XLabs.Forms.Resource.Styleable.AppCompatTextView = global::SQLConnect.Droid.Resource.Styleable.AppCompatTextView;
+			global::XLabs.Forms.Resource.Styleable.AppCompatTextView_android_textAppearance = global::SQLConnect.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::XLabs.Forms.Resource.Styleable.AppCompatTextView_textAllCaps = global::SQLConnect.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::XLabs.Forms.Resource.Styleable.CardView = global::SQLConnect.Droid.Resource.Styleable.CardView;
+			global::XLabs.Forms.Resource.Styleable.CardView_cardBackgroundColor = global::SQLConnect.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::XLabs.Forms.Resource.Styleable.CardView_cardCornerRadius = global::SQLConnect.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::XLabs.Forms.Resource.Styleable.CardView_cardElevation = global::SQLConnect.Droid.Resource.Styleable.CardView_cardElevation;
+			global::XLabs.Forms.Resource.Styleable.CardView_cardMaxElevation = global::SQLConnect.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::XLabs.Forms.Resource.Styleable.CardView_cardPreventCornerOverlap = global::SQLConnect.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::XLabs.Forms.Resource.Styleable.CardView_cardUseCompatPadding = global::SQLConnect.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::XLabs.Forms.Resource.Styleable.CardView_contentPadding = global::SQLConnect.Droid.Resource.Styleable.CardView_contentPadding;
+			global::XLabs.Forms.Resource.Styleable.CardView_contentPaddingBottom = global::SQLConnect.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::XLabs.Forms.Resource.Styleable.CardView_contentPaddingLeft = global::SQLConnect.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::XLabs.Forms.Resource.Styleable.CardView_contentPaddingRight = global::SQLConnect.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::XLabs.Forms.Resource.Styleable.CardView_contentPaddingTop = global::SQLConnect.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_title = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::XLabs.Forms.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::SQLConnect.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::XLabs.Forms.Resource.Styleable.CompoundButton = global::SQLConnect.Droid.Resource.Styleable.CompoundButton;
+			global::XLabs.Forms.Resource.Styleable.CompoundButton_android_button = global::SQLConnect.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::XLabs.Forms.Resource.Styleable.CompoundButton_buttonTint = global::SQLConnect.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::XLabs.Forms.Resource.Styleable.CompoundButton_buttonTintMode = global::SQLConnect.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::XLabs.Forms.Resource.Styleable.CoordinatorLayout = global::SQLConnect.Droid.Resource.Styleable.CoordinatorLayout;
+			global::XLabs.Forms.Resource.Styleable.CoordinatorLayout_keylines = global::SQLConnect.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::XLabs.Forms.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::SQLConnect.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle = global::SQLConnect.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::SQLConnect.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::SQLConnect.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_barLength = global::SQLConnect.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_color = global::SQLConnect.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_drawableSize = global::SQLConnect.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::SQLConnect.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_spinBars = global::SQLConnect.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::XLabs.Forms.Resource.Styleable.DrawerArrowToggle_thickness = global::SQLConnect.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::XLabs.Forms.Resource.Styleable.FloatingActionButton = global::SQLConnect.Droid.Resource.Styleable.FloatingActionButton;
+			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_backgroundTint = global::SQLConnect.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::SQLConnect.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_borderWidth = global::SQLConnect.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_elevation = global::SQLConnect.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_fabSize = global::SQLConnect.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::SQLConnect.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::XLabs.Forms.Resource.Styleable.FloatingActionButton_rippleColor = global::SQLConnect.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_gravity = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_orientation = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_divider = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_showDividers = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::XLabs.Forms.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::SQLConnect.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::XLabs.Forms.Resource.Styleable.ListPopupWindow = global::SQLConnect.Droid.Resource.Styleable.ListPopupWindow;
+			global::XLabs.Forms.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::SQLConnect.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::XLabs.Forms.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::SQLConnect.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::XLabs.Forms.Resource.Styleable.MediaRouteButton = global::SQLConnect.Droid.Resource.Styleable.MediaRouteButton;
+			global::XLabs.Forms.Resource.Styleable.MediaRouteButton_android_minHeight = global::SQLConnect.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
+			global::XLabs.Forms.Resource.Styleable.MediaRouteButton_android_minWidth = global::SQLConnect.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
+			global::XLabs.Forms.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::SQLConnect.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
+			global::XLabs.Forms.Resource.Styleable.MenuGroup = global::SQLConnect.Droid.Resource.Styleable.MenuGroup;
+			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_checkableBehavior = global::SQLConnect.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_enabled = global::SQLConnect.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_id = global::SQLConnect.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_menuCategory = global::SQLConnect.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_orderInCategory = global::SQLConnect.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::XLabs.Forms.Resource.Styleable.MenuGroup_android_visible = global::SQLConnect.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::XLabs.Forms.Resource.Styleable.MenuItem = global::SQLConnect.Droid.Resource.Styleable.MenuItem;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_actionLayout = global::SQLConnect.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_actionProviderClass = global::SQLConnect.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_actionViewClass = global::SQLConnect.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_checkable = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_checked = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_enabled = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_icon = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_id = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_id;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_menuCategory = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_numericShortcut = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_onClick = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_orderInCategory = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_title = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_title;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_titleCondensed = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_android_visible = global::SQLConnect.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::XLabs.Forms.Resource.Styleable.MenuItem_showAsAction = global::SQLConnect.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::XLabs.Forms.Resource.Styleable.MenuView = global::SQLConnect.Droid.Resource.Styleable.MenuView;
+			global::XLabs.Forms.Resource.Styleable.MenuView_android_headerBackground = global::SQLConnect.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::XLabs.Forms.Resource.Styleable.MenuView_android_horizontalDivider = global::SQLConnect.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::XLabs.Forms.Resource.Styleable.MenuView_android_itemBackground = global::SQLConnect.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::XLabs.Forms.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::SQLConnect.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::XLabs.Forms.Resource.Styleable.MenuView_android_itemTextAppearance = global::SQLConnect.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.MenuView_android_verticalDivider = global::SQLConnect.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::XLabs.Forms.Resource.Styleable.MenuView_android_windowAnimationStyle = global::SQLConnect.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::XLabs.Forms.Resource.Styleable.MenuView_preserveIconSpacing = global::SQLConnect.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::XLabs.Forms.Resource.Styleable.NavigationView = global::SQLConnect.Droid.Resource.Styleable.NavigationView;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_android_background = global::SQLConnect.Droid.Resource.Styleable.NavigationView_android_background;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::SQLConnect.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_android_maxWidth = global::SQLConnect.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_elevation = global::SQLConnect.Droid.Resource.Styleable.NavigationView_elevation;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_headerLayout = global::SQLConnect.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_itemBackground = global::SQLConnect.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_itemIconTint = global::SQLConnect.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_itemTextAppearance = global::SQLConnect.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_itemTextColor = global::SQLConnect.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::XLabs.Forms.Resource.Styleable.NavigationView_menu = global::SQLConnect.Droid.Resource.Styleable.NavigationView_menu;
+			global::XLabs.Forms.Resource.Styleable.PopupWindow = global::SQLConnect.Droid.Resource.Styleable.PopupWindow;
+			global::XLabs.Forms.Resource.Styleable.PopupWindow_android_popupBackground = global::SQLConnect.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::XLabs.Forms.Resource.Styleable.PopupWindow_overlapAnchor = global::SQLConnect.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::XLabs.Forms.Resource.Styleable.PopupWindowBackgroundState = global::SQLConnect.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::XLabs.Forms.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::SQLConnect.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::XLabs.Forms.Resource.Styleable.ScrimInsetsFrameLayout = global::SQLConnect.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::XLabs.Forms.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::SQLConnect.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::XLabs.Forms.Resource.Styleable.SearchView = global::SQLConnect.Droid.Resource.Styleable.SearchView;
+			global::XLabs.Forms.Resource.Styleable.SearchView_android_focusable = global::SQLConnect.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::XLabs.Forms.Resource.Styleable.SearchView_android_imeOptions = global::SQLConnect.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::XLabs.Forms.Resource.Styleable.SearchView_android_inputType = global::SQLConnect.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::XLabs.Forms.Resource.Styleable.SearchView_android_maxWidth = global::SQLConnect.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::XLabs.Forms.Resource.Styleable.SearchView_closeIcon = global::SQLConnect.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::XLabs.Forms.Resource.Styleable.SearchView_commitIcon = global::SQLConnect.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::XLabs.Forms.Resource.Styleable.SearchView_defaultQueryHint = global::SQLConnect.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::XLabs.Forms.Resource.Styleable.SearchView_goIcon = global::SQLConnect.Droid.Resource.Styleable.SearchView_goIcon;
+			global::XLabs.Forms.Resource.Styleable.SearchView_iconifiedByDefault = global::SQLConnect.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::XLabs.Forms.Resource.Styleable.SearchView_layout = global::SQLConnect.Droid.Resource.Styleable.SearchView_layout;
+			global::XLabs.Forms.Resource.Styleable.SearchView_queryBackground = global::SQLConnect.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::XLabs.Forms.Resource.Styleable.SearchView_queryHint = global::SQLConnect.Droid.Resource.Styleable.SearchView_queryHint;
+			global::XLabs.Forms.Resource.Styleable.SearchView_searchHintIcon = global::SQLConnect.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::XLabs.Forms.Resource.Styleable.SearchView_searchIcon = global::SQLConnect.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::XLabs.Forms.Resource.Styleable.SearchView_submitBackground = global::SQLConnect.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::XLabs.Forms.Resource.Styleable.SearchView_suggestionRowLayout = global::SQLConnect.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::XLabs.Forms.Resource.Styleable.SearchView_voiceIcon = global::SQLConnect.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::XLabs.Forms.Resource.Styleable.SnackbarLayout = global::SQLConnect.Droid.Resource.Styleable.SnackbarLayout;
+			global::XLabs.Forms.Resource.Styleable.SnackbarLayout_android_maxWidth = global::SQLConnect.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::XLabs.Forms.Resource.Styleable.SnackbarLayout_elevation = global::SQLConnect.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::XLabs.Forms.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::SQLConnect.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::XLabs.Forms.Resource.Styleable.Spinner = global::SQLConnect.Droid.Resource.Styleable.Spinner;
+			global::XLabs.Forms.Resource.Styleable.Spinner_android_dropDownWidth = global::SQLConnect.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::XLabs.Forms.Resource.Styleable.Spinner_android_popupBackground = global::SQLConnect.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::XLabs.Forms.Resource.Styleable.Spinner_android_prompt = global::SQLConnect.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::XLabs.Forms.Resource.Styleable.Spinner_popupTheme = global::SQLConnect.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_android_textOff = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_android_textOn = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_android_thumb = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_showText = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_splitTrack = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_switchMinWidth = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_switchPadding = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_switchTextAppearance = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_thumbTextPadding = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::XLabs.Forms.Resource.Styleable.SwitchCompat_track = global::SQLConnect.Droid.Resource.Styleable.SwitchCompat_track;
+			global::XLabs.Forms.Resource.Styleable.TabLayout = global::SQLConnect.Droid.Resource.Styleable.TabLayout;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabBackground = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabContentStart = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabGravity = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabIndicatorColor = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabIndicatorHeight = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabMaxWidth = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabMinWidth = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabMode = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPadding = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPaddingBottom = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPaddingEnd = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPaddingStart = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabPaddingTop = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabSelectedTextColor = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabTextAppearance = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.TabLayout_tabTextColor = global::SQLConnect.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::XLabs.Forms.Resource.Styleable.TextAppearance = global::SQLConnect.Droid.Resource.Styleable.TextAppearance;
+			global::XLabs.Forms.Resource.Styleable.TextAppearance_android_textColor = global::SQLConnect.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::XLabs.Forms.Resource.Styleable.TextAppearance_android_textSize = global::SQLConnect.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::XLabs.Forms.Resource.Styleable.TextAppearance_android_textStyle = global::SQLConnect.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::XLabs.Forms.Resource.Styleable.TextAppearance_android_typeface = global::SQLConnect.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::XLabs.Forms.Resource.Styleable.TextAppearance_textAllCaps = global::SQLConnect.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::XLabs.Forms.Resource.Styleable.TextInputLayout = global::SQLConnect.Droid.Resource.Styleable.TextInputLayout;
+			global::XLabs.Forms.Resource.Styleable.TextInputLayout_android_hint = global::SQLConnect.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::XLabs.Forms.Resource.Styleable.TextInputLayout_android_textColorHint = global::SQLConnect.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::XLabs.Forms.Resource.Styleable.TextInputLayout_errorEnabled = global::SQLConnect.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::XLabs.Forms.Resource.Styleable.TextInputLayout_errorTextAppearance = global::SQLConnect.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::SQLConnect.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::XLabs.Forms.Resource.Styleable.TextInputLayout_hintTextAppearance = global::SQLConnect.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.Toolbar = global::SQLConnect.Droid.Resource.Styleable.Toolbar;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_android_gravity = global::SQLConnect.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_android_minHeight = global::SQLConnect.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_collapseContentDescription = global::SQLConnect.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_collapseIcon = global::SQLConnect.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_contentInsetEnd = global::SQLConnect.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_contentInsetLeft = global::SQLConnect.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_contentInsetRight = global::SQLConnect.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_contentInsetStart = global::SQLConnect.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_logo = global::SQLConnect.Droid.Resource.Styleable.Toolbar_logo;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_logoDescription = global::SQLConnect.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_maxButtonHeight = global::SQLConnect.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_navigationContentDescription = global::SQLConnect.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_navigationIcon = global::SQLConnect.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_popupTheme = global::SQLConnect.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_subtitle = global::SQLConnect.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_subtitleTextAppearance = global::SQLConnect.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_subtitleTextColor = global::SQLConnect.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_title = global::SQLConnect.Droid.Resource.Styleable.Toolbar_title;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMarginBottom = global::SQLConnect.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMarginEnd = global::SQLConnect.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMarginStart = global::SQLConnect.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMarginTop = global::SQLConnect.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_titleMargins = global::SQLConnect.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_titleTextAppearance = global::SQLConnect.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::XLabs.Forms.Resource.Styleable.Toolbar_titleTextColor = global::SQLConnect.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::XLabs.Forms.Resource.Styleable.View = global::SQLConnect.Droid.Resource.Styleable.View;
+			global::XLabs.Forms.Resource.Styleable.View_android_focusable = global::SQLConnect.Droid.Resource.Styleable.View_android_focusable;
+			global::XLabs.Forms.Resource.Styleable.View_android_theme = global::SQLConnect.Droid.Resource.Styleable.View_android_theme;
+			global::XLabs.Forms.Resource.Styleable.View_paddingEnd = global::SQLConnect.Droid.Resource.Styleable.View_paddingEnd;
+			global::XLabs.Forms.Resource.Styleable.View_paddingStart = global::SQLConnect.Droid.Resource.Styleable.View_paddingStart;
+			global::XLabs.Forms.Resource.Styleable.View_theme = global::SQLConnect.Droid.Resource.Styleable.View_theme;
+			global::XLabs.Forms.Resource.Styleable.ViewBackgroundHelper = global::SQLConnect.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::XLabs.Forms.Resource.Styleable.ViewBackgroundHelper_android_background = global::SQLConnect.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::XLabs.Forms.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::SQLConnect.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::XLabs.Forms.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::SQLConnect.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::XLabs.Forms.Resource.Styleable.ViewStubCompat = global::SQLConnect.Droid.Resource.Styleable.ViewStubCompat;
+			global::XLabs.Forms.Resource.Styleable.ViewStubCompat_android_id = global::SQLConnect.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::XLabs.Forms.Resource.Styleable.ViewStubCompat_android_inflatedId = global::SQLConnect.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::XLabs.Forms.Resource.Styleable.ViewStubCompat_android_layout = global::SQLConnect.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 		}
 		
 		public partial class Animation
@@ -1734,6 +3130,42 @@ namespace SQLConnect.Droid
 			
 			// aapt resource value: 0x7f0100c2
 			public const int activityChooserViewStyle = 2130772162;
+			
+			// aapt resource value: 0x7f010154
+			public const int ahBarColor = 2130772308;
+			
+			// aapt resource value: 0x7f01015c
+			public const int ahBarLength = 2130772316;
+			
+			// aapt resource value: 0x7f01015b
+			public const int ahBarWidth = 2130772315;
+			
+			// aapt resource value: 0x7f010159
+			public const int ahCircleColor = 2130772313;
+			
+			// aapt resource value: 0x7f010158
+			public const int ahDelayMillis = 2130772312;
+			
+			// aapt resource value: 0x7f01015a
+			public const int ahRadius = 2130772314;
+			
+			// aapt resource value: 0x7f010155
+			public const int ahRimColor = 2130772309;
+			
+			// aapt resource value: 0x7f010156
+			public const int ahRimWidth = 2130772310;
+			
+			// aapt resource value: 0x7f010157
+			public const int ahSpinSpeed = 2130772311;
+			
+			// aapt resource value: 0x7f010151
+			public const int ahText = 2130772305;
+			
+			// aapt resource value: 0x7f010152
+			public const int ahTextColor = 2130772306;
+			
+			// aapt resource value: 0x7f010153
+			public const int ahTextSize = 2130772307;
 			
 			// aapt resource value: 0x7f0100e6
 			public const int alertDialogButtonGroupStyle = 2130772198;
@@ -2685,44 +4117,44 @@ namespace SQLConnect.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c004a
-			public const int abc_background_cache_hint_selector_material_dark = 2131492938;
+			// aapt resource value: 0x7f0c0055
+			public const int abc_background_cache_hint_selector_material_dark = 2131492949;
 			
-			// aapt resource value: 0x7f0c004b
-			public const int abc_background_cache_hint_selector_material_light = 2131492939;
+			// aapt resource value: 0x7f0c0056
+			public const int abc_background_cache_hint_selector_material_light = 2131492950;
 			
-			// aapt resource value: 0x7f0c004c
-			public const int abc_btn_colored_borderless_text_material = 2131492940;
+			// aapt resource value: 0x7f0c0057
+			public const int abc_btn_colored_borderless_text_material = 2131492951;
 			
-			// aapt resource value: 0x7f0c004d
-			public const int abc_btn_colored_text_material = 2131492941;
+			// aapt resource value: 0x7f0c0058
+			public const int abc_btn_colored_text_material = 2131492952;
 			
-			// aapt resource value: 0x7f0c004e
-			public const int abc_color_highlight_material = 2131492942;
+			// aapt resource value: 0x7f0c0059
+			public const int abc_color_highlight_material = 2131492953;
 			
-			// aapt resource value: 0x7f0c004f
-			public const int abc_hint_foreground_material_dark = 2131492943;
+			// aapt resource value: 0x7f0c005a
+			public const int abc_hint_foreground_material_dark = 2131492954;
 			
-			// aapt resource value: 0x7f0c0050
-			public const int abc_hint_foreground_material_light = 2131492944;
+			// aapt resource value: 0x7f0c005b
+			public const int abc_hint_foreground_material_light = 2131492955;
 			
 			// aapt resource value: 0x7f0c000c
 			public const int abc_input_method_navigation_guard = 2131492876;
 			
-			// aapt resource value: 0x7f0c0051
-			public const int abc_primary_text_disable_only_material_dark = 2131492945;
+			// aapt resource value: 0x7f0c005c
+			public const int abc_primary_text_disable_only_material_dark = 2131492956;
 			
-			// aapt resource value: 0x7f0c0052
-			public const int abc_primary_text_disable_only_material_light = 2131492946;
+			// aapt resource value: 0x7f0c005d
+			public const int abc_primary_text_disable_only_material_light = 2131492957;
 			
-			// aapt resource value: 0x7f0c0053
-			public const int abc_primary_text_material_dark = 2131492947;
+			// aapt resource value: 0x7f0c005e
+			public const int abc_primary_text_material_dark = 2131492958;
 			
-			// aapt resource value: 0x7f0c0054
-			public const int abc_primary_text_material_light = 2131492948;
+			// aapt resource value: 0x7f0c005f
+			public const int abc_primary_text_material_light = 2131492959;
 			
-			// aapt resource value: 0x7f0c0055
-			public const int abc_search_url_text = 2131492949;
+			// aapt resource value: 0x7f0c0060
+			public const int abc_search_url_text = 2131492960;
 			
 			// aapt resource value: 0x7f0c000d
 			public const int abc_search_url_text_normal = 2131492877;
@@ -2733,32 +4165,32 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0c000f
 			public const int abc_search_url_text_selected = 2131492879;
 			
-			// aapt resource value: 0x7f0c0056
-			public const int abc_secondary_text_material_dark = 2131492950;
+			// aapt resource value: 0x7f0c0061
+			public const int abc_secondary_text_material_dark = 2131492961;
 			
-			// aapt resource value: 0x7f0c0057
-			public const int abc_secondary_text_material_light = 2131492951;
+			// aapt resource value: 0x7f0c0062
+			public const int abc_secondary_text_material_light = 2131492962;
 			
-			// aapt resource value: 0x7f0c0058
-			public const int abc_tint_btn_checkable = 2131492952;
+			// aapt resource value: 0x7f0c0063
+			public const int abc_tint_btn_checkable = 2131492963;
 			
-			// aapt resource value: 0x7f0c0059
-			public const int abc_tint_default = 2131492953;
+			// aapt resource value: 0x7f0c0064
+			public const int abc_tint_default = 2131492964;
 			
-			// aapt resource value: 0x7f0c005a
-			public const int abc_tint_edittext = 2131492954;
+			// aapt resource value: 0x7f0c0065
+			public const int abc_tint_edittext = 2131492965;
 			
-			// aapt resource value: 0x7f0c005b
-			public const int abc_tint_seek_thumb = 2131492955;
+			// aapt resource value: 0x7f0c0066
+			public const int abc_tint_seek_thumb = 2131492966;
 			
-			// aapt resource value: 0x7f0c005c
-			public const int abc_tint_spinner = 2131492956;
+			// aapt resource value: 0x7f0c0067
+			public const int abc_tint_spinner = 2131492967;
 			
-			// aapt resource value: 0x7f0c005d
-			public const int abc_tint_switch_thumb = 2131492957;
+			// aapt resource value: 0x7f0c0068
+			public const int abc_tint_switch_thumb = 2131492968;
 			
-			// aapt resource value: 0x7f0c005e
-			public const int abc_tint_switch_track = 2131492958;
+			// aapt resource value: 0x7f0c0069
+			public const int abc_tint_switch_track = 2131492969;
 			
 			// aapt resource value: 0x7f0c0010
 			public const int accent_material_dark = 2131492880;
@@ -2802,6 +4234,42 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0c001d
 			public const int button_material_light = 2131492893;
 			
+			// aapt resource value: 0x7f0c004a
+			public const int calendar_active_month_bg = 2131492938;
+			
+			// aapt resource value: 0x7f0c004b
+			public const int calendar_bg = 2131492939;
+			
+			// aapt resource value: 0x7f0c004c
+			public const int calendar_divider = 2131492940;
+			
+			// aapt resource value: 0x7f0c004f
+			public const int calendar_highlighted_day_bg = 2131492943;
+			
+			// aapt resource value: 0x7f0c004d
+			public const int calendar_inactive_month_bg = 2131492941;
+			
+			// aapt resource value: 0x7f0c004e
+			public const int calendar_selected_day_bg = 2131492942;
+			
+			// aapt resource value: 0x7f0c0050
+			public const int calendar_selected_range_bg = 2131492944;
+			
+			// aapt resource value: 0x7f0c0052
+			public const int calendar_text_active = 2131492946;
+			
+			// aapt resource value: 0x7f0c0051
+			public const int calendar_text_inactive = 2131492945;
+			
+			// aapt resource value: 0x7f0c0053
+			public const int calendar_text_selected = 2131492947;
+			
+			// aapt resource value: 0x7f0c006a
+			public const int calendar_text_selector = 2131492970;
+			
+			// aapt resource value: 0x7f0c0054
+			public const int calendar_text_unselectable = 2131492948;
+			
 			// aapt resource value: 0x7f0c0046
 			public const int cardview_dark_background = 2131492934;
 			
@@ -2817,8 +4285,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0c0000
 			public const int design_bottom_navigation_shadow_color = 2131492864;
 			
-			// aapt resource value: 0x7f0c005f
-			public const int design_error = 2131492959;
+			// aapt resource value: 0x7f0c006b
+			public const int design_error = 2131492971;
 			
 			// aapt resource value: 0x7f0c0001
 			public const int design_fab_shadow_end_color = 2131492865;
@@ -2850,8 +4318,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0c000a
 			public const int design_textinput_error_color_light = 2131492874;
 			
-			// aapt resource value: 0x7f0c0060
-			public const int design_tint_password_toggle = 2131492960;
+			// aapt resource value: 0x7f0c006c
+			public const int design_tint_password_toggle = 2131492972;
 			
 			// aapt resource value: 0x7f0c001e
 			public const int dim_foreground_disabled_material_dark = 2131492894;
@@ -2970,11 +4438,11 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0c0043
 			public const int switch_thumb_disabled_material_light = 2131492931;
 			
-			// aapt resource value: 0x7f0c0061
-			public const int switch_thumb_material_dark = 2131492961;
+			// aapt resource value: 0x7f0c006d
+			public const int switch_thumb_material_dark = 2131492973;
 			
-			// aapt resource value: 0x7f0c0062
-			public const int switch_thumb_material_light = 2131492962;
+			// aapt resource value: 0x7f0c006e
+			public const int switch_thumb_material_light = 2131492974;
 			
 			// aapt resource value: 0x7f0c0044
 			public const int switch_thumb_normal_material_dark = 2131492932;
@@ -3216,6 +4684,21 @@ namespace SQLConnect.Droid
 			
 			// aapt resource value: 0x7f090030
 			public const int abc_text_size_title_material_toolbar = 2131296304;
+			
+			// aapt resource value: 0x7f090094
+			public const int calendar_day_headers_paddingbottom = 2131296404;
+			
+			// aapt resource value: 0x7f090096
+			public const int calendar_month_title_bottommargin = 2131296406;
+			
+			// aapt resource value: 0x7f090095
+			public const int calendar_month_topmargin = 2131296405;
+			
+			// aapt resource value: 0x7f090097
+			public const int calendar_text_medium = 2131296407;
+			
+			// aapt resource value: 0x7f090098
+			public const int calendar_text_small = 2131296408;
 			
 			// aapt resource value: 0x7f090091
 			public const int cardview_compat_inset_shadow = 2131296401;
@@ -3702,628 +5185,646 @@ namespace SQLConnect.Droid
 			public const int abc_vector_test = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int apparel = 2130837587;
+			public const int ad16 = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int avd_hide_password = 2130837588;
-			
-			// aapt resource value: 0x7f02011d
-			public const int avd_hide_password_1 = 2130837789;
-			
-			// aapt resource value: 0x7f02011e
-			public const int avd_hide_password_2 = 2130837790;
-			
-			// aapt resource value: 0x7f02011f
-			public const int avd_hide_password_3 = 2130837791;
+			public const int apparel = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int avd_show_password = 2130837589;
+			public const int avd_hide_password = 2130837589;
 			
-			// aapt resource value: 0x7f020120
-			public const int avd_show_password_1 = 2130837792;
+			// aapt resource value: 0x7f020123
+			public const int avd_hide_password_1 = 2130837795;
 			
-			// aapt resource value: 0x7f020121
-			public const int avd_show_password_2 = 2130837793;
+			// aapt resource value: 0x7f020124
+			public const int avd_hide_password_2 = 2130837796;
 			
-			// aapt resource value: 0x7f020122
-			public const int avd_show_password_3 = 2130837794;
+			// aapt resource value: 0x7f020125
+			public const int avd_hide_password_3 = 2130837797;
 			
 			// aapt resource value: 0x7f020056
-			public const int blueberryyumyumi = 2130837590;
+			public const int avd_show_password = 2130837590;
+			
+			// aapt resource value: 0x7f020126
+			public const int avd_show_password_1 = 2130837798;
+			
+			// aapt resource value: 0x7f020127
+			public const int avd_show_password_2 = 2130837799;
+			
+			// aapt resource value: 0x7f020128
+			public const int avd_show_password_3 = 2130837800;
 			
 			// aapt resource value: 0x7f020057
-			public const int cart = 2130837591;
+			public const int blueberryyumyumi = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int concentrate = 2130837592;
+			public const int calendar_bg_selector = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int design_bottom_navigation_item_background = 2130837593;
+			public const int cart = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int design_fab_background = 2130837594;
+			public const int concentrate = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int design_ic_visibility = 2130837595;
+			public const int design_bottom_navigation_item_background = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int design_ic_visibility_off = 2130837596;
+			public const int design_fab_background = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int design_password_eye = 2130837597;
+			public const int design_ic_visibility = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int design_snackbar_background = 2130837598;
+			public const int design_ic_visibility_off = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int edibles = 2130837599;
+			public const int design_password_eye = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int glass = 2130837600;
+			public const int design_snackbar_background = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int group = 2130837601;
+			public const int edibles = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ic_audiotrack_dark = 2130837602;
+			public const int glass = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int ic_audiotrack_light = 2130837603;
+			public const int group = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int ic_dialog_close_dark = 2130837604;
+			public const int ic_audiotrack_dark = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int ic_dialog_close_light = 2130837605;
+			public const int ic_audiotrack_light = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int ic_group_collapse_00 = 2130837606;
+			public const int ic_dialog_close_dark = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int ic_group_collapse_01 = 2130837607;
+			public const int ic_dialog_close_light = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int ic_group_collapse_02 = 2130837608;
+			public const int ic_errorstatus = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int ic_group_collapse_03 = 2130837609;
+			public const int ic_group_collapse_00 = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int ic_group_collapse_04 = 2130837610;
+			public const int ic_group_collapse_01 = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int ic_group_collapse_05 = 2130837611;
+			public const int ic_group_collapse_02 = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int ic_group_collapse_06 = 2130837612;
+			public const int ic_group_collapse_03 = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int ic_group_collapse_07 = 2130837613;
+			public const int ic_group_collapse_04 = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int ic_group_collapse_08 = 2130837614;
+			public const int ic_group_collapse_05 = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int ic_group_collapse_09 = 2130837615;
+			public const int ic_group_collapse_06 = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int ic_group_collapse_10 = 2130837616;
+			public const int ic_group_collapse_07 = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int ic_group_collapse_11 = 2130837617;
+			public const int ic_group_collapse_08 = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int ic_group_collapse_12 = 2130837618;
+			public const int ic_group_collapse_09 = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int ic_group_collapse_13 = 2130837619;
+			public const int ic_group_collapse_10 = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int ic_group_collapse_14 = 2130837620;
+			public const int ic_group_collapse_11 = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int ic_group_collapse_15 = 2130837621;
+			public const int ic_group_collapse_12 = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int ic_group_expand_00 = 2130837622;
+			public const int ic_group_collapse_13 = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int ic_group_expand_01 = 2130837623;
+			public const int ic_group_collapse_14 = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int ic_group_expand_02 = 2130837624;
+			public const int ic_group_collapse_15 = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int ic_group_expand_03 = 2130837625;
+			public const int ic_group_expand_00 = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int ic_group_expand_04 = 2130837626;
+			public const int ic_group_expand_01 = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int ic_group_expand_05 = 2130837627;
+			public const int ic_group_expand_02 = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int ic_group_expand_06 = 2130837628;
+			public const int ic_group_expand_03 = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int ic_group_expand_07 = 2130837629;
+			public const int ic_group_expand_04 = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int ic_group_expand_08 = 2130837630;
+			public const int ic_group_expand_05 = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int ic_group_expand_09 = 2130837631;
+			public const int ic_group_expand_06 = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int ic_group_expand_10 = 2130837632;
+			public const int ic_group_expand_07 = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int ic_group_expand_11 = 2130837633;
+			public const int ic_group_expand_08 = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int ic_group_expand_12 = 2130837634;
+			public const int ic_group_expand_09 = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int ic_group_expand_13 = 2130837635;
+			public const int ic_group_expand_10 = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int ic_group_expand_14 = 2130837636;
+			public const int ic_group_expand_11 = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int ic_group_expand_15 = 2130837637;
+			public const int ic_group_expand_12 = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int ic_media_pause_dark = 2130837638;
+			public const int ic_group_expand_13 = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int ic_media_pause_light = 2130837639;
+			public const int ic_group_expand_14 = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int ic_media_play_dark = 2130837640;
+			public const int ic_group_expand_15 = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int ic_media_play_light = 2130837641;
+			public const int ic_media_pause_dark = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int ic_mr_button_connected_00_dark = 2130837642;
+			public const int ic_media_pause_light = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int ic_mr_button_connected_00_light = 2130837643;
+			public const int ic_media_play_dark = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int ic_mr_button_connected_01_dark = 2130837644;
+			public const int ic_media_play_light = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int ic_mr_button_connected_01_light = 2130837645;
+			public const int ic_mr_button_connected_00_dark = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int ic_mr_button_connected_02_dark = 2130837646;
+			public const int ic_mr_button_connected_00_light = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int ic_mr_button_connected_02_light = 2130837647;
+			public const int ic_mr_button_connected_01_dark = 2130837647;
 			
 			// aapt resource value: 0x7f020090
-			public const int ic_mr_button_connected_03_dark = 2130837648;
+			public const int ic_mr_button_connected_01_light = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int ic_mr_button_connected_03_light = 2130837649;
+			public const int ic_mr_button_connected_02_dark = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int ic_mr_button_connected_04_dark = 2130837650;
+			public const int ic_mr_button_connected_02_light = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int ic_mr_button_connected_04_light = 2130837651;
+			public const int ic_mr_button_connected_03_dark = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int ic_mr_button_connected_05_dark = 2130837652;
+			public const int ic_mr_button_connected_03_light = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int ic_mr_button_connected_05_light = 2130837653;
+			public const int ic_mr_button_connected_04_dark = 2130837653;
 			
 			// aapt resource value: 0x7f020096
-			public const int ic_mr_button_connected_06_dark = 2130837654;
+			public const int ic_mr_button_connected_04_light = 2130837654;
 			
 			// aapt resource value: 0x7f020097
-			public const int ic_mr_button_connected_06_light = 2130837655;
+			public const int ic_mr_button_connected_05_dark = 2130837655;
 			
 			// aapt resource value: 0x7f020098
-			public const int ic_mr_button_connected_07_dark = 2130837656;
+			public const int ic_mr_button_connected_05_light = 2130837656;
 			
 			// aapt resource value: 0x7f020099
-			public const int ic_mr_button_connected_07_light = 2130837657;
+			public const int ic_mr_button_connected_06_dark = 2130837657;
 			
 			// aapt resource value: 0x7f02009a
-			public const int ic_mr_button_connected_08_dark = 2130837658;
+			public const int ic_mr_button_connected_06_light = 2130837658;
 			
 			// aapt resource value: 0x7f02009b
-			public const int ic_mr_button_connected_08_light = 2130837659;
+			public const int ic_mr_button_connected_07_dark = 2130837659;
 			
 			// aapt resource value: 0x7f02009c
-			public const int ic_mr_button_connected_09_dark = 2130837660;
+			public const int ic_mr_button_connected_07_light = 2130837660;
 			
 			// aapt resource value: 0x7f02009d
-			public const int ic_mr_button_connected_09_light = 2130837661;
+			public const int ic_mr_button_connected_08_dark = 2130837661;
 			
 			// aapt resource value: 0x7f02009e
-			public const int ic_mr_button_connected_10_dark = 2130837662;
+			public const int ic_mr_button_connected_08_light = 2130837662;
 			
 			// aapt resource value: 0x7f02009f
-			public const int ic_mr_button_connected_10_light = 2130837663;
+			public const int ic_mr_button_connected_09_dark = 2130837663;
 			
 			// aapt resource value: 0x7f0200a0
-			public const int ic_mr_button_connected_11_dark = 2130837664;
+			public const int ic_mr_button_connected_09_light = 2130837664;
 			
 			// aapt resource value: 0x7f0200a1
-			public const int ic_mr_button_connected_11_light = 2130837665;
+			public const int ic_mr_button_connected_10_dark = 2130837665;
 			
 			// aapt resource value: 0x7f0200a2
-			public const int ic_mr_button_connected_12_dark = 2130837666;
+			public const int ic_mr_button_connected_10_light = 2130837666;
 			
 			// aapt resource value: 0x7f0200a3
-			public const int ic_mr_button_connected_12_light = 2130837667;
+			public const int ic_mr_button_connected_11_dark = 2130837667;
 			
 			// aapt resource value: 0x7f0200a4
-			public const int ic_mr_button_connected_13_dark = 2130837668;
+			public const int ic_mr_button_connected_11_light = 2130837668;
 			
 			// aapt resource value: 0x7f0200a5
-			public const int ic_mr_button_connected_13_light = 2130837669;
+			public const int ic_mr_button_connected_12_dark = 2130837669;
 			
 			// aapt resource value: 0x7f0200a6
-			public const int ic_mr_button_connected_14_dark = 2130837670;
+			public const int ic_mr_button_connected_12_light = 2130837670;
 			
 			// aapt resource value: 0x7f0200a7
-			public const int ic_mr_button_connected_14_light = 2130837671;
+			public const int ic_mr_button_connected_13_dark = 2130837671;
 			
 			// aapt resource value: 0x7f0200a8
-			public const int ic_mr_button_connected_15_dark = 2130837672;
+			public const int ic_mr_button_connected_13_light = 2130837672;
 			
 			// aapt resource value: 0x7f0200a9
-			public const int ic_mr_button_connected_15_light = 2130837673;
+			public const int ic_mr_button_connected_14_dark = 2130837673;
 			
 			// aapt resource value: 0x7f0200aa
-			public const int ic_mr_button_connected_16_dark = 2130837674;
+			public const int ic_mr_button_connected_14_light = 2130837674;
 			
 			// aapt resource value: 0x7f0200ab
-			public const int ic_mr_button_connected_16_light = 2130837675;
+			public const int ic_mr_button_connected_15_dark = 2130837675;
 			
 			// aapt resource value: 0x7f0200ac
-			public const int ic_mr_button_connected_17_dark = 2130837676;
+			public const int ic_mr_button_connected_15_light = 2130837676;
 			
 			// aapt resource value: 0x7f0200ad
-			public const int ic_mr_button_connected_17_light = 2130837677;
+			public const int ic_mr_button_connected_16_dark = 2130837677;
 			
 			// aapt resource value: 0x7f0200ae
-			public const int ic_mr_button_connected_18_dark = 2130837678;
+			public const int ic_mr_button_connected_16_light = 2130837678;
 			
 			// aapt resource value: 0x7f0200af
-			public const int ic_mr_button_connected_18_light = 2130837679;
+			public const int ic_mr_button_connected_17_dark = 2130837679;
 			
 			// aapt resource value: 0x7f0200b0
-			public const int ic_mr_button_connected_19_dark = 2130837680;
+			public const int ic_mr_button_connected_17_light = 2130837680;
 			
 			// aapt resource value: 0x7f0200b1
-			public const int ic_mr_button_connected_19_light = 2130837681;
+			public const int ic_mr_button_connected_18_dark = 2130837681;
 			
 			// aapt resource value: 0x7f0200b2
-			public const int ic_mr_button_connected_20_dark = 2130837682;
+			public const int ic_mr_button_connected_18_light = 2130837682;
 			
 			// aapt resource value: 0x7f0200b3
-			public const int ic_mr_button_connected_20_light = 2130837683;
+			public const int ic_mr_button_connected_19_dark = 2130837683;
 			
 			// aapt resource value: 0x7f0200b4
-			public const int ic_mr_button_connected_21_dark = 2130837684;
+			public const int ic_mr_button_connected_19_light = 2130837684;
 			
 			// aapt resource value: 0x7f0200b5
-			public const int ic_mr_button_connected_21_light = 2130837685;
+			public const int ic_mr_button_connected_20_dark = 2130837685;
 			
 			// aapt resource value: 0x7f0200b6
-			public const int ic_mr_button_connected_22_dark = 2130837686;
+			public const int ic_mr_button_connected_20_light = 2130837686;
 			
 			// aapt resource value: 0x7f0200b7
-			public const int ic_mr_button_connected_22_light = 2130837687;
+			public const int ic_mr_button_connected_21_dark = 2130837687;
 			
 			// aapt resource value: 0x7f0200b8
-			public const int ic_mr_button_connecting_00_dark = 2130837688;
+			public const int ic_mr_button_connected_21_light = 2130837688;
 			
 			// aapt resource value: 0x7f0200b9
-			public const int ic_mr_button_connecting_00_light = 2130837689;
+			public const int ic_mr_button_connected_22_dark = 2130837689;
 			
 			// aapt resource value: 0x7f0200ba
-			public const int ic_mr_button_connecting_01_dark = 2130837690;
+			public const int ic_mr_button_connected_22_light = 2130837690;
 			
 			// aapt resource value: 0x7f0200bb
-			public const int ic_mr_button_connecting_01_light = 2130837691;
+			public const int ic_mr_button_connecting_00_dark = 2130837691;
 			
 			// aapt resource value: 0x7f0200bc
-			public const int ic_mr_button_connecting_02_dark = 2130837692;
+			public const int ic_mr_button_connecting_00_light = 2130837692;
 			
 			// aapt resource value: 0x7f0200bd
-			public const int ic_mr_button_connecting_02_light = 2130837693;
+			public const int ic_mr_button_connecting_01_dark = 2130837693;
 			
 			// aapt resource value: 0x7f0200be
-			public const int ic_mr_button_connecting_03_dark = 2130837694;
+			public const int ic_mr_button_connecting_01_light = 2130837694;
 			
 			// aapt resource value: 0x7f0200bf
-			public const int ic_mr_button_connecting_03_light = 2130837695;
+			public const int ic_mr_button_connecting_02_dark = 2130837695;
 			
 			// aapt resource value: 0x7f0200c0
-			public const int ic_mr_button_connecting_04_dark = 2130837696;
+			public const int ic_mr_button_connecting_02_light = 2130837696;
 			
 			// aapt resource value: 0x7f0200c1
-			public const int ic_mr_button_connecting_04_light = 2130837697;
+			public const int ic_mr_button_connecting_03_dark = 2130837697;
 			
 			// aapt resource value: 0x7f0200c2
-			public const int ic_mr_button_connecting_05_dark = 2130837698;
+			public const int ic_mr_button_connecting_03_light = 2130837698;
 			
 			// aapt resource value: 0x7f0200c3
-			public const int ic_mr_button_connecting_05_light = 2130837699;
+			public const int ic_mr_button_connecting_04_dark = 2130837699;
 			
 			// aapt resource value: 0x7f0200c4
-			public const int ic_mr_button_connecting_06_dark = 2130837700;
+			public const int ic_mr_button_connecting_04_light = 2130837700;
 			
 			// aapt resource value: 0x7f0200c5
-			public const int ic_mr_button_connecting_06_light = 2130837701;
+			public const int ic_mr_button_connecting_05_dark = 2130837701;
 			
 			// aapt resource value: 0x7f0200c6
-			public const int ic_mr_button_connecting_07_dark = 2130837702;
+			public const int ic_mr_button_connecting_05_light = 2130837702;
 			
 			// aapt resource value: 0x7f0200c7
-			public const int ic_mr_button_connecting_07_light = 2130837703;
+			public const int ic_mr_button_connecting_06_dark = 2130837703;
 			
 			// aapt resource value: 0x7f0200c8
-			public const int ic_mr_button_connecting_08_dark = 2130837704;
+			public const int ic_mr_button_connecting_06_light = 2130837704;
 			
 			// aapt resource value: 0x7f0200c9
-			public const int ic_mr_button_connecting_08_light = 2130837705;
+			public const int ic_mr_button_connecting_07_dark = 2130837705;
 			
 			// aapt resource value: 0x7f0200ca
-			public const int ic_mr_button_connecting_09_dark = 2130837706;
+			public const int ic_mr_button_connecting_07_light = 2130837706;
 			
 			// aapt resource value: 0x7f0200cb
-			public const int ic_mr_button_connecting_09_light = 2130837707;
+			public const int ic_mr_button_connecting_08_dark = 2130837707;
 			
 			// aapt resource value: 0x7f0200cc
-			public const int ic_mr_button_connecting_10_dark = 2130837708;
+			public const int ic_mr_button_connecting_08_light = 2130837708;
 			
 			// aapt resource value: 0x7f0200cd
-			public const int ic_mr_button_connecting_10_light = 2130837709;
+			public const int ic_mr_button_connecting_09_dark = 2130837709;
 			
 			// aapt resource value: 0x7f0200ce
-			public const int ic_mr_button_connecting_11_dark = 2130837710;
+			public const int ic_mr_button_connecting_09_light = 2130837710;
 			
 			// aapt resource value: 0x7f0200cf
-			public const int ic_mr_button_connecting_11_light = 2130837711;
+			public const int ic_mr_button_connecting_10_dark = 2130837711;
 			
 			// aapt resource value: 0x7f0200d0
-			public const int ic_mr_button_connecting_12_dark = 2130837712;
+			public const int ic_mr_button_connecting_10_light = 2130837712;
 			
 			// aapt resource value: 0x7f0200d1
-			public const int ic_mr_button_connecting_12_light = 2130837713;
+			public const int ic_mr_button_connecting_11_dark = 2130837713;
 			
 			// aapt resource value: 0x7f0200d2
-			public const int ic_mr_button_connecting_13_dark = 2130837714;
+			public const int ic_mr_button_connecting_11_light = 2130837714;
 			
 			// aapt resource value: 0x7f0200d3
-			public const int ic_mr_button_connecting_13_light = 2130837715;
+			public const int ic_mr_button_connecting_12_dark = 2130837715;
 			
 			// aapt resource value: 0x7f0200d4
-			public const int ic_mr_button_connecting_14_dark = 2130837716;
+			public const int ic_mr_button_connecting_12_light = 2130837716;
 			
 			// aapt resource value: 0x7f0200d5
-			public const int ic_mr_button_connecting_14_light = 2130837717;
+			public const int ic_mr_button_connecting_13_dark = 2130837717;
 			
 			// aapt resource value: 0x7f0200d6
-			public const int ic_mr_button_connecting_15_dark = 2130837718;
+			public const int ic_mr_button_connecting_13_light = 2130837718;
 			
 			// aapt resource value: 0x7f0200d7
-			public const int ic_mr_button_connecting_15_light = 2130837719;
+			public const int ic_mr_button_connecting_14_dark = 2130837719;
 			
 			// aapt resource value: 0x7f0200d8
-			public const int ic_mr_button_connecting_16_dark = 2130837720;
+			public const int ic_mr_button_connecting_14_light = 2130837720;
 			
 			// aapt resource value: 0x7f0200d9
-			public const int ic_mr_button_connecting_16_light = 2130837721;
+			public const int ic_mr_button_connecting_15_dark = 2130837721;
 			
 			// aapt resource value: 0x7f0200da
-			public const int ic_mr_button_connecting_17_dark = 2130837722;
+			public const int ic_mr_button_connecting_15_light = 2130837722;
 			
 			// aapt resource value: 0x7f0200db
-			public const int ic_mr_button_connecting_17_light = 2130837723;
+			public const int ic_mr_button_connecting_16_dark = 2130837723;
 			
 			// aapt resource value: 0x7f0200dc
-			public const int ic_mr_button_connecting_18_dark = 2130837724;
+			public const int ic_mr_button_connecting_16_light = 2130837724;
 			
 			// aapt resource value: 0x7f0200dd
-			public const int ic_mr_button_connecting_18_light = 2130837725;
+			public const int ic_mr_button_connecting_17_dark = 2130837725;
 			
 			// aapt resource value: 0x7f0200de
-			public const int ic_mr_button_connecting_19_dark = 2130837726;
+			public const int ic_mr_button_connecting_17_light = 2130837726;
 			
 			// aapt resource value: 0x7f0200df
-			public const int ic_mr_button_connecting_19_light = 2130837727;
+			public const int ic_mr_button_connecting_18_dark = 2130837727;
 			
 			// aapt resource value: 0x7f0200e0
-			public const int ic_mr_button_connecting_20_dark = 2130837728;
+			public const int ic_mr_button_connecting_18_light = 2130837728;
 			
 			// aapt resource value: 0x7f0200e1
-			public const int ic_mr_button_connecting_20_light = 2130837729;
+			public const int ic_mr_button_connecting_19_dark = 2130837729;
 			
 			// aapt resource value: 0x7f0200e2
-			public const int ic_mr_button_connecting_21_dark = 2130837730;
+			public const int ic_mr_button_connecting_19_light = 2130837730;
 			
 			// aapt resource value: 0x7f0200e3
-			public const int ic_mr_button_connecting_21_light = 2130837731;
+			public const int ic_mr_button_connecting_20_dark = 2130837731;
 			
 			// aapt resource value: 0x7f0200e4
-			public const int ic_mr_button_connecting_22_dark = 2130837732;
+			public const int ic_mr_button_connecting_20_light = 2130837732;
 			
 			// aapt resource value: 0x7f0200e5
-			public const int ic_mr_button_connecting_22_light = 2130837733;
+			public const int ic_mr_button_connecting_21_dark = 2130837733;
 			
 			// aapt resource value: 0x7f0200e6
-			public const int ic_mr_button_disabled_dark = 2130837734;
+			public const int ic_mr_button_connecting_21_light = 2130837734;
 			
 			// aapt resource value: 0x7f0200e7
-			public const int ic_mr_button_disabled_light = 2130837735;
+			public const int ic_mr_button_connecting_22_dark = 2130837735;
 			
 			// aapt resource value: 0x7f0200e8
-			public const int ic_mr_button_disconnected_dark = 2130837736;
+			public const int ic_mr_button_connecting_22_light = 2130837736;
 			
 			// aapt resource value: 0x7f0200e9
-			public const int ic_mr_button_disconnected_light = 2130837737;
+			public const int ic_mr_button_disabled_dark = 2130837737;
 			
 			// aapt resource value: 0x7f0200ea
-			public const int ic_mr_button_grey = 2130837738;
+			public const int ic_mr_button_disabled_light = 2130837738;
 			
 			// aapt resource value: 0x7f0200eb
-			public const int ic_vol_type_speaker_dark = 2130837739;
+			public const int ic_mr_button_disconnected_dark = 2130837739;
 			
 			// aapt resource value: 0x7f0200ec
-			public const int ic_vol_type_speaker_group_dark = 2130837740;
+			public const int ic_mr_button_disconnected_light = 2130837740;
 			
 			// aapt resource value: 0x7f0200ed
-			public const int ic_vol_type_speaker_group_light = 2130837741;
+			public const int ic_mr_button_grey = 2130837741;
 			
 			// aapt resource value: 0x7f0200ee
-			public const int ic_vol_type_speaker_light = 2130837742;
+			public const int ic_successstatus = 2130837742;
 			
 			// aapt resource value: 0x7f0200ef
-			public const int ic_vol_type_tv_dark = 2130837743;
+			public const int ic_vol_type_speaker_dark = 2130837743;
 			
 			// aapt resource value: 0x7f0200f0
-			public const int ic_vol_type_tv_light = 2130837744;
+			public const int ic_vol_type_speaker_group_dark = 2130837744;
 			
 			// aapt resource value: 0x7f0200f1
-			public const int icon = 2130837745;
+			public const int ic_vol_type_speaker_group_light = 2130837745;
 			
 			// aapt resource value: 0x7f0200f2
-			public const int important = 2130837746;
+			public const int ic_vol_type_speaker_light = 2130837746;
 			
 			// aapt resource value: 0x7f0200f3
-			public const int jarspic = 2130837747;
+			public const int ic_vol_type_tv_dark = 2130837747;
 			
 			// aapt resource value: 0x7f0200f4
-			public const int logo = 2130837748;
+			public const int ic_vol_type_tv_light = 2130837748;
 			
 			// aapt resource value: 0x7f0200f5
-			public const int logout = 2130837749;
+			public const int icon = 2130837749;
 			
 			// aapt resource value: 0x7f0200f6
-			public const int medkit = 2130837750;
+			public const int important = 2130837750;
 			
 			// aapt resource value: 0x7f0200f7
-			public const int mr_button_connected_dark = 2130837751;
+			public const int jarspic = 2130837751;
 			
 			// aapt resource value: 0x7f0200f8
-			public const int mr_button_connected_light = 2130837752;
+			public const int logo = 2130837752;
 			
 			// aapt resource value: 0x7f0200f9
-			public const int mr_button_connecting_dark = 2130837753;
+			public const int logout = 2130837753;
 			
 			// aapt resource value: 0x7f0200fa
-			public const int mr_button_connecting_light = 2130837754;
+			public const int medkit = 2130837754;
 			
 			// aapt resource value: 0x7f0200fb
-			public const int mr_button_dark = 2130837755;
+			public const int mr_button_connected_dark = 2130837755;
 			
 			// aapt resource value: 0x7f0200fc
-			public const int mr_button_light = 2130837756;
+			public const int mr_button_connected_light = 2130837756;
 			
 			// aapt resource value: 0x7f0200fd
-			public const int mr_dialog_close_dark = 2130837757;
+			public const int mr_button_connecting_dark = 2130837757;
 			
 			// aapt resource value: 0x7f0200fe
-			public const int mr_dialog_close_light = 2130837758;
+			public const int mr_button_connecting_light = 2130837758;
 			
 			// aapt resource value: 0x7f0200ff
-			public const int mr_dialog_material_background_dark = 2130837759;
+			public const int mr_button_dark = 2130837759;
 			
 			// aapt resource value: 0x7f020100
-			public const int mr_dialog_material_background_light = 2130837760;
+			public const int mr_button_light = 2130837760;
 			
 			// aapt resource value: 0x7f020101
-			public const int mr_group_collapse = 2130837761;
+			public const int mr_dialog_close_dark = 2130837761;
 			
 			// aapt resource value: 0x7f020102
-			public const int mr_group_expand = 2130837762;
+			public const int mr_dialog_close_light = 2130837762;
 			
 			// aapt resource value: 0x7f020103
-			public const int mr_media_pause_dark = 2130837763;
+			public const int mr_dialog_material_background_dark = 2130837763;
 			
 			// aapt resource value: 0x7f020104
-			public const int mr_media_pause_light = 2130837764;
+			public const int mr_dialog_material_background_light = 2130837764;
 			
 			// aapt resource value: 0x7f020105
-			public const int mr_media_play_dark = 2130837765;
+			public const int mr_group_collapse = 2130837765;
 			
 			// aapt resource value: 0x7f020106
-			public const int mr_media_play_light = 2130837766;
+			public const int mr_group_expand = 2130837766;
 			
 			// aapt resource value: 0x7f020107
-			public const int mr_vol_type_audiotrack_dark = 2130837767;
+			public const int mr_media_pause_dark = 2130837767;
 			
 			// aapt resource value: 0x7f020108
-			public const int mr_vol_type_audiotrack_light = 2130837768;
+			public const int mr_media_pause_light = 2130837768;
 			
 			// aapt resource value: 0x7f020109
-			public const int navigation_empty_icon = 2130837769;
+			public const int mr_media_play_dark = 2130837769;
 			
 			// aapt resource value: 0x7f02010a
-			public const int notification_action_background = 2130837770;
+			public const int mr_media_play_light = 2130837770;
 			
 			// aapt resource value: 0x7f02010b
-			public const int notification_bg = 2130837771;
+			public const int mr_vol_type_audiotrack_dark = 2130837771;
 			
 			// aapt resource value: 0x7f02010c
-			public const int notification_bg_low = 2130837772;
+			public const int mr_vol_type_audiotrack_light = 2130837772;
 			
 			// aapt resource value: 0x7f02010d
-			public const int notification_bg_low_normal = 2130837773;
+			public const int navigation_empty_icon = 2130837773;
 			
 			// aapt resource value: 0x7f02010e
-			public const int notification_bg_low_pressed = 2130837774;
+			public const int notification_action_background = 2130837774;
 			
 			// aapt resource value: 0x7f02010f
-			public const int notification_bg_normal = 2130837775;
+			public const int notification_bg = 2130837775;
 			
 			// aapt resource value: 0x7f020110
-			public const int notification_bg_normal_pressed = 2130837776;
+			public const int notification_bg_low = 2130837776;
 			
 			// aapt resource value: 0x7f020111
-			public const int notification_icon_background = 2130837777;
-			
-			// aapt resource value: 0x7f02011b
-			public const int notification_template_icon_bg = 2130837787;
-			
-			// aapt resource value: 0x7f02011c
-			public const int notification_template_icon_low_bg = 2130837788;
+			public const int notification_bg_low_normal = 2130837777;
 			
 			// aapt resource value: 0x7f020112
-			public const int notification_tile_bg = 2130837778;
+			public const int notification_bg_low_pressed = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int notify_panel_notification_icon_bg = 2130837779;
+			public const int notification_bg_normal = 2130837779;
 			
 			// aapt resource value: 0x7f020114
-			public const int pill = 2130837780;
+			public const int notification_bg_normal_pressed = 2130837780;
 			
 			// aapt resource value: 0x7f020115
-			public const int pillblank = 2130837781;
+			public const int notification_icon_background = 2130837781;
+			
+			// aapt resource value: 0x7f020121
+			public const int notification_template_icon_bg = 2130837793;
+			
+			// aapt resource value: 0x7f020122
+			public const int notification_template_icon_low_bg = 2130837794;
 			
 			// aapt resource value: 0x7f020116
-			public const int polyline = 2130837782;
+			public const int notification_tile_bg = 2130837782;
 			
 			// aapt resource value: 0x7f020117
-			public const int product = 2130837783;
+			public const int notify_panel_notification_icon_bg = 2130837783;
 			
 			// aapt resource value: 0x7f020118
-			public const int settings = 2130837784;
+			public const int pill = 2130837784;
 			
 			// aapt resource value: 0x7f020119
-			public const int store = 2130837785;
+			public const int pillblank = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int user = 2130837786;
+			public const int polyline = 2130837786;
+			
+			// aapt resource value: 0x7f02011b
+			public const int product = 2130837787;
+			
+			// aapt resource value: 0x7f02011c
+			public const int roundedbg = 2130837788;
+			
+			// aapt resource value: 0x7f02011d
+			public const int roundedbgdark = 2130837789;
+			
+			// aapt resource value: 0x7f02011e
+			public const int settings = 2130837790;
+			
+			// aapt resource value: 0x7f02011f
+			public const int store = 2130837791;
+			
+			// aapt resource value: 0x7f020120
+			public const int user = 2130837792;
 			
 			static Drawable()
 			{
@@ -4338,8 +5839,8 @@ namespace SQLConnect.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0d009c
-			public const int action0 = 2131558556;
+			// aapt resource value: 0x7f0d00a4
+			public const int action0 = 2131558564;
 			
 			// aapt resource value: 0x7f0d0064
 			public const int action_bar = 2131558500;
@@ -4362,17 +5863,17 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0041
 			public const int action_bar_title = 2131558465;
 			
-			// aapt resource value: 0x7f0d0099
-			public const int action_container = 2131558553;
+			// aapt resource value: 0x7f0d00a1
+			public const int action_container = 2131558561;
 			
 			// aapt resource value: 0x7f0d0065
 			public const int action_context_bar = 2131558501;
 			
-			// aapt resource value: 0x7f0d00a0
-			public const int action_divider = 2131558560;
+			// aapt resource value: 0x7f0d00a8
+			public const int action_divider = 2131558568;
 			
-			// aapt resource value: 0x7f0d009a
-			public const int action_image = 2131558554;
+			// aapt resource value: 0x7f0d00a2
+			public const int action_image = 2131558562;
 			
 			// aapt resource value: 0x7f0d0005
 			public const int action_menu_divider = 2131558405;
@@ -4389,11 +5890,11 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0043
 			public const int action_mode_close_button = 2131558467;
 			
-			// aapt resource value: 0x7f0d009b
-			public const int action_text = 2131558555;
+			// aapt resource value: 0x7f0d00a3
+			public const int action_text = 2131558563;
 			
-			// aapt resource value: 0x7f0d00a9
-			public const int actions = 2131558569;
+			// aapt resource value: 0x7f0d00b1
+			public const int actions = 2131558577;
 			
 			// aapt resource value: 0x7f0d0044
 			public const int activity_chooser_view_content = 2131558468;
@@ -4422,8 +5923,14 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d004b
 			public const int buttonPanel = 2131558475;
 			
-			// aapt resource value: 0x7f0d009d
-			public const int cancel_action = 2131558557;
+			// aapt resource value: 0x7f0d0086
+			public const int calendar_grid = 2131558534;
+			
+			// aapt resource value: 0x7f0d0073
+			public const int calendar_view = 2131558515;
+			
+			// aapt resource value: 0x7f0d00a5
+			public const int cancel_action = 2131558565;
 			
 			// aapt resource value: 0x7f0d0016
 			public const int center = 2131558422;
@@ -4437,8 +5944,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d005b
 			public const int checkbox = 2131558491;
 			
-			// aapt resource value: 0x7f0d00a5
-			public const int chronometer = 2131558565;
+			// aapt resource value: 0x7f0d00ad
+			public const int chronometer = 2131558573;
 			
 			// aapt resource value: 0x7f0d0022
 			public const int clip_horizontal = 2131558434;
@@ -4464,20 +5971,20 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0047
 			public const int default_activity_button = 2131558471;
 			
-			// aapt resource value: 0x7f0d0076
-			public const int design_bottom_sheet = 2131558518;
+			// aapt resource value: 0x7f0d0079
+			public const int design_bottom_sheet = 2131558521;
+			
+			// aapt resource value: 0x7f0d0080
+			public const int design_menu_item_action_area = 2131558528;
+			
+			// aapt resource value: 0x7f0d007f
+			public const int design_menu_item_action_area_stub = 2131558527;
+			
+			// aapt resource value: 0x7f0d007e
+			public const int design_menu_item_text = 2131558526;
 			
 			// aapt resource value: 0x7f0d007d
-			public const int design_menu_item_action_area = 2131558525;
-			
-			// aapt resource value: 0x7f0d007c
-			public const int design_menu_item_action_area_stub = 2131558524;
-			
-			// aapt resource value: 0x7f0d007b
-			public const int design_menu_item_text = 2131558523;
-			
-			// aapt resource value: 0x7f0d007a
-			public const int design_navigation_view = 2131558522;
+			public const int design_navigation_view = 2131558525;
 			
 			// aapt resource value: 0x7f0d0032
 			public const int disableHome = 2131558450;
@@ -4488,8 +5995,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0019
 			public const int end = 2131558425;
 			
-			// aapt resource value: 0x7f0d00af
-			public const int end_padder = 2131558575;
+			// aapt resource value: 0x7f0d00b7
+			public const int end_padder = 2131558583;
 			
 			// aapt resource value: 0x7f0d000f
 			public const int enterAlways = 2131558415;
@@ -4527,8 +6034,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0049
 			public const int icon = 2131558473;
 			
-			// aapt resource value: 0x7f0d00aa
-			public const int icon_group = 2131558570;
+			// aapt resource value: 0x7f0d00b2
+			public const int icon_group = 2131558578;
 			
 			// aapt resource value: 0x7f0d003e
 			public const int ifRoom = 2131558462;
@@ -4536,23 +6043,26 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0046
 			public const int image = 2131558470;
 			
-			// aapt resource value: 0x7f0d00a6
-			public const int info = 2131558566;
+			// aapt resource value: 0x7f0d00ae
+			public const int info = 2131558574;
 			
 			// aapt resource value: 0x7f0d000c
 			public const int item_touch_helper_previous_elevation = 2131558412;
 			
-			// aapt resource value: 0x7f0d0074
-			public const int largeLabel = 2131558516;
+			// aapt resource value: 0x7f0d0077
+			public const int largeLabel = 2131558519;
 			
 			// aapt resource value: 0x7f0d001b
 			public const int left = 2131558427;
 			
-			// aapt resource value: 0x7f0d00ab
-			public const int line1 = 2131558571;
+			// aapt resource value: 0x7f0d0075
+			public const int left_arrow = 2131558517;
 			
-			// aapt resource value: 0x7f0d00ad
-			public const int line3 = 2131558573;
+			// aapt resource value: 0x7f0d00b3
+			public const int line1 = 2131558579;
+			
+			// aapt resource value: 0x7f0d00b5
+			public const int line3 = 2131558581;
 			
 			// aapt resource value: 0x7f0d0030
 			public const int listMode = 2131558448;
@@ -4560,11 +6070,20 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0048
 			public const int list_item = 2131558472;
 			
-			// aapt resource value: 0x7f0d00b3
-			public const int masked = 2131558579;
+			// aapt resource value: 0x7f0d0084
+			public const int loadingImage = 2131558532;
 			
-			// aapt resource value: 0x7f0d009f
-			public const int media_actions = 2131558559;
+			// aapt resource value: 0x7f0d0082
+			public const int loadingProgressBar = 2131558530;
+			
+			// aapt resource value: 0x7f0d0085
+			public const int loadingProgressWheel = 2131558533;
+			
+			// aapt resource value: 0x7f0d00bb
+			public const int masked = 2131558587;
+			
+			// aapt resource value: 0x7f0d00a7
+			public const int media_actions = 2131558567;
 			
 			// aapt resource value: 0x7f0d003b
 			public const int middle = 2131558459;
@@ -4572,86 +6091,86 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0027
 			public const int mini = 2131558439;
 			
-			// aapt resource value: 0x7f0d008b
-			public const int mr_art = 2131558539;
-			
-			// aapt resource value: 0x7f0d0080
-			public const int mr_chooser_list = 2131558528;
-			
-			// aapt resource value: 0x7f0d0083
-			public const int mr_chooser_route_desc = 2131558531;
-			
-			// aapt resource value: 0x7f0d0081
-			public const int mr_chooser_route_icon = 2131558529;
-			
-			// aapt resource value: 0x7f0d0082
-			public const int mr_chooser_route_name = 2131558530;
-			
-			// aapt resource value: 0x7f0d007f
-			public const int mr_chooser_title = 2131558527;
+			// aapt resource value: 0x7f0d0093
+			public const int mr_art = 2131558547;
 			
 			// aapt resource value: 0x7f0d0088
-			public const int mr_close = 2131558536;
+			public const int mr_chooser_list = 2131558536;
 			
-			// aapt resource value: 0x7f0d008e
-			public const int mr_control_divider = 2131558542;
-			
-			// aapt resource value: 0x7f0d0094
-			public const int mr_control_play_pause = 2131558548;
-			
-			// aapt resource value: 0x7f0d0097
-			public const int mr_control_subtitle = 2131558551;
-			
-			// aapt resource value: 0x7f0d0096
-			public const int mr_control_title = 2131558550;
-			
-			// aapt resource value: 0x7f0d0095
-			public const int mr_control_title_container = 2131558549;
+			// aapt resource value: 0x7f0d008b
+			public const int mr_chooser_route_desc = 2131558539;
 			
 			// aapt resource value: 0x7f0d0089
-			public const int mr_custom_control = 2131558537;
+			public const int mr_chooser_route_icon = 2131558537;
 			
 			// aapt resource value: 0x7f0d008a
-			public const int mr_default_control = 2131558538;
-			
-			// aapt resource value: 0x7f0d0085
-			public const int mr_dialog_area = 2131558533;
-			
-			// aapt resource value: 0x7f0d0084
-			public const int mr_expandable_area = 2131558532;
-			
-			// aapt resource value: 0x7f0d0098
-			public const int mr_group_expand_collapse = 2131558552;
-			
-			// aapt resource value: 0x7f0d008c
-			public const int mr_media_main_control = 2131558540;
+			public const int mr_chooser_route_name = 2131558538;
 			
 			// aapt resource value: 0x7f0d0087
-			public const int mr_name = 2131558535;
-			
-			// aapt resource value: 0x7f0d008d
-			public const int mr_playback_control = 2131558541;
-			
-			// aapt resource value: 0x7f0d0086
-			public const int mr_title_bar = 2131558534;
-			
-			// aapt resource value: 0x7f0d008f
-			public const int mr_volume_control = 2131558543;
+			public const int mr_chooser_title = 2131558535;
 			
 			// aapt resource value: 0x7f0d0090
-			public const int mr_volume_group_list = 2131558544;
+			public const int mr_close = 2131558544;
+			
+			// aapt resource value: 0x7f0d0096
+			public const int mr_control_divider = 2131558550;
+			
+			// aapt resource value: 0x7f0d009c
+			public const int mr_control_play_pause = 2131558556;
+			
+			// aapt resource value: 0x7f0d009f
+			public const int mr_control_subtitle = 2131558559;
+			
+			// aapt resource value: 0x7f0d009e
+			public const int mr_control_title = 2131558558;
+			
+			// aapt resource value: 0x7f0d009d
+			public const int mr_control_title_container = 2131558557;
+			
+			// aapt resource value: 0x7f0d0091
+			public const int mr_custom_control = 2131558545;
 			
 			// aapt resource value: 0x7f0d0092
-			public const int mr_volume_item_icon = 2131558546;
+			public const int mr_default_control = 2131558546;
 			
-			// aapt resource value: 0x7f0d0093
-			public const int mr_volume_slider = 2131558547;
+			// aapt resource value: 0x7f0d008d
+			public const int mr_dialog_area = 2131558541;
+			
+			// aapt resource value: 0x7f0d008c
+			public const int mr_expandable_area = 2131558540;
+			
+			// aapt resource value: 0x7f0d00a0
+			public const int mr_group_expand_collapse = 2131558560;
+			
+			// aapt resource value: 0x7f0d0094
+			public const int mr_media_main_control = 2131558548;
+			
+			// aapt resource value: 0x7f0d008f
+			public const int mr_name = 2131558543;
+			
+			// aapt resource value: 0x7f0d0095
+			public const int mr_playback_control = 2131558549;
+			
+			// aapt resource value: 0x7f0d008e
+			public const int mr_title_bar = 2131558542;
+			
+			// aapt resource value: 0x7f0d0097
+			public const int mr_volume_control = 2131558551;
+			
+			// aapt resource value: 0x7f0d0098
+			public const int mr_volume_group_list = 2131558552;
+			
+			// aapt resource value: 0x7f0d009a
+			public const int mr_volume_item_icon = 2131558554;
+			
+			// aapt resource value: 0x7f0d009b
+			public const int mr_volume_slider = 2131558555;
 			
 			// aapt resource value: 0x7f0d002b
 			public const int multiply = 2131558443;
 			
-			// aapt resource value: 0x7f0d0079
-			public const int navigation_header_container = 2131558521;
+			// aapt resource value: 0x7f0d007c
+			public const int navigation_header_container = 2131558524;
 			
 			// aapt resource value: 0x7f0d003f
 			public const int never = 2131558463;
@@ -4662,14 +6181,14 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0028
 			public const int normal = 2131558440;
 			
-			// aapt resource value: 0x7f0d00a8
-			public const int notification_background = 2131558568;
+			// aapt resource value: 0x7f0d00b0
+			public const int notification_background = 2131558576;
 			
-			// aapt resource value: 0x7f0d00a2
-			public const int notification_main_column = 2131558562;
+			// aapt resource value: 0x7f0d00aa
+			public const int notification_main_column = 2131558570;
 			
-			// aapt resource value: 0x7f0d00a1
-			public const int notification_main_column_container = 2131558561;
+			// aapt resource value: 0x7f0d00a9
+			public const int notification_main_column_container = 2131558569;
 			
 			// aapt resource value: 0x7f0d0020
 			public const int parallax = 2131558432;
@@ -4692,11 +6211,14 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d001c
 			public const int right = 2131558428;
 			
-			// aapt resource value: 0x7f0d00a7
-			public const int right_icon = 2131558567;
+			// aapt resource value: 0x7f0d0074
+			public const int right_arrow = 2131558516;
 			
-			// aapt resource value: 0x7f0d00a3
-			public const int right_side = 2131558563;
+			// aapt resource value: 0x7f0d00af
+			public const int right_icon = 2131558575;
+			
+			// aapt resource value: 0x7f0d00ab
+			public const int right_side = 2131558571;
 			
 			// aapt resource value: 0x7f0d002c
 			public const int screen = 2131558444;
@@ -4761,17 +6283,17 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0036
 			public const int showTitle = 2131558454;
 			
-			// aapt resource value: 0x7f0d00b0
-			public const int sliding_tabs = 2131558576;
+			// aapt resource value: 0x7f0d00b8
+			public const int sliding_tabs = 2131558584;
 			
-			// aapt resource value: 0x7f0d0073
-			public const int smallLabel = 2131558515;
+			// aapt resource value: 0x7f0d0076
+			public const int smallLabel = 2131558518;
 			
-			// aapt resource value: 0x7f0d0078
-			public const int snackbar_action = 2131558520;
+			// aapt resource value: 0x7f0d007b
+			public const int snackbar_action = 2131558523;
 			
-			// aapt resource value: 0x7f0d0077
-			public const int snackbar_text = 2131558519;
+			// aapt resource value: 0x7f0d007a
+			public const int snackbar_text = 2131558522;
 			
 			// aapt resource value: 0x7f0d0013
 			public const int snap = 2131558419;
@@ -4794,8 +6316,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d001d
 			public const int start = 2131558429;
 			
-			// aapt resource value: 0x7f0d009e
-			public const int status_bar_latest_event_content = 2131558558;
+			// aapt resource value: 0x7f0d00a6
+			public const int status_bar_latest_event_content = 2131558566;
 			
 			// aapt resource value: 0x7f0d005e
 			public const int submenuarrow = 2131558494;
@@ -4806,11 +6328,11 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0031
 			public const int tabMode = 2131558449;
 			
-			// aapt resource value: 0x7f0d00ae
-			public const int text = 2131558574;
+			// aapt resource value: 0x7f0d00b6
+			public const int text = 2131558582;
 			
-			// aapt resource value: 0x7f0d00ac
-			public const int text2 = 2131558572;
+			// aapt resource value: 0x7f0d00b4
+			public const int text2 = 2131558580;
 			
 			// aapt resource value: 0x7f0d0052
 			public const int textSpacerNoButtons = 2131558482;
@@ -4818,8 +6340,11 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0051
 			public const int textSpacerNoTitle = 2131558481;
 			
-			// aapt resource value: 0x7f0d007e
-			public const int text_input_password_toggle = 2131558526;
+			// aapt resource value: 0x7f0d0083
+			public const int textViewStatus = 2131558531;
+			
+			// aapt resource value: 0x7f0d0081
+			public const int text_input_password_toggle = 2131558529;
 			
 			// aapt resource value: 0x7f0d0000
 			public const int textinput_counter = 2131558400;
@@ -4827,8 +6352,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0001
 			public const int textinput_error = 2131558401;
 			
-			// aapt resource value: 0x7f0d00a4
-			public const int time = 2131558564;
+			// aapt resource value: 0x7f0d00ac
+			public const int time = 2131558572;
 			
 			// aapt resource value: 0x7f0d004a
 			public const int title = 2131558474;
@@ -4839,8 +6364,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0057
 			public const int title_template = 2131558487;
 			
-			// aapt resource value: 0x7f0d00b1
-			public const int toolbar = 2131558577;
+			// aapt resource value: 0x7f0d00b9
+			public const int toolbar = 2131558585;
 			
 			// aapt resource value: 0x7f0d001e
 			public const int top = 2131558430;
@@ -4848,8 +6373,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0056
 			public const int topPanel = 2131558486;
 			
-			// aapt resource value: 0x7f0d0075
-			public const int touch_outside = 2131558517;
+			// aapt resource value: 0x7f0d0078
+			public const int touch_outside = 2131558520;
 			
 			// aapt resource value: 0x7f0d000d
 			public const int transition_current_scene = 2131558413;
@@ -4866,11 +6391,11 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0d0002
 			public const int view_offset_helper = 2131558402;
 			
-			// aapt resource value: 0x7f0d00b2
-			public const int visible = 2131558578;
+			// aapt resource value: 0x7f0d00ba
+			public const int visible = 2131558586;
 			
-			// aapt resource value: 0x7f0d0091
-			public const int volume_item_container = 2131558545;
+			// aapt resource value: 0x7f0d0099
+			public const int volume_item_container = 2131558553;
 			
 			// aapt resource value: 0x7f0d0040
 			public const int withText = 2131558464;
@@ -5041,127 +6566,151 @@ namespace SQLConnect.Droid
 			public const int abc_select_dialog_material = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int design_bottom_navigation_item = 2130903067;
+			public const int calendar_pager_layout = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int design_bottom_sheet_dialog = 2130903068;
+			public const int calendar_picker = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int design_layout_snackbar = 2130903069;
+			public const int design_bottom_navigation_item = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int design_layout_snackbar_include = 2130903070;
+			public const int design_bottom_sheet_dialog = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int design_layout_tab_icon = 2130903071;
+			public const int design_layout_snackbar = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int design_layout_tab_text = 2130903072;
+			public const int design_layout_snackbar_include = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int design_menu_item_action_area = 2130903073;
+			public const int design_layout_tab_icon = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int design_navigation_item = 2130903074;
+			public const int design_layout_tab_text = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int design_navigation_item_header = 2130903075;
+			public const int design_menu_item_action_area = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int design_navigation_item_separator = 2130903076;
+			public const int design_navigation_item = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int design_navigation_item_subheader = 2130903077;
+			public const int design_navigation_item_header = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int design_navigation_menu = 2130903078;
+			public const int design_navigation_item_separator = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int design_navigation_menu_item = 2130903079;
+			public const int design_navigation_item_subheader = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int design_text_input_password_icon = 2130903080;
+			public const int design_navigation_menu = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int mr_chooser_dialog = 2130903081;
+			public const int design_navigation_menu_item = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int mr_chooser_list_item = 2130903082;
+			public const int design_text_input_password_icon = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int mr_controller_material_dialog_b = 2130903083;
+			public const int dialog = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int mr_controller_volume_item = 2130903084;
+			public const int loading = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int mr_playback_control = 2130903085;
+			public const int loadingimage = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int mr_volume_control = 2130903086;
+			public const int loadingprogress = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int notification_action = 2130903087;
+			public const int month = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int notification_action_tombstone = 2130903088;
+			public const int mr_chooser_dialog = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int notification_media_action = 2130903089;
+			public const int mr_chooser_list_item = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int notification_media_cancel_action = 2130903090;
+			public const int mr_controller_material_dialog_b = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int notification_template_big_media = 2130903091;
+			public const int mr_controller_volume_item = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int notification_template_big_media_custom = 2130903092;
+			public const int mr_playback_control = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int notification_template_big_media_narrow = 2130903093;
+			public const int mr_volume_control = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int notification_template_big_media_narrow_custom = 2130903094;
+			public const int notification_action = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int notification_template_custom_big = 2130903095;
+			public const int notification_action_tombstone = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int notification_template_icon_group = 2130903096;
+			public const int notification_media_action = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int notification_template_lines_media = 2130903097;
+			public const int notification_media_cancel_action = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int notification_template_media = 2130903098;
+			public const int notification_template_big_media = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int notification_template_media_custom = 2130903099;
+			public const int notification_template_big_media_custom = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int notification_template_part_chronometer = 2130903100;
+			public const int notification_template_big_media_narrow = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int notification_template_part_time = 2130903101;
+			public const int notification_template_big_media_narrow_custom = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int select_dialog_item_material = 2130903102;
+			public const int notification_template_custom_big = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int select_dialog_multichoice_material = 2130903103;
+			public const int notification_template_icon_group = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int select_dialog_singlechoice_material = 2130903104;
+			public const int notification_template_lines_media = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int support_simple_spinner_dropdown_item = 2130903105;
+			public const int notification_template_media = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int Tabbar = 2130903106;
+			public const int notification_template_media_custom = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int Toolbar = 2130903107;
+			public const int notification_template_part_chronometer = 2130903107;
+			
+			// aapt resource value: 0x7f030044
+			public const int notification_template_part_time = 2130903108;
+			
+			// aapt resource value: 0x7f030045
+			public const int select_dialog_item_material = 2130903109;
+			
+			// aapt resource value: 0x7f030046
+			public const int select_dialog_multichoice_material = 2130903110;
+			
+			// aapt resource value: 0x7f030047
+			public const int select_dialog_singlechoice_material = 2130903111;
+			
+			// aapt resource value: 0x7f030048
+			public const int support_simple_spinner_dropdown_item = 2130903112;
+			
+			// aapt resource value: 0x7f030049
+			public const int Tabbar = 2130903113;
+			
+			// aapt resource value: 0x7f03004a
+			public const int Toolbar = 2130903114;
+			
+			// aapt resource value: 0x7f03004b
+			public const int week = 2130903115;
 			
 			static Layout()
 			{
@@ -5176,11 +6725,11 @@ namespace SQLConnect.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f08003e
-			public const int ApplicationName = 2131230782;
+			// aapt resource value: 0x7f080043
+			public const int ApplicationName = 2131230787;
 			
-			// aapt resource value: 0x7f08003d
-			public const int Hello = 2131230781;
+			// aapt resource value: 0x7f080042
+			public const int Hello = 2131230786;
 			
 			// aapt resource value: 0x7f08001c
 			public const int abc_action_bar_home_description = 2131230748;
@@ -5283,6 +6832,21 @@ namespace SQLConnect.Droid
 			
 			// aapt resource value: 0x7f080016
 			public const int character_counter_pattern = 2131230742;
+			
+			// aapt resource value: 0x7f08003e
+			public const int day_name_format = 2131230782;
+			
+			// aapt resource value: 0x7f080041
+			public const int full_date_format = 2131230785;
+			
+			// aapt resource value: 0x7f08003f
+			public const int invalid_date = 2131230783;
+			
+			// aapt resource value: 0x7f08003d
+			public const int library_name = 2131230781;
+			
+			// aapt resource value: 0x7f080040
+			public const int month_name_format = 2131230784;
 			
 			// aapt resource value: 0x7f080000
 			public const int mr_button_content_description = 2131230720;
@@ -5393,8 +6957,8 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0b000d
 			public const int Animation_Design_BottomSheetDialog = 2131427341;
 			
-			// aapt resource value: 0x7f0b018b
-			public const int AppCompatDialogStyle = 2131427723;
+			// aapt resource value: 0x7f0b018f
+			public const int AppCompatDialogStyle = 2131427727;
 			
 			// aapt resource value: 0x7f0b00c9
 			public const int Base_AlertDialog_AppCompat = 2131427529;
@@ -5861,6 +7425,18 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0b000f
 			public const int Base_Widget_Design_TabLayout = 2131427343;
 			
+			// aapt resource value: 0x7f0b018a
+			public const int CalendarCell = 2131427722;
+			
+			// aapt resource value: 0x7f0b018c
+			public const int CalendarCell_CalendarDate = 2131427724;
+			
+			// aapt resource value: 0x7f0b018b
+			public const int CalendarCell_DayHeader = 2131427723;
+			
+			// aapt resource value: 0x7f0b0189
+			public const int CalendarTitle = 2131427721;
+			
 			// aapt resource value: 0x7f0b0185
 			public const int CardView = 2131427717;
 			
@@ -5870,11 +7446,11 @@ namespace SQLConnect.Droid
 			// aapt resource value: 0x7f0b0188
 			public const int CardView_Light = 2131427720;
 			
-			// aapt resource value: 0x7f0b0189
-			public const int MyTheme = 2131427721;
+			// aapt resource value: 0x7f0b018d
+			public const int MyTheme = 2131427725;
 			
-			// aapt resource value: 0x7f0b018a
-			public const int MyTheme_Base = 2131427722;
+			// aapt resource value: 0x7f0b018e
+			public const int MyTheme_Base = 2131427726;
 			
 			// aapt resource value: 0x7f0b0044
 			public const int Platform_AppCompat = 2131427396;
@@ -8017,6 +9593,57 @@ namespace SQLConnect.Droid
 			
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
+			
+			public static int[] ProgressWheel = new int[]
+			{
+					2130772305,
+					2130772306,
+					2130772307,
+					2130772308,
+					2130772309,
+					2130772310,
+					2130772311,
+					2130772312,
+					2130772313,
+					2130772314,
+					2130772315,
+					2130772316};
+			
+			// aapt resource value: 3
+			public const int ProgressWheel_ahBarColor = 3;
+			
+			// aapt resource value: 11
+			public const int ProgressWheel_ahBarLength = 11;
+			
+			// aapt resource value: 10
+			public const int ProgressWheel_ahBarWidth = 10;
+			
+			// aapt resource value: 8
+			public const int ProgressWheel_ahCircleColor = 8;
+			
+			// aapt resource value: 7
+			public const int ProgressWheel_ahDelayMillis = 7;
+			
+			// aapt resource value: 9
+			public const int ProgressWheel_ahRadius = 9;
+			
+			// aapt resource value: 4
+			public const int ProgressWheel_ahRimColor = 4;
+			
+			// aapt resource value: 5
+			public const int ProgressWheel_ahRimWidth = 5;
+			
+			// aapt resource value: 6
+			public const int ProgressWheel_ahSpinSpeed = 6;
+			
+			// aapt resource value: 0
+			public const int ProgressWheel_ahText = 0;
+			
+			// aapt resource value: 1
+			public const int ProgressWheel_ahTextColor = 1;
+			
+			// aapt resource value: 2
+			public const int ProgressWheel_ahTextSize = 2;
 			
 			public static int[] RecycleListView = new int[]
 			{

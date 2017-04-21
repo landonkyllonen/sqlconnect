@@ -1,10 +1,25 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/SQLConnectPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/DispensaryManagementPage.xaml.cs">
     <Files>
-      <File FileName="SQLConnect/To Do List.txt" Line="117" Column="72" />
-      <File FileName="SQLConnect/Statics.cs" Line="145" Column="35" />
-      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="31" Column="36" />
+      <File FileName="SQLConnect/To Do List.txt" Line="121" Column="1" />
+      <File FileName="SQLConnect/DispensaryManagementPage.xaml.cs" Line="61" Column="32" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SQLConnect" expanded="True">
+            <Node name="SQLConnect" expanded="True">
+              <Node name="Properties" expanded="True" />
+              <Node name="DispensaryManagementPage.xaml" expanded="True">
+                <Node name="DispensaryManagementPage.xaml.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="SQLConnect.Droid" expanded="True" />
+            <Node name="SQLConnect.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -17,7 +32,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.LGH8126e5714a3" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.SQLConnect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2B0F6819-9E52-4C2C-8AEB-BB137A18C606" />
 </Properties>

@@ -86,3 +86,16 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Plugin.Media.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/SQLConnect.dll.mdb
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Acr.Support.Android.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/AndHUD.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Splat.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Acr.UserDialogs.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Acr.UserDialogs.Interface.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/ExifLib.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Core.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Ioc.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Platform.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Platform.Droid.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Serialization.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Forms.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Forms.Droid.dll

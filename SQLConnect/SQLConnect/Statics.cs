@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
@@ -307,8 +306,12 @@ namespace SQLConnect
 					{
 						saved += c.prodName + ";;" + c.prodAmount + ";;" + c.prodRate + ";;" + c.prodTotal + ";;" + c.prodUnitType + ";;" + c.prodIsFlower + ";;" + c.prodIsRegular+"~~";
 					}
-					//Cut of last 2 delims.
-					saved = saved.Substring(0, saved.Length - 2);
+					if (saved.Length > 0)
+					{
+						//Cut of last 2 delims if there are any.
+						saved = saved.Substring(0, saved.Length - 2);
+					}
+					App.Current.Properties.Remove("cart");
 					App.Current.Properties.Add("cart", saved);
 					//Now make sure these properties are saved in case the app is killed.
 					App.Current.SavePropertiesAsync();

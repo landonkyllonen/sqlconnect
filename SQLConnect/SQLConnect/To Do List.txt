@@ -118,12 +118,15 @@ Change suspend transactions button text based on value loaded on login.
 User cannot checkout if the dispensary has suspended orders.
 When reloading cart from last session, cart prices are compared against loaded values and updated accordingly.
 /
-
-/-----------Complete ^
 Research displayalert with entry so owner can enter unlock code.
-Test device id for IOS
+/
+Rewrote DispensaryManagement layout in order to implement custom popup with entry.
+Fixed issues with suspension php.
+Implemented and debugged unlocking a suspension.
+/-----------Complete ^
 orders placed in app, payment separate through interac
-login with storefront pic?
+
+Test device id for IOS(NEED TO UPDATE XCODE AND FOLLOW FREE PROVISIONING TUT)
 
 create help page for app.
 
@@ -133,11 +136,12 @@ Implement bulk discount option for non-flowers.
 
 Allow placing an order with checkout.
 
-Whitelist users?
 
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed, and whenever cancel is pressed) this may need to be done platform-specific.
 /--------------Unsure v
 Consider removing offline mode?
+
+login with storefront pic?
 
 Implement saving of credentials for offline mode.
 
@@ -146,6 +150,8 @@ Allow existing item name search when adding new item for quick fill?
 Explore change in speed between downloading all pictures at login vs all picture in category vs pics in category one by one?
 
 Allow dispensary owners to view average, min, and max price/unit of products being offered by other dispensaries?
+
+Whitelist users?
 
 Convert all connection calls to POST instead of GET. Safer that way?
 

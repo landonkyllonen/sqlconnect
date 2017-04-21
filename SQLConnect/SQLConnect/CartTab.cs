@@ -127,7 +127,7 @@ namespace SQLConnect
 			cartItems.Add(new CartListItem { prodName = "Glass Pipe", prodAmount = 1, prodUnitType = "", prodTotal = "$10.75" });*/
 
 			cartList.ItemsSource = cartItems;
-			cartList.ItemSelected += removeFromCart;
+			cartList.ItemTapped += removeFromCart;
 
 			double totalprice = 0;
 			foreach (CartListItem c in cartItems)
@@ -194,7 +194,7 @@ namespace SQLConnect
 			}
 		}
 
-		async Task<CartListItem> removeFromCart(object s, ItemTappedEventArgs e)
+		async void removeFromCart(object s, ItemTappedEventArgs e)
 		{
 			bool answer = await DisplayAlert("Remove From Cart?", "Are you sure you want to remove this item?", "Yes", "No");
 
@@ -207,11 +207,6 @@ namespace SQLConnect
 				Statics.Default.setCartItems(cartItems);
 				//Save changes for reload.
 				Statics.Default.serializeAndSave("cart");
-				return pressed;
-			}
-			else
-			{
-				return null;
 			}
 		}
 	}
