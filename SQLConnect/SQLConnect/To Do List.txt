@@ -123,7 +123,21 @@ Research displayalert with entry so owner can enter unlock code.
 Rewrote DispensaryManagement layout in order to implement custom popup with entry.
 Fixed issues with suspension php.
 Implemented and debugged unlocking a suspension.
+/
+Implemented a "buy at least x and get y% off" bulkdiscount for non-flower products.
+/
+Reworking bulk discount for non-flowers to include same features as flowers (required bulkdiscount limit and increment)
+	-Added calculations for regular item prices. 
+	-Updated db and phps to support regular bulk pricing.
+	-Update code for loading products to include new properties.
+	-Added controls for specifying new values on regular items.(AddProductPage and Productpage editing)
+	-Organized ProductPage.cs.
+
+Made input checks more complete when editing products.
+Debugged changes.
 /-----------Complete ^
+Create %off indicator on product pages.
+
 orders placed in app, payment separate through interac
 
 Test device id for IOS(NEED TO UPDATE XCODE AND FOLLOW FREE PROVISIONING TUT)
@@ -132,10 +146,7 @@ create help page for app.
 
 Implement 1 more analytics tab.
 
-Implement bulk discount option for non-flowers.
-
 Allow placing an order with checkout.
-
 
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed, and whenever cancel is pressed) this may need to be done platform-specific.
 /--------------Unsure v

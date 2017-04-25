@@ -60,8 +60,18 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 					<Label Text="Max bulk discount:" VerticalOptions="Center" TextColor="Teal"/>
-					<Entry x:Name="newBulk" Text="10" TextColor="Teal" WidthRequest="50" Keyboard="Numeric"/>
+					<Entry x:Name="newBulk" TextColor="Teal" Text="10" Keyboard="Numeric" WidthRequest="50" IsEnabled="false"/>
 					<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
+				</StackLayout>
+
+				<StackLayout x:Name="regBulk1" IsVisible="false" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
+					<Label Text="#Items required per discount step:" VerticalOptions="Center" TextColor="Teal"/>
+					<Entry x:Name="newBulkInterval" TextColor="Teal" Keyboard="Numeric" WidthRequest="50" IsEnabled="false"/>
+				</StackLayout>
+
+				<StackLayout x:Name="regBulk2" IsVisible="false" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
+					<Label Text="#Items to receive max discount:" VerticalOptions="Center" TextColor="Teal"/>
+					<Entry x:Name="newBulkLimit" TextColor="Teal" Keyboard="Numeric" WidthRequest="50" IsEnabled="false"/>
 				</StackLayout>
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">

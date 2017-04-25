@@ -121,7 +121,7 @@
 				</RelativeLayout>
 
 
-				<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" x:Name="editView" IsVisible="false" Padding="10,10,10,0">
+				<StackLayout x:Name="editView" Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" IsVisible="false" Padding="10,10,10,0">
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 						<Image x:Name="editPic" Source="product.png" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="150"/>
@@ -166,10 +166,20 @@
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
 						<Label Text="Max bulk discount:" VerticalOptions="Center" TextColor="Teal"/>
-						<Entry x:Name="editBulk" TextColor="Teal" Keyboard="Numeric" WidthRequest="50"/>
+						<Entry x:Name="editBulk" TextColor="Teal" Text="10" Keyboard="Numeric" WidthRequest="50" IsEnabled="false"/>
 						<Label Text="%" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 					</StackLayout>
-					
+
+					<StackLayout x:Name="regBulk1" IsVisible="false" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
+						<Label Text="#Items required per discount step:" VerticalOptions="Center" TextColor="Teal"/>
+						<Entry x:Name="editBulkInterval" TextColor="Teal" Keyboard="Numeric" WidthRequest="50" IsEnabled="false"/>
+					</StackLayout>
+
+					<StackLayout x:Name="regBulk2" IsVisible="false" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
+						<Label Text="#Items to receive max discount:" VerticalOptions="Center" TextColor="Teal"/>
+						<Entry x:Name="editBulkLimit" TextColor="Teal" Keyboard="Numeric" WidthRequest="50" IsEnabled="false"/>
+					</StackLayout>
+
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 						<Button Text="Save Changes" Clicked="saveEdits" TextColor="White" BackgroundColor="Teal" HorizontalOptions="CenterAndExpand"/>
 						<Button Text="Cancel Changes" Clicked="cancelEdits" TextColor="White" BackgroundColor="Gray" HorizontalOptions="CenterAndExpand"/>

@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/DispensaryManagementPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/ProductPage.xaml.cs">
     <Files>
-      <File FileName="SQLConnect/To Do List.txt" Line="121" Column="1" />
-      <File FileName="SQLConnect/DispensaryManagementPage.xaml.cs" Line="61" Column="32" />
+      <File FileName="SQLConnect/To Do List.txt" Line="139" Column="40" />
+      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="538" Column="38" />
+      <File FileName="SQLConnect/Statics.cs" Line="521" Column="59" />
+      <File FileName="SQLConnect/CartListItem.cs" Line="6" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,12 +12,13 @@
           <Node name="SQLConnect" expanded="True">
             <Node name="SQLConnect" expanded="True">
               <Node name="Properties" expanded="True" />
-              <Node name="DispensaryManagementPage.xaml" expanded="True">
-                <Node name="DispensaryManagementPage.xaml.cs" selected="True" />
+              <Node name="AddProductPage.xaml" expanded="True" />
+              <Node name="CategoryListPage.xaml" expanded="True" />
+              <Node name="ProductPage.xaml" expanded="True">
+                <Node name="ProductPage.xaml.cs" selected="True" />
               </Node>
+              <Node name="SQLConnectPage.xaml" expanded="True" />
             </Node>
-            <Node name="SQLConnect.Droid" expanded="True" />
-            <Node name="SQLConnect.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -23,16 +26,10 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="213" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="214" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="215" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="217" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="216" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.LGH8126e5714a3" />
+  <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.SQLConnect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2B0F6819-9E52-4C2C-8AEB-BB137A18C606" />
 </Properties>

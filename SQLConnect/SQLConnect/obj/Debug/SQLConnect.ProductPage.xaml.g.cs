@@ -90,6 +90,18 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Entry editBulk;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout regBulk1;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry editBulkInterval;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout regBulk2;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry editBulkLimit;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ProductPage));
             browseView = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.RelativeLayout>(this, "browseView");
@@ -117,6 +129,10 @@ namespace SQLConnect {
             editDiscount = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editDiscount");
             editBulkType = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Picker>(this, "editBulkType");
             editBulk = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editBulk");
+            regBulk1 = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.StackLayout>(this, "regBulk1");
+            editBulkInterval = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editBulkInterval");
+            regBulk2 = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.StackLayout>(this, "regBulk2");
+            editBulkLimit = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editBulkLimit");
         }
     }
 }

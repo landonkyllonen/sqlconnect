@@ -26,17 +26,12 @@ namespace SQLConnect
 				var unitType = new Label { FontSize = 15, TextColor = Color.Teal, VerticalTextAlignment = TextAlignment.Center, HorizontalTextAlignment = TextAlignment.Start };
 				var rate = new Label { FontSize = 15, TextColor = Color.Teal, VerticalTextAlignment = TextAlignment.Start, HorizontalTextAlignment = TextAlignment.End };
 				var total = new Label { FontSize = 15, TextColor = Color.Teal, VerticalTextAlignment = TextAlignment.End, HorizontalTextAlignment = TextAlignment.End };
-				var totalReg = new Label { FontSize = 15, TextColor = Color.Teal, VerticalTextAlignment = TextAlignment.Center, HorizontalTextAlignment = TextAlignment.End };
 
 				name.SetBinding(Label.TextProperty, "prodName");
 				amount.SetBinding(Label.TextProperty, "prodAmount");
 				unitType.SetBinding(Label.TextProperty, "prodUnitType");
-				totalReg.SetBinding(Label.TextProperty, "prodTotal");
 				total.SetBinding(Label.TextProperty, "prodTotal");
 				rate.SetBinding(Label.TextProperty, "prodRate");
-				total.SetBinding(IsVisibleProperty, "prodIsFlower");
-				rate.SetBinding(IsVisibleProperty, "prodIsFlower");
-				totalReg.SetBinding(IsVisibleProperty, "prodIsRegular");
 
 
 				holder.Children.Add(name, Constraint.Constant(15), Constraint.Constant(0),
@@ -86,6 +81,7 @@ namespace SQLConnect
 										return parent.Height/2;
 									}));
 
+
 				holder.Children.Add(rate, Constraint.RelativeToView(total, (parent, sibling) =>
 									{
 										return sibling.X;
@@ -98,19 +94,6 @@ namespace SQLConnect
 									Constraint.RelativeToParent((parent) =>
 									{
 										return parent.Height/2;
-									}));
-				holder.Children.Add(rate, Constraint.RelativeToView(total, (parent, sibling) =>
-									{
-										return sibling.X;
-									}),
-									Constraint.RelativeToParent((parent) => { return parent.Height / 2; }),
-									Constraint.RelativeToParent((parent) =>
-									{
-										return parent.Width / 3 - 15;
-									}),
-									Constraint.RelativeToParent((parent) =>
-									{
-										return parent.Height / 2;
 									}));
 
 				return new ViewCell { View = holder };

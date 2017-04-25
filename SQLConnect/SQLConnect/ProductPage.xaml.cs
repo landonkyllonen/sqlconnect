@@ -19,15 +19,29 @@ namespace SQLConnect
 		ImageSource ogSrc;
 
 		string[] medicalAmounts;
+		string[] bulkTypes;
 		double[] medicalPrices;
-		int discountType;
+		double[] regularPrices;
+
+		double discountMult;
+
+		//Regular
+		int bulkInterval;
+		int bulkLimit;
+
+		//For flower amount position.
 		int index;
+		//For regular amount position.
+		int regIndex;
+
 		byte[] imageBytes;
+
 
 		public ProductPage(bool dealLink)
 		{
 			InitializeComponent();
 
+			//Get Item clicked, is it from home page or list of items?
 			if (dealLink)
 			{
 				product = Statics.Default.getDeal();
@@ -37,18 +51,35 @@ namespace SQLConnect
 				product = Statics.Default.getProdClicked();
 			}
 
+			//INITIALIZATIONS
 			Title = product.prodName;
+			index = 0;
+			regIndex = 0;
+			bulkLimit = product.prodBulkLimit;
+			bulkInterval = product.prodBulkInterval;
+			editBulkType.SelectedIndexChanged += bulkChanged;
+
+			//Try to set image.
 			image.Source = product.prodImgSrc;
 			ogSrc = product.prodImgSrc;
+			//If image didn't finish loading before selection, load it.
+			if (product.prodImgSrc == null)
+			{
+				//This gets and sets image for all relevant views.
+				gatherItemImage();
+			}
 
+			//Flower amount options.
 			medicalAmounts = new string[] { "Gram", "Eighth\n(~3.5g)", "Quarter\n(~7g)", "Half Oz\n(~14g)", "Ounce\n(~28g)" };
-			//Discount?
-			discountType = product.prodBulkType;
-			//Populate price list for flowers.
-			//If discount available, it is applied iteratively to amounts greater than a gram. This value could be set by the dispensary, maybe for each item?
-			//1 gram is base price
+			//Regular item amounts are numeric and capped at 20.
 
-			double discountMult;
+			//Bulk discount options.
+			if (product.prodCategory.Equals("Flowers"))
+			{
+				bulkTypes = new string[] { "None", "Linear", "Diminishing" };
+			}
+
+			//Discount mult does nothing to pricing unless dealflag is set.
 			if (product.prodDealFlag)
 			{
 				discountMult = 1 - product.prodDiscount;
@@ -57,7 +88,11 @@ namespace SQLConnect
 			{
 				discountMult = 1;
 			}
-			switch (discountType)
+
+
+
+			//Calculation of pricing for each quantity.
+			switch (product.prodBulkType)
 			{
 				case 0:
 					//No discount.
@@ -67,6 +102,11 @@ namespace SQLConnect
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice* discountMult;
 					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice* discountMult;
 					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice* discountMult;
+					regularPrices = new double[20];
+					for (int i = 0; i < 20; i++)
+					{
+						regularPrices[i] = product.prodUnitPrice * i * discountMult;
+					}
 					break;
 				case 1:
 					//Linear discount progression, 1 oz being the maximum discount(specified amount)
@@ -76,6 +116,29 @@ namespace SQLConnect
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 1 / 2)* discountMult;// half of discount
 					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount * 3 / 4)* discountMult;// three/fourths of discount
 					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - product.prodBulkDiscount)* discountMult;// max discount
+					regularPrices = new double[20];
+					for (int i = 0; i < 20; i++)
+					{
+						double currentBulkDiscount;
+						//% per interval is given by dividing the maximum discount by how many intervals are specified.
+						//E.g. If the limit is set at 20 items with 20% max discount, and the intervals are every 5 items,
+						//Your discount would be 20%/(20/5) = 20%/4 = 5% per interval.
+						double discountPerInterval = product.prodBulkDiscount / (bulkLimit / bulkInterval);
+
+						//Intervals reached is #items/items needed for each step of the discount. We round this down.
+						//E.g. if interval is 4 and disPerInt is 5%, buying 7 items gives same discount as buying 4.
+						double intervalsReached = Math.Floor((double)i / bulkInterval);
+
+						//So current discount is given by intervals reached * discountPerInterval.
+						currentBulkDiscount = intervalsReached * discountPerInterval;
+
+						//This is 1-currentBulkDiscount because discounts from server are given as 0.2 for 20%.
+						//So to take 20% off we multiply by 0.8.
+						//Note: this would not be the same as dividing by 0.2.
+						regularPrices[i] = product.prodUnitPrice * i * discountMult * (1-currentBulkDiscount);
+						//Discounts here are multiplicative, not additive.
+						//This is to the benefit of the dispensary, as adding discounts together would be a larger discount.
+					}
 					break;
 				case 2:
 					//each step up gives half the discount of the previous step.
@@ -85,6 +148,25 @@ namespace SQLConnect
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 3 / 4))* discountMult;//Fourth more
 					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 7 / 8))* discountMult;//Eighth more
 					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 15 / 16))* discountMult;//Sixteenth more
+					regularPrices = new double[20];
+					for (int i = 0; i < 20; i++)
+					{
+						double cumulativeDiscount;
+						//% per interval decreases by half each interval.
+						double intervalsReached = Math.Floor((double)(i+1) / bulkInterval);
+
+						//We see from the medicalPrices examples that there is a pattern.
+						//If variable n is 2 to the power of intervals reached,
+						//Discount = 1-maxdiscount * (n-1/n).
+						//For example, take the 4th interval: We have divided the discount in half 4 times.
+						//In terms of 16ths, this gives us 8/16 + 4/16 + 2/16 + 1/16 = 15/16.
+						int n = (int) Math.Pow(2,intervalsReached);
+
+						cumulativeDiscount = product.prodBulkDiscount * (n - 1) / n;
+
+						regularPrices[i] = product.prodUnitPrice * (i+1) * discountMult * (1 - cumulativeDiscount);
+						Debug.WriteLine("Price calc'd: " + regularPrices[i]);
+					}
 					break;
 				default:
 					//No discount.
@@ -94,15 +176,22 @@ namespace SQLConnect
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice* discountMult;
 					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice* discountMult;
 					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice* discountMult;
+					regularPrices = new double[20];
+					for (int i = 0; i < 20; i++)
+					{
+						regularPrices[i] = product.prodUnitPrice * i * discountMult;
+					}
 					break;
 			}
 
-			index = 0;
+			//Initialize price displays with calculated values.
 			priceExact.Text = medicalPrices[0].ToString("C");
 			priceExactRate.Text = "(" + medicalPrices[0].ToString("C") + "/g)";
+			price.Text = regularPrices[0].ToString("C");
+			priceRegRate.Text = "(" + regularPrices[0].ToString("C") + "/item)";
 
-			//Get information on what type of choices to display.
 
+			//IF MANAGER EDITING, SHOW EDITING INTERFACE,
 			if (Statics.Default.getCreds()[12].Equals("1") && Statics.Default.IsEditing())
 			{
 				editView.IsVisible = true;
@@ -115,18 +204,33 @@ namespace SQLConnect
 				editUnit.Text = product.prodUnitPrice.ToString("F");
 				editIncUnit.Text = product.prodUnitPriceIncentive.ToString();
 				editIncFlag.IsToggled = product.prodIncentiveFlag;
+
 				//Select proper bulk type
-				string[] bulkTypes = new string[] { "None", "Linear", "Diminishing" };
 				foreach (string s in bulkTypes)
 				{
 					editBulkType.Items.Add(s);
 				}
-				editBulkType.SelectedIndex = discountType;
+				editBulkType.SelectedIndex = product.prodBulkType;
 				editDealFlag.IsToggled = product.prodDealFlag;
 				editDiscount.Text = (product.prodDiscount * 100).ToString();
+
+				//Include certain values for editing if not flowers.
+				if (!product.prodCategory.Equals("Flowers"))
+				{
+					regBulk1.IsVisible = true;
+					regBulk2.IsVisible = true;
+					editBulkLimit.Text = product.prodBulkLimit.ToString();
+					editBulkInterval.Text = product.prodBulkInterval.ToString();
+					//Enable them if bulktype isn't none.
+					if (editBulkType.SelectedIndex > 0)
+					{
+						regBulk1.IsEnabled = true;
+						regBulk2.IsEnabled = true;
+					}
+				}
 			}
 			else
-			{
+			{//IF ACCESSING NORMALLY, SHOW PRODUCT PAGE FOR FLOWERS OR REG.
 				if (product.prodCategory.Equals("Flowers"))
 				{
 					componentExact.IsVisible = true;
@@ -135,15 +239,9 @@ namespace SQLConnect
 				{
 					componentRegular.IsVisible = true;
 				}
-
-				//If image not loaded, load it.
-				if (product.prodImgSrc == null)
-				{
-					gatherItemImage();
-				}
 			}
 
-			price.Text = product.prodUnitPrice.ToString("C");
+
 
 			Debug.WriteLine("editView: " + editView.IsVisible + " browse: " + browseView.IsVisible);
 		}
@@ -154,11 +252,13 @@ namespace SQLConnect
 		{
 			s.ToString();
 			e.ToString();
-			if (int.Parse(value.Text) > 9) { return; }
+			if (regIndex == 19) { return; }
 			else
 			{
-				value.Text = (int.Parse(value.Text) + 1).ToString();
-				price.Text = (int.Parse(value.Text) * product.prodUnitPrice).ToString("C");
+				regIndex++;
+				value.Text = (regIndex + 1).ToString();
+				price.Text = (regularPrices[regIndex]).ToString("C");
+				priceRegRate.Text = "(" + (regularPrices[regIndex] / (regIndex + 1)).ToString("C") + "/item)";
 			}
 		}
 
@@ -168,11 +268,13 @@ namespace SQLConnect
 		{
 			s.ToString();
 			e.ToString();
-			if (int.Parse(value.Text) < 2) { return; }
+			if (regIndex ==0) { return; }
 			else
 			{
-				value.Text = (int.Parse(value.Text) - 1).ToString();
-				price.Text = (int.Parse(value.Text) * product.prodUnitPrice).ToString("C");
+				regIndex--;
+				value.Text = (regIndex +1).ToString();
+				price.Text = (regularPrices[regIndex]).ToString("C");
+				priceRegRate.Text = "(" + (regularPrices[regIndex]/(regIndex+1)).ToString("C") + "/item)";
 			}
 		}
 
@@ -415,18 +517,18 @@ namespace SQLConnect
 						rate = "(" + (medicalPrices[4] / (3.54688 * 8)).ToString("C") + "/g)";
 						break;
 				}
-				//Medicalprices takes the amount into account already.
+				//Medicalprices takes the amount, discount and bulkdiscount into account already.
 				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular = false, prodIsFlower = true, prodAmount = amount, prodRate = rate, prodUnitType = unit, prodTotal = (medicalPrices[index]).ToString("C") };
 			}
 			else
 			{
-				//Non-flowers does not, so we multiply unit price by amount.
-				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular = true, prodIsFlower = false, prodAmount = double.Parse(value.Text), prodUnitType = "", prodTotal = (product.prodUnitPrice * double.Parse(value.Text)).ToString("C") };
+				string rate = "(" + (regularPrices[regIndex] / (regIndex + 1)).ToString("C") + "/item)";
+				//Regular prices does now too.
+				cartItem = new CartListItem { prodName = product.prodName, prodIsRegular = true, prodIsFlower = false, prodAmount = regIndex+1, prodRate = rate, prodUnitType = "", prodTotal = (regularPrices[regIndex]).ToString("C") };
 			}
+			//Update static cart.
 			ObservableCollection<CartListItem> pulled = Statics.Default.getCartItems();
-
 			pulled.Add(cartItem);
-
 			Statics.Default.setCartItems(pulled);
 
 			var answer = await DisplayAlert("Added to Cart", "Would you like to keep browsing?", "Keep Browsing", "View Cart");
@@ -453,35 +555,44 @@ namespace SQLConnect
 
 			var answer = await DisplayAlert("Save Changes", "Review your changes for accuracy. Are you sure you want to make these changes?", "Yes", "No");
 
-			bool valid = true;
 			string error = "";
 
 			/*Checklist*/
 
 			//Fails if any info is empty.
 			if (String.IsNullOrEmpty(editDesc.Text) ||
-			   String.IsNullOrEmpty(editUnit.Text) ||
-			   //String.IsNullOrEmpty(newIncUnit.Text) || NOT REQUIRED YET
-			   String.IsNullOrEmpty(editBulkType.Items[editBulkType.SelectedIndex]))
+			     String.IsNullOrEmpty(editUnit.Text) ||
+			     String.IsNullOrEmpty(editDiscount.Text) ||
+			    (String.IsNullOrEmpty(editBulk.Text) && editBulkType.SelectedIndex>0) ||
+			    (String.IsNullOrEmpty(editDiscount.Text) && editDealFlag.IsToggled) ||
+			    (String.IsNullOrEmpty(editIncUnit.Text) && editIncFlag.IsToggled) ||
+			    (String.IsNullOrEmpty(editBulkType.Items[editBulkType.SelectedIndex]) && product.prodCategory.Equals("Flowers")) ||
+			    (String.IsNullOrEmpty(editBulkLimit.Text) && product.prodCategory.Equals("Flowers")) ||
+			    (String.IsNullOrEmpty(editBulkInterval.Text) && product.prodCategory.Equals("Flowers")))
 			{
-				valid = false;
 				error = "No fields can be empty.";
+				//Display error
+				await DisplayAlert("Error", error, "Okay");
+				return;
 			}
 
 			//Fails if either discount is applied but set to less than 5%.
-			if ((int.Parse(editDiscount.Text) < 5 && editDealFlag.IsToggled) || (int.Parse(editBulk.Text) < 5 && editBulkType.SelectedIndex > 0))
+			if ((int.Parse(editDiscount.Text) < 5 && editDealFlag.IsToggled) || 
+			    (int.Parse(editBulk.Text) < 5 && editBulkType.SelectedIndex > 0))
 			{
-				valid = false;
 				error = "Discount cannot be less than 5%, increase discount % or disable the discount(Set 'Bulk discount' to none or disable 'Discount applied'";
+				//Display error
+				await DisplayAlert("Error", error, "Okay");
+				return;
 			}
 
 			//Possibly create safeguards for someone trying to set an item to be free.
 
-			if (answer && valid)
+			if (answer)
 			{
 				//Upload changes, notify manager that they can browse products normally to see exactly how these changes look to the users.
 
-				//Check inputs
+				//Convert inputs
 				string deal, inc;
 				if (editDealFlag.IsToggled) { deal = "1"; } else { deal = "0"; }
 				if (editIncFlag.IsToggled) { inc = "1"; } else { inc = "0"; }
@@ -507,6 +618,9 @@ namespace SQLConnect
 				contentSent.Add(new StringContent(discount.ToString()), "discount");
 				contentSent.Add(new StringContent(editBulkType.Items[editBulkType.SelectedIndex]), "bulkType");
 				contentSent.Add(new StringContent(bulkDiscount.ToString()), "bulkDiscount");
+				contentSent.Add(new StringContent(editBulkLimit.Text), "bulkLimit");
+				contentSent.Add(new StringContent(editBulkInterval.Text), "bulkInterval");
+
 
 				//Show that we are waiting for a response and wait for it.
 				var response = await client.PostAsync("http://cbd-online.net/landon/addOrEditProduct.php", contentSent);
@@ -547,6 +661,8 @@ namespace SQLConnect
 					product.prodDiscount = discount;
 					product.prodBulkType = editBulkType.SelectedIndex;
 					product.prodBulkDiscount = bulkDiscount;
+					product.prodBulkLimit = int.Parse(editBulkLimit.Text);
+					product.prodBulkInterval = int.Parse(editBulkInterval.Text);
 
 					pulled.Insert(place, product);
 					pulledCat.Insert(placeCat, product);
@@ -560,11 +676,6 @@ namespace SQLConnect
 					await DisplayAlert("Error", "Sorry, there was a problem uploading your changes.", "Okay");
 
 				}
-			}
-			else
-			{
-				//Display error
-				await DisplayAlert("Error", error, "Okay");
 			}
 		}
 
@@ -637,6 +748,23 @@ namespace SQLConnect
 				return "jpg";
 
 			return "unknown";
+		}
+
+		//Couldn't bind picker to 'isenabled' of other controls like switches without some sort of converter.
+		void bulkChanged(object s, EventArgs e)
+		{
+			if (editBulkType.SelectedIndex > 0)
+			{
+				editBulk.IsEnabled = true;
+				editBulkLimit.IsEnabled = true;
+				editBulkInterval.IsEnabled = true;
+			}
+			else
+			{
+				editBulk.IsEnabled = false;
+				editBulkLimit.IsEnabled = false;
+				editBulkInterval.IsEnabled = false;
+			}
 		}
 
 		void cancelNew(object s, EventArgs e)

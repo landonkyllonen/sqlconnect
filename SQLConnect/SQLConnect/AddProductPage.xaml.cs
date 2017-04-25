@@ -43,16 +43,17 @@ namespace SQLConnect
 			{
 				newCat.Items.Add(s);
 			}
+			newCat.SelectedIndexChanged += catChanged;
 			string[] bulkTypes = new string[] { "None", "Linear", "Diminishing" };
 			foreach (string s in bulkTypes)
 			{
 				newBulkType.Items.Add(s);
 			}
+			newBulkType.SelectedIndexChanged += bulkChanged;
 		}
 
 		async void saveNew(object s, EventArgs e)
 		{
-			bool valid = true;
 			string error = "";
 
 			/*Checklist*/
@@ -60,102 +61,112 @@ namespace SQLConnect
 			//Fails if item already exists in this dispensary.
 			foreach (ProductListItem p in Statics.Default.getProducts())
 			{
-				if (p.prodName.Equals(newName.Text)) { valid = false; error = "This item name already exists at your dispensary."; break; }
+				if (p.prodName.Equals(newName.Text)) { error = "This item name already exists at your dispensary."; break; }
 			}
+
 			//Fails if any info is empty.
 			if (String.IsNullOrEmpty(newName.Text) ||
-			   String.IsNullOrEmpty(newCat.Items[newCat.SelectedIndex]) ||
-			   String.IsNullOrEmpty(newDesc.Text) ||
-			   String.IsNullOrEmpty(newUnit.Text) ||
-			   //String.IsNullOrEmpty(newIncUnit.Text) || NOT REQUIRED YET
-			   newBulkType.SelectedIndex<0)
+			     String.IsNullOrEmpty(newCat.Items[newCat.SelectedIndex]) ||
+				 String.IsNullOrEmpty(newDesc.Text) ||
+				 String.IsNullOrEmpty(newUnit.Text) ||
+				 String.IsNullOrEmpty(newDiscount.Text) ||
+				(String.IsNullOrEmpty(newBulk.Text) && newBulkType.SelectedIndex > 0) ||
+				(String.IsNullOrEmpty(newDiscount.Text) && newDealFlag.IsToggled) ||
+				(String.IsNullOrEmpty(newIncUnit.Text) && newIncFlag.IsToggled) ||
+				(String.IsNullOrEmpty(newBulkType.Items[newBulkType.SelectedIndex]) && newCat.SelectedIndex > 0) ||
+			    (String.IsNullOrEmpty(newBulkLimit.Text) && newCat.SelectedIndex>0) ||
+				(String.IsNullOrEmpty(newBulkInterval.Text) && newCat.SelectedIndex > 0))
 			{
-				valid = false; 
-				error = "You must fill in all fields.";
+				error = "No fields can be empty.";
+				//Display error
+				await DisplayAlert("Error", error, "Okay");
+				return;
 			}
 
 			//Fails if image isn't provided.
-			if (imageBytes == null) { valid = false; error = "No image data was selected."; }
+			if (imageBytes == null) {
+				error = "No image data was selected.";
+				await DisplayAlert("Error", error, "Okay");
+				return;
+			}
 
 			//Fails if either discount is applied but set to 0%.
-			if ((int.Parse(newDiscount.Text) < 5 && newDealFlag.IsToggled) || (int.Parse(newBulk.Text) < 5 && newBulkType.SelectedIndex > 0))
+			if ((int.Parse(newDiscount.Text) < 5 && newDealFlag.IsToggled) || 
+			    (int.Parse(newBulk.Text) < 5 && newBulkType.SelectedIndex > 0))
 			{
-				valid = false;
 				error = "Discount cannot be less than 5%, increase discount % or disable the discount(Set 'Bulk discount' to none or disable 'Discount applied'";
+				await DisplayAlert("Error", error, "Okay");
+				return;
 			}
 
-			if (valid)
+			var answer = await DisplayAlert("Add this Item", "Review your submission for accuracy. Are you sure you want to make this product available for sale with these values?", "Yes", "No");
+			if (answer)
 			{
-				var answer = await DisplayAlert("Add this Item", "Review your submission for accuracy. Are you sure you want to make this product available for sale with these values?", "Yes", "No");
-				if (answer)
+				//Connect to url.
+				var client = new HttpClient();
+
+				//Format inputs.
+				string deal, inc;
+				if (newDealFlag.IsToggled) { deal = "1"; } else { deal = "0"; }
+				if (newIncFlag.IsToggled) { inc = "1"; } else { inc = "0"; }
+				double discount = double.Parse(newDiscount.Text) / 100;
+				double bulkDiscount = double.Parse(newBulk.Text) / 100;
+
+				var contentSent = new MultipartFormDataContent();
+				contentSent.Add(new StringContent("0"), "operation");
+				contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
+				contentSent.Add(new StringContent(newName.Text), "name");
+				contentSent.Add(new StringContent(newCat.Items[newCat.SelectedIndex]), "cat");
+				contentSent.Add(new StringContent(newDesc.Text), "desc");
+				contentSent.Add(new ByteArrayContent(imageBytes), "picBytes");
+				contentSent.Add(new StringContent(newUnit.Text), "unitPrice");
+				contentSent.Add(new StringContent(inc), "incFlag");
+				contentSent.Add(new StringContent(newIncUnit.Text), "incUnitPrice");
+				contentSent.Add(new StringContent(deal), "dealFlag");
+				contentSent.Add(new StringContent(discount.ToString()), "discount");
+				contentSent.Add(new StringContent(newBulkType.Items[newBulkType.SelectedIndex].ToString()), "bulkType");
+				contentSent.Add(new StringContent(bulkDiscount.ToString()), "bulkDiscount");
+				contentSent.Add(new StringContent(newBulkLimit.Text), "bulkLimit");
+				contentSent.Add(new StringContent(newBulkInterval.Text), "bulkInterval");
+
+				//Show that we are waiting for a response and wait for it.
+				var response = await client.PostAsync("http://cbd-online.net/landon/addOrEditProduct.php", contentSent);
+
+				var output = await response.Content.ReadAsStringAsync();
+
+				string[] components = output.Split(new string[] { "\n" }, StringSplitOptions.None);
+
+				if (components[0].Equals("true"))
 				{
-					//Connect to url.
-					var client = new HttpClient();
+					await DisplayAlert("Success", "Item values modified. You can see your edited inventory list by navigating to products section.", "Okay");
+					//Change locally.
+					ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
+					ProductListItem product = new ProductListItem();
 
-					//Format inputs.
-					string deal, inc;
-					if (newDealFlag.IsToggled) { deal = "1"; } else { deal = "0"; }
-					if (newIncFlag.IsToggled) { inc = "1"; } else { inc = "0"; }
-					double discount = double.Parse(newDiscount.Text) / 100;
-					double bulkDiscount = double.Parse(newBulk.Text) / 100;
+					product.prodName = newName.Text;
+					product.prodCategory = newCat.Items[newCat.SelectedIndex];
+					product.prodDescription = newDesc.Text;
+					product.prodImgSrc = newPic.Source;
+					product.prodUnitPrice = double.Parse(newUnit.Text);
+					product.prodIncentiveFlag = newIncFlag.IsToggled;
+					product.prodUnitPriceIncentive = double.Parse(newIncUnit.Text);
+					product.prodDealFlag = newDealFlag.IsToggled;
+					product.prodDiscount = double.Parse(newDiscount.Text);
+					product.prodBulkType = newBulkType.SelectedIndex;
+					product.prodBulkDiscount = double.Parse(newBulk.Text);
+					product.prodBulkLimit = int.Parse(newBulkLimit.Text);
+					product.prodBulkInterval = int.Parse(newBulkInterval.Text);
 
-					var contentSent = new MultipartFormDataContent();
-					contentSent.Add(new StringContent("0"), "operation");
-					contentSent.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
-					contentSent.Add(new StringContent(newName.Text), "name");
-					contentSent.Add(new StringContent(newCat.Items[newCat.SelectedIndex]), "cat");
-					contentSent.Add(new StringContent(newDesc.Text), "desc");
-					contentSent.Add(new ByteArrayContent(imageBytes), "picBytes");
-					contentSent.Add(new StringContent(newUnit.Text), "unitPrice");
-					contentSent.Add(new StringContent(inc), "incFlag");
-					contentSent.Add(new StringContent(newIncUnit.Text), "incUnitPrice");
-					contentSent.Add(new StringContent(deal), "dealFlag");
-					contentSent.Add(new StringContent(discount.ToString()), "discount");
-					contentSent.Add(new StringContent(newBulkType.Items[newBulkType.SelectedIndex].ToString()), "bulkType");
-					contentSent.Add(new StringContent(bulkDiscount.ToString()), "bulkDiscount");
+					pulled.Add(product);
+					Statics.Default.setProducts(pulled);
 
-					//Show that we are waiting for a response and wait for it.
-					var response = await client.PostAsync("http://cbd-online.net/landon/addOrEditProduct.php", contentSent);
-
-					var output = await response.Content.ReadAsStringAsync();
-
-					string[] components = output.Split(new string[] { "\n" }, StringSplitOptions.None);
-
-					if (components[0].Equals("true"))
-					{
-						await DisplayAlert("Success", "Item values modified. You can see your edited inventory list by navigating to products section.", "Okay");
-						//Change locally.
-						ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
-						ProductListItem product = new ProductListItem();
-
-						product.prodName = newName.Text;
-						product.prodCategory = newCat.Items[newCat.SelectedIndex];
-						product.prodDescription = newDesc.Text;
-						product.prodImgSrc = newPic.Source;
-						product.prodUnitPrice = double.Parse(newUnit.Text);
-						product.prodIncentiveFlag = newIncFlag.IsToggled;
-						product.prodUnitPriceIncentive = double.Parse(newIncUnit.Text);
-						product.prodDealFlag = newDealFlag.IsToggled;
-						product.prodDiscount = double.Parse(newDiscount.Text);
-						product.prodBulkType = newBulkType.SelectedIndex;
-						product.prodBulkDiscount = double.Parse(newBulk.Text);
-
-						pulled.Add(product);
-						Statics.Default.setProducts(pulled);
-
-						await Navigation.PopModalAsync();
-					}
-					else
-					{
-						await DisplayAlert("Error", "Sorry, there was a problem uploading your changes.", "Okay");
-					}
+					await Navigation.PopModalAsync();
+				}
+				else
+				{
+					await DisplayAlert("Error", "Sorry, there was a problem uploading your changes.", "Okay");
 				}
 			}
-			else
-			{
-				await DisplayAlert("Error", error, "Okay");
-			}
-
 		}
 
 		public async void pickPic(object s, EventArgs e)
@@ -258,6 +269,38 @@ namespace SQLConnect
 				return "jpg";
 
 			throw new NotSupportedException("The image type is not supported, supported types are of type PNG or JPEG.");
+		}
+
+		void catChanged(object s, EventArgs e)
+		{
+			//Show controls specific to regular items.
+			if (newCat.SelectedIndex > 0)
+			{
+				regBulk1.IsVisible = true;
+				regBulk2.IsVisible = true;
+			}
+			//Show just flower controls.
+			else
+			{
+				regBulk1.IsVisible = false;
+				regBulk2.IsVisible = false;
+			}
+		}
+
+		void bulkChanged(object s, EventArgs e)
+		{
+			if (newBulkType.SelectedIndex > 0)
+			{
+				newBulk.IsEnabled = true;
+				newBulkLimit.IsEnabled = true;
+				newBulkInterval.IsEnabled = true;
+			}
+			else
+			{
+				newBulk.IsEnabled = false;
+				newBulkLimit.IsEnabled = false;
+				newBulkInterval.IsEnabled = false;
+			}
 		}
 
 		void cancelNew(object s, EventArgs e)

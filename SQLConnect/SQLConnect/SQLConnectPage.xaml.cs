@@ -259,8 +259,8 @@ namespace SQLConnect
 				Debug.WriteLine(comps);
 				//FOR DEBUGGING--
  
-				//  0    1   2       3          4       5            6                7                8            9           10                11
-				//Name, Id, Cat, Description, PicUrl, BasePrice, IncentiveFlag, IncentiveBasePrice, DealFlag, DealDiscount, BulkDiscountType, BulkDiscount
+				//  0    1   2       3          4       5            6                7                8            9           10                11			12			13
+				//Name, Id, Cat, Description, PicUrl, BasePrice, IncentiveFlag, IncentiveBasePrice, DealFlag, DealDiscount, BulkDiscountType, BulkDiscount, BulkInterval, BulkLimit
 				bool deal = false;
 				bool incentive = false;
 				if (productComponents[8].Equals("1")) { deal = true; }
@@ -274,11 +274,13 @@ namespace SQLConnect
 					prodImgUrl = productComponents[4],
 					prodUnitPrice = double.Parse(productComponents[5]),
 					prodUnitPriceIncentive = double.Parse(productComponents[7]),
-					prodDiscount = double.Parse(productComponents[9]),
 					prodDealFlag = deal,
 					prodIncentiveFlag = incentive,
+					prodDiscount = double.Parse(productComponents[9]),
+					prodBulkType = int.Parse(productComponents[10]),
 					prodBulkDiscount = double.Parse(productComponents[11]),
-					prodBulkType = int.Parse(productComponents[10])
+					prodBulkInterval = int.Parse(productComponents[12]),
+					prodBulkLimit = int.Parse(productComponents[13])
 				};
 
 				if (prod.prodDealFlag) { Statics.Default.setDeal(prod); }

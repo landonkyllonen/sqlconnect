@@ -489,6 +489,111 @@ namespace SQLConnect
 								else
 								{
 									//Item is not flower
+									foreach (ProductListItem p in products)
+									{
+										//If item is found...
+										if (p.prodName.Equals(c.prodName))
+										{
+											double[] regularPrices;
+											int amount = (int)c.prodAmount;
+											int bulktype = p.prodBulkType;
+
+											//Generate price list for flower based on bulk discount type.
+
+											double discountMult;
+											if (p.prodDealFlag)
+											{
+												discountMult = 1 - p.prodDiscount;
+											}
+											else
+											{
+												discountMult = 1;
+											}
+
+											//Calculate new pricing.
+											switch (bulktype)
+											{
+												case 0:
+													//No discount.
+													regularPrices = new double[20];
+													for (int i = 0; i < 20; i++)
+													{
+														regularPrices[i] = p.prodUnitPrice * (i + 1) * discountMult;
+													}
+													break;
+												case 1:
+													regularPrices = new double[20];
+													for (int i = 0; i < 20; i++)
+													{
+														//See ProductPage.xaml.cs for information on calculations.
+														double currentBulkDiscount;
+														double discountPerInterval = p.prodBulkDiscount / (p.prodBulkLimit / p.prodBulkInterval);
+														double intervalsReached = Math.Floor((double)i / p.prodBulkInterval);
+														currentBulkDiscount = intervalsReached * discountPerInterval;
+														regularPrices[i] = p.prodUnitPrice * (i + 1) * discountMult * (1 - currentBulkDiscount);
+													}
+													break;
+												case 2:
+													//See ProductPage.xaml.cs for information on calculations.
+													//each step up gives half the discount of the previous step.
+													regularPrices = new double[20];
+													for (int i = 0; i < 20; i++)
+													{
+														double cumulativeDiscount;
+														//% per interval decreases by half each interval.
+														double intervalsReached = Math.Floor((double)i / p.prodBulkInterval);
+														//Find what % to give off purchase.
+														int n = (int)Math.Pow(2, intervalsReached);
+														cumulativeDiscount = p.prodBulkDiscount * (n - 1) / n;
+														regularPrices[i] = p.prodUnitPrice * (i+1) * discountMult * (1 - cumulativeDiscount);
+													}
+													break;
+												default:
+													//No discount.
+													regularPrices = new double[20];
+													for (int i = 0; i < 20; i++)
+													{
+														regularPrices[i] = p.prodUnitPrice * (i + 1) * discountMult;
+													}
+													break;
+											}
+
+											//Now that regularPrices calculated, set new total.
+											c.prodTotal = regularPrices[amount].ToString();
+
+											//Calculate new rate.
+											string rate;
+											switch (amount)
+											{
+												case 0:
+													rate = "(" + (regularPrices[0]).ToString("C") + "/item)";
+													break;
+												case 1:
+													rate = "(" + (regularPrices[1] / 3.54688).ToString("C") + "/item)";
+													break;
+												case 2:
+													rate = "(" + (regularPrices[2] / (3.54688 * 2)).ToString("C") + "/item)";
+													break;
+												case 3:
+													rate = "(" + (regularPrices[3] / (3.54688 * 4)).ToString("C") + "/item)";
+													break;
+												default:
+													rate = "(" + (regularPrices[4] / (3.54688 * 8)).ToString("C") + "/item)";
+													break;
+											}
+											//Set new rate
+											c.prodRate = rate;
+
+											//Add this updated cart item into memory.
+											this.cartItems.Add(c);
+											//No longer search for this item, already found, move to next.
+											break;
+										}
+										else//Item is not found in dispensary inventory.
+										{
+											//This item should not be kept on app close, at end of both loops we will resave only cart items that could be updated.
+										}
+									}
 								}
 							}
 							//Now all of the cart items that could be are updated, resave this to local memory.
