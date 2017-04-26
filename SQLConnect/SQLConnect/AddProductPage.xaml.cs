@@ -280,12 +280,14 @@ namespace SQLConnect
 			//Show controls specific to regular items.
 			if (newCat.SelectedIndex > 0)
 			{
+				newPriceLbl.Text = "Price/unit:";
 				regBulk1.IsVisible = true;
 				regBulk2.IsVisible = true;
 			}
 			//Show just flower controls.
 			else
 			{
+				newPriceLbl.Text = "Price/g:";
 				regBulk1.IsVisible = false;
 				regBulk2.IsVisible = false;
 			}
@@ -305,6 +307,13 @@ namespace SQLConnect
 				newBulkLimit.IsEnabled = false;
 				newBulkInterval.IsEnabled = false;
 			}
+		}
+
+		void showBulkHelp(object s, EventArgs e)
+		{
+			DisplayAlert("Bulk Types:", "Linear: Discount approaches maximum % specified in equal increments. E.G. 5%, 10%, 15%, %20%...(With max 30%)\n" +
+			             "Diminishing: Discount approaches maximum % specified more slowly with each step. E.G. 15%, ~22%, ~26%, ~28%...(With max 30%)",
+			            "Close");
 		}
 
 		void cancelNew(object s, EventArgs e)

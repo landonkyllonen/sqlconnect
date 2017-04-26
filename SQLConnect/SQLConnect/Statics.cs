@@ -600,7 +600,7 @@ namespace SQLConnect
 													regularPrices = new double[20];
 													for (int i = 0; i < 20; i++)
 													{
-														regularPrices[i] = product.prodUnitPrice * (i + 1) * discountMult;
+														regularPrices[i] = p.prodUnitPrice * (i + 1) * discountMult;
 													}
 													break;
 											}

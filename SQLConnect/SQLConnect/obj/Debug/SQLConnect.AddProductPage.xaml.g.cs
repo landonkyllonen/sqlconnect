@@ -33,6 +33,9 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Editor newDesc;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label newPriceLbl;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry newUnit;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -74,6 +77,7 @@ namespace SQLConnect {
             newPic = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Image>(this, "newPic");
             newPicBtn = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Button>(this, "newPicBtn");
             newDesc = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Editor>(this, "newDesc");
+            newPriceLbl = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "newPriceLbl");
             newUnit = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "newUnit");
             newIncFlag = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Switch>(this, "newIncFlag");
             newIncUnit = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "newIncUnit");

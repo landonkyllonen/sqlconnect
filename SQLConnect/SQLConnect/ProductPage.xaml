@@ -15,6 +15,12 @@
 						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.45, Constant=0}">
 					</Image>
 
+					<Button Text="Info" TextColor="White" BackgroundColor="#00cdcd" Clicked="showInfo" BorderRadius="0" BorderWidth="0"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8, Constant=5}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.45, Constant=-6}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2, Constant=-10}"
+						/>
+
 					<RelativeLayout x:Name="componentRegular" IsVisible="false"
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.45, Constant=0}"
@@ -143,17 +149,17 @@
 					</StackLayout>
 					
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-						<Label Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
+						<Label x:Name="editPriceLbl" Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
 						<Label Text=" $" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 						<Entry x:Name="editUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100"/>
 					</StackLayout>
 
-					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start" IsVisible="false">
 						<Label Text="Purchasable with points:" VerticalOptions="Center" TextColor="Teal"/>
 						<Switch x:Name="editIncFlag" HorizontalOptions="End"/>
 					</StackLayout>
 
-					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
+					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start" IsVisible="false">
 						<Label Text="Points/unit:" VerticalOptions="Center" TextColor="Teal"/>
 						<Entry x:Name="editIncUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=editIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 					</StackLayout>
@@ -171,7 +177,8 @@
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 						<Label Text="Bulk discount type:" VerticalOptions="Center" TextColor="Teal"/>
-						<Picker x:Name="editBulkType" TextColor="Teal" HorizontalOptions="End" WidthRequest="175"/>
+						<Picker x:Name="editBulkType" TextColor="Teal" HorizontalOptions="End" WidthRequest="120"/>
+						<Button Clicked="showBulkHelp" Text = "?" TextColor = "White" BackgroundColor="#8C8984"/>
 					</StackLayout>
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">

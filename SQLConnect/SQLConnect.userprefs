@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/ProductPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="SQLConnect/To Do List.txt" Line="143" Column="25" />
-      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="149" Column="101" />
-      <File FileName="SQLConnect/Statics.cs" Line="408" Column="64" />
+      <File FileName="SQLConnect/To Do List.txt" Line="146" Column="23" />
+      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="242" Column="5" />
+      <File FileName="SQLConnect/AddProductPage.xaml.cs" Line="317" Column="4" />
+      <File FileName="SQLConnect/ProfileTab.cs" Line="327" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +19,11 @@
               </Node>
               <Node name="SQLConnectPage.xaml" expanded="True" />
             </Node>
-            <Node name="SQLConnect.Droid" expanded="True" />
+            <Node name="SQLConnect.Droid" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="values" expanded="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>

@@ -141,6 +141,9 @@ Created %off indicator on product pages.
 Debugged for regular items.
 Debug flower % indicator.
 Fixed calculation of regularPrices DR to take limit into account.
+/
+Add info button on ProductPage to show item description and active deals.
+Add help buttons for clarity on bulk choices in adding/editing interface.
 /-----------Complete ^
 orders placed in app, payment separate through interac
 

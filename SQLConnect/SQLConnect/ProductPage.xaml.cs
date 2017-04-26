@@ -265,6 +265,10 @@ namespace SQLConnect
 						regBulk2.IsEnabled = true;
 					}
 				}
+				else
+				{
+					editPriceLbl.Text = "Price/g:";
+				}
 			}
 			else
 			{//IF ACCESSING NORMALLY, SHOW PRODUCT PAGE FOR FLOWERS OR REG.
@@ -886,6 +890,74 @@ namespace SQLConnect
 				editBulkLimit.IsEnabled = false;
 				editBulkInterval.IsEnabled = false;
 			}
+		}
+
+		void showInfo(object s, EventArgs e)
+		{
+			string saleText = "";
+			string bulkText = "";
+			string disclaimer = "";
+
+			//Sale?
+			if (product.prodDealFlag)
+			{
+				saleText = "\nThis product is " + (int)(product.prodDiscount * 100) + "% off.";
+				if (product.prodBulkType > 0)
+				{
+					disclaimer = "\n(Regular and bulk discounts are multiplicative, not additive.)";
+				}
+			}
+
+			//Bulk deal?
+				//Flowers
+			if (product.prodCategory.Equals("Flowers"))
+			{
+				switch (product.prodBulkType)
+				{
+					//Linear
+					case 1:
+						int discountPerInterval = (int)((product.prodBulkDiscount / 4) * 100);
+						bulkText = "\nGet " + discountPerInterval + "% off for each increase in amount.";
+						break;
+					case 2://DR
+						bulkText = "\nDiscount rate increases as amount is increased.";
+						break;
+					default:
+						break;
+				}
+			}
+			else //Regular
+			{
+				switch (product.prodBulkType)
+				{
+					//Linear
+					case 1:
+						int discountPerInterval = (int)((product.prodBulkDiscount / (product.prodBulkLimit / product.prodBulkInterval)) * 100);
+						//Simplify message if possible.
+						if (product.prodBulkLimit == product.prodBulkInterval)
+						{
+							bulkText = "\nBuy " + product.prodBulkInterval + " or more and get " + discountPerInterval + "% off.";
+						}
+						else
+						{
+							bulkText = "\nReceive " + discountPerInterval + "% off for every " + product.prodBulkInterval + " items purchased.";
+						}
+						break;
+					case 2://DR
+						bulkText = "\nDiscount rate increases as quantity is increased.";
+						break;
+					default:
+						break;
+				}
+			}
+			DisplayAlert(product.prodName, product.prodDescription + saleText + bulkText + disclaimer, "Close");
+		}
+
+		void showBulkHelp(object s, EventArgs e)
+		{
+			DisplayAlert("Bulk Types:", "Linear: Discount approaches maximum % in equal increments. (5,10,15,20)\n\n" +
+						 "Diminishing: Discount approaches maximum % specified more slowly with each step. (10,15,17.5....20)",
+						"Close");
 		}
 
 		void cancelNew(object s, EventArgs e)

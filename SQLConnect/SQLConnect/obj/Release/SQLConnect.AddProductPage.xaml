@@ -27,17 +27,17 @@
 				</StackLayout>
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-					<Label Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
+					<Label x:Name="priceLbl" Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
 					<Label Text=" $" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 					<Entry x:Name="newUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100"/>
 				</StackLayout>
 
-				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start" IsVisible="false">
 					<Label Text="Purchasable with points:" VerticalOptions="Center" TextColor="Teal"/>
 					<Switch x:Name="newIncFlag" HorizontalOptions="End" IsToggled="false" IsEnabled="false"/>
 				</StackLayout>
 
-				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
+				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start" IsVisible="false">
 					<Label Text="Points/unit:" VerticalOptions="Center" TextColor="Teal"/>
 					<Entry x:Name="newIncUnit" TextColor="Teal" Keyboard="Numeric" Text="100" HorizontalOptions="End" WidthRequest="100" BindingContext="{x:Reference Name=newIncFlag}" IsEnabled="{Binding Path=IsToggled}"/>
 				</StackLayout>
@@ -56,6 +56,7 @@
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Label Text="Bulk discount type:" VerticalOptions="Center" TextColor="Teal"/>
 					<Picker x:Name="newBulkType" TextColor="Teal" HorizontalOptions="End" WidthRequest="175"/>
+					<Button Clicked="showBulkHelp" Text = "?" TextColor = "White" FontSize="25" BackgroundColor="#8C8984"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
