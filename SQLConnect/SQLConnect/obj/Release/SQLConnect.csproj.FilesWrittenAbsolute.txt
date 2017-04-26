@@ -68,3 +68,10 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/Xamarin.Forms.Xaml.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/Plugin.Permissions.Abstractions.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/Plugin.Permissions.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/Splat.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/ExifLib.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/XLabs.Core.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/XLabs.Ioc.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/XLabs.Platform.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/XLabs.Serialization.dll
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Release/XLabs.Forms.dll

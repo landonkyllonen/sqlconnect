@@ -25,6 +25,8 @@ namespace SQLConnect
 
 		double discountMult;
 
+		double totalDiscount;
+
 		//Regular
 		int bulkInterval;
 		int bulkLimit;
@@ -74,10 +76,7 @@ namespace SQLConnect
 			//Regular item amounts are numeric and capped at 20.
 
 			//Bulk discount options.
-			if (product.prodCategory.Equals("Flowers"))
-			{
-				bulkTypes = new string[] { "None", "Linear", "Diminishing" };
-			}
+			bulkTypes = new string[] { "None", "Linear", "Diminishing" };
 
 			//Discount mult does nothing to pricing unless dealflag is set.
 			if (product.prodDealFlag)
@@ -105,7 +104,7 @@ namespace SQLConnect
 					regularPrices = new double[20];
 					for (int i = 0; i < 20; i++)
 					{
-						regularPrices[i] = product.prodUnitPrice * i * discountMult;
+						regularPrices[i] = product.prodUnitPrice * (i+1) * discountMult;
 					}
 					break;
 				case 1:
@@ -120,14 +119,23 @@ namespace SQLConnect
 					for (int i = 0; i < 20; i++)
 					{
 						double currentBulkDiscount;
+						double discountIntervals = bulkLimit / bulkInterval;
 						//% per interval is given by dividing the maximum discount by how many intervals are specified.
 						//E.g. If the limit is set at 20 items with 20% max discount, and the intervals are every 5 items,
 						//Your discount would be 20%/(20/5) = 20%/4 = 5% per interval.
-						double discountPerInterval = product.prodBulkDiscount / (bulkLimit / bulkInterval);
+						double discountPerInterval = product.prodBulkDiscount / discountIntervals;
 
 						//Intervals reached is #items/items needed for each step of the discount. We round this down.
 						//E.g. if interval is 4 and disPerInt is 5%, buying 7 items gives same discount as buying 4.
-						double intervalsReached = Math.Floor((double)i / bulkInterval);
+						double intervalsReached = Math.Floor((double)(i+1) / bulkInterval);
+
+						//Cap intervalsreached at limit set.
+						//If reached > or = to intervals allowed by limit...
+						//Equalize.
+						if (intervalsReached >= discountIntervals)
+						{
+							intervalsReached = discountIntervals;
+						}
 
 						//So current discount is given by intervals reached * discountPerInterval.
 						currentBulkDiscount = intervalsReached * discountPerInterval;
@@ -135,7 +143,7 @@ namespace SQLConnect
 						//This is 1-currentBulkDiscount because discounts from server are given as 0.2 for 20%.
 						//So to take 20% off we multiply by 0.8.
 						//Note: this would not be the same as dividing by 0.2.
-						regularPrices[i] = product.prodUnitPrice * i * discountMult * (1-currentBulkDiscount);
+						regularPrices[i] = product.prodUnitPrice * (i+1) * discountMult * (1-currentBulkDiscount);
 						//Discounts here are multiplicative, not additive.
 						//This is to the benefit of the dispensary, as adding discounts together would be a larger discount.
 					}
@@ -147,13 +155,22 @@ namespace SQLConnect
 					medicalPrices[1] = 3.54688 * product.prodUnitPrice * (1 - (product.prodBulkDiscount / 2))* discountMult;//Half discount
 					medicalPrices[2] = 3.54688 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 3 / 4))* discountMult;//Fourth more
 					medicalPrices[3] = 3.54688 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 7 / 8))* discountMult;//Eighth more
-					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount * 15 / 16))* discountMult;//Sixteenth more
+					medicalPrices[4] = 3.54688 * 2 * 2 * 2 * product.prodUnitPrice * (1 - (product.prodBulkDiscount))* discountMult;//Sixteenth more
 					regularPrices = new double[20];
 					for (int i = 0; i < 20; i++)
 					{
 						double cumulativeDiscount;
+						double discountIntervals = bulkLimit / bulkInterval;
 						//% per interval decreases by half each interval.
 						double intervalsReached = Math.Floor((double)(i+1) / bulkInterval);
+
+						//Cap intervalsreached at limit set.
+						//If reached > or = to intervals allowed by limit...
+						//Equalize.
+						if (intervalsReached >= discountIntervals)
+						{
+							intervalsReached = discountIntervals;
+						}
 
 						//We see from the medicalPrices examples that there is a pattern.
 						//If variable n is 2 to the power of intervals reached,
@@ -162,7 +179,15 @@ namespace SQLConnect
 						//In terms of 16ths, this gives us 8/16 + 4/16 + 2/16 + 1/16 = 15/16.
 						int n = (int) Math.Pow(2,intervalsReached);
 
-						cumulativeDiscount = product.prodBulkDiscount * (n - 1) / n;
+						//If achieved limit, give full discount.
+						if ((int)intervalsReached == (int)discountIntervals)
+						{
+							cumulativeDiscount = product.prodBulkDiscount;
+						}//Else, get closer by half.
+						else
+						{
+							cumulativeDiscount = product.prodBulkDiscount * (n - 1) / n;
+						}
 
 						regularPrices[i] = product.prodUnitPrice * (i+1) * discountMult * (1 - cumulativeDiscount);
 						Debug.WriteLine("Price calc'd: " + regularPrices[i]);
@@ -179,7 +204,7 @@ namespace SQLConnect
 					regularPrices = new double[20];
 					for (int i = 0; i < 20; i++)
 					{
-						regularPrices[i] = product.prodUnitPrice * i * discountMult;
+						regularPrices[i] = product.prodUnitPrice * (i+1) * discountMult;
 					}
 					break;
 			}
@@ -187,8 +212,20 @@ namespace SQLConnect
 			//Initialize price displays with calculated values.
 			priceExact.Text = medicalPrices[0].ToString("C");
 			priceExactRate.Text = "(" + medicalPrices[0].ToString("C") + "/g)";
+			if (medicalPrices[0] < product.prodUnitPrice)
+			{
+				totalDiscount = (1-medicalPrices[0] / product.prodUnitPrice) * 100;
+				priceExactOff.Text = Math.Round(totalDiscount, MidpointRounding.AwayFromZero).ToString() + "%\noff";
+				priceExactOff.IsVisible = true;
+			}
 			price.Text = regularPrices[0].ToString("C");
 			priceRegRate.Text = "(" + regularPrices[0].ToString("C") + "/item)";
+			if (regularPrices[0] < product.prodUnitPrice)
+			{
+				totalDiscount = (1-regularPrices[0] / product.prodUnitPrice) * 100;
+				priceRegOff.Text = Math.Round(totalDiscount, MidpointRounding.AwayFromZero).ToString() + "%\noff";
+				priceRegOff.IsVisible = true;
+			}
 
 
 			//IF MANAGER EDITING, SHOW EDITING INTERFACE,
@@ -256,6 +293,23 @@ namespace SQLConnect
 			else
 			{
 				regIndex++;
+				//Recalc discount
+				totalDiscount = (1-regularPrices[regIndex] / (product.prodUnitPrice*(regIndex+1)))*100;
+				Debug.WriteLine("Price for this amount:" + regularPrices[regIndex]);
+				Debug.WriteLine("Amount:" + regIndex+1);
+				Debug.WriteLine("Without discounts:" + product.prodUnitPrice*(regIndex+1));
+				Debug.WriteLine("Ratio:" + regularPrices[regIndex] / (product.prodUnitPrice * (regIndex + 1)));
+				Debug.WriteLine("Discount %:" + totalDiscount);
+				Debug.WriteLine("Rounded:" + Math.Round(totalDiscount, MidpointRounding.AwayFromZero));
+				if (totalDiscount > 0)
+				{
+					priceRegOff.Text = Math.Round(totalDiscount, MidpointRounding.AwayFromZero).ToString() + "%\noff";
+					priceRegOff.IsVisible = true;
+				}
+				else
+				{
+					priceRegOff.IsVisible = false;
+				}
 				value.Text = (regIndex + 1).ToString();
 				price.Text = (regularPrices[regIndex]).ToString("C");
 				priceRegRate.Text = "(" + (regularPrices[regIndex] / (regIndex + 1)).ToString("C") + "/item)";
@@ -272,6 +326,17 @@ namespace SQLConnect
 			else
 			{
 				regIndex--;
+				//Recalc discount
+				totalDiscount = (1 - regularPrices[regIndex] / (product.prodUnitPrice * (regIndex + 1))) * 100;
+				if (totalDiscount > 0)
+				{
+					priceRegOff.Text = Math.Round(totalDiscount, MidpointRounding.AwayFromZero).ToString() + "%\noff";
+					priceRegOff.IsVisible = true;
+				}
+				else
+				{
+					priceRegOff.IsVisible = false;
+				}
 				value.Text = (regIndex +1).ToString();
 				price.Text = (regularPrices[regIndex]).ToString("C");
 				priceRegRate.Text = "(" + (regularPrices[regIndex]/(regIndex+1)).ToString("C") + "/item)";
@@ -284,6 +349,9 @@ namespace SQLConnect
 		{
 			s.ToString();
 			e.ToString();
+
+			double grams;
+
 			if (index == 0)
 			{
 				return;
@@ -291,31 +359,56 @@ namespace SQLConnect
 			else
 			{
 				index--;
+
+				//Recalc discount
+
+				switch (index)
+				{
+					case 0:
+						//1g
+						grams = 1;
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice)) * 100;
+						break;
+					case 1:
+						grams = 3.54688;
+						//3.54688g
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice* grams)) * 100;
+						break;
+					case 2:
+						grams = 3.54688 * 2;
+						//3.54688g
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice * grams)) * 100;
+						break;
+					case 3:
+						grams = 3.54688 * 4;
+						//3.54688g
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice * grams)) * 100;
+						break;
+					case 4:
+						//3.54688g
+						grams = 3.54688 * 8;
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice * grams)) * 100;
+						break;
+					default:
+						grams = 0;
+						break;
+						
+				}
+				if (totalDiscount > 0)
+				{
+					priceExactOff.Text = Math.Round(totalDiscount, MidpointRounding.AwayFromZero).ToString() + "%\noff";
+					priceExactOff.IsVisible = true;
+				}
+				else
+				{
+					priceExactOff.IsVisible = false;
+				}
+
 				if (index == 0) { valueLeft.Text = ""; }
 				else { valueLeft.Text = medicalAmounts[index - 1]; }
 				valueMid.Text = medicalAmounts[index];
 				valueRight.Text = medicalAmounts[index + 1];
-				double grams = 0;
-				switch (index)
-				{
-					case 0:
-						grams = 1;
-						break;
-					case 1:
-						grams = 3.54688;
-						break;
-					case 2:
-						grams = 3.54688 * 2;
-						break;
-					case 3:
-						grams = 3.54688 * 4;
-						break;
-					case 4:
-						grams = 3.54688 * 8;
-						break;
-					default:
-						break;
-				}
+
 				priceExact.Text = medicalPrices[index].ToString("C");
 				priceExactRate.Text = "(" + (medicalPrices[index] / grams).ToString("C") + "/g)";
 			}
@@ -327,6 +420,9 @@ namespace SQLConnect
 		{
 			s.ToString();
 			e.ToString();
+
+			double grams;
+
 			if (index == 4)
 			{
 				return;
@@ -334,31 +430,51 @@ namespace SQLConnect
 			else
 			{
 				index++;
+				//Recalc discount
+				switch (index)
+				{
+					case 0:
+						//1g
+						grams = 1;
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice)) * 100;
+						break;
+					case 1:
+						//3.54688g
+						grams = 3.54688;
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice * grams)) * 100;
+						break;
+					case 2:
+						grams = 3.54688 * 2;
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice * grams)) * 100;
+						break;
+					case 3:
+						grams = 3.54688 *4;
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice * grams)) * 100;
+						break;
+					case 4:
+						grams = 3.54688 * 8;
+						totalDiscount = (1 - medicalPrices[index] / (product.prodUnitPrice * grams)) * 100;
+						break;
+					default:
+						grams = 0;
+						break;
+
+				}
+				if (totalDiscount > 0)
+				{
+					priceExactOff.Text = Math.Round(totalDiscount, MidpointRounding.AwayFromZero).ToString() + "%\noff";
+					priceExactOff.IsVisible = true;
+				}
+				else
+				{
+					priceExactOff.IsVisible = false;
+				}
+
 				if (index == 4) { valueRight.Text = ""; }
 				else { valueRight.Text = medicalAmounts[index + 1]; }
 				valueMid.Text = medicalAmounts[index];
 				valueLeft.Text = medicalAmounts[index - 1];
-				double grams = 0;
-				switch (index)
-				{
-					case 0:
-						grams = 1;
-						break;
-					case 1:
-						grams = 3.54688;
-						break;
-					case 2:
-						grams = 3.54688 * 2;
-						break;
-					case 3:
-						grams = 3.54688 * 4;
-						break;
-					case 4:
-						grams = 3.54688 * 8;
-						break;
-					default:
-						break;
-				}
+
 				priceExact.Text = medicalPrices[index].ToString("C");
 				priceExactRate.Text = "(" + (medicalPrices[index] / grams).ToString("C") + "/g)";
 			}
@@ -553,22 +669,22 @@ namespace SQLConnect
 			s.ToString();
 			e.ToString();
 
-			var answer = await DisplayAlert("Save Changes", "Review your changes for accuracy. Are you sure you want to make these changes?", "Yes", "No");
+			var answer = await DisplayAlert("Save Changes", "Review your changes for accuracy. Are you sure you want to make these changes?", "Yes", "Review");
 
 			string error = "";
 
 			/*Checklist*/
 
 			//Fails if any info is empty.
-			if (String.IsNullOrEmpty(editDesc.Text) ||
+			if (String.IsNullOrEmpty(editDesc.Text) || editDesc.Text.Equals("Enter your description.") ||
 			     String.IsNullOrEmpty(editUnit.Text) ||
 			     String.IsNullOrEmpty(editDiscount.Text) ||
 			    (String.IsNullOrEmpty(editBulk.Text) && editBulkType.SelectedIndex>0) ||
 			    (String.IsNullOrEmpty(editDiscount.Text) && editDealFlag.IsToggled) ||
 			    (String.IsNullOrEmpty(editIncUnit.Text) && editIncFlag.IsToggled) ||
-			    (String.IsNullOrEmpty(editBulkType.Items[editBulkType.SelectedIndex]) && product.prodCategory.Equals("Flowers")) ||
-			    (String.IsNullOrEmpty(editBulkLimit.Text) && product.prodCategory.Equals("Flowers")) ||
-			    (String.IsNullOrEmpty(editBulkInterval.Text) && product.prodCategory.Equals("Flowers")))
+			    editBulkType.SelectedIndex < 0 ||
+			    (String.IsNullOrEmpty(editBulkLimit.Text) && !product.prodCategory.Equals("Flowers")) ||
+			    (String.IsNullOrEmpty(editBulkInterval.Text) && !product.prodCategory.Equals("Flowers")))
 			{
 				error = "No fields can be empty.";
 				//Display error
@@ -618,9 +734,11 @@ namespace SQLConnect
 				contentSent.Add(new StringContent(discount.ToString()), "discount");
 				contentSent.Add(new StringContent(editBulkType.Items[editBulkType.SelectedIndex]), "bulkType");
 				contentSent.Add(new StringContent(bulkDiscount.ToString()), "bulkDiscount");
-				contentSent.Add(new StringContent(editBulkLimit.Text), "bulkLimit");
-				contentSent.Add(new StringContent(editBulkInterval.Text), "bulkInterval");
-
+				if (!product.prodCategory.Equals("Flowers") && editBulkType.SelectedIndex > 0)
+				{
+					contentSent.Add(new StringContent(editBulkLimit.Text), "bulkLimit");
+					contentSent.Add(new StringContent(editBulkInterval.Text), "bulkInterval");
+				}
 
 				//Show that we are waiting for a response and wait for it.
 				var response = await client.PostAsync("http://cbd-online.net/landon/addOrEditProduct.php", contentSent);
@@ -661,8 +779,11 @@ namespace SQLConnect
 					product.prodDiscount = discount;
 					product.prodBulkType = editBulkType.SelectedIndex;
 					product.prodBulkDiscount = bulkDiscount;
-					product.prodBulkLimit = int.Parse(editBulkLimit.Text);
-					product.prodBulkInterval = int.Parse(editBulkInterval.Text);
+					if (!product.prodCategory.Equals("Flowers") && editBulkType.SelectedIndex > 0)
+					{
+						product.prodBulkLimit = int.Parse(editBulkLimit.Text);
+						product.prodBulkInterval = int.Parse(editBulkInterval.Text);
+					}
 
 					pulled.Insert(place, product);
 					pulledCat.Insert(placeCat, product);

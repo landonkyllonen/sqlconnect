@@ -51,10 +51,15 @@
 							RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=0}"
 							RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=0,Constant=40}"/>
 						<Label x:Name="priceRegRate" TextColor="#edf2ef" Text = "($xx.xx/ea)" HorizontalTextAlignment="Start" FontSize="17"
-							RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75, Constant=0}"
+							RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75, Constant=-5}"
 							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1, Constant=125}"
-							RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25, Constant=0}"
+							RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25, Constant=5}"
 							RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=0,Constant=40}"/>
+						<Label x:Name="priceRegOff" TextColor="#edf2ef" Text = "" HorizontalTextAlignment="Start" FontSize="23" IsVisible="false" VerticalTextAlignment="Center"
+							RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=25}"
+							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1, Constant=105}"
+							RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25, Constant=0}"
+							RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=0,Constant=80}"/>
 						<Button Text="Add to Cart" Clicked="addToCart" TextColor="White" BackgroundColor="Teal"
 							RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-80}"
 							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7, Constant=0}"
@@ -112,6 +117,11 @@
 							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1, Constant=125}"
 							RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25, Constant=0}"
 							RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=0,Constant=40}"/>
+						<Label x:Name="priceExactOff" TextColor="#edf2ef" Text = "" HorizontalTextAlignment="Start" FontSize="23" IsVisible="false" VerticalTextAlignment="Center"
+							RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=25}"
+							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1, Constant=105}"
+							RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25, Constant=0}"
+							RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=0,Constant=80}"/>
 						<Button Text="Add to Cart" Clicked="addToCart" TextColor="White" BackgroundColor="Teal"
 							RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-80}"
 							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7, Constant=0}"
@@ -149,7 +159,7 @@
 					</StackLayout>
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-						<Label Text="Discount Applied:" VerticalOptions="Center" TextColor="Teal"/>
+						<Label Text="Discount Active:" VerticalOptions="Center" TextColor="Teal"/>
 						<Switch x:Name="editDealFlag" HorizontalOptions="End"/>
 					</StackLayout>
 

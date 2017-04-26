@@ -66,16 +66,14 @@ namespace SQLConnect
 
 			//Fails if any info is empty.
 			if (String.IsNullOrEmpty(newName.Text) ||
-			     String.IsNullOrEmpty(newCat.Items[newCat.SelectedIndex]) ||
-				 String.IsNullOrEmpty(newDesc.Text) ||
+			    String.IsNullOrEmpty(newDesc.Text) || newDesc.Text.Equals("Enter your description.") ||
 				 String.IsNullOrEmpty(newUnit.Text) ||
-				 String.IsNullOrEmpty(newDiscount.Text) ||
 				(String.IsNullOrEmpty(newBulk.Text) && newBulkType.SelectedIndex > 0) ||
 				(String.IsNullOrEmpty(newDiscount.Text) && newDealFlag.IsToggled) ||
 				(String.IsNullOrEmpty(newIncUnit.Text) && newIncFlag.IsToggled) ||
-				(String.IsNullOrEmpty(newBulkType.Items[newBulkType.SelectedIndex]) && newCat.SelectedIndex > 0) ||
-			    (String.IsNullOrEmpty(newBulkLimit.Text) && newCat.SelectedIndex>0) ||
-				(String.IsNullOrEmpty(newBulkInterval.Text) && newCat.SelectedIndex > 0))
+			    newBulkType.SelectedIndex<0 || newCat.SelectedIndex < 0 ||
+			    (String.IsNullOrEmpty(newBulkLimit.Text) && newCat.SelectedIndex>0 && newBulkType.SelectedIndex > 0) ||
+			    (String.IsNullOrEmpty(newBulkInterval.Text) && newCat.SelectedIndex > 0 && newBulkType.SelectedIndex>0))
 			{
 				error = "No fields can be empty.";
 				//Display error
@@ -99,7 +97,7 @@ namespace SQLConnect
 				return;
 			}
 
-			var answer = await DisplayAlert("Add this Item", "Review your submission for accuracy. Are you sure you want to make this product available for sale with these values?", "Yes", "No");
+			var answer = await DisplayAlert("Add this Item", "Review your submission for accuracy. Are you sure you want to make this product available for sale with these values?", "Yes", "Review");
 			if (answer)
 			{
 				//Connect to url.
@@ -126,8 +124,11 @@ namespace SQLConnect
 				contentSent.Add(new StringContent(discount.ToString()), "discount");
 				contentSent.Add(new StringContent(newBulkType.Items[newBulkType.SelectedIndex].ToString()), "bulkType");
 				contentSent.Add(new StringContent(bulkDiscount.ToString()), "bulkDiscount");
-				contentSent.Add(new StringContent(newBulkLimit.Text), "bulkLimit");
-				contentSent.Add(new StringContent(newBulkInterval.Text), "bulkInterval");
+				if (newCat.SelectedIndex > 0 && newBulkType.SelectedIndex>0)
+				{
+					contentSent.Add(new StringContent(newBulkLimit.Text), "bulkLimit");
+					contentSent.Add(new StringContent(newBulkInterval.Text), "bulkInterval");
+				}
 
 				//Show that we are waiting for a response and wait for it.
 				var response = await client.PostAsync("http://cbd-online.net/landon/addOrEditProduct.php", contentSent);
@@ -154,8 +155,11 @@ namespace SQLConnect
 					product.prodDiscount = double.Parse(newDiscount.Text);
 					product.prodBulkType = newBulkType.SelectedIndex;
 					product.prodBulkDiscount = double.Parse(newBulk.Text);
-					product.prodBulkLimit = int.Parse(newBulkLimit.Text);
-					product.prodBulkInterval = int.Parse(newBulkInterval.Text);
+					if (newCat.SelectedIndex > 0 && newBulkType.SelectedIndex > 0)
+					{
+						product.prodBulkLimit = int.Parse(newBulkLimit.Text);
+						product.prodBulkInterval = int.Parse(newBulkInterval.Text);
+					}
 
 					pulled.Add(product);
 					Statics.Default.setProducts(pulled);

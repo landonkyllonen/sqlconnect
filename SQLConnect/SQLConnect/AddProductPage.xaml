@@ -43,7 +43,7 @@
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-					<Label Text="Discount Applied:" VerticalOptions="Center" TextColor="Teal"/>
+					<Label Text="Discount Active:" VerticalOptions="Center" TextColor="Teal"/>
 					<Switch x:Name="newDealFlag" HorizontalOptions="End"/>
 				</StackLayout>
 

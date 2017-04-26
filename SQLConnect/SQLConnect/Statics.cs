@@ -409,7 +409,7 @@ namespace SQLConnect
 													medicalPrices[1] = 3.54688 * p.prodUnitPrice * (1 - (p.prodBulkDiscount / 2)) * discountMult;//Half discount
 													medicalPrices[2] = 3.54688 * 2 * p.prodUnitPrice * (1 - (p.prodBulkDiscount * 3 / 4)) * discountMult;//Fourth more
 													medicalPrices[3] = 3.54688 * 2 * 2 * p.prodUnitPrice * (1 - (p.prodBulkDiscount * 7 / 8)) * discountMult;//Eighth more
-													medicalPrices[4] = 3.54688 * 2 * 2 * 2 * p.prodUnitPrice * (1 - (p.prodBulkDiscount * 15 / 16)) * discountMult;//Sixteenth more
+													medicalPrices[4] = 3.54688 * 2 * 2 * 2 * p.prodUnitPrice * (1 - (p.prodBulkDiscount)) * discountMult;//Sixteenth more
 													break;
 												default:
 													//No discount.
@@ -525,12 +525,34 @@ namespace SQLConnect
 													regularPrices = new double[20];
 													for (int i = 0; i < 20; i++)
 													{
-														//See ProductPage.xaml.cs for information on calculations.
 														double currentBulkDiscount;
-														double discountPerInterval = p.prodBulkDiscount / (p.prodBulkLimit / p.prodBulkInterval);
-														double intervalsReached = Math.Floor((double)i / p.prodBulkInterval);
+														double discountIntervals = p.prodBulkLimit / p.prodBulkInterval;
+														//% per interval is given by dividing the maximum discount by how many intervals are specified.
+														//E.g. If the limit is set at 20 items with 20% max discount, and the intervals are every 5 items,
+														//Your discount would be 20%/(20/5) = 20%/4 = 5% per interval.
+														double discountPerInterval = p.prodBulkDiscount / discountIntervals;
+
+														//Intervals reached is #items/items needed for each step of the discount. We round this down.
+														//E.g. if interval is 4 and disPerInt is 5%, buying 7 items gives same discount as buying 4.
+														double intervalsReached = Math.Floor((double)(i + 1) / p.prodBulkInterval);
+
+														//Cap intervalsreached at limit set.
+														//If reached > or = to intervals allowed by limit...
+														//Equalize.
+														if (intervalsReached >= discountIntervals)
+														{
+															intervalsReached = discountIntervals;
+														}
+
+														//So current discount is given by intervals reached * discountPerInterval.
 														currentBulkDiscount = intervalsReached * discountPerInterval;
+
+														//This is 1-currentBulkDiscount because discounts from server are given as 0.2 for 20%.
+														//So to take 20% off we multiply by 0.8.
+														//Note: this would not be the same as dividing by 0.2.
 														regularPrices[i] = p.prodUnitPrice * (i + 1) * discountMult * (1 - currentBulkDiscount);
+														//Discounts here are multiplicative, not additive.
+														//This is to the benefit of the dispensary, as adding discounts together would be a larger discount.
 													}
 													break;
 												case 2:
@@ -540,12 +562,37 @@ namespace SQLConnect
 													for (int i = 0; i < 20; i++)
 													{
 														double cumulativeDiscount;
+														double discountIntervals = p.prodBulkLimit / p.prodBulkInterval;
 														//% per interval decreases by half each interval.
-														double intervalsReached = Math.Floor((double)i / p.prodBulkInterval);
-														//Find what % to give off purchase.
+														double intervalsReached = Math.Floor((double)(i + 1) / p.prodBulkInterval);
+
+														//Cap intervalsreached at limit set.
+														//If reached > or = to intervals allowed by limit...
+														//Equalize.
+														if (intervalsReached >= discountIntervals)
+														{
+															intervalsReached = discountIntervals;
+														}
+
+														//We see from the medicalPrices examples that there is a pattern.
+														//If variable n is 2 to the power of intervals reached,
+														//Discount = 1-maxdiscount * (n-1/n).
+														//For example, take the 4th interval: We have divided the discount in half 4 times.
+														//In terms of 16ths, this gives us 8/16 + 4/16 + 2/16 + 1/16 = 15/16.
 														int n = (int)Math.Pow(2, intervalsReached);
-														cumulativeDiscount = p.prodBulkDiscount * (n - 1) / n;
-														regularPrices[i] = p.prodUnitPrice * (i+1) * discountMult * (1 - cumulativeDiscount);
+
+														//If achieved limit, give full discount.
+														if ((int)intervalsReached == (int)discountIntervals)
+														{
+															cumulativeDiscount = p.prodBulkDiscount;
+														}//Else, get closer by half.
+														else
+														{
+															cumulativeDiscount = p.prodBulkDiscount * (n - 1) / n;
+														}
+
+														regularPrices[i] = p.prodUnitPrice * (i + 1) * discountMult * (1 - cumulativeDiscount);
+														Debug.WriteLine("Price calc'd: " + regularPrices[i]);
 													}
 													break;
 												default:
@@ -553,7 +600,7 @@ namespace SQLConnect
 													regularPrices = new double[20];
 													for (int i = 0; i < 20; i++)
 													{
-														regularPrices[i] = p.prodUnitPrice * (i + 1) * discountMult;
+														regularPrices[i] = product.prodUnitPrice * (i + 1) * discountMult;
 													}
 													break;
 											}

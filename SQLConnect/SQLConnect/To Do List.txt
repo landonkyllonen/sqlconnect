@@ -134,10 +134,14 @@ Reworking bulk discount for non-flowers to include same features as flowers (req
 	-Organized ProductPage.cs.
 
 Made input checks more complete when editing products.
-Debugged changes.
+Debugged productpage.
+/
+Debugged adding/editing products.
+Created %off indicator on product pages.
+Debugged for regular items.
+Debug flower % indicator.
+Fixed calculation of regularPrices DR to take limit into account.
 /-----------Complete ^
-Create %off indicator on product pages.
-
 orders placed in app, payment separate through interac
 
 Test device id for IOS(NEED TO UPDATE XCODE AND FOLLOW FREE PROVISIONING TUT)

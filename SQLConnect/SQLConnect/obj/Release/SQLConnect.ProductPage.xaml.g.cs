@@ -36,6 +36,9 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Label priceRegRate;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label priceRegOff;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.RelativeLayout componentExact;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -55,6 +58,9 @@ namespace SQLConnect {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label priceExactRate;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label priceExactOff;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.StackLayout editView;
@@ -90,6 +96,18 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Entry editBulk;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout regBulk1;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry editBulkInterval;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout regBulk2;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry editBulkLimit;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ProductPage));
             browseView = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.RelativeLayout>(this, "browseView");
@@ -99,6 +117,7 @@ namespace SQLConnect {
             priceLbl = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceLbl");
             price = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "price");
             priceRegRate = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceRegRate");
+            priceRegOff = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceRegOff");
             componentExact = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.RelativeLayout>(this, "componentExact");
             valueLeft = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "valueLeft");
             valueMid = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "valueMid");
@@ -106,6 +125,7 @@ namespace SQLConnect {
             priceLblExact = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceLblExact");
             priceExact = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceExact");
             priceExactRate = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceExactRate");
+            priceExactOff = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceExactOff");
             editView = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.StackLayout>(this, "editView");
             editPic = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Image>(this, "editPic");
             editPicBtn = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Button>(this, "editPicBtn");
@@ -117,6 +137,10 @@ namespace SQLConnect {
             editDiscount = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editDiscount");
             editBulkType = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Picker>(this, "editBulkType");
             editBulk = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editBulk");
+            regBulk1 = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.StackLayout>(this, "regBulk1");
+            editBulkInterval = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editBulkInterval");
+            regBulk2 = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.StackLayout>(this, "regBulk2");
+            editBulkLimit = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editBulkLimit");
         }
     }
 }
