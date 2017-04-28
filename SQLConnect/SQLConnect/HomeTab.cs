@@ -83,7 +83,7 @@ namespace SQLConnect
 
 				dealImage = new Image
 				{
-					Aspect = Aspect.AspectFill,
+				Aspect = Aspect.AspectFit,
 					HorizontalOptions = LayoutOptions.CenterAndExpand,
 					VerticalOptions = LayoutOptions.CenterAndExpand
 				};	
@@ -217,11 +217,8 @@ namespace SQLConnect
 							{
 								return sibling.Y + 30;
 							}),
-							Constraint.RelativeToParent((parent) =>
-							{
-								return parent.Width * .3;
-							}),
-								 Constraint.Constant(50));
+			                 Constraint.Constant(75),
+							 Constraint.Constant(50));
 
 			rel.Children.Add(dealPrice, Constraint.RelativeToParent((parent) =>
 							{

@@ -75,6 +75,9 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Editor editDesc;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label editPriceLbl;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry editUnit;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -130,6 +133,7 @@ namespace SQLConnect {
             editPic = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Image>(this, "editPic");
             editPicBtn = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Button>(this, "editPicBtn");
             editDesc = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Editor>(this, "editDesc");
+            editPriceLbl = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "editPriceLbl");
             editUnit = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editUnit");
             editIncFlag = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Switch>(this, "editIncFlag");
             editIncUnit = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editIncUnit");

@@ -10,14 +10,14 @@
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
 						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"
 					/>
-					<Image x:Name="image" Source="product.png" Aspect="AspectFill"
+					<Image x:Name="image" Source="product.png" Aspect="Fill"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}"
-						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.45, Constant=0}">
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.66, Constant=3}">
 					</Image>
 
 					<Button Text="Info" TextColor="White" BackgroundColor="#00cdcd" Clicked="showInfo" BorderRadius="0" BorderWidth="0"
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8, Constant=5}"
-						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.45, Constant=-6}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.66, Constant=-3}"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2, Constant=-10}"
 						/>
 
@@ -140,7 +140,7 @@
 				<StackLayout x:Name="editView" Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" IsVisible="false" Padding="10,10,10,0">
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-						<Image x:Name="editPic" Source="product.png" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="150"/>
+						<Image x:Name="editPic" Source="product.png" Aspect="AspectFit" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="150"/>
 						<Button x:Name="editPicBtn" Text="Upload" Clicked="pickPic" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
 					</StackLayout>
 					
@@ -149,7 +149,7 @@
 					</StackLayout>
 					
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-						<Label x:Name="priceLbl" Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
+						<Label x:Name="editPriceLbl" Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
 						<Label Text=" $" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 						<Entry x:Name="editUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100"/>
 					</StackLayout>
@@ -177,8 +177,8 @@
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 						<Label Text="Bulk discount type:" VerticalOptions="Center" TextColor="Teal"/>
-						<Picker x:Name="editBulkType" TextColor="Teal" HorizontalOptions="End" WidthRequest="175"/>
-						<Button Clicked="showBulkHelp" Text = "?" TextColor = "White" FontSize="25" BackgroundColor="#8C8984"/>
+						<Picker x:Name="editBulkType" TextColor="Teal" HorizontalOptions="End" WidthRequest="120"/>
+						<Button Clicked="showBulkHelp" Text = "?" TextColor = "White" BackgroundColor="#8C8984"/>
 					</StackLayout>
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">

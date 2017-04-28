@@ -6,22 +6,22 @@
 		>
 	<ContentPage.Content>
 		<StackLayout Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Teal">
-			<SearchBar Placeholder="Search by name" TextChanged = "filterItems" PlaceholderColor = "#E5E2DD" TextColor="White"
+			<SearchBar x:Name="search" Placeholder="Search by name" TextChanged = "filterItems" PlaceholderColor = "#E5E2DD" TextColor="White" 
 				CancelButtonColor = "White" />
 			<ListView  x:Name="prodList" RowHeight="80" SeparatorVisibility="Default" SeparatorColor="Silver" BackgroundColor="Teal">
             	<ListView.ItemTemplate>
 	                <DataTemplate>
 	                    <ViewCell>
 	                        <RelativeLayout>
-	                        	<Image Source="{Binding prodImgSrc}" Aspect="AspectFill"
+	                        	<Image Source="{Binding prodImgSrc}" Aspect="AspectFit"
 									RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=5}"
 									RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y,Factor=0,Constant=5}"
-									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=-10}"
+									RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=105}"
 									RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=-10}"
 								/>
-								<Label Text = "{Binding prodName}" TextColor = "White" FontSize="25" HorizontalOptions = "Center" VerticalOptions = "Center"
-										RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.3,Constant=0}"
-										RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.7,Constant=0}"
+								<Label Text = "{Binding prodName}" TextColor = "White" FontSize="25" HorizontalTextAlignment = "Center" VerticalTextAlignment = "Center"
+										RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=110}"
+										RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=-110}"
 										RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}"
 										/>
 							</RelativeLayout>

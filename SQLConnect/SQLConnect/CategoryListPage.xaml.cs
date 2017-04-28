@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
@@ -34,8 +35,11 @@ namespace SQLConnect
 			prodList.BeginRefresh();
 
 			if (string.IsNullOrWhiteSpace(e.NewTextValue))
+			{
 				prodList.ItemsSource = prodItems;
-			else {
+			}
+			else
+			{
 				prodItemsFiltered.Clear();
 				prodItemsFiltered = new ObservableCollection<ProductListItem>();
 				foreach (ProductListItem item in prodItems)
@@ -113,7 +117,6 @@ namespace SQLConnect
 			//Update static to save pictures for future use.
 			Statics.Default.setProducts(pulled);
 		}
-
 
 		void onItemSelect(object sender, ItemTappedEventArgs e)
 		{

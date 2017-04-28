@@ -18,7 +18,7 @@
 				</StackLayout>
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-					<Image x:Name="newPic" Source="product.png" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="150"/>
+					<Image x:Name="newPic" Source="product.png" Aspect="AspectFit" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="178"/>
 					<Button x:Name="newPicBtn" Clicked="pickPic" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
 				</StackLayout>
 
@@ -27,7 +27,7 @@
 				</StackLayout>
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-					<Label x:Name="priceLbl" Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
+					<Label x:Name="newPriceLbl" Text="Price/unit:" VerticalOptions="Center" TextColor="Teal"/>
 					<Label Text=" $" VerticalOptions="Center" FontSize="20" TextColor="Teal"/>
 					<Entry x:Name="newUnit" TextColor="Teal" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100"/>
 				</StackLayout>
@@ -55,8 +55,8 @@
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Label Text="Bulk discount type:" VerticalOptions="Center" TextColor="Teal"/>
-					<Picker x:Name="newBulkType" TextColor="Teal" HorizontalOptions="End" WidthRequest="175"/>
-					<Button Clicked="showBulkHelp" Text = "?" TextColor = "White" FontSize="25" BackgroundColor="#8C8984"/>
+					<Picker x:Name="newBulkType" TextColor="Teal" HorizontalOptions="End" WidthRequest="120"/>
+					<Button Clicked="showBulkHelp" Text = "?" TextColor = "White" BackgroundColor="#8C8984"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="20,0,0,0" VerticalOptions="Start">
