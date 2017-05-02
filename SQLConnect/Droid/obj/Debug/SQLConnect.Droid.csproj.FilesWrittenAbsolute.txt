@@ -99,3 +99,5 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Serialization.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Forms.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Forms.Droid.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/oos.jpg
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/oos.png

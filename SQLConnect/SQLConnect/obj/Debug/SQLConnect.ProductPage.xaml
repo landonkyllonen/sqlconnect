@@ -134,6 +134,22 @@
 							RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0, Constant=160}"
 						/>
 					</RelativeLayout>
+
+					<RelativeLayout x:Name="componentOOS" IsVisible="false"
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.45, Constant=0}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.55, Constant=0}">
+
+						<Label Text = "Out of Stock" TextColor="White" FontSize="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+							RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}"
+							RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=0}"
+							RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}"
+							RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=0}"
+						/>
+						
+					</RelativeLayout>
+					
 				</RelativeLayout>
 
 
@@ -199,7 +215,12 @@
 
 					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 						<Button Text="Save Changes" Clicked="saveEdits" TextColor="White" BackgroundColor="Teal" HorizontalOptions="CenterAndExpand"/>
-						<Button Text="Cancel Changes" Clicked="cancelEdits" TextColor="White" BackgroundColor="Gray" HorizontalOptions="CenterAndExpand"/>
+						<Button Text="Cancel" Clicked="cancelEdits" TextColor="White" BackgroundColor="Gray" HorizontalOptions="CenterAndExpand"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+						<Button Text="Mark Out of Stock" Clicked="markAsOOS" TextColor="White" BackgroundColor="#cccc53" HorizontalOptions="CenterAndExpand"/>
+						<Button Text="Remove" Clicked="removeProduct" TextColor="White" BackgroundColor="Red" HorizontalOptions="CenterAndExpand"/>
 					</StackLayout>
 				</StackLayout>
 			</StackLayout>

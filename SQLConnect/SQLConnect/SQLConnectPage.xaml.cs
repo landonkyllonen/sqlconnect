@@ -263,8 +263,10 @@ namespace SQLConnect
 				//Name, Id, Cat, Description, PicUrl, BasePrice, IncentiveFlag, IncentiveBasePrice, DealFlag, DealDiscount, BulkDiscountType, BulkDiscount, BulkInterval, BulkLimit
 				bool deal = false;
 				bool incentive = false;
+				bool oos = false;
 				if (productComponents[8].Equals("1")) { deal = true; }
 				if (productComponents[6].Equals("1")) { incentive = true; }
+				if (productComponents[14].Equals("1")) { oos = true; }
 
 				var prod = new ProductListItem
 				{
@@ -276,6 +278,7 @@ namespace SQLConnect
 					prodUnitPriceIncentive = double.Parse(productComponents[7]),
 					prodDealFlag = deal,
 					prodIncentiveFlag = incentive,
+					prodOutofstock = oos,
 					prodDiscount = double.Parse(productComponents[9]),
 					prodBulkType = int.Parse(productComponents[10]),
 					prodBulkDiscount = double.Parse(productComponents[11]),
@@ -283,7 +286,7 @@ namespace SQLConnect
 					prodBulkLimit = int.Parse(productComponents[13])
 				};
 
-				if (prod.prodDealFlag) { Statics.Default.setDeal(prod); }
+				if (prod.prodDealFlag && !oos) { Statics.Default.setDeal(prod); }
 
 				//bound as name--category--description--imageurl--incrementtype--baseprice--incbaseprice--dealdiscount--dealflag-incflag--bulkdis--bulkdistype;;
 				prods.Add(prod);
@@ -396,13 +399,14 @@ namespace SQLConnect
 				//All items will appear in the first component (before first ";;").
 				string[] orderItems = orderComponents[0].Split(new string[] { "--" }, StringSplitOptions.None);
 
-				ObservableCollection<ProductListItem> thisOrderItems = new ObservableCollection<ProductListItem>();
+				ObservableCollection<CartListItem> thisOrderItems = new ObservableCollection<CartListItem>();
 
-				//Check that format is correct, should be multiple of 3
-				//item bound as: name--amount--price
-				for (int i = 0; i+3 < orderItems.Length&&(orderItems.Length%3<1); i+=3){
-					double price = double.Parse(orderItems[i + 2]);
-					thisOrderItems.Add(new ProductListItem {prodName = orderItems[i], prodOrderAmount = orderItems[i+1], prodOrderPrice = price.ToString("C")});
+				//Check that format is correct, should be multiple of 5
+				//item bound as: name--amount--unittype--total--rate
+				for (int i = 0; i+5 < orderItems.Length&&(orderItems.Length%5<1); i+=5){
+					double price = double.Parse(orderItems[i + 3]);
+					thisOrderItems.Add(new CartListItem {prodName = orderItems[i], prodAmount = double.Parse(orderItems[i+1]), prodUnitType = orderItems[i+2],
+						prodTotal = price.ToString("C"), prodRate = orderItems[i+4]});
 				}
 
 				//thisOrderitems is now populated, create the orderItem object

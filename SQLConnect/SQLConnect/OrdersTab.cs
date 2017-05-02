@@ -103,11 +103,11 @@ namespace SQLConnect
 
 			if (Statics.Default.isOffline())
 			{
-				ObservableCollection<ProductListItem> testProds = new ObservableCollection<ProductListItem>();
-				testProds.Add(new ProductListItem { prodName = "Item Name", prodOrderPrice = "$32.00", prodOrderAmount = "Eighth" });
-				testProds.Add(new ProductListItem { prodName = "Item Name", prodOrderPrice = "$18.75", prodOrderAmount = "2" });
-				testProds.Add(new ProductListItem { prodName = "Item Name", prodOrderPrice = "$48.25", prodOrderAmount = "1/2 oz." });
-				testProds.Add(new ProductListItem { prodName = "Item Name", prodOrderPrice = "$38.00", prodOrderAmount = "1/4 oz." });
+				ObservableCollection<CartListItem> testProds = new ObservableCollection<CartListItem>();
+				testProds.Add(new CartListItem { });
+				testProds.Add(new CartListItem {});
+				testProds.Add(new CartListItem {  });
+				testProds.Add(new CartListItem {  });
 				orderItems.Add(new OrderListItem { orderID = 62378346, orderDate = "2017-01-27", orderTotal = "$54.60", orderPaymentStatus = "Unpaid", orderCompletionStatus = "Ready", orderItems = testProds });
 				orderItems.Add(new OrderListItem { orderID = 73458659, orderDate = "2017-01-24", orderTotal = "$23.60", orderPaymentStatus = "Paid", orderCompletionStatus = "Ready", orderItems = testProds });
 				orderItems.Add(new OrderListItem { orderID = 12543473, orderDate = "2017-01-21", orderTotal = "$43.45", orderPaymentStatus = "Paid", orderCompletionStatus = "Received", orderItems = testProds });

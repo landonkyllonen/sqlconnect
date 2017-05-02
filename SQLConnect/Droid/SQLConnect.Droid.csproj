@@ -237,6 +237,7 @@
     <AndroidResource Include="Resources\drawable-nodpi\important.png" />
     <AndroidResource Include="Resources\drawable-nodpi\pillblank.png" />
     <AndroidResource Include="Resources\xml\file_paths.xml" />
+    <AndroidResource Include="Resources\drawable-nodpi\oos.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\xml\" />

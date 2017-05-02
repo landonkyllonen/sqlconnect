@@ -148,6 +148,18 @@ Add help buttons for clarity on bulk choices in adding/editing interface.
 Changed dimensions of all picture elements in xaml to accomodate most common landscape aspect ratio.
  -Chose 3:2, same aspect as pictures given (Most common dslr aspect ratio)
  -Resized adjacent elements to fit.
+ /
+ Removed 3rd placeholder Analytics tab.
+ Carttab is now capable of saving an order.
+ Php completed to save order. Id is now auto increment and new php uses POST method.
+ /
+ Rework phps to support new recreationStats/medicalStats/usedMed/usedRec scheme. (uploadLogsWithReview.php, saveOrder.php, addMedication.php)
+ Structure the scheme ^ on db.
+ Created deactivateOrRemoveProduct.php
+ Created buttons and supporting methods to mark an item as out of stock, or to remove it from a dispensary's store.
+ Changed order uploads to contain cartlistitems instead of productlistitems and changed other code accordingly.
+ Created and bound out of stock indicator to products with that property set to true.
+ Changed ProductPage to display "Out of stock" in place of pricing when it is out of stock.
 /-----------Complete ^
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed(even with nothing inside), and whenever cancel is pressed) this may need to be done platform-specific.
 
@@ -157,7 +169,7 @@ Test device id for IOS(NEED TO UPDATE XCODE AND FOLLOW FREE PROVISIONING TUT)
 
 create help page for app.
 
-Allow placing an order with checkout.
+Allow deactivation/removal of products the dispensary no longer wishes to offer.
 /--------------Unsure v
 Consider removing offline mode?
 

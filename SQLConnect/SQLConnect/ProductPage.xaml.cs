@@ -88,8 +88,6 @@ namespace SQLConnect
 				discountMult = 1;
 			}
 
-
-
 			//Calculation of pricing for each quantity.
 			switch (product.prodBulkType)
 			{
@@ -272,7 +270,11 @@ namespace SQLConnect
 			}
 			else
 			{//IF ACCESSING NORMALLY, SHOW PRODUCT PAGE FOR FLOWERS OR REG.
-				if (product.prodCategory.Equals("Flowers"))
+				if (product.prodOutofstock)
+				{
+					componentOOS.IsVisible = true;
+				}
+				else if(product.prodCategory.Equals("Flowers"))
 				{
 					componentExact.IsVisible = true;
 				}
@@ -801,6 +803,67 @@ namespace SQLConnect
 					await DisplayAlert("Error", "Sorry, there was a problem uploading your changes.", "Okay");
 
 				}
+			}
+		}
+
+		async void markAsOOS(object s, EventArgs e)
+		{
+			var answer = await DisplayAlert("Are you sure?", "Marking this item as out of stock will disallow user purchase but will still be visible. You can unmark this at any time.", "Yes", "Nevermind");
+
+			if (answer)
+			{
+				HttpClient client = new HttpClient();
+
+				MultipartFormDataContent content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
+				content.Add(new StringContent(product.prodName), "productName");
+				content.Add(new StringContent("0"), "operation");
+
+				var response = await client.PostAsync("http://cbd-online.net/landon/deactivateOrRemoveProduct.php", content);
+
+				var output = await response.Content.ReadAsStringAsync();
+				Debug.WriteLine(output);
+
+				//Update locally
+				ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
+				int place = pulled.IndexOf(product);
+				product.prodOutofstock = true;
+				pulled.RemoveAt(place);
+				pulled.Insert(place, product);
+				Statics.Default.setProducts(pulled);
+
+				await Navigation.PopModalAsync();
+			}
+		}
+
+		async void removeProduct(object s, EventArgs e)
+		{
+			var answer = await DisplayAlert("Are you sure?", "If you change your mind, you will have to add this item again manually.", "Remove", "Nevermind");
+
+			if (answer)
+			{
+				HttpClient client = new HttpClient();
+
+				MultipartFormDataContent content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
+				content.Add(new StringContent(product.prodName), "productName");
+				content.Add(new StringContent("1"), "operation");
+
+				var response = await client.PostAsync("http://cbd-online.net/landon/deactivateOrRemoveProduct.php", content);
+
+				var output = await response.Content.ReadAsStringAsync();
+				Debug.WriteLine(output);
+
+				//Update locally
+				ObservableCollection<ProductListItem> pulled = Statics.Default.getProducts();
+				pulled.Remove(product);
+				Statics.Default.setProducts(pulled);
+
+				ObservableCollection<ProductListItem> pulledcat = Statics.Default.getCatClickedContents();
+				pulledcat.Remove(product);
+				Statics.Default.setCatClickedContents(pulledcat);
+
+				await Navigation.PopModalAsync();
 			}
 		}
 

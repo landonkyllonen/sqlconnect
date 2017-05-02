@@ -17,18 +17,26 @@ namespace SQLConnect
 
 		string name;
 		ImageSource imgsrc;
+		bool oos;
 		
 		public string prodName { 
 			get { return name; }
 			set { name = value; OnPropertyChanged("prodName"); }
 		}
+
 		public string prodCategory { get; set; }
 		public string prodDescription { get; set; }
-
 		public string prodImgUrl { get; set; }
+
 		public ImageSource prodImgSrc {
 			get { return imgsrc; }
 			set { imgsrc = value; OnPropertyChanged("prodImgSrc"); }
+		}
+
+		public bool prodOutofstock
+		{
+			get{ return oos; }
+			set{ oos = value; OnPropertyChanged("prodOutofstock"); }
 		}
 
 		public double prodUnitPrice { get; set; }

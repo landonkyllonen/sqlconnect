@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -174,6 +175,63 @@ namespace SQLConnect
 			{
 				await DisplayAlert("Transactions suspended", "Transactions for all users have been suspended temporarily by the dispensary owner. Try again later. (You will have to log out and back in)", "Okay");
 				return;
+			}
+			else if (cartItems.Count < 1)
+			{
+				await DisplayAlert("No items", "You must add items to your cart before you can place an order.", "Okay");
+				return;
+			}
+			else
+			{
+				DateTime date = DateTime.Today;
+				double total = 0;
+				string cartString = "";
+
+				foreach (CartListItem c in cartItems)
+				{
+					total += double.Parse(c.prodTotal);
+					cartString += c.prodName + "--" + c.prodAmount + "--" + c.prodUnitType + "--" + c.prodTotal + "--" + c.prodRate + ";;";
+				}
+
+				//Cut off extra delims.
+				cartString = cartString.Substring(0, cartString.Length - 2);
+
+				OrderListItem order = new OrderListItem
+				{
+					orderDate = date.ToString("d"),
+					orderTotal = total.ToString(),
+					orderPaymentStatus = "Unpaid",
+					orderCompletionStatus = "Incomplete",
+					orderItems = cartItems
+				};
+
+				//Connect to url.
+				var client = new HttpClient();
+
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(cartString), "cart");
+				content.Add(new StringContent(order.orderDate), "date");
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent(order.orderTotal), "total");
+
+				var response = await client.PostAsync("http://cbd-online.net/landon/saveOrder.php", content);
+
+				var output = await response.Content.ReadAsStringAsync();
+				//Will output new auto id.
+				string[] returned = output.Split(new string[] { ";;" }, StringSplitOptions.RemoveEmptyEntries);
+				if (returned[0].Equals("true"))
+				{
+					order.orderID = int.Parse(returned[1]);
+					//Save new order locally.
+					ObservableCollection<OrderListItem> pulled = Statics.Default.getOrders();
+					pulled.Add(order);
+					Statics.Default.setOrders(pulled);
+				}
+				else
+				{
+					//Something went wrong in php.
+					await DisplayAlert("Error", "Sorry, something went wrong while submitting your order.", "Okay");
+				}
 			}
 		}
 

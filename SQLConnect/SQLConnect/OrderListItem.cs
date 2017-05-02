@@ -9,6 +9,6 @@ namespace SQLConnect
 		public string orderTotal { get; set; }
 		public string orderPaymentStatus { get; set; }
 		public string orderCompletionStatus { get; set; }
-		public ObservableCollection<ProductListItem> orderItems { get; set;}
+		public ObservableCollection<CartListItem> orderItems { get; set;}
 	}
 }

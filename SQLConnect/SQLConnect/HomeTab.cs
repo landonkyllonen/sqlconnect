@@ -50,7 +50,7 @@ namespace SQLConnect
 
 				Label dealPrice = new Label
 				{
-				Text = "price/g",
+				Text = "",
 					FontSize = 15,
 					TextColor = Color.Teal,
 					HorizontalOptions=LayoutOptions.CenterAndExpand
@@ -64,7 +64,7 @@ namespace SQLConnect
 
 					Label dealName = new Label
 					{
-						Text = "Product Name",
+						Text = "No deals.",
 						TextColor = Color.Teal,
 						FontSize=15,
 						HorizontalOptions=LayoutOptions.CenterAndExpand,
@@ -83,7 +83,7 @@ namespace SQLConnect
 
 				dealImage = new Image
 				{
-				Aspect = Aspect.AspectFit,
+					Aspect = Aspect.AspectFit,
 					HorizontalOptions = LayoutOptions.CenterAndExpand,
 					VerticalOptions = LayoutOptions.CenterAndExpand
 				};	
@@ -338,6 +338,7 @@ namespace SQLConnect
 			else
 			{
 				toDeal.IsEnabled = false;
+				dealName.FontSize = 20;
 			}
 
 			welcome.SetValue(Label.TextProperty, "Hello, " + credentials[0] + "!");
