@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -31,16 +32,16 @@ namespace SQLConnect
 				return;
 			}else {
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent(medNameEntry.Text), "name");
+				content.Add(new StringContent(medMethodEntry.Text), "method");
+				content.Add(new StringContent(medDoseEntry.Text), "dose");
+				content.Add(new StringContent(medFreqEntry.Text), "freq");
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/addMedication.php?" +
-													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-				                                     "&name=" + System.Net.WebUtility.UrlEncode(medNameEntry.Text) +
-				                                     "&method=" + System.Net.WebUtility.UrlEncode(medMethodEntry.Text) +
-				                                     "&dose=" + System.Net.WebUtility.UrlEncode(medDoseEntry.Text) +
-				                                     "&freq=" + System.Net.WebUtility.UrlEncode(medFreqEntry.Text));
+				var response = await client.PostAsync("http://cbd-online.net/landon/addMedication.php", content);
 
 				var output = await response.Content.ReadAsStringAsync();
 				//If successful, add the condition to current conditions.

@@ -1,6 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
-using System.Net;
+using System.Net.Http;
 
 namespace SQLConnect
 {
@@ -44,12 +44,12 @@ namespace SQLConnect
 			string titletext = title.Text;
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var contentsent = new MultipartFormDataContent();
+			contentsent.Add(new StringContent(to.Text), "user");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/getAuth.php?" +
-			                                     "user=" + WebUtility.UrlEncode(to.Text));
+			var response = await client.PostAsync("http://cbd-online.net/landon/getAuth.php", contentsent);
 
 			var authRetrieved = await response.Content.ReadAsStringAsync();
 
@@ -64,14 +64,14 @@ namespace SQLConnect
 
 			string titleCrypt = Convert.ToBase64String(Crypto.EncryptAes(titletext, complete, saltDefault));
 
-			//Show that we are waiting for a response and wait for it.
+			var contentsent2 = new MultipartFormDataContent();
+			contentsent2.Add(new StringContent(to.Text), "user");
+			contentsent2.Add(new StringContent(Statics.Default.getUser()), "sender");
+			contentsent2.Add(new StringContent(messageCrypt), "msg");
+			contentsent2.Add(new StringContent(date.ToString("d")), "date");
+			contentsent2.Add(new StringContent(titleCrypt), "title");
 
-			var response2 = await client.GetAsync("http://cbd-online.net/landon/messageTemplate.php?" +
-			                                     "user=" + WebUtility.UrlEncode(to.Text) +
-			                                     "&sender=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
-			                                     "&msg=" + WebUtility.UrlEncode(messageCrypt) +
-			                                     "&date=" + WebUtility.UrlEncode(date.ToString("d")) +
-			                                     "&title=" + WebUtility.UrlEncode(titleCrypt));
+			var response2 = await client.PostAsync("http://cbd-online.net/landon/messageTemplate.php", contentsent2);
 
 			var output = await response2.Content.ReadAsStringAsync();
 

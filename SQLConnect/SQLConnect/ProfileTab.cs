@@ -2,6 +2,7 @@
 using System;
 using System.Net;
 using System.Diagnostics;
+using System.Net.Http;
 
 namespace SQLConnect
 {
@@ -514,22 +515,22 @@ namespace SQLConnect
 			credentials = Statics.Default.getCreds();
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(Statics.Default.getUser()), "user");
+			content.Add(new StringContent(email.Text), "email");
+			content.Add(new StringContent(phone.Text), "phone");
+			content.Add(new StringContent(bodytypes[bmi.SelectedIndex]), "body");
+			content.Add(new StringContent(bloodtypes[blood.SelectedIndex]), "blood");
+			content.Add(new StringContent(energytypes[energy.SelectedIndex]), "energy");
+			content.Add(new StringContent(cancertypes[cancer.SelectedIndex]), "ctype");
+			content.Add(new StringContent(ancestry.Text), "ancestry");
+
+			var response = await client.PostAsync("http://cbd-online.net/landon/updateDetails.php", content);
 
 			Debug.WriteLine(WebUtility.UrlEncode(Statics.Default.getUser()) + " " + WebUtility.UrlEncode(email.Text) + " " +WebUtility.UrlEncode(phone.Text)+" "+WebUtility.UrlEncode(bodytypes[bmi.SelectedIndex])+" "+WebUtility.UrlEncode(bloodtypes[blood.SelectedIndex])+" "+
 			                WebUtility.UrlEncode(energytypes[energy.SelectedIndex]) + " " + WebUtility.UrlEncode(cancertypes[cancer.SelectedIndex]) +" "+WebUtility.UrlEncode(ancestry.Text));
-
-			var response = await client.GetAsync("http://cbd-online.net/landon/updateDetails.php?" +
-			                                     "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
-			                                     "&email="+ WebUtility.UrlEncode(email.Text) +
-			                                     "&phone=" + WebUtility.UrlEncode(phone.Text) +
-			                                     "&body=" + WebUtility.UrlEncode(bodytypes[bmi.SelectedIndex]) +
-			                                     "&blood=" + WebUtility.UrlEncode(bloodtypes[blood.SelectedIndex]) +
-			                                     "&energy=" + WebUtility.UrlEncode(energytypes[energy.SelectedIndex]) +
-			                                     "&ctype=" + WebUtility.UrlEncode(cancertypes[cancer.SelectedIndex]) +
-			                                     "&ancestry=" + WebUtility.UrlEncode(ancestry.Text));
 
 			var output = await response.Content.ReadAsStringAsync();
 

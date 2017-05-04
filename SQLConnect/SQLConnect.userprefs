@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/ProductPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/AddProductPage.xaml.cs">
     <Files>
-      <File FileName="SQLConnect/To Do List.txt" Line="162" Column="92" />
-      <File FileName="SQLConnect/SQLConnectPage.xaml.cs" Line="289" Column="1" />
-      <File FileName="SQLConnect/Statics.cs" Line="122" Column="1" />
-      <File FileName="SQLConnect/HomeTab.cs" Line="341" Column="28" />
-      <File FileName="SQLConnect/CategoryListPage.xaml.cs" Line="39" Column="38" />
-      <File FileName="SQLConnect/ProductPage.xaml.cs" Line="279" Column="38" />
+      <File FileName="SQLConnect/To Do List.txt" Line="169" Column="41" />
+      <File FileName="SQLConnect/obj/Debug/SQLConnect.SettingsPage.xaml.g.cs" Line="21" Column="45" />
+      <File FileName="SQLConnect/obj/Debug/SQLConnect.CreateLogPage.xaml.g.cs" Line="1" Column="1" />
+      <File FileName="../../../../Library/Frameworks/Xamarin.Android.framework/Versions/7.1.0-43/lib/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1" Column="1" />
+      <File FileName="SQLConnect/AddProductPage.xaml.cs" Line="219" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,23 +13,26 @@
           <Node name="SQLConnect" expanded="True">
             <Node name="SQLConnect" expanded="True">
               <Node name="Properties" expanded="True" />
-              <Node name="AddProductPage.xaml" expanded="True" />
+              <Node name="AddConditionPage.xaml" expanded="True" />
+              <Node name="AddMedicationPage.xaml" expanded="True" />
+              <Node name="AddProductPage.xaml" expanded="True">
+                <Node name="AddProductPage.xaml.cs" selected="True" />
+              </Node>
+              <Node name="BlacklistPage.xaml" expanded="True" />
               <Node name="CategoryListPage.xaml" expanded="True" />
+              <Node name="ComposeMessagePage.xaml" expanded="True" />
+              <Node name="ConditionsPage.xaml" expanded="True" />
+              <Node name="ContactsPage.xaml" expanded="True" />
               <Node name="CreateLogPage.xaml" expanded="True" />
-              <Node name="ProductPage.xaml" expanded="True">
-                <Node name="ProductPage.xaml.cs" selected="True" />
-              </Node>
+              <Node name="DispensaryManagementPage.xaml" expanded="True" />
+              <Node name="DispensaryPage.xaml" expanded="True" />
+              <Node name="HelpPage.xaml" expanded="True" />
+              <Node name="MedicationsPage.xaml" expanded="True" />
+              <Node name="MessagePage.xaml" expanded="True" />
+              <Node name="ProductPage.xaml" expanded="True" />
+              <Node name="RegisterPage.xaml" expanded="True" />
+              <Node name="SettingsPage.xaml" expanded="True" />
               <Node name="SQLConnectPage.xaml" expanded="True" />
-            </Node>
-            <Node name="SQLConnect.Droid" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="drawable-nodpi" expanded="True" />
-                <Node name="layout" expanded="True" />
-                <Node name="values" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="SQLConnect.iOS" expanded="True">
-              <Node name="Resources" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -39,12 +41,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/AddProductPage.xaml.cs" relfile="SQLConnect/AddProductPage.xaml.cs" line="80" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/SQLConnectPage.xaml.cs" relfile="SQLConnect/SQLConnectPage.xaml.cs" line="289" column="31" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/SQLConnectPage.xaml.cs" relfile="SQLConnect/SQLConnectPage.xaml.cs" line="266" column="1" />
-      <Breakpoint file="/Users/kellypowers/Projects/SQLConnect/SQLConnect/SQLConnectPage.xaml.cs" relfile="SQLConnect/SQLConnectPage.xaml.cs" line="264" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.SQLConnect.Droid PreferredExecutionTarget="Android.LGH8126e5714a3" />

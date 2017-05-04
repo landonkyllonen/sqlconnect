@@ -27,9 +27,6 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Label value;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label priceLbl;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label price;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -51,9 +48,6 @@ namespace SQLConnect {
         private global::Xamarin.Forms.Label valueRight;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label priceLblExact;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label priceExact;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -70,9 +64,6 @@ namespace SQLConnect {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image editPic;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button editPicBtn;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Editor editDesc;
@@ -120,7 +111,6 @@ namespace SQLConnect {
             image = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Image>(this, "image");
             componentRegular = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.RelativeLayout>(this, "componentRegular");
             value = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "value");
-            priceLbl = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceLbl");
             price = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "price");
             priceRegRate = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceRegRate");
             priceRegOff = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceRegOff");
@@ -128,14 +118,12 @@ namespace SQLConnect {
             valueLeft = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "valueLeft");
             valueMid = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "valueMid");
             valueRight = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "valueRight");
-            priceLblExact = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceLblExact");
             priceExact = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceExact");
             priceExactRate = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceExactRate");
             priceExactOff = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "priceExactOff");
             componentOOS = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.RelativeLayout>(this, "componentOOS");
             editView = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.StackLayout>(this, "editView");
             editPic = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Image>(this, "editPic");
-            editPicBtn = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Button>(this, "editPicBtn");
             editDesc = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Editor>(this, "editDesc");
             editPriceLbl = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Label>(this, "editPriceLbl");
             editUnit = global::Xamarin.Forms.NameScopeExtensions.FindByName <global::Xamarin.Forms.Entry>(this, "editUnit");

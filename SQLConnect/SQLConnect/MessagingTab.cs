@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using System;
+using System.Net.Http;
 
 namespace SQLConnect
 {
@@ -244,12 +245,12 @@ namespace SQLConnect
 			var message = e.Item as MessageListItem;
 
 			//Set this message to viewed in db.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(message.msgId.ToString()), "id");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/markMessageRead.php?" +
-			                                     "id=" + System.Net.WebUtility.UrlEncode(message.msgId.ToString()));
+			await client.PostAsync("http://cbd-online.net/landon/markMessageRead.php", content);
 
 			//...and locally.
 			int counter = 0;
@@ -310,12 +311,12 @@ namespace SQLConnect
 			byte[] saltDefault = { 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20 };
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(Statics.Default.getUser()), "user");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/acquireMessages.php?" +
-												 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()));
+			var response = await client.PostAsync("http://cbd-online.net/landon/acquireMessages.php", content);
 
 			var output = await response.Content.ReadAsStringAsync();
 

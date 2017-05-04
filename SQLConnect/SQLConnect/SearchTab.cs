@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -238,14 +239,14 @@ namespace SQLConnect
 				string extraInfo = three.Text;
 
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(queryId.ToString()), "queryId");
+				content.Add(new StringContent(Statics.Default.getCreds()[16]), "dispId");
+				content.Add(new StringContent(extraInfo), "extraInfo");
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/medicalSearch.php?" +
-				                                     "queryId=" + System.Net.WebUtility.UrlEncode(queryId.ToString()) +
-				                                     "&dispId=" + System.Net.WebUtility.UrlEncode(Statics.Default.getCreds()[16]) +
-				                                     "&extraInfo=" + System.Net.WebUtility.UrlEncode(extraInfo));
+				var response = await client.PostAsync("http://cbd-online.net/landon/medicalSearch.php", content);
 
 				var output = await response.Content.ReadAsStringAsync();
 

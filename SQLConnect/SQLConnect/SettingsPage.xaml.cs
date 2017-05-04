@@ -1,8 +1,6 @@
 ﻿using Xamarin.Forms;
-using System.Net;
 using System.Net.Http;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using System;
 
 namespace SQLConnect
@@ -38,13 +36,14 @@ namespace SQLConnect
 				{
 					//Upload changes.
 					//Connect to url.
-					var client = new System.Net.Http.HttpClient();
+					var client = new HttpClient();
 
-					//Show that we are waiting for a response and wait for it.
+					var content = new MultipartFormDataContent();
+					content.Add(new StringContent(Statics.Default.getUser()), "user");
+					content.Add(new StringContent("0"), "pref");
+					content.Add(new StringContent(appear.ToString()), "state");
 
-					var response = await client.GetAsync("http://cbd-online.net/landon/changePref.php?" +
-														 "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
-														 "&pref=" + 0 + "&state=" + appear);
+					var response = await client.PostAsync("http://cbd-online.net/landon/changePref.php", content);
 
 					await response.Content.ReadAsStringAsync();
 				}
@@ -56,13 +55,14 @@ namespace SQLConnect
 				appear = 1;
 				//Upload changes.
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent("0"), "pref");
+				content.Add(new StringContent(appear.ToString()), "state");
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/changePref.php?" +
-													 "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
-													 "&pref=" + 0 + "&state=" + appear);
+				var response = await client.PostAsync("http://cbd-online.net/landon/changePref.php", content);
 
 				await response.Content.ReadAsStringAsync();
 			}
@@ -81,13 +81,14 @@ namespace SQLConnect
 				{
 					//Upload changes.
 					//Connect to url.
-					var client = new System.Net.Http.HttpClient();
+					var client = new HttpClient();
 
-					//Show that we are waiting for a response and wait for it.
+					var content = new MultipartFormDataContent();
+					content.Add(new StringContent(Statics.Default.getUser()), "user");
+					content.Add(new StringContent("1"), "pref");
+					content.Add(new StringContent(block.ToString()), "state");
 
-					var response = await client.GetAsync("http://cbd-online.net/landon/changePref.php?" +
-														 "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
-														 "&pref=" + 1 + "&state=" + block);
+					var response = await client.PostAsync("http://cbd-online.net/landon/changePref.php", content);
 
 					await response.Content.ReadAsStringAsync();
 				}
@@ -99,13 +100,14 @@ namespace SQLConnect
 				block = 1;
 				//Upload changes.
 				//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent("1"), "pref");
+				content.Add(new StringContent(block.ToString()), "state");
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/changePref.php?" +
-													 "user=" + WebUtility.UrlEncode(Statics.Default.getUser()) +
-													 "&pref=" + 1 + "&state=" + block);
+				var response = await client.PostAsync("http://cbd-online.net/landon/changePref.php", content);
 
 				await response.Content.ReadAsStringAsync();
 			}

@@ -7,7 +7,7 @@
 		<StackLayout Orientation="Vertical" Spacing="15" Padding="10,10,10,0">
 			<Button Text="Add Item to Inventory" TextColor="White" BackgroundColor="Teal" HorizontalOptions="Center" Clicked="toAddItem"/>
 			<Button Text="Browse/Edit Inventory" TextColor="White" BackgroundColor="Teal" HorizontalOptions="Center" Clicked="toBrowseEdit"/>
-			<Button x:Name="suspendBtn" Text="Suspend Transactions" TextColor="White" BackgroundColor="Red" HorizontalOptions="Center" Clicked="suspendTransactions"/>
+			<Button Text="Suspend Transactions" TextColor="White" BackgroundColor="Red" HorizontalOptions="Center" Clicked="suspendTransactions"/>
 			<Label HorizontalTextAlignment="Center" VerticalOptions="End" TextColor="Teal" Text="Note: If you have lost your code to re-enable transactions, or are having problems with any other managerial task please contact the support team."/>
 		</StackLayout>
 	</ContentPage.Content>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -76,12 +77,12 @@ namespace SQLConnect
 			if (answer)
 			{
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var contentsent = new MultipartFormDataContent();
+				contentsent.Add(new StringContent(msgClicked.msgId.ToString()), "id");
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/deleteMessage.php?" +
-													 "id=" + Statics.Default.UrlEncodeParameter(msgClicked.msgId.ToString()));
+				var response = await client.PostAsync("http://cbd-online.net/landon/deleteMessage.php", contentsent);
 
 				await response.Content.ReadAsStringAsync();
 
@@ -132,15 +133,15 @@ namespace SQLConnect
 
 				//db
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var contentsent = new MultipartFormDataContent();
+				contentsent.Add(new StringContent(Statics.Default.getUser()), "user");
+				contentsent.Add(new StringContent("Contacts"), "type");
+				contentsent.Add(new StringContent(name), "itemname");
+				contentsent.Add(new StringContent("Add"), "action");
 
-				await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
-													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-													 "&type=" + System.Net.WebUtility.UrlEncode("Contacts") +
-													 "&itemname=" + System.Net.WebUtility.UrlEncode(name) +
-														"&action=" + System.Net.WebUtility.UrlEncode("Add"));
+				await client.PostAsync("http://cbd-online.net/landon/changeUserList.php", contentsent);
 
 				//var output = response.Content.ReadAsStringAsync();
 
@@ -174,15 +175,15 @@ namespace SQLConnect
 
 				//db
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var contentsent = new MultipartFormDataContent();
+				contentsent.Add(new StringContent(Statics.Default.getUser()), "user");
+				contentsent.Add(new StringContent("Blacklist"), "type");
+				contentsent.Add(new StringContent(name), "itemname");
+				contentsent.Add(new StringContent("Add"), "action");
 
-				await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
-													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-													 "&type=" + System.Net.WebUtility.UrlEncode("Blacklist") +
-													 "&itemname=" + System.Net.WebUtility.UrlEncode(name) +
-														"&action=" + System.Net.WebUtility.UrlEncode("Add"));
+				await client.PostAsync("http://cbd-online.net/landon/changeUserList.php", contentsent);
 
 				//var output = response.Content.ReadAsStringAsync();
 

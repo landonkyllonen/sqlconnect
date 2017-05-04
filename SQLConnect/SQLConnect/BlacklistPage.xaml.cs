@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -24,19 +25,18 @@ namespace SQLConnect
 
 			if (answer)
 			{
-				//Delete cond from db.
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent("Blacklist"), "type");
+				content.Add(new StringContent(((SimpleListItem)e.Item).labelName), "itemname");
+				content.Add(new StringContent("Remove"), "action");
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
-													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-													 "&type=" + System.Net.WebUtility.UrlEncode("Blacklist") +
-													 "&itemname=" + System.Net.WebUtility.UrlEncode(((SimpleListItem)e.Item).labelName) +
-													 "&action=" + System.Net.WebUtility.UrlEncode("Remove"));
+				var response = await client.PostAsync("http://cbd-online.net/landon/changeUserList.php", content);
 
-				var output = await response.Content.ReadAsStringAsync();
+				await response.Content.ReadAsStringAsync();
 
 				//and locally.
 				ObservableCollection<SimpleListItem> pulled = Statics.Default.getBlacklist();
@@ -77,15 +77,15 @@ namespace SQLConnect
 
 				//db
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent("Blacklist"), "type");
+				content.Add(new StringContent(name), "itemname");
+				content.Add(new StringContent("Add"), "action");
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/changeUserList.php?" +
-													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-													 "&type=" + System.Net.WebUtility.UrlEncode("Blacklist") +
-													 "&itemname=" + System.Net.WebUtility.UrlEncode(name) +
-														"&action=" + System.Net.WebUtility.UrlEncode("Add"));
+				await client.PostAsync("http://cbd-online.net/landon/changeUserList.php", content);
 
 				//var output = response.Content.ReadAsStringAsync();
 

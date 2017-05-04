@@ -8,7 +8,6 @@ using Plugin.Media.Abstractions;
 using System.Diagnostics;
 using Plugin.Media;
 using System.Threading.Tasks;
-using System.Text;
 using System.Linq;
 
 namespace SQLConnect
@@ -38,13 +37,13 @@ namespace SQLConnect
 		{
 			InitializeComponent();
 
-			string[] categories = new string[] { "Flowers", "Concentrates", "Edibles", "Glass", "Apparel" };
+			string[] categories = { "Flowers", "Concentrates", "Edibles", "Glass", "Apparel" };
 			foreach (string s in categories)
 			{
 				newCat.Items.Add(s);
 			}
 			newCat.SelectedIndexChanged += catChanged;
-			string[] bulkTypes = new string[] { "None", "Linear", "Diminishing" };
+			string[] bulkTypes = { "None", "Linear", "Diminishing" };
 			foreach (string s in bulkTypes)
 			{
 				newBulkType.Items.Add(s);
@@ -65,15 +64,15 @@ namespace SQLConnect
 			}
 
 			//Fails if any info is empty.
-			if (String.IsNullOrEmpty(newName.Text) ||
-			    String.IsNullOrEmpty(newDesc.Text) || newDesc.Text.Equals("Enter your description.") ||
-				 String.IsNullOrEmpty(newUnit.Text) ||
-				(String.IsNullOrEmpty(newBulk.Text) && newBulkType.SelectedIndex > 0) ||
-				(String.IsNullOrEmpty(newDiscount.Text) && newDealFlag.IsToggled) ||
-				(String.IsNullOrEmpty(newIncUnit.Text) && newIncFlag.IsToggled) ||
+			if (string.IsNullOrEmpty(newName.Text) ||
+			    string.IsNullOrEmpty(newDesc.Text) || newDesc.Text.Equals("Enter your description.") ||
+				 string.IsNullOrEmpty(newUnit.Text) ||
+				(string.IsNullOrEmpty(newBulk.Text) && newBulkType.SelectedIndex > 0) ||
+				(string.IsNullOrEmpty(newDiscount.Text) && newDealFlag.IsToggled) ||
+				(string.IsNullOrEmpty(newIncUnit.Text) && newIncFlag.IsToggled) ||
 			    newBulkType.SelectedIndex<0 || newCat.SelectedIndex < 0 ||
-			    (String.IsNullOrEmpty(newBulkLimit.Text) && newCat.SelectedIndex>0 && newBulkType.SelectedIndex > 0) ||
-			    (String.IsNullOrEmpty(newBulkInterval.Text) && newCat.SelectedIndex > 0 && newBulkType.SelectedIndex>0))
+			    (string.IsNullOrEmpty(newBulkLimit.Text) && newCat.SelectedIndex>0 && newBulkType.SelectedIndex > 0) ||
+			    (string.IsNullOrEmpty(newBulkInterval.Text) && newCat.SelectedIndex > 0 && newBulkType.SelectedIndex>0))
 			{
 				error = "No fields can be empty.";
 				//Display error
@@ -206,7 +205,7 @@ namespace SQLConnect
 
 			MediaFile file = null;
 			string filePath = string.Empty;
-			string imageName = string.Empty;
+			//string imageName = string.Empty;
 
 			try
 			{
@@ -219,7 +218,7 @@ namespace SQLConnect
 				else
 				{
 					filePath = file.Path;/* Add your own logic here for where to save the file */ //_fileHelper.CopyFile(file.Path, imageName);
-					imageName = "SomeImageName.jpg";
+					//imageName = "SomeImageName.jpg";
 
 					var memoryStream = new MemoryStream();
 					file.GetStream().CopyTo(memoryStream);

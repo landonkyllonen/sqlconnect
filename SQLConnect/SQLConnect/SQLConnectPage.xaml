@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		xmlns:local="clr-namespace:SQLConnect"
@@ -6,6 +6,10 @@
 	<ContentPage.Content>
 		<ScrollView Orientation="Vertical">
 			<RelativeLayout BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill">
+				<Image x:Name="loginBackground" Opacity = "0.1"
+					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+					RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+				/>
 				<StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Center" Padding="15,30,15,15" Spacing="10"
 				     RelativeLayout.WidthConstraint=
 				         "{ConstraintExpression Type=RelativeToParent,

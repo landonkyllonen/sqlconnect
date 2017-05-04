@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="SQLConnect.CreateLogPage"
@@ -21,15 +21,15 @@
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.5,Constant=-75}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=title, Property=Height,Factor=1,Constant=30}"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=150}"/>
-					<Label x:Name="pubLbl" TextColor="Teal" FontSize="18" Text="Public"
+					<Label TextColor="Teal" FontSize="18" Text="Public"
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=15}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=logDate, Property=Y,Factor=1,Constant=30}"
 						/>
-					<Label x:Name="impLbl" TextColor="Teal" FontSize="18" Text="Important"
+					<Label TextColor="Teal" FontSize="18" Text="Important"
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Width,Factor=1,Constant=30}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=0}"
 						/>
-					<Label x:Name="medLbl" TextColor="Teal" FontSize="18" Text="Medication:" HorizontalTextAlignment="End"
+					<Label TextColor="Teal" FontSize="18" Text="Medication:" HorizontalTextAlignment="End"
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.6,Constant=0}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=pubLbl, Property=Y,Factor=1,Constant=0}"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0.4,Constant=-15}"/>
@@ -71,7 +71,7 @@
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=0,Constant=0}"
 						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"
 						/>
-					<Label x:Name="extraInfoLbl" BackgroundColor="#009a9a" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="If you feel that a medication is helping/having no effect on a condition of yours, please indicate below."
+					<Label BackgroundColor="#009a9a" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="If you feel that a medication is helping/having no effect on a condition of yours, please indicate below."
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0,Constant=0}"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=logTextBox, Property=Y,Factor=1,Constant=110}"
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"

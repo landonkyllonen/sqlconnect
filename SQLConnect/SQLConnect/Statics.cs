@@ -311,10 +311,10 @@ namespace SQLConnect
 						//Cut of last 2 delims if there are any.
 						saved = saved.Substring(0, saved.Length - 2);
 					}
-					App.Current.Properties.Remove("cart");
-					App.Current.Properties.Add("cart", saved);
+					Xamarin.Forms.Application.Current.Properties.Remove("cart");
+					Xamarin.Forms.Application.Current.Properties.Add("cart", saved);
 					//Now make sure these properties are saved in case the app is killed.
-					App.Current.SavePropertiesAsync();
+					Xamarin.Forms.Application.Current.SavePropertiesAsync();
 					break;
 				default:
 					break;
@@ -329,10 +329,10 @@ namespace SQLConnect
 			try
 			{
 				//If that property has been saved...
-				if (App.Current.Properties.ContainsKey(property))
+				if (Xamarin.Forms.Application.Current.Properties.ContainsKey(property))
 				{
 					//Load it
-					var data = App.Current.Properties[property] as string;
+					var data = Xamarin.Forms.Application.Current.Properties[property] as string;
 					//Parse the string and load the specified property with its information.
 					switch (property)
 					{
@@ -475,7 +475,7 @@ namespace SQLConnect
 											c.prodRate = rate;
 
 											//Add this updated cart item into memory.
-											this.cartItems.Add(c);
+											cartItems.Add(c);
 											//No longer search for this item, already found, move to next.
 											break;
 										}
@@ -632,7 +632,7 @@ namespace SQLConnect
 											c.prodRate = rate;
 
 											//Add this updated cart item into memory.
-											this.cartItems.Add(c);
+											cartItems.Add(c);
 											//No longer search for this item, already found, move to next.
 											break;
 										}

@@ -45,6 +45,7 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/important.png
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/pillblank.png
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/xml/file_paths.xml
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/oos.png
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/R.cs.flag
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/com.landonkyllonen.sqlconnect-Signed.apk
 /Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/uploadflags.txt
@@ -84,8 +85,6 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Xamarin.Forms.Xaml.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Plugin.Media.Abstractions.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Plugin.Media.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/SQLConnect.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/SQLConnect.dll.mdb
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Acr.Support.Android.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/AndHUD.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/Splat.dll
@@ -99,5 +98,5 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Serialization.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Forms.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/XLabs.Forms.Droid.dll
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/oos.jpg
-/Users/kellypowers/Projects/SQLConnect/Droid/obj/Debug/res/drawable-nodpi/oos.png
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/SQLConnect.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/bin/Debug/SQLConnect.dll.mdb

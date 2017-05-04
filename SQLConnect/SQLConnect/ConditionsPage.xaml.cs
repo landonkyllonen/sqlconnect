@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Net.Http;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -25,14 +26,14 @@ namespace SQLConnect
 			{
 				//Delete cond from db.
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent("Conditions"), "type");
+				content.Add(new StringContent(((SimpleListItem)e.Item).labelName), "itemname");
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/removeDetail.php?" +
-													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-														 "&type=" + System.Net.WebUtility.UrlEncode("Conditions") +
-				                                     "&itemname=" + System.Net.WebUtility.UrlEncode(((SimpleListItem)e.Item).labelName));
+				var response = await client.PostAsync("http://cbd-online.net/landon/removeDetail.php", content);
 
 				await response.Content.ReadAsStringAsync();
 

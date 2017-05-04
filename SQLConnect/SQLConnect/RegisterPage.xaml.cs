@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net.Http;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -85,18 +86,18 @@ namespace SQLConnect
 			}
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(entries[0]), "user");
+			content.Add(new StringContent(entries[1]), "pass");
+			content.Add(new StringContent(entries[2]), "first");
+			content.Add(new StringContent(entries[3]), "last");
+			content.Add(new StringContent(entries[4]), "email");
+			content.Add(new StringContent(entries[5]), "phone");
+			content.Add(new StringContent(entries[6]), "auth");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/testregister.php?" +
-			                                     "user=" + entries[0] +
-												 "&pass=" + entries[1] +
-												 "&first=" + entries[2] +
-			                                     "&last=" +entries[3] +
-			                                     "&phone=" +entries[4] +
-			                                     "&email=" + entries[5]+
-												 "&auth=" +entries[6]);
+			var response = await client.PostAsync("http://cbd-online.net/landon/testregister.php", content);
 
 			var output = await response.Content.ReadAsStringAsync();
 

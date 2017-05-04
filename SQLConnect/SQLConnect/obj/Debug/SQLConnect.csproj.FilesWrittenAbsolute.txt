@@ -26,6 +26,7 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.BarcodePage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.DispensaryManagementPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.AddProductPage.xaml
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.HelpPage.xaml
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.App.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.SQLConnectPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.SocialPage.xaml.g.cs
@@ -53,6 +54,7 @@
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.BarcodePage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.DispensaryManagementPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.AddProductPage.xaml.g.cs
+/Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.HelpPage.xaml.g.cs
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/SQLConnect.dll.mdb
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/bin/Debug/SQLConnect.dll
 /Users/kellypowers/Projects/SQLConnect/SQLConnect/obj/Debug/SQLConnect.dll

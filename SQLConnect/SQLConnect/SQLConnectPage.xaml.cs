@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 
 namespace SQLConnect
 {
@@ -60,15 +61,15 @@ namespace SQLConnect
 			Debug.WriteLine("Your device id is: " + id);
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(user), "user");
+			content.Add(new StringContent(pass), "pass");
+			content.Add(new StringContent(date.ToString("d")), "date");
+			content.Add(new StringContent(id), "id");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/logInandgetCreds.php?" +
-													 "user=" + UrlEncodeParameter(user) +
-													 "&pass=" + UrlEncodeParameter(pass) +
-													 "&date=" + UrlEncodeParameter(date.ToString("d")) +
-													 "&id=" + UrlEncodeParameter(id));
+			var response = await client.PostAsync("http://cbd-online.net/landon/logInandgetCreds.php", content);
 
 			var output = await response.Content.ReadAsStringAsync();
 
@@ -98,7 +99,7 @@ namespace SQLConnect
 
 				//await asyncLoadDispensaries();
 				console.Text = "Loading Messages...";
-				await asyncLoadMessages(user);
+				await asyncLoadMessages();
 				console.Text = "Loading Dispensaries...";
 				await asyncLoadDispensaries();
 				console.Text = "Loading Products...";
@@ -108,7 +109,7 @@ namespace SQLConnect
 				console.Text = "Loading Logs...";
 				await asyncLoadLogs(user);
 				console.Text = "Loading Preferences...";
-				await asyncLoadPrefs(user);
+				await asyncLoadPrefs();
 				console.TextColor = Color.Teal;
 				console.Text = "Success!";
 
@@ -183,7 +184,7 @@ namespace SQLConnect
 			ObservableCollection<DispListItem> dispensaries = new ObservableCollection<DispListItem>();
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
 			//Show that we are waiting for a response and wait for it.
 
@@ -231,12 +232,13 @@ namespace SQLConnect
 			ObservableCollection<ProductListItem> prods;
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(dispId), "dispId");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/getItemInfo.php?" +
-			                                     "dispId=" + UrlEncodeParameter(dispId));
+			var response = await client.PostAsync("http://cbd-online.net/landon/getItemInfo.php", content);
+
 
 			var output = await response.Content.ReadAsStringAsync();
 
@@ -298,7 +300,7 @@ namespace SQLConnect
 			Statics.Default.setProducts(prods);
 		}
 
-		async Task asyncLoadMessages(string username)
+		async Task asyncLoadMessages()
 		{
 			ObservableCollection<MessageListItem> messages = new ObservableCollection<MessageListItem>();
 
@@ -322,12 +324,12 @@ namespace SQLConnect
 			string complete = authHalf + auth;
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(Statics.Default.getUser()), "user");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/acquireMessages.php?" +
-												 "user=" + WebUtility.UrlEncode(username));
+			var response = await client.PostAsync("http://cbd-online.net/landon/acquireMessages.php", content);
 
 			var output = await response.Content.ReadAsStringAsync();
 			//Process the output.
@@ -362,12 +364,12 @@ namespace SQLConnect
 			ObservableCollection<OrderListItem> orders = new ObservableCollection<OrderListItem>();
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(username), "user");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/importOrders.php?" +
-												 "user=" + UrlEncodeParameter(username));
+			var response = await client.PostAsync("http://cbd-online.net/landon/importOrders.php", content);
 
 			var output = await response.Content.ReadAsStringAsync();
 
@@ -422,12 +424,12 @@ namespace SQLConnect
 			ObservableCollection<LogListItem> logs = new ObservableCollection<LogListItem>();
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(username), "user");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/importLogs.php?" +
-												 "user=" + UrlEncodeParameter(username));
+			var response = await client.PostAsync("http://cbd-online.net/landon/importLogs.php", content);
 
 			var output = await response.Content.ReadAsStringAsync();
 
@@ -485,14 +487,14 @@ namespace SQLConnect
 			Statics.Default.setLogs(logs);
 		}
 
-		async Task asyncLoadPrefs(string username) {
+		async Task asyncLoadPrefs() {
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(Statics.Default.getUser()), "user");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/getPrefs.php?" +
-			                                     "user=" + WebUtility.UrlEncode(username));
+			var response = await client.PostAsync("http://cbd-online.net/landon/getPrefs.php", content);
 
 			var output = await response.Content.ReadAsStringAsync();
 			//Response as Appear;;Block;;Contacts1--contacts2...;;Blacklist1--blacklist2

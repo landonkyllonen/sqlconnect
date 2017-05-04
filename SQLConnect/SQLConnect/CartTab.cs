@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net.Http;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SQLConnect

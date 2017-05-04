@@ -44,3 +44,4 @@
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/XLabs.Forms.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/XLabs.Forms.iOS.dll
 /Users/kellypowers/Projects/SQLConnect/iOS/bin/iPhone/Release/SQLConnect.dll
+/Users/kellypowers/Projects/SQLConnect/iOS/obj/iPhone/Release/optimized/oos.png

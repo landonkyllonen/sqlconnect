@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -545,7 +544,7 @@ namespace SQLConnect
 
 			MediaFile file = null;
 			string filePath = string.Empty;
-			string imageName = string.Empty;
+			//string imageName = string.Empty;
 
 			try
 			{
@@ -558,7 +557,7 @@ namespace SQLConnect
 				else
 				{
 					filePath = file.Path;/* Add your own logic here for where to save the file */ //_fileHelper.CopyFile(file.Path, imageName);
-					imageName = "SomeImageName.jpg";
+					//imageName = "SomeImageName.jpg";
 
 					var memoryStream = new MemoryStream();
 					file.GetStream().CopyTo(memoryStream);
@@ -614,7 +613,7 @@ namespace SQLConnect
 				switch (index)
 				{
 					case 0:
-						amount = (double)1;
+						amount = 1;
 						unit = "g";
 						rate = "(" + (medicalPrices[0]).ToString("C") + "/g)";
 						break;
@@ -634,7 +633,7 @@ namespace SQLConnect
 						rate = "(" + (medicalPrices[3] / (3.54688 * 4)).ToString("C") + "/g)";
 						break;
 					default:
-						amount = (double)1;
+						amount = 1;
 						unit = "oz";
 						rate = "(" + (medicalPrices[4] / (3.54688 * 8)).ToString("C") + "/g)";
 						break;
@@ -682,15 +681,15 @@ namespace SQLConnect
 			/*Checklist*/
 
 			//Fails if any info is empty.
-			if (String.IsNullOrEmpty(editDesc.Text) || editDesc.Text.Equals("Enter your description.") ||
-			     String.IsNullOrEmpty(editUnit.Text) ||
-			     String.IsNullOrEmpty(editDiscount.Text) ||
-			    (String.IsNullOrEmpty(editBulk.Text) && editBulkType.SelectedIndex>0) ||
-			    (String.IsNullOrEmpty(editDiscount.Text) && editDealFlag.IsToggled) ||
-			    (String.IsNullOrEmpty(editIncUnit.Text) && editIncFlag.IsToggled) ||
+			if (string.IsNullOrEmpty(editDesc.Text) || editDesc.Text.Equals("Enter your description.") ||
+				 string.IsNullOrEmpty(editUnit.Text) ||
+			     string.IsNullOrEmpty(editDiscount.Text) ||
+			    (string.IsNullOrEmpty(editBulk.Text) && editBulkType.SelectedIndex>0) ||
+			    (string.IsNullOrEmpty(editDiscount.Text) && editDealFlag.IsToggled) ||
+			    (string.IsNullOrEmpty(editIncUnit.Text) && editIncFlag.IsToggled) ||
 			    editBulkType.SelectedIndex < 0 ||
-			    (String.IsNullOrEmpty(editBulkLimit.Text) && !product.prodCategory.Equals("Flowers")) ||
-			    (String.IsNullOrEmpty(editBulkInterval.Text) && !product.prodCategory.Equals("Flowers")))
+			    (string.IsNullOrEmpty(editBulkLimit.Text) && !product.prodCategory.Equals("Flowers")) ||
+			    (string.IsNullOrEmpty(editBulkInterval.Text) && !product.prodCategory.Equals("Flowers")))
 			{
 				error = "No fields can be empty.";
 				//Display error

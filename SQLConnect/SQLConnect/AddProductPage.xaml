@@ -5,7 +5,7 @@
 	Title="Add a Product">
 	<ContentPage.Content>
 		<ScrollView Orientation="Vertical">
-			<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" x:Name="editView" Padding="10,10,10,0">
+			<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="15" Padding="10,10,10,0">
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Label Text="Name:" VerticalOptions="Center" TextColor="Teal"/>
@@ -19,7 +19,7 @@
 				
 				<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
 					<Image x:Name="newPic" Source="product.png" Aspect="AspectFit" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="100" WidthRequest="178"/>
-					<Button x:Name="newPicBtn" Clicked="pickPic" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
+					<Button Clicked="pickPic" Text="Upload" TextColor="White" BackgroundColor="Teal" HorizontalOptions="EndAndExpand"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Start">

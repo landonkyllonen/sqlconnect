@@ -105,6 +105,9 @@
     <EmbeddedResource Include="AddProductPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="HelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -215,6 +218,9 @@
     <Compile Include="IFtpWebRequest.cs" />
     <Compile Include="IFileProcessing.cs" />
     <Compile Include="IDeviceId.cs" />
+    <Compile Include="HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">

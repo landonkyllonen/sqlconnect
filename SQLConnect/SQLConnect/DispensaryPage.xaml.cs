@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Net;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Net.Http;
 
 namespace SQLConnect
 {
@@ -59,13 +59,13 @@ namespace SQLConnect
 				Statics.Default.setCreds(credentials);
 
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent(newDispensary), "disp");
 
-				await client.GetAsync("http://cbd-online.net/landon/changeDispensary.php?" +
-													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-													 "&disp=" + System.Net.WebUtility.UrlEncode(newDispensary));
+				await client.PostAsync("http://cbd-online.net/landon/changeDispensary.php", content);
 
 				//Reload products again.
 				await asyncLoadProducts(newDispensary);
@@ -111,12 +111,12 @@ namespace SQLConnect
 			ObservableCollection<ProductListItem> prods;
 
 			//Connect to url.
-			var client = new System.Net.Http.HttpClient();
+			var client = new HttpClient();
 
-			//Show that we are waiting for a response and wait for it.
+			var content = new MultipartFormDataContent();
+			content.Add(new StringContent(dispId), "dispId");
 
-			var response = await client.GetAsync("http://cbd-online.net/landon/getItemInfo.php?" +
-			                                     "dispId=" + WebUtility.UrlEncode(dispId));
+			var response = await client.PostAsync("http://cbd-online.net/landon/getItemInfo.php", content);
 
 			var output = await response.Content.ReadAsStringAsync();
 

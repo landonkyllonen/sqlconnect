@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using Xamarin.Forms;
 
 namespace SQLConnect
@@ -163,13 +164,13 @@ namespace SQLConnect
 
 				string logstring = title.Text + ";;" + logDate.Text + ";;" + logTextBox.Text + ";;" + pub + ";;" + imp + ";;" + medstring;
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent(logstring), "log");
 
-				await client.GetAsync("http://cbd-online.net/landon/uploadOneLog.php?" +
-													 "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-													 "&log=" + System.Net.WebUtility.UrlEncode(logstring));
+				await client.PostAsync("http://cbd-online.net/landon/uploadOneLog.php", content);
 
 				//var output = await response.Content.ReadAsStringAsync();
 
@@ -218,19 +219,19 @@ namespace SQLConnect
 
 				string logstring = title.Text + ";;" + logDate.Text + ";;" + logTextBox.Text + ";;" + pub + ";;" + imp + ";;" + medstring;
 				//Connect to url.
-				var client = new System.Net.Http.HttpClient();
+				var client = new HttpClient();
 
-				//Show that we are waiting for a response and wait for it.
+				var content = new MultipartFormDataContent();
+				content.Add(new StringContent(Statics.Default.getUser()), "user");
+				content.Add(new StringContent(logstring), "log");
+				content.Add(new StringContent(Statics.Default.getCreds()[14]), "oldFeedback");
+				content.Add(new StringContent(extraMed.Items[extraMed.SelectedIndex]), "med");
+				content.Add(new StringContent(extraCond.Items[extraCond.SelectedIndex]), "cond");
+				content.Add(new StringContent(pos), "pos");
+				content.Add(new StringContent(neg), "neg");
+				content.Add(new StringContent(negText.Text), "note");
 
-				var response = await client.GetAsync("http://cbd-online.net/landon/uploadLogWithReview.php?" +
-				                                     "user=" + System.Net.WebUtility.UrlEncode(Statics.Default.getUser()) +
-				                                     "&log=" + System.Net.WebUtility.UrlEncode(logstring) +
-				                                     "&oldFeedback=" + System.Net.WebUtility.UrlEncode(Statics.Default.getCreds()[14]) +
-				                                     "&med=" + System.Net.WebUtility.UrlEncode(extraMed.Items[extraMed.SelectedIndex]) +
-				                                     "&cond=" + System.Net.WebUtility.UrlEncode(extraCond.Items[extraCond.SelectedIndex]) +
-				                                     "&pos=" + System.Net.WebUtility.UrlEncode(pos) +
-				                                     "&neg=" + System.Net.WebUtility.UrlEncode(neg) +
-				                                     "&note=" + System.Net.WebUtility.UrlEncode(negText.Text));
+				var response = await client.PostAsync("http://cbd-online.net/landon/uploadLogWithReview.php", content);
 
 				await response.Content.ReadAsStringAsync();
 

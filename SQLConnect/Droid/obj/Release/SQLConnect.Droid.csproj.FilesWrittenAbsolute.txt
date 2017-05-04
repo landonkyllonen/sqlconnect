@@ -98,3 +98,4 @@
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/XLabs.Forms.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/XLabs.Forms.Droid.dll
 /Users/kellypowers/Projects/SQLConnect/Droid/bin/Release/SQLConnect.dll
+/Users/kellypowers/Projects/SQLConnect/Droid/obj/Release/res/drawable-nodpi/oos.png

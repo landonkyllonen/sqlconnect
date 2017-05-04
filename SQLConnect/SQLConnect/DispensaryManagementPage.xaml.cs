@@ -2,7 +2,6 @@
 using System;
 using Xamarin.Forms;
 using XLabs.Forms.Controls;
-using System.Threading.Tasks;
 using System.Linq;
 using System.Diagnostics;
 
