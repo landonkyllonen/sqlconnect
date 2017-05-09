@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{F7A63A17-85C9-4B79-81F6-26161807A837}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/AddProductPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLConnect/MessagePage.xaml.cs">
     <Files>
-      <File FileName="SQLConnect/To Do List.txt" Line="169" Column="41" />
-      <File FileName="SQLConnect/obj/Debug/SQLConnect.SettingsPage.xaml.g.cs" Line="21" Column="45" />
-      <File FileName="SQLConnect/obj/Debug/SQLConnect.CreateLogPage.xaml.g.cs" Line="1" Column="1" />
-      <File FileName="../../../../Library/Frameworks/Xamarin.Android.framework/Versions/7.1.0-43/lib/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1" Column="1" />
-      <File FileName="SQLConnect/AddProductPage.xaml.cs" Line="219" Column="6" />
+      <File FileName="SQLConnect/To Do List.txt" Line="171" Column="100" />
+      <File FileName="SQLConnect/MessagingTab.cs" Line="230" Column="4" />
+      <File FileName="SQLConnect/ContactsPage.xaml.cs" Line="11" Column="24" />
+      <File FileName="SQLConnect/BlacklistPage.xaml.cs" Line="107" Column="29" />
+      <File FileName="SQLConnect/MessagePage.xaml.cs" Line="186" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,9 +15,7 @@
               <Node name="Properties" expanded="True" />
               <Node name="AddConditionPage.xaml" expanded="True" />
               <Node name="AddMedicationPage.xaml" expanded="True" />
-              <Node name="AddProductPage.xaml" expanded="True">
-                <Node name="AddProductPage.xaml.cs" selected="True" />
-              </Node>
+              <Node name="AddProductPage.xaml" expanded="True" />
               <Node name="BlacklistPage.xaml" expanded="True" />
               <Node name="CategoryListPage.xaml" expanded="True" />
               <Node name="ComposeMessagePage.xaml" expanded="True" />
@@ -27,8 +25,12 @@
               <Node name="DispensaryManagementPage.xaml" expanded="True" />
               <Node name="DispensaryPage.xaml" expanded="True" />
               <Node name="HelpPage.xaml" expanded="True" />
+              <Node name="MasterList.xaml" expanded="True" />
+              <Node name="MasterPage.xaml" expanded="True" />
               <Node name="MedicationsPage.xaml" expanded="True" />
-              <Node name="MessagePage.xaml" expanded="True" />
+              <Node name="MessagePage.xaml" expanded="True">
+                <Node name="MessagePage.xaml.cs" selected="True" />
+              </Node>
               <Node name="ProductPage.xaml" expanded="True" />
               <Node name="RegisterPage.xaml" expanded="True" />
               <Node name="SettingsPage.xaml" expanded="True" />

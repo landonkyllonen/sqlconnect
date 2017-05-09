@@ -365,7 +365,7 @@ namespace SQLConnect
 
 		public void toHelpPage(object s, EventArgs e)
 		{
-			NavigationPage nav = new NavigationPage(new BarcodePage());
+			NavigationPage nav = new NavigationPage(new HelpPage());
 			NavigationPage.SetHasBackButton(nav, true);
 			Navigation.PushModalAsync(nav);
 		}

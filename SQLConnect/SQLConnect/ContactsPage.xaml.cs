@@ -16,6 +16,11 @@ namespace SQLConnect
 
 			contactList.ItemsSource = contacts;
 			contactList.ItemTapped += onItemSelect;
+
+			if (contacts.Count < 1)
+			{
+				empty.IsVisible = true;
+			}
 		}
 
 		async void onItemSelect(object sender, ItemTappedEventArgs e)
@@ -52,6 +57,10 @@ namespace SQLConnect
 				//Reflect changes to static variable.
 				Statics.Default.setContacts(pulled);
 
+				if (pulled.Count < 1)
+				{
+					empty.IsVisible = true;
+				}
 			}
 			return;
 		}
@@ -86,6 +95,8 @@ namespace SQLConnect
 			Statics.Default.setContacts(contacts);
 
 			nameEntry.Text = "";
+
+			empty.IsVisible = false;
 		}
 	}
 }

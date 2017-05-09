@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		x:Class="SQLConnect.ContactsPage"
@@ -32,6 +32,12 @@
 	                </DataTemplate>
             	</ListView.ItemTemplate>
         	</ListView>
+			<Label x:Name="empty" HorizontalTextAlignment="Center" Text="No contacts" VerticalTextAlignment="Center" FontSize="26" IsVisible="false"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0,Constant=0}"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1, Constant=0}"
+			/>
 			<Label x:Name="console" TextColor="Red" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="19"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=0,Constant=0}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=0.8,Constant=0}"

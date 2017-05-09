@@ -18,8 +18,8 @@ namespace SQLConnect
 			block = Statics.Default.getBlockNonContacts();
 			blacklist = Statics.Default.getBlacklist();
 
-			if (appear == 1) { hideSwitch.IsToggled = true;}
-			if (block == 1) { blockSwitch.IsToggled = true;}
+			//if (appear == 1) { hideSwitch.IsToggled = true;}
+			//if (block == 1) { blockSwitch.IsToggled = true;}
 		}
 
 		async void hideWarning(object s, ToggledEventArgs e)

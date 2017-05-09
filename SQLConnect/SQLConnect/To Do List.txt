@@ -165,8 +165,13 @@ Changed dimensions of all picture elements in xaml to accomodate most common lan
  Added minor element to out of stock page.
  All 37 phps are updated to POST instead of get method, and all references in code have been updated as well.
  Cleaned up all warnings except for param not used warnings. (Need to be suppressed, not sure how)
+ /
+  --Note to self: ignore warnings for "x:Name not used" because sometimes its being used for relativeToView positioning.
+ Finished blacklist/contact initialization.
+ Developed initial parts of help page, any Q/A combos can be added in the initialization method now.
+ Display a message on all lists that shows up if list is empty.
 /-----------Complete ^
-Finish blacklist/contact initialization.
+Figure out why delete message does not set Deleted to 1(does in phpfiddle)
 
 Find better way to dismiss searchbar keyboard(should hide whenever search is pressed(even with nothing inside), and whenever cancel is pressed) this may need to be done platform-specific.
 

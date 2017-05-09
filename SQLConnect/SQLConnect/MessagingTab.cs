@@ -151,6 +151,15 @@ namespace SQLConnect
 			};
 			blacklist.Clicked += toBlacklist;
 
+			Label empty = new Label
+			{
+				Text = "No messages",
+				FontSize = 26,
+				HorizontalTextAlignment = TextAlignment.Center,
+				VerticalTextAlignment = TextAlignment.Center,
+				IsVisible=false
+			};
+
 			//Define container
 			RelativeLayout relativeLayout = new RelativeLayout();
 			relativeLayout.HorizontalOptions = LayoutOptions.Fill;
@@ -208,7 +217,21 @@ namespace SQLConnect
 											return parent.Height * .15;
 										}));
 
+			relativeLayout.Children.Add(empty, Constraint.Constant(0), Constraint.Constant(0), 
+			                            Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Width;
+										}), Constraint.RelativeToParent((parent) =>
+										{
+											return parent.Height*.95;
+										}));
+
 			Content = relativeLayout;
+
+			if (Statics.Default.getMessages().Count < 1)
+			{
+				empty.IsVisible = true;
+			}
 		}
 
 		void Handle_TextChanged(object sender, TextChangedEventArgs e)

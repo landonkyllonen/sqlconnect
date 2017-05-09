@@ -16,6 +16,11 @@ namespace SQLConnect
 
 			blackList.ItemsSource = blacklist;
 			blackList.ItemTapped += onItemSelect;
+
+			if (blacklist.Count < 1)
+			{
+				empty.IsVisible = true;
+			}
 		}
 
 		async void onItemSelect(object sender, ItemTappedEventArgs e)
@@ -52,6 +57,10 @@ namespace SQLConnect
 				//Reflect changes to static variable.
 				Statics.Default.setBlacklist(pulled);
 
+				if (pulled.Count < 1)
+				{
+					empty.IsVisible = true;
+				}
 			}
 			return;
 		}
@@ -94,6 +103,8 @@ namespace SQLConnect
 				Statics.Default.setBlacklist(blacklist);
 
 				nameEntry.Text = "";
+
+				empty.IsVisible = false;
 			}
 		}
 	}

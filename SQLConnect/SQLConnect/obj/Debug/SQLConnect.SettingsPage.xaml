@@ -5,11 +5,11 @@
 		Title = "Settings">
 	<ContentPage.Content>
 		<RelativeLayout>
-			<Label Text="Appear in search results" TextColor="Teal" FontSize="18" VerticalTextAlignment="Center"
+			<Label x:Name="lbl1" Text="Appear in search results" TextColor="Teal" FontSize="18" VerticalTextAlignment="Center"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
 			/>
-			<Label Text="Block messages from non-contacts" TextColor="Teal" FontSize="18" VerticalTextAlignment="Center"
+			<Label x:Name="lbl2" Text="Block messages from non-contacts" TextColor="Teal" FontSize="18" VerticalTextAlignment="Center"
 				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
 				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=lbl1, Property=Height, Factor=1, Constant=45}"
 			/>
